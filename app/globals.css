@@ -2,6 +2,27 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+:root {
+  --brand-blue: #0083CB;
+  --brand-blue-hover: #006FAE;
+  --brand-sky: #12A9E2;
+  --brand-green: #1F8A42;
+  --brand-green-hover: #176C34;
+  --brand-lime: #74BD6C;
+  --ink: #0B1720;
+  --muted: #52616B;
+  --bg: #F8FAFC;
+  --card: #FFFFFF;
+  --border: #DCE5EA;
+  --brand-gradient: linear-gradient(135deg, #0083CB 0%, #12A9E2 45%, #74BD6C 100%);
+}
+
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #f6f8f3; color: #111; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
-::selection { background: #7AC143; color: #fff; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+::selection { background: #0083CB; color: #fff; }
+img { max-width: 100%; }

@@ -2,42 +2,50 @@
 
 import { useState } from 'react'
 import {
-  Sun, Zap, Leaf, Recycle, BatteryCharging, PlugZap, Gauge,
+  Sun, Zap, Leaf, BatteryCharging, PlugZap, Gauge,
   ArrowRight, Play, Check, Menu, X, Phone, Mail, MapPin,
   Globe, Share2, AtSign, Rss, Star, Wrench, Lightbulb,
-  Mountain, Warehouse, CarFront, Headset, Quote, ChevronLeft, ChevronRight
+  Mountain, Warehouse, CarFront, Headset, Quote,
+  ShieldCheck, Cog, ChevronLeft, ChevronRight
 } from 'lucide-react'
 
+/* Brand source of truth — EV & SOLAR logo */
+const LOGO_URL =
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/EV%20%26%20SOLAR%20LOGO%20final.jpg%20%284%29-mkVPCg09FJf5Yc550FUgAC2cI2EFi8.jpeg'
+
 const IMG = {
-  heroWoman: 'https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=800&q=80',
-  heroBg: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80',
-  fieldTurbine: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1400&q=80',
-  maintenance: 'https://images.unsplash.com/photo-1559302995-f1d7e0b9c1d5?auto=format&fit=crop&w=800&q=80',
-  saving: 'https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&w=800&q=80',
-  install: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80',
-  worker1: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
-  worker2: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=600&q=80',
-  manSolar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80',
-  panelClose: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80',
-  roof: 'https://images.unsplash.com/photo-1605980776566-0486c3ac7617?auto=format&fit=crop&w=600&q=80',
-  sunset: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=600&q=80',
+  solarField: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=80',
+  evCharge: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=80',
+  rooftop: 'https://images.unsplash.com/photo-1605980776566-0486c3ac7617?auto=format&fit=crop&w=800&q=80',
+  ground: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80',
+  carport: 'https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=800&q=80',
+  panel: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80',
+  engineer1: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=700&q=80',
+  engineer2: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=700&q=80',
   blog1: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=800&q=80',
-  blog2: 'https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?auto=format&fit=crop&w=800&q=80',
-  blog3: 'https://images.unsplash.com/photo-1584276433295-4b49a252e5b7?auto=format&fit=crop&w=800&q=80',
+  blog2: 'https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&w=800&q=80',
+  blog3: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=800&q=80',
 }
+
+const GRADIENT = 'linear-gradient(135deg, #0083CB 0%, #12A9E2 45%, #74BD6C 100%)'
 
 function TopBar() {
   return (
-    <div className="bg-[#0c2310] text-white/90 text-[12.5px]">
+    <div className="bg-[#0B1720] text-[12.5px] text-white/85">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-2">
         <div className="flex items-center gap-5">
-          <span className="flex items-center gap-1.5"><Mail size={14} className="text-[#8DC63F]" /> info@evnsolar.in</span>
-          <span className="hidden items-center gap-1.5 sm:flex"><Phone size={14} className="text-[#8DC63F]" /> +91 70405 06295</span>
+          <span className="flex items-center gap-1.5"><Mail size={14} className="text-[#12A9E2]" /> info@evnsolar.in</span>
+          <span className="hidden items-center gap-1.5 sm:flex"><Phone size={14} className="text-[#74BD6C]" /> +91 70405 06295</span>
         </div>
-        <p className="hidden items-center gap-2 md:flex">⚡ Purchase Today & Enjoy UP TO 20% OFF <span className="rounded-full bg-[#8DC63F] px-2.5 py-0.5 text-[11px] font-bold text-[#0c2310]">Get Now</span></p>
+        <p className="hidden items-center gap-2 md:flex">
+          <Zap size={13} className="text-[#74BD6C]" /> EV + Solar — Engineered for India
+          <span className="rounded-full bg-[#0083CB] px-2.5 py-0.5 text-[11px] font-bold text-white">Get Subsidy Help</span>
+        </p>
         <div className="flex items-center gap-2">
           {[Globe, Share2, AtSign, Rss].map((Icon, i) => (
-            <a key={i} href="#top" className="grid size-6 place-items-center rounded-full bg-white/10 hover:bg-[#8DC63F] hover:text-[#0c2310] transition"><Icon size={12} /></a>
+            <a key={i} href="#top" aria-label="social link" className="grid size-6 place-items-center rounded-full bg-white/10 transition hover:bg-[#0083CB] hover:text-white">
+              <Icon size={12} />
+            </a>
           ))}
         </div>
       </div>
@@ -47,29 +55,46 @@ function TopBar() {
 
 function Navbar() {
   const [open, setOpen] = useState(false)
+  const links: [string, string][] = [
+    ['Home', '#top'],
+    ['Solar', '#solutions'],
+    ['EV Charging', '#ev'],
+    ['Projects', '#work'],
+    ['About', '#why'],
+    ['Contact', '#contact'],
+  ]
   return (
-    <div className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-2xl bg-white/95 px-4 py-3 shadow-[0_10px_40px_rgba(12,35,16,0.12)] backdrop-blur">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="grid size-9 place-items-center rounded-xl bg-[#8DC63F] text-white"><Sun size={20} /></span>
-          <span className="text-xl font-extrabold tracking-tight">Solar<span className="text-[#5da32a]">.</span></span>
+    <div className="sticky top-0 z-50 bg-[#F8FAFC]/90 px-3 pt-3 backdrop-blur sm:px-5">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-2xl border border-[#DCE5EA] bg-white px-4 py-2.5 shadow-[0_10px_35px_rgba(11,23,32,0.08)]">
+        <a href="#top" className="flex items-center gap-3">
+          <img src={LOGO_URL} alt="EV & Solar — EVN Solar Energy Solutions" className="h-11 w-auto rounded-lg object-contain" />
+          <span className="hidden flex-col leading-none sm:flex">
+            <span className="text-[17px] font-extrabold tracking-tight text-[#0B1720]">
+              EV<span className="text-[#0083CB]">&</span><span className="text-[#0083CB]">SOLAR</span>
+            </span>
+            <span className="mt-0.5 text-[9px] font-bold tracking-[0.14em] text-[#52616B]">EVN SOLAR ENERGY SOLUTIONS</span>
+          </span>
         </a>
-        <div className="hidden items-center gap-7 text-[14px] font-medium text-neutral-700 lg:flex">
-          {['Home', 'About Us', 'Services', 'Projects', 'Pages', 'Blog'].map((l, i) => (
-            <a key={l} href={`#${['top', 'harvest', 'solutions', 'work', 'pricing', 'blog'][i]}`} className={i === 0 ? 'font-bold text-black' : 'hover:text-[#5da32a]'}>{l}</a>
+        <div className="hidden items-center gap-6 text-[14px] font-semibold text-[#52616B] lg:flex">
+          {links.map(([l, h]) => (
+            <a key={l} href={h} className="transition hover:text-[#0083CB] first:font-extrabold first:text-[#0B1720]">{l}</a>
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <a href="#contact" className="hidden rounded-full bg-[#7AC143] px-5 py-2.5 text-[13.5px] font-bold text-white hover:bg-[#5da32a] transition sm:block">Contact Us</a>
-          <button onClick={() => setOpen(!open)} className="grid size-10 place-items-center rounded-xl border lg:hidden">{open ? <X size={20} /> : <Menu size={20} />}</button>
+          <a href="#contact" className="hidden rounded-full bg-[#0083CB] px-5 py-2.5 text-[13.5px] font-bold text-white transition hover:bg-[#006FAE] sm:block">
+            Get Free Quote
+          </a>
+          <button onClick={() => setOpen(!open)} aria-label="menu" className="grid size-10 place-items-center rounded-xl border border-[#DCE5EA] text-[#0B1720] lg:hidden">
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </nav>
       {open && (
-        <div className="mx-auto mt-2 max-w-6xl rounded-2xl bg-white p-4 shadow-xl lg:hidden">
-          {['Home', 'About Us', 'Services', 'Projects', 'Pages', 'Blog'].map((l) => (
-            <a key={l} href="#top" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2.5 font-medium hover:bg-lime-50">{l}</a>
+        <div className="mx-auto mt-2 max-w-6xl rounded-2xl border border-[#DCE5EA] bg-white p-3 shadow-xl lg:hidden">
+          {links.map(([l, h]) => (
+            <a key={l} href={h} onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2.5 font-semibold text-[#0B1720] hover:bg-[#F8FAFC]">{l}</a>
           ))}
-          <a href="#contact" className="mt-2 block rounded-full bg-[#7AC143] px-5 py-3 text-center font-bold text-white">Contact Us</a>
+          <a href="#contact" onClick={() => setOpen(false)} className="mt-2 block rounded-full bg-[#0083CB] px-5 py-3 text-center font-bold text-white">Get Free Quote</a>
         </div>
       )}
     </div>
@@ -78,306 +103,363 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section id="top" className="px-3 pt-3 sm:px-5">
-      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] bg-[#0c2310]">
-        <img src={IMG.heroBg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0c2310] via-[#0c2310]/85 to-[#0c2310]/20" />
-        <div className="relative grid items-center gap-8 p-8 sm:p-12 lg:grid-cols-[1.1fr_0.9fr]">
+    <section id="top" className="bg-[#F8FAFC] px-3 pt-4 sm:px-5">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-[#DCE5EA] bg-white">
+        {/* selective gradient wash + grid */}
+        <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 320px at 85% 10%, rgba(18,169,226,0.14), transparent), radial-gradient(600px 300px at 10% 90%, rgba(116,189,108,0.14), transparent)' }} />
+        <div className="relative grid items-center gap-10 p-8 sm:p-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="mb-4 inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] text-lime-300">☀ WELCOME TO SOLAR</p>
-            <h1 className="text-[38px] font-extrabold leading-[1.05] tracking-tight text-white sm:text-[52px]">
-              Power Your Future<br />with Reliable<br /><span className="text-[#8DC63F]">Solar Solutions</span>
-            </h1>
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/70">
-              Harness the power of the sun with cutting-edge solar technology. Save on bills, reduce carbon footprint and enjoy energy independence.
+            <p className="inline-flex items-center gap-2 rounded-full border border-[#DCE5EA] bg-[#F8FAFC] px-3.5 py-1.5 text-[11px] font-extrabold tracking-[0.16em] text-[#0083CB]">
+              <span className="size-2 rounded-full" style={{ background: GRADIENT }} /> EVN SOLAR ENERGY SOLUTIONS • EV + SOLAR
             </p>
-            <div className="mt-7 flex flex-wrap items-center gap-4">
-              <a href="#harvest" className="rounded-full bg-[#7AC143] px-7 py-3 text-sm font-bold text-white hover:bg-[#5da32a]">Learn More</a>
-              <a href="#harvest" className="group flex items-center gap-3 text-sm font-semibold text-white">
-                <span className="grid size-12 place-items-center rounded-full border border-white/30 bg-white/10 backdrop-blur group-hover:bg-[#7AC143]"><Play size={18} className="fill-white" /></span>
-                Watch Video
+            <h1 className="mt-5 text-[38px] font-extrabold leading-[1.04] tracking-tight text-[#0B1720] sm:text-[54px]">
+              Charge forward.
+              <br />
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: GRADIENT }}>Powered by the sun.</span>
+            </h1>
+            <p className="mt-5 max-w-md text-[15.5px] leading-relaxed text-[#52616B]">
+              Rooftop solar, ground-mounted plants, solar carports and EV charging — engineered as one clean-technology system for homes, businesses and fleets.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#0083CB] px-7 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(0,131,203,0.35)] transition hover:bg-[#006FAE]">
+                Get Free Site Assessment <ArrowRight size={17} />
+              </a>
+              <a href="#ev" className="inline-flex items-center gap-2 rounded-full border border-[#1F8A42]/30 bg-[#1F8A42]/5 px-6 py-3.5 text-sm font-bold text-[#1F8A42] transition hover:bg-[#1F8A42] hover:text-white">
+                <CarFront size={18} /> Explore EV Charging
               </a>
             </div>
-            <div className="mt-8 flex gap-8 border-t border-white/15 pt-6 text-white">
-              {[['25+', 'Years Exp.'], ['12k+', 'Projects Done'], ['98%', 'Happy Clients']].map(([n, l]) => (
-                <div key={l}><p className="text-2xl font-extrabold">{n}</p><p className="text-xs text-white/60">{l}</p></div>
+            <div className="mt-8 grid max-w-md grid-cols-3 gap-4 border-t border-[#DCE5EA] pt-6">
+              {[
+                ['25+', 'Years engineering'],
+                ['1,000+', 'Projects delivered'],
+                ['98%', 'Customer satisfaction'],
+              ].map(([n, l]) => (
+                <div key={l}>
+                  <p className="bg-clip-text text-[26px] font-extrabold text-transparent" style={{ backgroundImage: GRADIENT }}>{n}</p>
+                  <p className="mt-0.5 text-[12px] font-medium text-[#52616B]">{l}</p>
+                </div>
               ))}
             </div>
           </div>
-          <div className="relative mx-auto hidden w-full max-w-[380px] lg:block">
-            <div className="absolute -inset-4 rounded-full border border-dashed border-lime-300/30" />
-            <img src={IMG.heroWoman} alt="Solar expert" className="aspect-square w-full rounded-full border-[10px] border-white/10 object-cover" />
-            <div className="absolute -left-4 top-10 rounded-2xl bg-white p-3 shadow-xl">
-              <p className="flex items-center gap-2 text-xs font-bold"><Zap size={16} className="text-[#7AC143]" /> 100% Clean Energy</p>
+
+          <div className="relative">
+            <div className="grid gap-4">
+              <div className="relative overflow-hidden rounded-[22px] border border-[#DCE5EA] shadow-[0_20px_50px_rgba(0,131,203,0.15)]">
+                <img src={IMG.solarField} alt="Solar plant" className="h-60 w-full object-cover sm:h-72" />
+                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[12px] font-bold text-[#0083CB]">
+                  <Sun size={14} /> Solar Generation • Live
+                </span>
+              </div>
+              <div className="grid grid-cols-[1fr_0.9fr] gap-4">
+                <div className="relative overflow-hidden rounded-[20px] border border-[#DCE5EA]">
+                  <img src={IMG.evCharge} alt="EV charging" className="h-44 w-full object-cover" />
+                  <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#0B1720]/90 px-3 py-1.5 text-[12px] font-bold text-white">
+                    <PlugZap size={14} className="text-[#74BD6C]" /> 22 kW EV Charging
+                  </span>
+                </div>
+                <div className="rounded-[20px] border border-[#DCE5EA] bg-[#0B1720] p-5 text-white">
+                  <span className="grid size-10 place-items-center rounded-xl" style={{ background: GRADIENT }}><Zap size={20} className="text-white" /></span>
+                  <p className="mt-3 text-[22px] font-extrabold">70%</p>
+                  <p className="text-[12.5px] leading-snug text-white/70">Average grid-bill reduction with solar + smart charging</p>
+                </div>
+              </div>
             </div>
-            <div className="absolute -right-2 bottom-10 rounded-2xl bg-[#7AC143] p-3 text-white shadow-xl">
-              <p className="text-xl font-extrabold">24/7</p><p className="text-[11px]">Support</p>
-            </div>
+            <a href="#solutions" className="absolute -left-2 top-1/2 hidden -translate-y-1/2 items-center gap-2 rounded-full bg-white py-2 pl-2 pr-4 text-[13px] font-bold text-[#0B1720] shadow-xl xl:flex">
+              <span className="grid size-10 place-items-center rounded-full bg-[#0083CB] text-white"><Play size={16} className="fill-white" /></span> How it works
+            </a>
           </div>
+        </div>
+
+        <div className="relative flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[#DCE5EA] bg-[#F8FAFC] px-8 py-4 text-[12px] font-bold tracking-wide text-[#52616B] sm:px-12">
+          <span className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#0083CB]" /> MNRE-Aligned Engineering</span>
+          <span className="flex items-center gap-2"><Cog size={16} className="text-[#0083CB]" /> 25-Yr Panel / 5-Yr Service Warranty</span>
+          <span className="flex items-center gap-2"><Leaf size={16} className="text-[#1F8A42]" /> Net-Metering + Subsidy Support</span>
         </div>
       </div>
     </section>
   )
 }
 
-function SectionHead({ tag, title, desc, center }: { tag: string; title: React.ReactNode; desc?: string; center?: boolean }) {
+function Eyebrow({ children }: { children: string }) {
   return (
-    <div className={`${center ? 'mx-auto text-center items-center' : ''} flex max-w-3xl flex-col gap-3`}>
-      <span className="text-[11px] font-extrabold tracking-[0.18em] text-[#5da32a]">☀ {tag}</span>
-      <h2 className="text-[28px] font-extrabold leading-tight tracking-tight text-neutral-900 sm:text-[36px]">{title}</h2>
-      {desc && <p className="text-[14.5px] leading-relaxed text-neutral-500">{desc}</p>}
-    </div>
+    <span className="inline-flex items-center gap-2 text-[11px] font-extrabold tracking-[0.18em] text-[#0083CB]">
+      <span className="h-[2px] w-6 rounded-full" style={{ background: GRADIENT }} /> {children}
+    </span>
   )
 }
 
 export default function Page() {
   const [tIndex, setTIndex] = useState(0)
   const testimonials = [
-    { name: 'John Doe', role: 'Head of Officer', text: 'Switching to solar was the best decision. Our electricity bills dropped by 70% and the installation was seamless. Highly professional team from survey to switch-on.' },
-    { name: 'Arita Benson', role: 'Homeowner', text: 'Amazing service! The team explained everything clearly, installed in 2 days and now we generate our own power. Truly reliable and eco-friendly solution.' },
-    { name: 'Rahul Sharma', role: 'Business Owner', text: 'We powered our entire warehouse with EVN Solar. Great ROI, excellent monitoring app and 24x7 support. Recommended for every commercial setup.' },
+    { name: 'John Doe', role: 'Head of Operations, Logistics', text: 'EVN engineered solar + EV charging for our depot in one project. Generation monitoring and load management just works. Bills down 68% in six months.' },
+    { name: 'Arita Benson', role: 'Homeowner, Nashik', text: '5kW rooftop with battery-ready inverter and a 7.4kW home EV charger. Clean install, subsidy paperwork handled, app shows every unit generated.' },
+    { name: 'Rahul Sharma', role: 'Warehouse Owner, Malegaon', text: '120kW ground-mounted plant with scheduled EV fleet charging. Professional survey, safety-first execution and strong after-sales support.' },
   ]
 
   return (
-    <main className="min-h-screen bg-[#f6f8f3] font-sans text-neutral-900 antialiased">
+    <main className="min-h-screen bg-[#F8FAFC] font-sans text-[#0B1720] antialiased">
       <TopBar />
       <Navbar />
       <Hero />
 
-      {/* Harvest */}
-      <section id="harvest" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <div className="grid items-end justify-between gap-6 lg:grid-cols-2">
-          <SectionHead tag="BEST SOLUTION" title={<>Harvest Sunlight, Share a Brighter Future</>} />
-          <p className="max-w-md text-[14px] leading-relaxed text-neutral-500 lg:justify-self-end">Best of the best way to generate clean power for homes and businesses with high-efficiency panels, smart inverters and expert installation.</p>
-        </div>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Sectors */}
+      <section className="mx-auto max-w-6xl px-5 py-10">
+        <div className="grid gap-3 rounded-[22px] border border-[#DCE5EA] bg-white p-4 shadow-sm sm:grid-cols-4">
           {[
-            { icon: Mountain, t: 'Ground Mounting System' },
-            { icon: Warehouse, t: 'Flat Roof Mounting System' },
-            { icon: CarFront, t: 'Solar Carport' },
-            { icon: Headset, t: '24 X 7 Support' },
-          ].map(({ icon: Icon, t }) => (
-            <div key={t} className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#eaf5dc] text-[#5da32a]"><Icon size={19} /></span>
-              <p className="text-[13.5px] font-bold leading-snug">{t}</p>
+            { icon: Sun, t: 'Residential', d: '1–10 kW rooftop' },
+            { icon: Warehouse, t: 'Commercial', d: '10–500 kW plants' },
+            { icon: Mountain, t: 'Industrial', d: 'MW-scale + O&M' },
+            { icon: CarFront, t: 'EV & Fleet', d: 'AC + DC charging' },
+          ].map(({ icon: Icon, t, d }) => (
+            <div key={t} className="flex items-center gap-3 rounded-2xl bg-[#F8FAFC] px-4 py-3.5">
+              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#0083CB]/10 text-[#0083CB]"><Icon size={21} /></span>
+              <div><p className="text-[14px] font-extrabold">{t}</p><p className="text-[12.5px] text-[#52616B]">{d}</p></div>
             </div>
           ))}
         </div>
-        <div className="relative mt-6 overflow-hidden rounded-[24px] shadow-lg">
-          <img src={IMG.fieldTurbine} alt="Solar farm" className="h-[320px] w-full object-cover sm:h-[420px]" />
-          <a href="#solutions" className="absolute inset-0 grid place-items-center">
-            <span className="grid size-16 place-items-center rounded-full bg-[#7AC143] text-white shadow-[0_0_0_12px_rgba(122,193,67,0.3)] transition hover:scale-105"><Play size={24} className="fill-white" /></span>
-          </a>
+      </section>
+
+      {/* Solutions */}
+      <section id="solutions" className="mx-auto max-w-6xl px-5 py-10 sm:py-14">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-xl">
+            <Eyebrow>OUR SOLUTIONS</Eyebrow>
+            <h2 className="mt-3 text-[30px] font-extrabold leading-tight tracking-tight sm:text-[38px]">One partner for sunlight <span className="text-[#0083CB]">to</span> <span className="text-[#1F8A42]">mobility.</span></h2>
+            <p className="mt-3 text-[14.5px] leading-relaxed text-[#52616B]">Designed around load, space and growth — with engineering documentation, safety compliance and monitoring.</p>
+          </div>
+          <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-[#DCE5EA] bg-white px-5 py-3 text-[13px] font-bold text-[#0083CB] hover:border-[#0083CB]">Compare solutions <ArrowRight size={15} /></a>
+        </div>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            { img: IMG.rooftop, icon: Sun, tag: 'SOLAR', t: 'Rooftop Solar', d: 'High-efficiency mono PERC / TOPCon with shadow analysis and structure design.', specs: ['1–100 kW', 'On-grid / Hybrid'] },
+            { img: IMG.ground, icon: Mountain, tag: 'SOLAR', t: 'Ground-Mounted', d: 'Land-optimized plants for farms, industry and large campuses.', specs: ['100 kW–2 MW', 'SCADA ready'] },
+            { img: IMG.carport, icon: Warehouse, tag: 'SOLAR + EV', t: 'Solar Carports', d: 'Parking shade that generates power and pre-wires EV chargers.', specs: ['2–50 cars', 'EV-ready'] },
+            { img: IMG.evCharge, icon: PlugZap, tag: 'EV CHARGING', t: 'EV Charging Infra', d: '7.4–60 kW AC/DC chargers with load balancing and billing.', specs: ['Home / Fleet', 'OCPP + App'] },
+          ].map(({ img, icon: Icon, tag, t, d, specs }) => (
+            <article key={t} className="group flex flex-col overflow-hidden rounded-[22px] border border-[#DCE5EA] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,131,203,0.15)]">
+              <div className="relative h-44 overflow-hidden">
+                <img src={img} alt={t} className="h-full w-full object-cover transition group-hover:scale-105" />
+                <span className="absolute left-4 top-4 rounded-full bg-[#0B1720]/85 px-3 py-1 text-[10.5px] font-extrabold tracking-wider text-white backdrop-blur">{tag}</span>
+                <span className={`absolute -bottom-0 right-4 grid size-11 translate-y-1/2 place-items-center rounded-full text-white shadow-lg ${tag === 'EV CHARGING' || tag.includes('EV') ? 'bg-[#1F8A42]' : 'bg-[#0083CB]'}`}>
+                  <Icon size={20} />
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col p-5 pt-6">
+                <h3 className="text-[16.5px] font-extrabold">{t}</h3>
+                <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-[#52616B]">{d}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {specs.map((s) => (
+                    <span key={s} className="rounded-full border border-[#DCE5EA] bg-[#F8FAFC] px-2.5 py-1 text-[11.5px] font-bold text-[#0B1720]">{s}</span>
+                  ))}
+                </div>
+                <a href="#contact" className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#0083CB]">Get sizing <ArrowRight size={14} /></a>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* Company Solutions */}
-      <section id="solutions" className="bg-[#eef3e8]/70 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-5">
-          <div className="flex items-end justify-between gap-6">
-            <SectionHead tag="WHAT WE DO" title={<>Our Company Solutions</>} desc="End-to-end solar services — from maintenance to complete installations." />
-            <div className="hidden gap-2 sm:flex">
-              <button className="grid size-10 place-items-center rounded-full border bg-white"><ChevronLeft size={18} /></button>
-              <button className="grid size-10 place-items-center rounded-full bg-[#0c2310] text-white"><ChevronRight size={18} /></button>
+      {/* Why */}
+      <section id="why" className="border-y border-[#DCE5EA] bg-white py-14 sm:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-2">
+          <div className="relative">
+            <div className="grid grid-cols-2 gap-4">
+              <img src={IMG.engineer1} alt="Solar engineering" className="h-[340px] rounded-[22px] border border-[#DCE5EA] object-cover" />
+              <div>
+                <img src={IMG.engineer2} alt="EV installation" className="h-[250px] w-full rounded-[22px] border border-[#DCE5EA] object-cover" />
+                <div className="mt-4 rounded-2xl border border-[#DCE5EA] p-4" style={{ background: 'linear-gradient(135deg, rgba(0,131,203,0.08), rgba(116,189,108,0.12))' }}>
+                  <p className="flex items-center gap-2 text-[13px] font-extrabold text-[#0B1720]"><Leaf size={16} className="text-[#1F8A42]" /> Sustainability, engineered</p>
+                  <p className="mt-1 text-[12.5px] text-[#52616B]">Generation + consumption designed together.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {[
-              { img: IMG.maintenance, t: 'Solar Maintenance', d: 'Panel cleaning, health checks & performance optimization.', icon: Wrench },
-              { img: IMG.saving, t: 'Energy Saving Devices', d: 'Smart inverters, batteries & monitoring systems.', icon: Lightbulb },
-              { img: IMG.install, t: 'Solar Solutions', d: 'Rooftop, ground-mounted & carport installations.', icon: Sun },
-            ].map(({ img, t, d, icon: Icon }) => (
-              <article key={t} className="group overflow-hidden rounded-[22px] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                <div className="relative h-52 overflow-hidden">
-                  <img src={img} alt={t} className="h-full w-full object-cover transition group-hover:scale-105" />
-                  <span className="absolute -bottom-5 left-6 grid size-11 place-items-center rounded-full bg-[#7AC143] text-white shadow-lg"><Icon size={20} /></span>
-                </div>
-                <div className="p-6 pt-8">
-                  <h3 className="text-[17px] font-extrabold">{t}</h3>
-                  <p className="mt-1.5 text-[13.5px] text-neutral-500">{d}</p>
-                  <a href="#pricing" className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#5da32a]">Read More <ArrowRight size={15} /></a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why use solar */}
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="flex gap-4">
-            <img src={IMG.worker1} alt="Installer" className="h-[380px] w-1/2 rounded-[22px] object-cover" />
-            <div className="w-1/2">
-              <img src={IMG.worker2} alt="Engineer" className="h-[280px] w-full rounded-[22px] object-cover" />
-              <span className="mt-3 inline-block rounded-full bg-[#eaf5dc] px-4 py-2 text-[12px] font-bold text-[#4a8a1f]">☀ Environmentally Friendly</span>
+            <div className="absolute -bottom-5 left-6 flex items-center gap-3 rounded-2xl bg-[#0B1720] px-5 py-3.5 text-white shadow-xl">
+              <span className="grid size-10 place-items-center rounded-xl" style={{ background: GRADIENT }}><ShieldCheck size={20} /></span>
+              <div><p className="text-[15px] font-extrabold">Safety-first execution</p><p className="text-[12px] text-white/60">Earthing • Protection • Compliance</p></div>
             </div>
           </div>
           <div>
-            <SectionHead tag="WHY SUSTAINABLE ENERGY" title={<>Why do you have to use Solar Panels?</>} desc="Reduce bills, gain independence and protect the planet with proven solar technology." />
+            <Eyebrow>WHY EV & SOLAR</Eyebrow>
+            <h2 className="mt-3 text-[30px] font-extrabold leading-tight sm:text-[38px]">More control over the energy you <span className="text-[#0083CB]">generate</span> and the miles you <span className="text-[#1F8A42]">drive.</span></h2>
+            <p className="mt-4 max-w-lg text-[14.5px] leading-relaxed text-[#52616B]">We size solar for your real load — including EV charging — so you buy less grid power, handle outages better and plan fleet growth confidently.</p>
             <div className="mt-7 grid gap-5 sm:grid-cols-2">
               {[
-                { icon: Recycle, t: 'Renewable Resource', d: 'Unlimited clean power straight from the sun.' },
-                { icon: Leaf, t: 'Environmentally Friendly', d: 'Zero emissions, lower carbon footprint.' },
-                { icon: BatteryCharging, t: 'Reserve Energy', d: 'Batteries store power for night & outages.' },
-                { icon: Sun, t: 'Save The Earth', d: 'A greener tomorrow for next generations.' },
-              ].map(({ icon: Icon, t, d }) => (
+                { icon: Gauge, t: 'Lower grid dependence', d: 'Generate daytime power and offset charging load.', c: '#0083CB' },
+                { icon: BatteryCharging, t: 'Backup-ready design', d: 'Hybrid inverters + storage options for outages.', c: '#1F8A42' },
+                { icon: Lightbulb, t: 'Smart monitoring', d: 'Plant + charger data in one app dashboard.', c: '#0083CB' },
+                { icon: Leaf, t: 'Cleaner mobility', d: 'Drive on sunlight, cut fuel + emissions.', c: '#1F8A42' },
+              ].map(({ icon: Icon, t, d, c }) => (
                 <div key={t} className="flex gap-3">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#7AC143] text-white"><Icon size={20} /></span>
-                  <div><p className="font-extrabold text-[15px]">{t}</p><p className="mt-1 text-[13px] leading-relaxed text-neutral-500">{d}</p></div>
+                  <span className="grid size-11 shrink-0 place-items-center rounded-xl text-white" style={{ background: c }}><Icon size={20} /></span>
+                  <div><p className="text-[14.5px] font-extrabold">{t}</p><p className="mt-1 text-[13px] leading-relaxed text-[#52616B]">{d}</p></div>
                 </div>
               ))}
+            </div>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a href="#contact" className="rounded-full bg-[#0083CB] px-7 py-3 text-sm font-bold text-white hover:bg-[#006FAE]">Start your project</a>
+              <a href="#ev" className="rounded-full border border-[#DCE5EA] bg-white px-6 py-3 text-sm font-bold text-[#0B1720] hover:border-[#1F8A42] hover:text-[#1F8A42]">See EV range</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Save planet */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-[1fr_0.9fr_0.6fr]">
+      {/* Energy flow */}
+      <section id="ev" className="mx-auto max-w-6xl px-5 py-14 sm:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <SectionHead tag="SAVE ENERGY" title={<>Save The Planet by using Renewable Energy.</>} />
-            <ul className="mt-6 space-y-3 text-[14px]">
-              {['Affordable solar for every home & business', 'Net-metering & subsidy assistance', 'Smart monitoring & tracking system', '5-year service + 25-year panel warranty'].map((li) => (
-                <li key={li} className="flex items-center gap-2.5 font-medium text-neutral-700"><span className="grid size-5 place-items-center rounded-full bg-[#7AC143] text-white"><Check size={13} /></span>{li}</li>
+            <Eyebrow>THE EV & SOLAR APPROACH</Eyebrow>
+            <h2 className="mt-3 text-[30px] font-extrabold leading-tight sm:text-[42px]">From sunlight <span className="bg-clip-text text-transparent" style={{ backgroundImage: GRADIENT }}>to the road.</span></h2>
+            <p className="mt-4 max-w-md text-[14.5px] leading-relaxed text-[#52616B]">One energy loop: generate clean power on your roof or land, use it in your building, and carry it with you as electric miles.</p>
+            <ul className="mt-6 space-y-3 text-[14px] font-medium text-[#0B1720]">
+              {['DC fast + AC charging with dynamic load management', 'Solar-priority charging to maximise self-consumption', 'Billing, RFID and fleet reports for commercial sites'].map((li) => (
+                <li key={li} className="flex items-start gap-2.5"><span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[#1F8A42] text-white"><Check size={13} /></span>{li}</li>
               ))}
             </ul>
-            <a href="#contact" className="mt-7 inline-block rounded-full bg-[#7AC143] px-7 py-3 text-sm font-bold text-white hover:bg-[#5da32a]">Contact Now</a>
           </div>
-          <img src={IMG.manSolar} alt="Happy customer" className="h-[420px] w-full rounded-[24px] object-cover shadow-lg" />
-          <div className="space-y-6">
+          <div className="relative rounded-[24px] border border-[#DCE5EA] bg-white p-6 sm:p-8">
+            <div className="absolute bottom-10 left-[39px] top-10 w-[3px] rounded-full sm:left-[47px]" style={{ background: GRADIENT }} />
             {[
-              ['1,000+', 'Project Done'],
-              ['800+', 'Happy Clients'],
-              ['700+', 'Award Winning'],
+              ['Sun', 'The source', Sun, '#0083CB'],
+              ['Solar panels', 'Generate 440W+ TOPCon', Sun, '#12A9E2'],
+              ['Clean energy', 'Power building load', Zap, '#0083CB'],
+              ['EV charging', '7.4–60 kW OCPP', PlugZap, '#1F8A42'],
+              ['Electric vehicle', 'Drive on sunlight', CarFront, '#74BD6C'],
+            ].map(([t, s, Icon, c]) => {
+              const I = Icon as typeof Sun
+              return (
+                <div key={t as string} className="relative flex items-center gap-5 py-3.5">
+                  <span className="z-10 grid size-9 shrink-0 place-items-center rounded-full border-2 border-white bg-white text-white shadow-md sm:size-11" style={{ background: c as string }}>
+                    <I size={19} />
+                  </span>
+                  <div><p className="text-[15.5px] font-extrabold">{t}</p><p className="text-[12px] font-bold uppercase tracking-wider text-[#52616B]">{s}</p></div>
+                </div>
+              )
+            })}
+            <div className="mt-4 rounded-2xl bg-[#F8FAFC] p-4 text-[13px] text-[#52616B]">
+              <span className="font-extrabold text-[#0083CB]">Example:</span> 5 kW rooftop ≈ 20–22 units/day ≈ 120–150 EV km/day of clean driving potential.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats gradient band — selective use */}
+      <section className="px-3 sm:px-5">
+        <div className="mx-auto grid max-w-6xl gap-8 rounded-[26px] p-8 text-white sm:p-12 lg:grid-cols-[1fr_1.2fr]" style={{ background: GRADIENT }}>
+          <div>
+            <p className="text-[11px] font-extrabold tracking-[0.18em] text-white/85">PROVEN AT SCALE</p>
+            <h2 className="mt-3 text-[28px] font-extrabold leading-tight sm:text-[36px]">Save the planet with numbers that matter.</h2>
+            <a href="#contact" className="mt-6 inline-block rounded-full bg-white px-7 py-3 text-sm font-bold text-[#006FAE]">Contact Now</a>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            {[
+              ['1,000+', 'Projects done'],
+              ['800+', 'Happy clients'],
+              ['2.4 MW+', 'Capacity installed'],
             ].map(([n, l]) => (
-              <div key={l} className="border-l-4 border-[#7AC143] pl-4">
-                <p className="text-3xl font-extrabold">{n}</p><p className="text-[13px] text-neutral-500">{l}</p>
+              <div key={l} className="rounded-2xl bg-white/15 p-5 backdrop-blur">
+                <p className="text-[26px] font-extrabold sm:text-[32px]">{n}</p>
+                <p className="mt-1 text-[12.5px] text-white/85">{l}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Working progress */}
-      <section id="work" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <div className="flex items-end justify-between">
-          <SectionHead tag="HOW WE WORK" title={<>Our Working Progress</>} />
-          <p className="hidden max-w-sm text-[13.5px] text-neutral-500 md:block">From site survey to switch-on in 4 simple steps. Transparent, fast and hassle-free.</p>
+      {/* Work */}
+      <section id="work" className="mx-auto max-w-6xl px-5 py-14 sm:py-20">
+        <Eyebrow>HOW WE WORK</Eyebrow>
+        <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
+          <h2 className="max-w-lg text-[30px] font-extrabold leading-tight sm:text-[38px]">Site survey to switch-on in 4 steps.</h2>
+          <p className="max-w-sm text-[13.5px] text-[#52616B]">Transparent scope, DISCOM liaison, safe installation and handover with monitoring training.</p>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { img: IMG.roof, t: 'Site Survey & Design' },
-            { img: IMG.sunset, t: 'Documentation & Approval' },
-            { img: IMG.install, t: 'Installation & Testing' },
-            { img: IMG.panelClose, t: 'Monitoring & Support' },
-          ].map(({ img, t }, i) => (
-            <div key={t} className="relative h-64 overflow-hidden rounded-[20px] group">
+            { img: IMG.rooftop, t: 'Survey & shadow analysis', s: 'Load study + structure check' },
+            { img: IMG.panel, t: 'Design & approvals', s: 'Single-line diagram + net-metering' },
+            { img: IMG.engineer1, t: 'Install & test', s: 'Earthing, protection, commissioning' },
+            { img: IMG.evCharge, t: 'Monitor & support', s: 'App onboarding + 5-yr service' },
+          ].map(({ img, t, s }, i) => (
+            <div key={t} className="group relative h-64 overflow-hidden rounded-[20px] border border-[#DCE5EA]">
               <img src={img} alt={t} className="h-full w-full object-cover transition group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c2310]/90 via-transparent" />
-              <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[12px] font-bold">0{i + 1}</span>
-              <p className="absolute bottom-4 left-4 right-4 font-bold text-white">{t}</p>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(11,23,32,0.88), transparent 60%)' }} />
+              <span className="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-[12px] font-extrabold text-[#0083CB]">0{i + 1}</span>
+              <div className="absolute bottom-4 left-4 right-4"><p className="font-extrabold text-white">{t}</p><p className="text-[12.5px] text-white/70">{s}</p></div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Produce clean */}
-      <section className="bg-[#eef3e8]/70 py-16">
-        <div className="mx-auto max-w-6xl px-5 text-center">
-          <div className="mx-auto max-w-2xl"><SectionHead center tag="SMART ENERGY" title={<>Produce Your Own Clean Save our the Environment</>} /></div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { icon: Gauge, t: 'Peak Shaving', d: 'Cut peak-hour charges with stored solar power.' },
-              { icon: PlugZap, t: 'Demand Response', d: 'Smart load control for maximum savings.' },
-              { icon: BatteryCharging, t: 'Load Shifting', d: 'Use solar energy when you need it most.' },
-              { icon: Leaf, t: 'Renewable', d: '100% green power for home & EV.' },
-            ].map(({ icon: Icon, t, d }) => (
-              <div key={t} className="rounded-[20px] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <span className="mx-auto grid size-14 place-items-center rounded-2xl bg-[#eaf5dc] text-[#5da32a]"><Icon size={26} /></span>
-                <p className="mt-4 font-extrabold">{t}</p><p className="mt-1.5 text-[13px] text-neutral-500">{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Clients */}
-      <section className="mx-auto max-w-6xl px-5 py-14 text-center">
-        <p className="text-[11px] font-extrabold tracking-[0.18em] text-[#5da32a]">☀ TRUSTED WORLDWIDE</p>
-        <h2 className="mx-auto mt-2 max-w-md text-[26px] font-extrabold sm:text-[30px]">Over 200+ Clients Worldwide Rely On Solar</h2>
-        <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-5">
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="flex items-center justify-center gap-2 rounded-2xl bg-[#eef3e8] py-6 font-extrabold text-neutral-400"><Sun size={20} className="text-[#7AC143]" /> Logipsum</div>
           ))}
         </div>
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="bg-white py-16 sm:py-20">
+      <section id="pricing" className="border-y border-[#DCE5EA] bg-white py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-5">
-          <div className="mx-auto max-w-xl text-center"><SectionHead center tag="PRICING PLAN" title={<>Choose Your Best Offer</>} desc="Transparent pricing for every need — residential, commercial & industrial." /></div>
+          <div className="mx-auto max-w-xl text-center">
+            <Eyebrow>SYSTEM SIZES</Eyebrow>
+            <h2 className="mt-3 text-[30px] font-extrabold sm:text-[38px]">Choose your clean-power starting point</h2>
+            <p className="mt-3 text-[14px] text-[#52616B]">Final pricing after site survey. Subsidy and EMI assistance available.</p>
+          </div>
           <div className="mt-9 grid gap-5 md:grid-cols-3">
             {[
-              { plan: 'Basic', price: '$29.99', feat: ['2kW Solar System', 'Basic Monitoring', '5yr Service', 'Net-metering Help', '1yr Maintenance'] },
-              { plan: 'Standard', price: '$39.99', feat: ['5kW Solar System', 'Smart Monitoring App', 'Battery Ready', 'Subsidy Assistance', '3yr Maintenance'], hot: true },
-              { plan: 'Premium', price: '$59.99', feat: ['10kW+ Solar System', 'Battery + EV Charger', 'Priority 24x7 Support', 'Full Documentation', '5yr Maintenance'] },
-            ].map(({ plan, price, feat, hot }) => (
-              <div key={plan} className={`overflow-hidden rounded-[22px] border ${hot ? 'border-[#7AC143] shadow-[0_20px_60px_rgba(122,193,67,0.25)]' : 'border-neutral-100 shadow-sm'} bg-white`}>
-                <div className={`px-6 py-5 text-center ${hot ? 'bg-[#0c2310] text-white' : 'bg-[#f3f7ee]'}`}>
-                  <p className="font-bold">{plan}</p>
-                  <p className="mt-1"><span className={`rounded-full px-4 py-1.5 text-lg font-extrabold ${hot ? 'bg-[#7AC143] text-white' : 'bg-[#7AC143]/15 text-[#4a8a1f]'}`}>{price} <span className="text-xs font-medium">/ mo</span></span></p>
+              { plan: 'Home Essential', price: '3 kW onwards', feat: ['Rooftop on-grid system', 'Generation monitoring app', 'Net-metering assistance', '5-yr service support'], cta: 'Get home quote', primary: false },
+              { plan: 'Home + EV', price: '5 kW + 7.4 kW charger', feat: ['Solar + home EV charging', 'Load balancing + priority solar', 'Battery-ready hybrid option', 'Subsidy + EMI help', 'Priority support'], cta: 'Get EV bundle quote', primary: true },
+              { plan: 'Commercial', price: '50 kW+ / Fleet', feat: ['Ground / shed / carport plants', 'DC fast + multi-point AC', 'Billing, RFID + fleet reports', 'O&M contracts'], cta: 'Talk to sales', primary: false },
+            ].map(({ plan, price, feat, cta, primary }) => (
+              <div key={plan} className={`flex flex-col overflow-hidden rounded-[22px] border bg-white ${primary ? 'border-[#0083CB] shadow-[0_20px_60px_rgba(0,131,203,0.22)]' : 'border-[#DCE5EA] shadow-sm'}`}>
+                <div className={`px-6 py-5 text-center ${primary ? 'text-white' : 'bg-[#F8FAFC]'}`} style={primary ? { background: GRADIENT } : undefined}>
+                  <p className="text-[14px] font-extrabold">{plan}</p>
+                  <p className={`mt-2 inline-block rounded-full px-4 py-1.5 text-[14px] font-extrabold ${primary ? 'bg-white text-[#006FAE]' : 'bg-[#0083CB]/10 text-[#0083CB]'}`}>{price}</p>
                 </div>
-                <ul className="space-y-3 p-6 text-[13.5px]">
+                <ul className="flex-1 space-y-3 p-6 text-[13.5px] text-[#0B1720]">
                   {feat.map((f) => (
-                    <li key={f} className="flex items-center gap-2.5 text-neutral-600"><span className="grid size-5 place-items-center rounded-full bg-[#7AC143] text-white"><Check size={12} /></span>{f}</li>
+                    <li key={f} className="flex items-start gap-2.5"><span className={`mt-0.5 grid size-5 shrink-0 place-items-center rounded-full text-white ${primary ? 'bg-[#1F8A42]' : 'bg-[#0083CB]'}`}><Check size={12} /></span>{f}</li>
                   ))}
                 </ul>
-                <div className="px-6 pb-6"><a href="#contact" className={`block rounded-full py-3 text-center text-sm font-bold ${hot ? 'bg-[#7AC143] text-white' : 'bg-[#eef5e4] text-[#4a8a1f]'} hover:opacity-90`}>Contact Now</a></div>
+                <div className="px-6 pb-6">
+                  <a href="#contact" className={`block rounded-full py-3 text-center text-sm font-bold transition ${primary ? 'bg-[#0083CB] text-white hover:bg-[#006FAE]' : 'bg-[#F8FAFC] text-[#0083CB] ring-1 ring-[#DCE5EA] hover:bg-[#0083CB] hover:text-white'}`}>{cta}</a>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="mx-auto max-w-6xl px-5 py-16">
-        <SectionHead tag="OUR TESTIMONIAL" title={<>See What People Say&apos;s<br />About Us</>} />
+      {/* Testimonials + blog */}
+      <section className="mx-auto max-w-6xl px-5 py-14 sm:py-20">
+        <Eyebrow>CUSTOMER STORIES</Eyebrow>
+        <h2 className="mt-3 max-w-lg text-[30px] font-extrabold leading-tight sm:text-[36px]">Trusted for engineering, not just installation.</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {[testimonials[tIndex % 3], testimonials[(tIndex + 1) % 3]].map((t, i) => (
-            <figure key={i} className="rounded-[20px] bg-white p-7 shadow-sm">
-              <div className="flex gap-1 text-[#7AC143]">{[1, 2, 3, 4, 5].map((s) => <Star key={s} size={15} className="fill-[#7AC143]" />)}</div>
-              <blockquote className="mt-4 text-[14px] leading-relaxed text-neutral-600">&ldquo;{t.text}&rdquo;</blockquote>
+            <figure key={i} className="rounded-[20px] border border-[#DCE5EA] bg-white p-7 shadow-sm">
+              <div className="flex gap-1">{[1, 2, 3, 4, 5].map((s) => <Star key={s} size={15} className="fill-[#0083CB] text-[#0083CB]" />)}</div>
+              <blockquote className="mt-4 text-[14px] leading-relaxed text-[#52616B]">&ldquo;{t.text}&rdquo;</blockquote>
               <figcaption className="mt-5 flex items-center gap-3">
-                <span className="grid size-11 place-items-center rounded-full bg-[#0c2310] font-bold text-white">{t.name[0]}</span>
-                <div><p className="font-bold text-[14px]">{t.name}</p><p className="text-[12px] text-neutral-500">{t.role}</p></div>
-                <Quote size={22} className="ml-auto text-[#7AC143]/30" />
+                <span className="grid size-11 place-items-center rounded-full font-bold text-white" style={{ background: GRADIENT }}>{t.name[0]}</span>
+                <div><p className="text-[14px] font-extrabold">{t.name}</p><p className="text-[12px] text-[#52616B]">{t.role}</p></div>
+                <Quote size={22} className="ml-auto text-[#0083CB]/20" />
               </figcaption>
             </figure>
           ))}
         </div>
-        <div className="mt-6 flex items-center justify-center gap-3">
-          <button onClick={() => setTIndex((v) => (v + 2) % 3)} className="grid size-9 place-items-center rounded-full border bg-white"><ChevronLeft size={17} /></button>
-          <button onClick={() => setTIndex((v) => (v + 1) % 3)} className="grid size-9 place-items-center rounded-full bg-[#7AC143] text-white"><ChevronRight size={17} /></button>
+        <div className="mt-6 flex items-center gap-3">
+          <button onClick={() => setTIndex((v) => (v + 2) % 3)} aria-label="prev" className="grid size-9 place-items-center rounded-full border border-[#DCE5EA] bg-white"><ChevronLeft size={17} /></button>
+          <button onClick={() => setTIndex((v) => (v + 1) % 3)} aria-label="next" className="grid size-9 place-items-center rounded-full bg-[#0083CB] text-white"><ChevronRight size={17} /></button>
         </div>
-      </section>
 
-      {/* Blog */}
-      <section id="blog" className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <SectionHead tag="RECENT ARTICLES" title={<>Our Latest Blog</>} />
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+        <div id="blog" className="mt-14">
+          <Eyebrow>KNOWLEDGE HUB</Eyebrow>
+          <h2 className="mt-3 text-[26px] font-extrabold sm:text-[30px]">Solar + EV guides</h2>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
             {[
-              { img: IMG.blog1, t: 'Exploring the Latest Innovations in Solar Technology' },
-              { img: IMG.blog2, t: 'Solar Solutions for a Sustainable Tomorrow' },
-              { img: IMG.blog3, t: 'Advancements and Breakthroughs in Renewable Power' },
+              { img: IMG.blog1, t: 'How much solar do you need for an EV?' },
+              { img: IMG.blog2, t: 'On-grid vs hybrid for homes with EVs' },
+              { img: IMG.blog3, t: 'Commercial solar + fleet charging ROI' },
             ].map(({ img, t }) => (
-              <article key={t} className="group overflow-hidden rounded-[20px] bg-[#f6f8f3]">
-                <div className="h-52 overflow-hidden"><img src={img} alt={t} className="h-full w-full object-cover transition group-hover:scale-105" /></div>
+              <article key={t} className="group overflow-hidden rounded-[20px] border border-[#DCE5EA] bg-white">
+                <div className="h-48 overflow-hidden"><img src={img} alt={t} className="h-full w-full object-cover transition group-hover:scale-105" /></div>
                 <div className="p-5">
-                  <p className="text-[11px] font-bold text-[#5da32a]">☀ SOLAR • 12 MIN READ</p>
+                  <p className="text-[11px] font-extrabold tracking-wider text-[#0083CB]">GUIDE • 8 MIN READ</p>
                   <h3 className="mt-2 font-extrabold leading-snug">{t}</h3>
-                  <a href="#blog" className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#4a8a1f]">Read More <ArrowRight size={14} /></a>
+                  <a href="#contact" className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#1F8A42]">Ask our engineers <ArrowRight size={14} /></a>
                 </div>
               </article>
             ))}
@@ -385,61 +467,70 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Marquee */}
-      <div className="overflow-hidden bg-[#7AC143] py-4">
-        <p className="animate-[marquee_18s_linear_infinite] whitespace-nowrap text-center text-[22px] font-extrabold tracking-wide text-[#0c2310]">
-          GENERATE YOUR OWN POWER&nbsp;&nbsp;/&nbsp;&nbsp;REAP THE SAVINGS&nbsp;&nbsp;/&nbsp;&nbsp;GENERATE YOUR OWN POWER&nbsp;&nbsp;/&nbsp;&nbsp;REAP THE SAVINGS
-        </p>
-      </div>
+      {/* CTA — gradient emphasis */}
+      <section className="px-3 pb-4 sm:px-5">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 rounded-[26px] p-8 text-white sm:p-12" style={{ background: 'linear-gradient(135deg, #0B1720 0%, #0083CB 55%, #1F8A42 100%)' }}>
+          <div className="max-w-xl">
+            <p className="text-[11px] font-extrabold tracking-[0.18em] text-white/75">READY WHEN YOU ARE</p>
+            <h2 className="mt-3 text-[28px] font-extrabold leading-tight sm:text-[38px]">Generate your own energy. Drive on sunlight.</h2>
+            <p className="mt-3 text-[14.5px] text-white/75">Share your monthly bill and parking/terrace photos — we&apos;ll respond with system size, generation estimate and subsidy breakup.</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <a href="mailto:mail@evnsolar.in" className="rounded-full bg-white px-8 py-3.5 text-center text-sm font-bold text-[#006FAE]">Get Free Quote</a>
+            <a href="tel:+917040506295" className="flex items-center justify-center gap-2 text-sm font-bold text-white"><Phone size={16} /> +91 70405 06295</a>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-[#0c2310] text-white">
+      <footer id="contact" className="mt-4 bg-[#0B1720] text-white">
         <div className="mx-auto grid max-w-6xl gap-4 px-5 py-8 sm:grid-cols-3">
           {[
-            { icon: Mail, t: 'Support & Email', d: 'info@evnsolar.in' },
-            { icon: Headset, t: 'Customer Support', d: '+91 70405 06295' },
-            { icon: MapPin, t: 'Our Location', d: 'Malegaon, Maharashtra 423203' },
+            { icon: Mail, t: 'Support & Email', d: 'info@evnsolar.in • mail@evnsolar.in' },
+            { icon: Headset, t: 'Customer Support', d: '+91 70405 06295 (9am–7pm)' },
+            { icon: MapPin, t: 'Our Location', d: '79 Mahada Colony, Malegaon 423203' },
           ].map(({ icon: Icon, t, d }) => (
-            <div key={t} className="flex items-center gap-3 rounded-2xl bg-white/5 p-4">
-              <span className="grid size-11 place-items-center rounded-full bg-[#7AC143]"><Icon size={20} /></span>
-              <div><p className="font-bold text-[14px]">{t}</p><p className="text-[13px] text-white/60">{d}</p></div>
+            <div key={t} className="flex items-center gap-3 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+              <span className="grid size-11 shrink-0 place-items-center rounded-xl" style={{ background: GRADIENT }}><Icon size={20} /></span>
+              <div><p className="text-[14px] font-extrabold">{t}</p><p className="text-[12.5px] text-white/60">{d}</p></div>
             </div>
           ))}
         </div>
         <div className="border-t border-white/10">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-[1.3fr_0.7fr_0.7fr_0.7fr]">
+          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-[1.4fr_0.7fr_0.7fr_0.7fr]">
             <div>
-              <p className="flex items-center gap-2 text-xl font-extrabold"><span className="grid size-9 place-items-center rounded-xl bg-[#7AC143]"><Sun size={20} /></span>Solar.</p>
-              <p className="mt-4 max-w-xs text-[13.5px] leading-relaxed text-white/60">EVN Solar Energy Solutions — rooftop solar, ground-mounted plants, carports & EV charging across Maharashtra & India.</p>
+              <img src={LOGO_URL} alt="EV and Solar logo" className="h-14 w-auto rounded-xl bg-white p-1.5" />
+              <p className="mt-4 max-w-xs text-[13.5px] leading-relaxed text-white/60">EVN Solar Energy Solutions — rooftop & ground solar, solar carports and EV charging infrastructure across Maharashtra & India.</p>
               <div className="mt-4 flex gap-2">
                 {[Globe, Share2, AtSign, Rss].map((Icon, i) => (
-                  <a key={i} href="#top" className="grid size-8 place-items-center rounded-full bg-white/10 hover:bg-[#7AC143]"><Icon size={14} /></a>
+                  <a key={i} href="#top" aria-label="social" className="grid size-8 place-items-center rounded-full bg-white/10 transition hover:bg-[#0083CB]"><Icon size={14} /></a>
                 ))}
               </div>
             </div>
             {[
-              ['Quick Links', ['Home', 'About Us', 'Services', 'Blog', 'Contact']],
-              ['Services', ['Hybrid Energy', 'Renewable Energy', 'Solar Installation', 'Solar Repair', 'Wind Solutions']],
-              ['Useful Links', ['Privacy Policy', 'Terms & Conditions', 'äProjects', 'Support', 'Cookies Policy']],
+              ['Company', ['Home', 'About Us', 'Projects', 'Blog', 'Contact']],
+              ['Solutions', ['Rooftop Solar', 'Ground Solar', 'Solar Carport', 'EV Charging', 'O&M Support']],
+              ['Support', ['Subsidy Help', 'Net-Metering', 'Warranty', 'Service', 'Privacy Policy']],
             ].map(([title, links]) => (
               <div key={title as string}>
-                <p className="font-bold">{title}</p>
+                <p className="font-extrabold">{title}</p>
                 <ul className="mt-4 space-y-2.5 text-[13.5px] text-white/60">
-                  {(links as string[]).map((l) => <li key={l}><a href="#top" className="hover:text-[#8DC63F]">{l}</a></li>)}
+                  {(links as string[]).map((l) => <li key={l}><a href="#top" className="transition hover:text-[#12A9E2]">{l}</a></li>)}
                 </ul>
               </div>
             ))}
           </div>
         </div>
         <div className="px-5 pb-6">
-          <p className="mx-auto max-w-6xl rounded-full bg-[#7AC143] py-3 text-center text-[12.5px] font-bold text-[#0c2310]">Copyright © 2026 Solar. All Rights Reserved. • EVN Solar Energy Solutions Pvt Ltd</p>
+          <p className="mx-auto max-w-6xl rounded-full bg-white/10 py-3 text-center text-[12px] font-semibold text-white/70 ring-1 ring-white/10">
+            Copyright © 2026 EVN Solar Energy Solutions Pvt Ltd • EV & Solar • All Rights Reserved
+          </p>
         </div>
       </footer>
 
-      {/* floating call */}
-      <a href="tel:+917040506295" className="fixed bottom-5 right-5 z-50 grid size-13 place-items-center rounded-full bg-[#7AC143] p-3.5 text-white shadow-2xl hover:scale-105"><Phone size={22} /></a>
-
-      <style>{`@keyframes marquee{from{transform:translateX(20%)}to{transform:translateX(-20%)}}`}</style>
+      <a href="tel:+917040506295" aria-label="call" className="fixed bottom-5 right-5 z-50 grid size-13 place-items-center rounded-full bg-[#0083CB] p-3.5 text-white shadow-[0_15px_40px_rgba(0,131,203,0.45)] transition hover:bg-[#006FAE]">
+        <Phone size={22} />
+      </a>
     </main>
   )
 }
