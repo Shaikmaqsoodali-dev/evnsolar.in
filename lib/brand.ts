@@ -19,11 +19,11 @@ export const IMG = {
 }
 
 export const NAV_LINKS: [string, string][] = [
-  ['Home', '/'],
   ['About', '/about'],
-  ['Solar Services', '/services'],
+  ['Solar', '/services'],
   ['EV Charging', '/ev-charging'],
   ['Projects', '/projects'],
   ['Pricing', '/pricing'],
   ['Blog', '/blog'],
+  ['Contact', '/contact'],
 ]

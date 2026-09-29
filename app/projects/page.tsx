@@ -1,52 +1,56 @@
 import Link from 'next/link'
-import { ArrowRight, MapPin } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { IMG } from '@/lib/brand'
-import { Eyebrow, PageHero, CtaBand } from '@/components/site-chrome'
+import { PageIntro, CtaBand } from '@/components/site-chrome'
 
-export const metadata = { title: 'Projects | EV & Solar' }
+export const metadata = { title: 'Projects — EVN Solar Energy Solutions' }
 
 const PROJECTS = [
-  { img: IMG.rooftop, t: '5 kW Home + 7.4 kW EV Charger', loc: 'Nashik, Maharashtra', tag: 'RESIDENTIAL + EV', d: 'Hybrid-ready rooftop with solar-priority EV charging and app monitoring.' },
-  { img: IMG.ground, t: '120 kW Ground Plant + Fleet Charging', loc: 'Malegaon, Maharashtra', tag: 'COMMERCIAL + FLEET', d: 'Warehouse plant with scheduled depot charging and billing.' },
-  { img: IMG.carport, t: '40-Car Solar Carport', loc: 'Industrial Campus', tag: 'CARPORT + EV', d: 'Waterproof carport generating daytime power with EV-ready bays.' },
-  { img: IMG.solarField, t: '500 kW Industrial Rooftop', loc: 'MIDC Area', tag: 'INDUSTRIAL', d: 'Multi-shed installation with SCADA and O&M contract.' },
-  { img: IMG.evCharge, t: 'Workplace Charging Hub (6 points)', loc: 'Corporate Park', tag: 'EV CHARGING', d: 'Load-balanced 22 kW points with RFID billing and reports.' },
-  { img: IMG.panel, t: '10 kW Hybrid with Storage', loc: 'Farmhouse', tag: 'HYBRID + BACKUP', d: 'Outage-proof design with batteries and critical-load backup.' },
+  { img: IMG.rooftop, sector: 'Residential · Nashik', size: '5 kW + 7.4 kW charger', t: 'Rooftop with home EV charging', d: 'Battery-ready hybrid, subsidy filing and app-based generation tracking for a two-storey home.' },
+  { img: IMG.ground, sector: 'Industrial · Malegaon', size: '120 kW', t: 'Ground-mounted plant + fleet charging', d: 'Land-optimized rows with scheduled depot charging and monthly generation reporting.' },
+  { img: IMG.carport, sector: 'Commercial · Office campus', size: '40 kW', t: 'Solar carport, EV-ready', d: 'Waterproof parking structure with charger conduits, lighting and CCTV provision.' },
+  { img: IMG.panel, sector: 'Commercial · Hospital', size: '30 kW', t: 'Hospital rooftop with O&M', d: 'High-uptime design with cleaning plan, thermography and annual maintenance contract.' },
+  { img: IMG.evCharge, sector: 'Fleet · Logistics depot', size: '60 kW DC + 22 kW AC', t: 'Depot charging hub', d: 'DC fast plus multi-point AC with load management, RFID billing and fleet reports.' },
+  { img: IMG.solarField, sector: 'Industrial · Farm', size: '250 kW', t: 'Captive ground-mounted plant', d: 'Captive generation with SCADA-ready monitoring and staged expansion provision.' },
 ]
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-[#F8FAFC]">
-      <PageHero
-        tag="PROJECTS & CASE STUDIES"
-        title={<>Work that generates — <span className="text-[#0083CB]">and charges.</span></>}
-        desc="A sample of homes, businesses and fleets running on EVN-engineered solar + EV infrastructure."
+    <main className="bg-white">
+      <PageIntro
+        kicker="Projects"
+        title="Work we will stand behind in writing."
+        lede="A selection of residential, commercial and industrial installations across Maharashtra. Every project includes drawings, test records and a monitoring handover."
+        meta={['2.4 MW+ installed', 'Residential to MW-scale', 'Drawings & test records included']}
       />
-      <section className="mx-auto max-w-6xl px-5 py-14">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map(({ img, t, loc, tag, d }) => (
-            <article key={t} className="group overflow-hidden rounded-[22px] border border-[#DCE5EA] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,131,203,0.15)]">
-              <div className="relative h-52 overflow-hidden">
-                <img src={img} alt={t} className="h-full w-full object-cover transition group-hover:scale-105" />
-                <span className="absolute left-4 top-4 rounded-full bg-[#0B1720]/85 px-3 py-1 text-[10.5px] font-extrabold text-white">{tag}</span>
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {PROJECTS.map(({ img, sector, size, t, d }) => (
+            <article key={t} className="group border border-[#E2E8EC] bg-white transition-shadow hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
+              <div className="overflow-hidden">
+                <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
               <div className="p-6">
-                <h2 className="text-[16.5px] font-extrabold leading-snug">{t}</h2>
-                <p className="mt-1.5 flex items-center gap-1.5 text-[12.5px] font-semibold text-[#0083CB]"><MapPin size={13} /> {loc}</p>
-                <p className="mt-2 text-[13.5px] text-[#52616B]">{d}</p>
-                <Link href="/contact" className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#1F8A42]">Get a similar system <ArrowRight size={14} /></Link>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#0083CB]">{sector}</p>
+                  <p className="shrink-0 border border-[#E2E8EC] bg-[#F4F6F8] px-2.5 py-1 text-[12px] font-semibold text-[#42545F]" style={{ borderRadius: 6 }}>{size}</p>
+                </div>
+                <h2 className="font-display mt-3 text-[19px] font-semibold text-[#0C1E28]">{t}</h2>
+                <p className="mt-2 text-[14px] leading-relaxed text-[#5B6D77]">{d}</p>
               </div>
             </article>
           ))}
         </div>
-        <div className="mt-10 rounded-[22px] border border-[#DCE5EA] bg-white p-8 text-center">
-          <Eyebrow>YOUR SITE COULD BE NEXT</Eyebrow>
-          <p className="mx-auto mt-3 max-w-md text-[14px] text-[#52616B]">Send terrace / parking photos + latest bill — we&apos;ll share a preliminary size and generation estimate.</p>
-          <Link href="/contact" className="mt-5 inline-block rounded-full bg-[#0083CB] px-8 py-3 text-sm font-bold text-white hover:bg-[#006FAE]">Start with a free survey</Link>
+        <div className="mt-10 flex flex-col items-start justify-between gap-4 border border-[#E2E8EC] bg-[#F4F6F8] p-6 sm:flex-row sm:items-center" style={{ borderRadius: 8 }}>
+          <p className="text-[15px] text-[#42545F]">
+            <span className="font-semibold text-[#0C1E28]">Have a similar site?</span> Send your bill and photos — we respond with size, generation and subsidy breakup.
+          </p>
+          <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 bg-[#0083CB] px-6 py-3 text-[14px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
+            Discuss your site <ArrowRight size={15} />
+          </Link>
         </div>
       </section>
       <CtaBand />
-      <div className="h-4" />
     </main>
   )
 }

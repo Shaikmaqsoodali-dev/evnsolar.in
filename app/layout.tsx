@@ -1,14 +1,16 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Inter, Inter_Tight } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
-import { Phone } from 'lucide-react'
+
+const body = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
+const display = Inter_Tight({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'EV & Solar | EVN Solar Energy Solutions — Charge Forward, Powered by the Sun',
-  description: 'EVN Solar Energy Solutions: rooftop & ground-mounted solar, solar carports and EV charging infrastructure. Blue #0083CB + Green #1F8A42 engineered clean technology.',
-  generator: 'v0.app',
+  title: 'EVN Solar Energy Solutions — Rooftop Solar & EV Charging, Maharashtra',
+  description:
+    'EVN Solar Energy Solutions designs and installs rooftop solar, ground-mounted plants, solar carports and EV charging infrastructure. Site survey, DISCOM liaison, subsidy support and 5-year service.',
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
@@ -21,20 +23,16 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: [{ media: '(prefers-color-scheme: light)', color: '#F8FAFC' }],
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className="bg-[#F8FAFC] text-[#0B1720] antialiased">
+    <html lang="en" className={`${body.variable} ${display.variable}`}>
+      <body className="bg-white text-[#14242E] antialiased">
         <SiteHeader />
         {children}
         <SiteFooter />
-        <a href="tel:+917040506295" aria-label="call" className="fixed bottom-5 right-5 z-50 grid place-items-center rounded-full bg-[#0083CB] p-3.5 text-white shadow-[0_15px_40px_rgba(0,131,203,0.45)] transition hover:bg-[#006FAE]">
-          <Phone size={22} />
-        </a>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )

@@ -1,50 +1,87 @@
 import Link from 'next/link'
-import { Check } from 'lucide-react'
-import { GRADIENT } from '@/lib/brand'
-import { Eyebrow, PageHero, CtaBand } from '@/components/site-chrome'
+import { ArrowRight, Check } from 'lucide-react'
+import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 
-export const metadata = { title: 'Pricing | EV & Solar' }
+export const metadata = { title: 'Pricing — EVN Solar Energy Solutions' }
+
+const PLANS = [
+  {
+    name: 'Home Essential', size: '3 kW onwards', d: 'For households looking to cut the grid bill with a straightforward on-grid rooftop.',
+    feat: ['Rooftop on-grid system', 'Generation monitoring app', 'Net-metering assistance', '5-year service support'], cta: 'Get home quote', featured: false,
+  },
+  {
+    name: 'Home + EV', size: '5 kW + 7.4 kW charger', d: 'Our most specified bundle: solar sized for the bill plus EV kilometres, with one charger.',
+    feat: ['Solar + home EV charging', 'Load balancing, solar priority', 'Battery-ready hybrid option', 'Subsidy and EMI assistance', 'Priority support'], cta: 'Get EV bundle quote', featured: true,
+  },
+  {
+    name: 'Commercial / Fleet', size: '50 kW+ · Custom', d: 'Sheds, ground mounts and carports with multi-point or DC fast charging.',
+    feat: ['Ground, shed & carport plants', 'DC fast + multi-point AC', 'Billing, RFID, fleet reports', 'O&M contracts'], cta: 'Talk to sales', featured: false,
+  },
+]
 
 export default function PricingPage() {
   return (
-    <main className="bg-[#F8FAFC]">
-      <PageHero
-        tag="SYSTEM SIZES & PRICING"
-        title={<>Start with the right size. <span className="text-[#0083CB]">Scale later.</span></>}
-        desc="Indicative starting points. Final quote after site survey with generation estimate, subsidy breakup and EMI options."
+    <main className="bg-white">
+      <PageIntro
+        kicker="Sizes & pricing"
+        title="Start with the right size. Expand later."
+        lede="Indicative starting points. Your final proposal follows a site survey and includes a generation estimate, subsidy breakup and payment schedule."
+        meta={['Survey before final quote', 'PM Surya Ghar guidance', 'EMI & staged payments']}
       />
-      <section className="mx-auto max-w-6xl px-5 py-14">
-        <div className="grid gap-5 md:grid-cols-3">
-          {[
-            { plan: 'Home Essential', price: '3 kW onwards', feat: ['Rooftop on-grid system', 'Generation monitoring app', 'Net-metering assistance', '5-yr service support'], cta: 'Get home quote', primary: false },
-            { plan: 'Home + EV', price: '5 kW + 7.4 kW charger', feat: ['Solar + home EV charging', 'Load balancing + solar priority', 'Battery-ready hybrid option', 'Subsidy + EMI help', 'Priority support'], cta: 'Get EV bundle quote', primary: true },
-            { plan: 'Commercial / Fleet', price: '50 kW+ / Custom', feat: ['Ground / shed / carport plants', 'DC fast + multi-point AC', 'Billing, RFID + fleet reports', 'O&M contracts'], cta: 'Talk to sales', primary: false },
-          ].map(({ plan, price, feat, cta, primary }) => (
-            <div key={plan} className={`flex flex-col overflow-hidden rounded-[22px] border bg-white ${primary ? 'border-[#0083CB] shadow-[0_20px_60px_rgba(0,131,203,0.22)]' : 'border-[#DCE5EA] shadow-sm'}`}>
-              <div className="px-6 py-5 text-center" style={primary ? { background: GRADIENT } : { background: '#F8FAFC' }}>
-                <p className={`text-[14px] font-extrabold ${primary ? 'text-white' : ''}`}>{plan}</p>
-                <p className={`mt-2 inline-block rounded-full px-4 py-1.5 text-[14px] font-extrabold ${primary ? 'bg-white text-[#006FAE]' : 'bg-[#0083CB]/10 text-[#0083CB]'}`}>{price}</p>
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+        <div className="grid gap-6 lg:grid-cols-3">
+          {PLANS.map(({ name, size, d, feat, cta, featured }) => (
+            <div
+              key={name}
+              className={`flex flex-col border p-8 ${featured ? 'border-[#0C1E28] bg-[#0C1E28] text-white' : 'border-[#E2E8EC] bg-white'}`}
+              style={{ borderRadius: 10 }}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <p className={`text-[13px] font-semibold uppercase tracking-[0.12em] ${featured ? 'text-white/60' : 'text-[#0083CB]'}`}>{name}</p>
+                {featured && (
+                  <span className="bg-[#0083CB] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white" style={{ borderRadius: 6 }}>
+                    Most specified
+                  </span>
+                )}
               </div>
-              <ul className="flex-1 space-y-3 p-6 text-[13.5px]">
+              <p className={`font-display mt-3 text-[24px] font-semibold ${featured ? 'text-white' : 'text-[#0C1E28]'}`}>{size}</p>
+              <p className={`mt-2 text-[14px] leading-relaxed ${featured ? 'text-white/65' : 'text-[#5B6D77]'}`}>{d}</p>
+              <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${featured ? 'border-white/15' : 'border-[#E2E8EC]'}`}>
                 {feat.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5"><span className={`mt-0.5 grid size-5 shrink-0 place-items-center rounded-full text-white ${primary ? 'bg-[#1F8A42]' : 'bg-[#0083CB]'}`}><Check size={12} /></span>{f}</li>
+                  <li key={f} className={`flex items-start gap-2.5 text-[14px] ${featured ? 'text-white/85' : 'text-[#14242E]'}`}>
+                    <Check size={16} className={`mt-0.5 shrink-0 ${featured ? 'text-[#7BD88F]' : 'text-[#1E7A3C]'}`} /> {f}
+                  </li>
                 ))}
               </ul>
-              <div className="px-6 pb-6">
-                <Link href="/contact" className={`block rounded-full py-3 text-center text-sm font-bold ${primary ? 'bg-[#0083CB] text-white hover:bg-[#006FAE]' : 'bg-[#F8FAFC] text-[#0083CB] ring-1 ring-[#DCE5EA] hover:bg-[#0083CB] hover:text-white'}`}>{cta}</Link>
-              </div>
+              <Link
+                href="/contact"
+                className={`mt-7 inline-flex items-center justify-center gap-2 px-6 py-3 text-[14px] font-semibold ${featured ? 'bg-white text-[#0C1E28] hover:bg-[#E8EEF1]' : 'bg-[#0083CB] text-white hover:bg-[#00659D]'}`}
+                style={{ borderRadius: 6 }}
+              >
+                {cta} <ArrowRight size={15} />
+              </Link>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 grid gap-4 rounded-[22px] border border-[#DCE5EA] bg-white p-8 md:grid-cols-3">
-          <div><Eyebrow>SUBSIDY</Eyebrow><p className="mt-2 text-[14px] font-bold">PM Surya Ghar guidance</p><p className="mt-1 text-[13px] text-[#52616B]">Eligibility check + application support for homes.</p></div>
-          <div><Eyebrow>PAYMENTS</Eyebrow><p className="mt-2 text-[14px] font-bold">EMI + staged payments</p><p className="mt-1 text-[13px] text-[#52616B]">Pay on survey, installation and commissioning milestones.</p></div>
-          <div><Eyebrow>WARRANTY</Eyebrow><p className="mt-2 text-[14px] font-bold">25-yr panels / 5-yr service</p><p className="mt-1 text-[13px] text-[#52616B]">Product + performance warranties documented at handover.</p></div>
+        <div className="mt-14">
+          <SectionHeading kicker="Commercial terms" title="How pricing and payment work." />
+          <div className="mt-8 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] md:grid-cols-3" style={{ borderRadius: 8 }}>
+            {[
+              ['Subsidy', 'PM Surya Ghar guidance', 'Eligibility check and application support for residential systems.'],
+              ['Payments', 'EMI with staged milestones', 'Survey, installation and commissioning milestones — no full advance.'],
+              ['Warranty', '25-yr modules · 5-yr service', 'Product and performance warranties documented at handover.'],
+            ].map(([k, t, d]) => (
+              <div key={t} className="bg-white p-7">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#0083CB]">{k}</p>
+                <p className="font-display mt-2 text-[17px] font-semibold text-[#0C1E28]">{t}</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-[#5B6D77]">{d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <CtaBand />
-      <div className="h-4" />
     </main>
   )
 }
