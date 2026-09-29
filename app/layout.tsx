@@ -44,19 +44,19 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#ffffff',
+  themeColor: '#5da96b',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${body.variable} ${display.variable} ${grot.variable} ${serifEd.variable}`}>
-      <body className="bg-white text-[#14242E] antialiased">
+      <body className="bg-[#5da96b] text-[#14242E] antialiased">
         <SiteHeader />
         {children}
         <SiteFooter />
         <BackToTop />
         <MobileCtaBar />
-        <div className="h-[54px] bg-white sm:hidden" aria-hidden />
+        <div className="h-[54px] bg-[#5da96b] sm:hidden" aria-hidden />
       </body>
     </html>
   )

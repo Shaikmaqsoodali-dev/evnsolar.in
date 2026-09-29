@@ -16,7 +16,7 @@ const PROJECTS = [
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#5da96b]">
       <PageIntro
         kicker="Projects"
         title={<>Work we will stand behind <em className="serif-accent text-[#0083CB]">in writing.</em></>}

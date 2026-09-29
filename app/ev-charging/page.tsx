@@ -8,7 +8,7 @@ export const metadata = { title: 'EV Charging — EVN Solar Energy Solutions' }
 
 export default function EvChargingPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#5da96b]">
       <PageIntro
         kicker="EV charging infrastructure"
         title={<>Charge at home, at work — preferably <em className="serif-accent text-[#1E7A3C]">on sunlight.</em></>}

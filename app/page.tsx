@@ -6,7 +6,7 @@ import { VideoHero } from '@/components/video-hero'
 
 export default function HomePage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#5da96b]">
       <VideoHero />
 
       {/* ——— scope strip: brand blue band ——— */}

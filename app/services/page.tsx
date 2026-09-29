@@ -31,7 +31,7 @@ const SERVICES = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#5da96b]">
       <PageIntro
         kicker="Solar services"
         title={<>Solar for every roof, plot and <em className="serif-accent text-[#0083CB]">parking lot.</em></>}

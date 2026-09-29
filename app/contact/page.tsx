@@ -9,7 +9,7 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: '', phone: '', type: 'Home rooftop', message: '' })
 
   return (
-    <main className="bg-white">
+    <main className="bg-[#5da96b]">
       <PageIntro
         kicker="Contact & free site survey"
         title={<>Tell us your bill. <em className="serif-accent text-[#0083CB]">We&apos;ll do the math.</em></>}

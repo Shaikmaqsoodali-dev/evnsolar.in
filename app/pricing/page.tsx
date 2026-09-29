@@ -22,7 +22,7 @@ const PLANS = [
 
 export default function PricingPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#5da96b]">
       <PageIntro
         kicker="Sizes & pricing"
         title={<>Start with the right size. <em className="serif-accent text-[#0083CB]">Expand later.</em></>}

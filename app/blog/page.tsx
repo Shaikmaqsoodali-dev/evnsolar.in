@@ -16,7 +16,7 @@ const POSTS = [
 
 export default function BlogPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#5da96b]">
       <PageIntro
         kicker="Notes from site"
         title={<>Practical guides, <em className="serif-accent text-[#0083CB]">not brochures.</em></>}

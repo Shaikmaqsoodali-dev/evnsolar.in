@@ -7,7 +7,7 @@ export const metadata = { title: 'About — EVN Solar Energy Solutions' }
 
 export default function AboutPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#5da96b]">
       <PageIntro
         kicker="About EVN Solar"
         title={<>An energy contractor built for generation and <em className="serif-accent text-[#1E7A3C]">mobility.</em></>}

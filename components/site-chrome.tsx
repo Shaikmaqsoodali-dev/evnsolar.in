@@ -64,7 +64,7 @@ export function PageIntro({
   crumb?: [string, string][]
 }) {
   return (
-    <section className="border-b border-[#E2E8EC] bg-white">
+    <section className="border-b border-[#E2E8EC] bg-[#5da96b]">
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
         {crumb && <Breadcrumbs trail={crumb} />}
         <Kicker>{kicker}</Kicker>
@@ -90,7 +90,7 @@ export function PageIntro({
 
 export function CtaBand() {
   return (
-    <section className="bg-white">
+    <section className="bg-[#5da96b]">
       <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="grid gap-8 border border-[#E2E8EC] bg-[#0C1E28] p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 10 }}>
           <div>
