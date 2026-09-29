@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import {
-  Sun, Zap, ArrowRight, Play, Check, Star, Quote, ChevronLeft, ChevronRight,
+  Sun, Zap, ArrowRight, Star, Quote, ChevronLeft, ChevronRight,
   Mountain, Warehouse, CarFront, PlugZap, BatteryCharging, Lightbulb, Leaf,
-  ShieldCheck, Cog, Gauge,
+  ShieldCheck, Cog, Gauge, Building2, Wrench,
 } from 'lucide-react'
 import { GRADIENT, IMG } from '@/lib/brand'
 import { Eyebrow, CtaBand } from '@/components/site-chrome'
@@ -20,64 +20,65 @@ export default function HomePage() {
 
   return (
     <main className="bg-[#F8FAFC]">
-      {/* HERO */}
+      {/* HERO — full-bleed solar image, own UI/UX + copy */}
       <section className="bg-[#F8FAFC] px-3 pt-4 sm:px-5">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-[#DCE5EA] bg-white">
-          <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(700px 320px at 85% 10%, rgba(18,169,226,0.14), transparent), radial-gradient(600px 300px at 10% 90%, rgba(116,189,108,0.14), transparent)' }} />
-          <div className="relative grid items-center gap-10 p-8 sm:p-12 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
-              <p className="inline-flex items-center gap-2 rounded-full border border-[#DCE5EA] bg-[#F8FAFC] px-3.5 py-1.5 text-[11px] font-extrabold tracking-[0.16em] text-[#0083CB]">
-                <span className="size-2 rounded-full" style={{ background: GRADIENT }} /> EVN SOLAR ENERGY SOLUTIONS • EV + SOLAR
-              </p>
-              <h1 className="mt-5 text-[38px] font-extrabold leading-[1.04] tracking-tight sm:text-[54px]">
-                Charge forward.<br />
-                <span className="bg-clip-text text-transparent" style={{ backgroundImage: GRADIENT }}>Powered by the sun.</span>
-              </h1>
-              <p className="mt-5 max-w-md text-[15.5px] leading-relaxed text-[#52616B]">
-                Rooftop solar, ground-mounted plants, solar carports and EV charging — engineered as one clean-technology system.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[#0083CB] px-7 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(0,131,203,0.35)] hover:bg-[#006FAE]">
-                  Get Free Site Assessment <ArrowRight size={17} />
-                </Link>
-                <Link href="/ev-charging" className="inline-flex items-center gap-2 rounded-full border border-[#1F8A42]/30 bg-[#1F8A42]/5 px-6 py-3.5 text-sm font-bold text-[#1F8A42] hover:bg-[#1F8A42] hover:text-white">
-                  <CarFront size={18} /> Explore EV Charging
-                </Link>
-              </div>
-              <div className="mt-8 grid max-w-md grid-cols-3 gap-4 border-t border-[#DCE5EA] pt-6">
-                {[['25+', 'Years engineering'], ['1,000+', 'Projects delivered'], ['98%', 'Satisfaction']].map(([n, l]) => (
-                  <div key={l}>
-                    <p className="bg-clip-text text-[26px] font-extrabold text-transparent" style={{ backgroundImage: GRADIENT }}>{n}</p>
-                    <p className="mt-0.5 text-[12px] font-medium text-[#52616B]">{l}</p>
-                  </div>
-                ))}
-              </div>
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-[#DCE5EA] shadow-[0_25px_70px_rgba(11,23,32,0.12)]">
+          <img src={IMG.solarField} alt="Solar farm at sunrise" className="absolute inset-0 h-full w-full object-cover" />
+          {/* white readability wash from left */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/94 via-white/78 to-white/5" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent" />
+          {/* decorative bottom-left diagonals */}
+          <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-[420px] rotate-[-8deg] rounded-[24px] bg-gradient-to-r from-[#0083CB]/15 to-[#12A9E2]/10" />
+          <div className="pointer-events-none absolute -bottom-10 -left-10 h-36 w-[300px] rotate-[-8deg] rounded-[20px] bg-gradient-to-r from-[#74BD6C]/25 to-transparent" />
+
+          <div className="relative px-7 pb-8 pt-12 sm:px-12 sm:pt-16">
+            <p className="flex items-center gap-3 text-[12px] font-extrabold tracking-[0.28em] text-[#0083CB]">
+              CLEAN ENERGY SOLUTIONS
+              <span className="h-[2.5px] w-24 rounded-full sm:w-36" style={{ background: GRADIENT }} />
+            </p>
+            <h1 className="mt-5 max-w-[560px] text-[46px] font-extrabold leading-[0.98] tracking-tight sm:text-[72px]">
+              <span className="text-[#0B63E5]">Powering</span>
+              <br />
+              <span className="text-[#22A04B]">a Greener Tomorrow.</span>
+            </h1>
+            <p className="mt-5 max-w-[430px] text-[15.5px] leading-relaxed text-[#3c4b54]">
+              Own your power — rooftop solar, EV charging and industrial clean energy, designed and maintained by one accountable team.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link href="/contact" className="group inline-flex items-center gap-3 rounded-xl bg-[#0B63E5] px-7 py-4 text-[13px] font-extrabold tracking-wider text-white shadow-[0_14px_35px_rgba(11,99,229,0.4)] transition hover:bg-[#006FAE]">
+                GET FREE SITE ASSESSMENT
+                <ArrowRight size={18} className="transition group-hover:translate-x-1" />
+              </Link>
+              <Link href="/services" className="group inline-flex items-center gap-3 rounded-xl border border-[#0083CB]/40 bg-white/90 px-7 py-4 text-[13px] font-extrabold tracking-wider text-[#0B1720] backdrop-blur transition hover:border-[#0083CB] hover:text-[#0083CB]">
+                EXPLORE OUR SOLUTIONS
+                <ArrowRight size={18} className="transition group-hover:translate-x-1" />
+              </Link>
             </div>
-            <div className="relative">
-              <div className="grid gap-4">
-                <div className="relative overflow-hidden rounded-[22px] border border-[#DCE5EA]">
-                  <img src={IMG.solarField} alt="Solar plant" className="h-60 w-full object-cover sm:h-72" />
-                  <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[12px] font-bold text-[#0083CB]"><Sun size={14} /> Solar Generation • Live</span>
+
+            {/* feature strip */}
+            <div className="mt-12 grid grid-cols-2 gap-y-6 border-t border-[#0B1720]/10 pt-7 lg:grid-cols-4">
+              {[
+                { icon: Sun, t: 'Rooftop', d: 'Solar Systems' },
+                { icon: PlugZap, t: 'EV Charging', d: 'Solutions' },
+                { icon: Building2, t: 'Commercial', d: '& Industrial' },
+                { icon: Wrench, t: 'Installation', d: '& Maintenance' },
+              ].map(({ icon: Icon, t, d }, i) => (
+                <div key={t} className={`flex items-center gap-3 pr-6 ${i > 0 ? 'lg:border-l lg:border-[#1F8A42]/30 lg:pl-6' : ''}`}>
+                  <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-white shadow-[0_8px_20px_rgba(0,131,203,0.15)] ring-1 ring-[#DCE5EA]">
+                    <Icon size={24} className={i % 2 ? 'text-[#1F8A42]' : 'text-[#0083CB]'} />
+                  </span>
+                  <p className="text-[14px] font-semibold leading-tight text-[#0B1720]">{t}<br />{d}</p>
                 </div>
-                <div className="grid grid-cols-[1fr_0.9fr] gap-4">
-                  <div className="relative overflow-hidden rounded-[20px] border border-[#DCE5EA]">
-                    <img src={IMG.evCharge} alt="EV charging" className="h-44 w-full object-cover" />
-                    <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#0B1720]/90 px-3 py-1.5 text-[12px] font-bold text-white"><PlugZap size={14} className="text-[#74BD6C]" /> 22 kW EV Charging</span>
-                  </div>
-                  <div className="rounded-[20px] bg-[#0B1720] p-5 text-white">
-                    <span className="grid size-10 place-items-center rounded-xl" style={{ background: GRADIENT }}><Zap size={20} /></span>
-                    <p className="mt-3 text-[22px] font-extrabold">70%</p>
-                    <p className="text-[12.5px] leading-snug text-white/70">Average grid-bill reduction with solar + smart charging</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-          <div className="relative flex flex-wrap gap-x-8 gap-y-3 border-t border-[#DCE5EA] bg-[#F8FAFC] px-8 py-4 text-[12px] font-bold text-[#52616B] sm:px-12">
-            <span className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#0083CB]" /> MNRE-Aligned Engineering</span>
-            <span className="flex items-center gap-2"><Cog size={16} className="text-[#0083CB]" /> 25-Yr Panel / 5-Yr Service Warranty</span>
-            <span className="flex items-center gap-2"><Leaf size={16} className="text-[#1F8A42]" /> Net-Metering + Subsidy Support</span>
-          </div>
+        </div>
+
+        {/* trust mini-strip */}
+        <div className="mx-auto mt-4 flex max-w-6xl flex-wrap gap-x-8 gap-y-2 px-2 text-[12px] font-bold text-[#52616B]">
+          <span className="flex items-center gap-2"><ShieldCheck size={15} className="text-[#0083CB]" /> MNRE-Aligned Engineering</span>
+          <span className="flex items-center gap-2"><Cog size={15} className="text-[#0083CB]" /> 25-Yr Panel / 5-Yr Service Warranty</span>
+          <span className="flex items-center gap-2"><Leaf size={15} className="text-[#1F8A42]" /> Net-Metering + Subsidy Support</span>
         </div>
       </section>
 
