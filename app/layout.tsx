@@ -1,11 +1,16 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Inter_Tight } from 'next/font/google'
+import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
 
 const body = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
-const display = Inter_Tight({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
+const display = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-display',
+  weight: ['500', '600', '700', '800'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'EVN Solar Energy Solutions — Rooftop Solar & EV Charging, Maharashtra',

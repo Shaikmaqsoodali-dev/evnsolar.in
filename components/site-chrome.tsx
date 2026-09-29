@@ -2,11 +2,16 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { LOGO_URL } from '@/lib/brand'
 
-export function Kicker({ children }: { children: string }) {
+export function Kicker({ children, center = false }: { children: string; center?: boolean }) {
   return (
-    <p className="flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#0083CB]">
-      <span className="inline-block h-px w-8 bg-[#0083CB]" aria-hidden />
+    <p
+      className={`flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.22em] text-[#0083CB] ${
+        center ? 'justify-center' : ''
+      }`}
+    >
+      <span className="inline-block h-[2px] w-8 bg-[#0083CB]" aria-hidden />
       {children}
+      {center && <span className="inline-block h-[2px] w-8 bg-[#0083CB]" aria-hidden />}
     </p>
   )
 }
@@ -15,18 +20,24 @@ export function SectionHeading({
   kicker,
   title,
   lede,
+  center = false,
 }: {
   kicker: string
   title: React.ReactNode
   lede?: string
+  center?: boolean
 }) {
   return (
-    <div className="max-w-2xl">
-      <Kicker>{kicker}</Kicker>
-      <h2 className="font-display mt-4 text-[30px] font-semibold text-[#0C1E28] sm:text-[36px]">
+    <div className={`max-w-2xl ${center ? 'mx-auto text-center' : ''}`}>
+      <Kicker center={center}>{kicker}</Kicker>
+      <h2 className="section-title mt-4 text-[28px] text-[#0C1E28] sm:text-[34px]">
         {title}
       </h2>
-      {lede && <p className="mt-4 text-[16px] leading-relaxed text-[#5B6D77]">{lede}</p>}
+      {lede && (
+        <p className={`mt-4 text-[15.5px] leading-relaxed text-[#5B6D77] ${center ? 'mx-auto' : ''}`}>
+          {lede}
+        </p>
+      )}
     </div>
   )
 }
@@ -46,7 +57,7 @@ export function PageIntro({
     <section className="border-b border-[#E2E8EC] bg-white">
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
         <Kicker>{kicker}</Kicker>
-        <h1 className="font-display mt-4 max-w-3xl text-[36px] font-semibold text-[#0C1E28] sm:text-[48px]">
+        <h1 className="section-title mt-4 max-w-3xl text-[32px] text-[#0C1E28] sm:text-[44px]">
           {title}
         </h1>
         {lede && (
@@ -154,7 +165,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-[12.5px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 EVN Solar Energy Solutions Pvt. Ltd. All rights reserved.</p>
-          <p>MNRE-aligned design · DISCOM liaison · 5-year service support</p>
+          <p>Works: 79 Mahada Colony, Malegaon 423203, Maharashtra, India · MNRE-aligned · 5-year service</p>
         </div>
       </div>
     </footer>
