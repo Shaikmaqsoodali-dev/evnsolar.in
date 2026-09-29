@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
+import { Faq } from '@/components/ux-bits'
 
 export const metadata = { title: 'Pricing — EVN Solar Energy Solutions' }
 
@@ -27,6 +28,7 @@ export default function PricingPage() {
         title="Start with the right size. Expand later."
         lede="Indicative starting points. Your final proposal follows a site survey and includes a generation estimate, subsidy breakup and payment schedule."
         meta={['Survey before final quote', 'PM Surya Ghar guidance', 'EMI & staged payments']}
+        crumb={[['Pricing', '/pricing']]}
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="grid gap-6 lg:grid-cols-3">
@@ -78,6 +80,19 @@ export default function PricingPage() {
                 <p className="mt-2 text-[14px] leading-relaxed text-[#5B6D77]">{d}</p>
               </div>
             ))}
+          </div>
+        </div>
+        <div className="mt-14">
+          <SectionHeading kicker="Questions" title="Pricing questions, answered." />
+          <div className="mt-8">
+            <Faq
+              items={[
+                ['Why no fixed price list?', 'Shadow, roof strength, cable distance and sanction load change the cost materially. A fixed list would either overcharge you or hide extras — the survey-first quote is more honest.'],
+                ['How do staged payments work?', 'A small advance on survey confirmation, the bulk on material delivery and installation, and the balance only after commissioning and app handover.'],
+                ['Is EMI available?', 'Yes, through partner financiers for residential systems, typically 12–60 months. We share options with your quote.'],
+                ['What subsidy can I get?', 'Under PM Surya Ghar, eligible homes receive central assistance directly to their bank account. We check eligibility and file the application for you.'],
+              ]}
+            />
           </div>
         </div>
       </section>

@@ -22,6 +22,7 @@ export default function ProjectsPage() {
         title="Work we will stand behind in writing."
         lede="A selection of residential, commercial and industrial installations across Maharashtra. Every project includes drawings, test records and a monitoring handover."
         meta={['2.4 MW+ installed', 'Residential to MW-scale', 'Drawings & test records included']}
+        crumb={[['Projects', '/projects']]}
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

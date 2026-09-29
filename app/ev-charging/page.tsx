@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
+import { Faq } from '@/components/ux-bits'
 
 export const metadata = { title: 'EV Charging — EVN Solar Energy Solutions' }
 
@@ -13,6 +14,7 @@ export default function EvChargingPage() {
         title="Charge at home, at work — preferably on sunlight."
         lede="7.4–60 kW AC and DC chargers with load management, solar-priority charging, billing and fleet reporting for homes, offices and depots."
         meta={['7.4–22 kW AC · 30–60 kW DC', 'OCPP with remote diagnostics', 'Load study before you pay']}
+        crumb={[['EV Charging', '/ev-charging']]}
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
@@ -85,6 +87,20 @@ export default function EvChargingPage() {
               Check feasibility <ArrowRight size={15} />
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+        <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#0083CB]">Common questions</p>
+        <h2 className="section-title mt-3 text-[26px] text-[#0C1E28] sm:text-[32px]">Before you ask.</h2>
+        <div className="mt-8">
+          <Faq
+            items={[
+              ['Will I need a sanction-load upgrade for a home charger?', 'Usually not. A 7.4 kW charger with dynamic load management fits most homes with 5 kW+ sanctioned load. We confirm from your bill and meter photo before you pay anything.'],
+              ['Can the car charge directly from my rooftop solar?', 'Yes — with solar-priority mode the charger draws from surplus generation first and tops up from the grid only as needed. Scheduled night charging uses cheaper off-peak power.'],
+              ['How do billing and access work for shared chargers?', 'Workplace and apartment chargers support RFID and app payments with per-user reports, so costs split fairly without manual tracking.'],
+            ]}
+          />
         </div>
       </section>
 

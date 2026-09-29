@@ -3,6 +3,7 @@ import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
+import { BackToTop, MobileCtaBar } from '@/components/ux-bits'
 
 const body = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
 const display = Montserrat({
@@ -38,6 +39,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         {children}
         <SiteFooter />
+        <BackToTop />
+        <MobileCtaBar />
+        <div className="h-[54px] bg-white sm:hidden" aria-hidden />
       </body>
     </html>
   )

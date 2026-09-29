@@ -21,6 +21,7 @@ export default function BlogPage() {
         kicker="Notes from site"
         title="Practical guides, not brochures."
         lede="Sizing worksheets, subsidy walkthroughs and maintenance checklists from our survey and service teams."
+        crumb={[['Blog', '/blog']]}
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

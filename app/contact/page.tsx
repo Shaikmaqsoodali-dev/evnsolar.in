@@ -14,6 +14,7 @@ export default function ContactPage() {
         kicker="Contact & free site survey"
         title="Tell us your bill. We'll do the math."
         lede="Call, email or send the form below. Include monthly units, roof or parking photos and any EV plans for the fastest, most accurate quote."
+        crumb={[['Contact', '/contact']]}
       />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:py-20 lg:grid-cols-[0.9fr_1.1fr]">

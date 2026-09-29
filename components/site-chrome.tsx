@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { LOGO_URL } from '@/lib/brand'
+import { Breadcrumbs } from '@/components/ux-bits'
 
 export function Kicker({ children, center = false }: { children: string; center?: boolean }) {
   return (
@@ -47,15 +48,18 @@ export function PageIntro({
   title,
   lede,
   meta,
+  crumb,
 }: {
   kicker: string
   title: React.ReactNode
   lede?: string
   meta?: string[]
+  crumb?: [string, string][]
 }) {
   return (
     <section className="border-b border-[#E2E8EC] bg-white">
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
+        {crumb && <Breadcrumbs trail={crumb} />}
         <Kicker>{kicker}</Kicker>
         <h1 className="section-title mt-4 max-w-3xl text-[32px] text-[#0C1E28] sm:text-[44px]">
           {title}

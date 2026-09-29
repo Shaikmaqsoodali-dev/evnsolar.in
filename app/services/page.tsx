@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
+import { Faq } from '@/components/ux-bits'
 
 export const metadata = { title: 'Solar Services — EVN Solar Energy Solutions' }
 
@@ -36,6 +37,7 @@ export default function ServicesPage() {
         title="Solar for every roof, plot and parking lot."
         lede="On-grid, hybrid and battery-ready systems with engineering drawings, DISCOM liaison and verified generation — not just installation."
         meta={['On-grid · Hybrid · Battery-ready', 'Tier-1 modules, tested inverters', 'Subsidy & net-metering handled']}
+        crumb={[['Solar', '/services']]}
       />
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
@@ -79,6 +81,21 @@ export default function ServicesPage() {
               <p key={x} className="bg-white px-5 py-4 text-[14px] font-medium text-[#14242E]">{x}</p>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+        <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#0083CB]">Common questions</p>
+        <h2 className="section-title mt-3 text-[26px] text-[#0C1E28] sm:text-[32px]">Before you ask.</h2>
+        <div className="mt-8">
+          <Faq
+            items={[
+              ['How much will a rooftop really generate?', 'A well-oriented 1 kW in Maharashtra generates roughly 4–4.5 units a day — so a 5 kW system delivers about 20–22 units daily. Your survey report states the estimate in writing before you commit.'],
+              ['Do you handle net-metering and subsidy paperwork?', 'Yes. We file the DISCOM net-metering application and the PM Surya Ghar subsidy application as part of every residential project.'],
+              ['On-grid, hybrid or battery — which do I need?', 'On-grid if your supply is stable and you want fastest payback. Hybrid with batteries if you need backup during cuts. We recommend only after studying your outage pattern.'],
+              ['What maintenance does the plant need?', 'Panel cleaning every 2–4 weeks in dusty season, plus an annual health check. AMC plans cover both, with thermography and inverter service.'],
+            ]}
+          />
         </div>
       </section>
 
