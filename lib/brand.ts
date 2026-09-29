@@ -19,6 +19,7 @@ export const IMG = {
 }
 
 export const NAV_LINKS: [string, string][] = [
+  ['Home', '/'],
   ['About', '/about'],
   ['Solar', '/services'],
   ['EV Charging', '/ev-charging'],

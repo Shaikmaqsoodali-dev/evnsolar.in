@@ -114,7 +114,7 @@ export function CtaBand() {
 }
 
 const FOOT_COLS: [string, [string, string][]][] = [
-  ['Company', [['About', '/about'], ['Projects', '/projects'], ['Blog', '/blog'], ['Contact', '/contact']]],
+  ['Company', [['Home', '/'], ['About', '/about'], ['Projects', '/projects'], ['Blog', '/blog'], ['Contact', '/contact']]],
   ['Solar', [['Rooftop solar', '/services'], ['Ground-mounted', '/services'], ['Solar carports', '/services'], ['Sizes & pricing', '/pricing']]],
   ['EV charging', [['Home charging', '/ev-charging'], ['Workplace', '/ev-charging'], ['Fleet & DC fast', '/ev-charging'], ['Solar + EV bundles', '/pricing']]],
 ]
