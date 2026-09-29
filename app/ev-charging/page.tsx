@@ -11,7 +11,7 @@ export default function EvChargingPage() {
     <main className="bg-white">
       <PageIntro
         kicker="EV charging infrastructure"
-        title="Charge at home, at work — preferably on sunlight."
+        title={<>Charge at home, at work — preferably <em className="serif-accent text-[#1E7A3C]">on sunlight.</em></>}
         lede="7.4–60 kW AC and DC chargers with load management, solar-priority charging, billing and fleet reporting for homes, offices and depots."
         meta={['7.4–22 kW AC · 30–60 kW DC', 'OCPP with remote diagnostics', 'Load study before you pay']}
         crumb={[['EV Charging', '/ev-charging']]}
@@ -34,7 +34,7 @@ export default function EvChargingPage() {
         <div>
           <SectionHeading
             kicker="Solar + EV together"
-            title="Fuel the car from the roof, not the grid."
+            title={<>Fuel the car from the roof, <em className="serif-accent text-[#0083CB]">not the grid.</em></>}
             lede="A 5 kW rooftop generates roughly 20–22 units a day — about 120–150 km of driving. We size solar for your current bill plus your EV kilometres, and set charging priority accordingly."
           />
           <ul className="mt-7 space-y-3 border-t border-[#E2E8EC] pt-7">
@@ -53,10 +53,10 @@ export default function EvChargingPage() {
             ))}
           </ul>
           <dl className="mt-7 grid grid-cols-3 gap-6 border-t border-[#E2E8EC] pt-6">
-            {[['120+', 'EV points installed'], ['60 kW', 'Max DC output'], ['24×7', 'Remote monitoring']].map(([v, l]) => (
+            {[['120', '+', 'EV points installed'], ['60', 'kW', 'Max DC output'], ['24', '×7', 'Remote monitoring']].map(([v, u, l]) => (
               <div key={l}>
-                <dt className="font-display text-[22px] font-semibold text-[#0C1E28]">{v}</dt>
-                <dd className="mt-1 text-[13px] text-[#5B6D77]">{l}</dd>
+                <dt className="stat-number text-[#0C1E28]" style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)' }}>{v}<span className="stat-unit text-[#1E7A3C]">{u}</span></dt>
+                <dd className="micro mt-2 text-[#5B6D77]">{l}</dd>
               </div>
             ))}
           </dl>

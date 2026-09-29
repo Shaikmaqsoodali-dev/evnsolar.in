@@ -22,20 +22,27 @@ export function SectionHeading({
   title,
   lede,
   center = false,
+  align = 'left',
+  size = 'lg',
 }: {
   kicker: string
   title: React.ReactNode
   lede?: string
   center?: boolean
+  align?: 'left' | 'center' | 'right'
+  size?: 'xl' | 'lg' | 'md'
 }) {
+  const a = center ? 'center' : align
+  const alignCls =
+    a === 'center' ? 'mx-auto text-center' : a === 'right' ? 'ml-auto text-right' : ''
   return (
-    <div className={`max-w-2xl ${center ? 'mx-auto text-center' : ''}`}>
-      <Kicker center={center}>{kicker}</Kicker>
-      <h2 className="section-title mt-4 text-[28px] text-[#0C1E28] sm:text-[34px]">
+    <div className={`max-w-2xl ${alignCls}`}>
+      <Kicker center={a === 'center'}>{kicker}</Kicker>
+      <h2 className={`sx sx-${size} mt-4 text-[#0C1E28]`}>
         {title}
       </h2>
       {lede && (
-        <p className={`mt-4 text-[15.5px] leading-relaxed text-[#5B6D77] ${center ? 'mx-auto' : ''}`}>
+        <p className={`mt-4 text-[15px] font-normal leading-relaxed text-[#5B6D77] ${a === 'center' ? 'mx-auto' : ''}`}>
           {lede}
         </p>
       )}
@@ -61,7 +68,7 @@ export function PageIntro({
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
         {crumb && <Breadcrumbs trail={crumb} />}
         <Kicker>{kicker}</Kicker>
-        <h1 className="section-title mt-4 max-w-3xl text-[32px] text-[#0C1E28] sm:text-[44px]">
+        <h1 className="sx sx-xl mt-5 max-w-3xl text-[#0C1E28]">
           {title}
         </h1>
         {lede && (
@@ -87,11 +94,13 @@ export function CtaBand() {
       <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="grid gap-8 border border-[#E2E8EC] bg-[#0C1E28] p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 10 }}>
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-white/60">
+            <p className="micro text-white/55">
               Free site assessment
             </p>
-            <h2 className="font-display mt-3 text-[28px] font-semibold sm:text-[34px]">
-              Send us your electricity bill. We&rsquo;ll size the right system.
+            <h2 className="sx sx-lg mt-4 max-w-xl text-white">
+              Send us your electricity bill.
+              <br />
+              We&rsquo;ll size the <em className="serif-accent text-[#8FD6A4]">right system.</em>
             </h2>
             <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-white/65">
               Share monthly units, terrace or parking photos, and any EV plans. You receive a

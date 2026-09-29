@@ -19,7 +19,7 @@ export default function BlogPage() {
     <main className="bg-white">
       <PageIntro
         kicker="Notes from site"
-        title="Practical guides, not brochures."
+        title={<>Practical guides, <em className="serif-accent text-[#0083CB]">not brochures.</em></>}
         lede="Sizing worksheets, subsidy walkthroughs and maintenance checklists from our survey and service teams."
         crumb={[['Blog', '/blog']]}
       />

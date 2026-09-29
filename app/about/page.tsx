@@ -10,7 +10,7 @@ export default function AboutPage() {
     <main className="bg-white">
       <PageIntro
         kicker="About EVN Solar"
-        title="An energy contractor built for generation and mobility."
+        title={<>An energy contractor built for generation and <em className="serif-accent text-[#1E7A3C]">mobility.</em></>}
         lede="EVN Solar Energy Solutions designs rooftop solar, ground-mounted plants, solar carports and EV charging as one engineered system — safe, monitored and subsidy-ready."
         meta={['Based in Malegaon, serving Maharashtra', 'Residential · Commercial · Industrial', 'In-house survey, install & service']}
         crumb={[['About', '/about']]}
@@ -22,7 +22,7 @@ export default function AboutPage() {
           <div className="mt-3 grid grid-cols-2 gap-3">
             <img src={IMG.engineer2} alt="Engineer commissioning equipment" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 8 }} />
             <div className="flex flex-col justify-center bg-[#0C1E28] p-6 text-white" style={{ borderRadius: 8 }}>
-              <p className="font-display text-[34px] font-semibold">25+</p>
+              <p className="stat-number" style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)' }}>25<span className="stat-unit">+</span></p>
               <p className="mt-1 text-[13px] leading-snug text-white/65">Years of combined clean-energy engineering practice on the team</p>
             </div>
           </div>
@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div>
           <SectionHeading
             kicker="Our position"
-            title="Clean power you can measure. Miles you can trust."
+            title={<>Clean power you can measure. Miles <em className="serif-accent text-[#0083CB]">you can trust.</em></>}
             lede="We do not oversize systems or skip protection to win on price. Every site gets a load study, shadow analysis, structure check and protection design before we quote — and a generation estimate you can verify in the app after commissioning."
           />
           <ul className="mt-7 space-y-3 border-t border-[#E2E8EC] pt-7">

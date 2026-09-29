@@ -14,6 +14,8 @@
   --line: #e2e8ec;
   --font-display: 'Montserrat', 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-grot: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif-ed: 'Fraunces', Georgia, serif;
 }
 
 html {
@@ -35,9 +37,9 @@ h1,
 h2,
 h3,
 .font-display {
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
-  line-height: 1.1;
+  font-family: var(--font-grot);
+  letter-spacing: -0.015em;
+  line-height: 1.05;
   text-wrap: balance;
 }
 
@@ -72,6 +74,133 @@ h3,
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.12;
+}
+
+/* Legacy alias — maps old uniform titles onto the editorial scale */
+.section-title {
+  font-family: var(--font-grot);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+/* ——— Place-wise editorial typography ——— */
+
+/* 1. HERO: oversized grotesk, tight leading, compositional — never auto-wrapped */
+.hero-display {
+  font-family: var(--font-grot);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+  text-wrap: balance;
+  font-size: clamp(3rem, 8.5vw, 6.75rem);
+}
+.hero-display .thin {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Serif italic accent word inside grotesk headlines — the art-director contrast */
+.serif-accent {
+  font-family: var(--font-serif-ed);
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+/* 2. SECTION HEADINGS: editorial grotesk, per-place scale via .sx-xl / .sx-lg */
+.sx {
+  font-family: var(--font-grot);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+.sx-xl { font-size: clamp(2.1rem, 4.6vw, 3.6rem); }
+.sx-lg { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
+.sx-md { font-size: clamp(1.35rem, 2.4vw, 1.9rem); }
+
+/* Oversized ghost index numeral beside section headings */
+.sx-index {
+  font-family: var(--font-grot);
+  font-weight: 900;
+  font-size: clamp(3.4rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #0083cb;
+  user-select: none;
+}
+.sx-index.on-dark { -webkit-text-stroke-color: #2ea3e0; }
+
+/* 3. PRICE / KEY NUMBER as visual object — numeral dominates, unit small */
+.stat-number {
+  font-family: var(--font-grot);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+}
+.stat-unit {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.42em;
+  letter-spacing: 0.08em;
+  vertical-align: super;
+}
+
+/* 4. BADGE / LABEL / CATEGORY — compact uppercase micro treatments */
+.micro {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.micro-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  border: 1px solid currentcolor;
+  border-radius: 999px;
+  padding: 0.45em 1em;
+}
+.micro-corner {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+}
+
+/* 6. SMALL INFO — quiet, spaced, never bold */
+.fineprint {
+  font-size: 12.5px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+
+/* Editorial pull-quote — serif italic, generous scale */
+.quote-ed {
+  font-family: var(--font-serif-ed);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  text-wrap: pretty;
+}
+
+/* Vertical micro-label for edges/corners */
+.vertical-micro {
+  writing-mode: vertical-rl;
+  rotate: 180deg;
 }
 
 ::selection {

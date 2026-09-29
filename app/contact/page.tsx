@@ -12,7 +12,7 @@ export default function ContactPage() {
     <main className="bg-white">
       <PageIntro
         kicker="Contact & free site survey"
-        title="Tell us your bill. We'll do the math."
+        title={<>Tell us your bill. <em className="serif-accent text-[#0083CB]">We&apos;ll do the math.</em></>}
         lede="Call, email or send the form below. Include monthly units, roof or parking photos and any EV plans for the fastest, most accurate quote."
         crumb={[['Contact', '/contact']]}
       />

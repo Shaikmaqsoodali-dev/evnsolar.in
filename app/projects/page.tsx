@@ -19,7 +19,7 @@ export default function ProjectsPage() {
     <main className="bg-white">
       <PageIntro
         kicker="Projects"
-        title="Work we will stand behind in writing."
+        title={<>Work we will stand behind <em className="serif-accent text-[#0083CB]">in writing.</em></>}
         lede="A selection of residential, commercial and industrial installations across Maharashtra. Every project includes drawings, test records and a monitoring handover."
         meta={['2.4 MW+ installed', 'Residential to MW-scale', 'Drawings & test records included']}
         crumb={[['Projects', '/projects']]}

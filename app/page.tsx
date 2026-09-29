@@ -33,19 +33,19 @@ export default function HomePage() {
           <div className="mt-3 grid grid-cols-2 gap-3">
             <img src={IMG.rooftop} alt="Rooftop solar array" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 6 }} />
             <div className="flex flex-col justify-center bg-[#0083CB] p-6 text-white" style={{ borderRadius: 6 }}>
-              <p className="font-display text-[34px] font-extrabold leading-none">25+</p>
-              <p className="mt-2 text-[12px] font-semibold uppercase leading-snug tracking-[0.12em] text-white/80">
+              <p className="stat-number" style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)' }}>25<span className="stat-unit">+</span></p>
+              <p className="fineprint mt-2 uppercase leading-snug tracking-[0.12em] text-white/80" style={{ fontWeight: 600 }}>
                 Years of clean-energy engineering practice
               </p>
             </div>
           </div>
         </div>
-        <div>
-          <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#5B6D77]">About us</p>
-          <h2 className="section-title mt-3 text-[28px] text-[#0C1E28] sm:text-[36px]">
-            EVN Solar
+        <div className="relative">
+          <p className="micro text-[#5B6D77]">01 · About us</p>
+          <h2 className="sx sx-xl mt-4 text-[#0C1E28]">
+            EVN Solar —
             <br />
-            Let&rsquo;s go solar.
+            let&rsquo;s go <em className="serif-accent text-[#0083CB]">solar.</em>
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-[#5B6D77]">
             Offering engineered solar and EV-charging solutions, EVN Solar designs
@@ -79,37 +79,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ——— 3. NUMBERS band, Premier "IN NUMBERS" pattern ——— */}
+      {/* ——— 3. NUMBERS band — numerals as visual objects ——— */}
       <section className="bg-[#0C1E28] text-white">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-16">
-          <p className="text-center text-[12px] font-bold uppercase tracking-[0.24em] text-white/55">
+          <p className="micro text-center text-white/55">
             EVN Solar in numbers
           </p>
-          <div className="mx-auto mt-8 grid max-w-5xl gap-px overflow-hidden bg-white/15 text-center sm:grid-cols-4" style={{ borderRadius: 6 }}>
+          <div className="mx-auto mt-10 grid max-w-5xl gap-px overflow-hidden bg-white/15 text-center sm:grid-cols-4" style={{ borderRadius: 6 }}>
             {[
-              ['2.4 MW+', 'Solar installed'],
-              ['1,000+', 'Projects delivered'],
-              ['120+', 'EV points installed'],
-              ['5-yr', 'Service support'],
-            ].map(([v, l]) => (
+              ['2.4', 'MW+', 'Solar installed'],
+              ['1,000', '+', 'Projects delivered'],
+              ['120', '+', 'EV points installed'],
+              ['5', '-yr', 'Service support'],
+            ].map(([v, u, l]) => (
               <div key={l} className="bg-[#0C1E28] px-6 py-8">
-                <p className="font-display text-[30px] font-extrabold text-white">{v}</p>
-                <p className="mx-auto mt-2 max-w-[160px] text-[11.5px] font-semibold uppercase leading-snug tracking-[0.12em] text-white/55">{l}</p>
+                <p className="stat-number text-white">{v}<span className="stat-unit text-[#2EA3E0]">{u}</span></p>
+                <p className="micro mx-auto mt-3 max-w-[160px] text-white/55">{l}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ——— 4. PRODUCTS on light brand-blue tint ——— */}
+      {/* ——— 4. PRODUCTS — asymmetric heading, ghost index, serif accent ——— */}
       <section className="bg-[#EAF3F9]">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-          <SectionHeading
-            center
-            kicker="Products & solutions"
-            title="Turning sunlight into energy."
-            lede="Four factory-tested disciplines — each with drawings, protection design and a monitoring handover."
-          />
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-xl">
+              <p className="micro text-[#0083CB]">02 · Products & solutions</p>
+              <h2 className="sx sx-xl mt-4 text-[#0C1E28]">
+                Turning sunlight
+                <br />
+                <em className="serif-accent text-[#0083CB]">into energy.</em>
+              </h2>
+              <p className="mt-4 max-w-md text-[15px] font-normal leading-relaxed text-[#5B6D77]">
+                Four factory-tested disciplines — each with drawings, protection design and a monitoring handover.
+              </p>
+            </div>
+            <span aria-hidden className="sx-index hidden select-none sm:block">02</span>
+          </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { img: IMG.rooftop, tag: '1–100 kW', t: 'Rooftop solar', d: 'On-grid and hybrid systems for homes, shops and factories.', href: '/services' },
@@ -138,12 +146,13 @@ export default function HomePage() {
       <section className="bg-[#0C1E28] text-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.22em] text-[#2EA3E0]">
-              <span className="inline-block h-[2px] w-8 bg-[#2EA3E0]" aria-hidden />
-              Technology
+            <p className="micro text-[#2EA3E0]">
+              <span className="micro-pill">03 · Technology</span>
             </p>
-            <h2 className="section-title mt-3 text-[28px] text-white sm:text-[34px]">
-              Leading-edge technology at work.
+            <h2 className="sx sx-xl mt-5 text-white">
+              Leading-edge
+              <br />
+              technology <em className="serif-accent text-[#2EA3E0]">at work.</em>
             </h2>
             <p className="mt-4 text-[15.5px] leading-relaxed text-white/70">
               High-efficiency TOPCon modules, tested string and micro-inverters,
@@ -178,12 +187,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ——— 6. NEWS / PROJECTS, Premier "News" pattern ——— */}
+      {/* ——— 6. NEWS — right-offset heading, card titles in grotesk ——— */}
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
-            kicker="News & projects"
-            title="Recent work and updates."
+            align="right"
+            size="md"
+            kicker="04 · News & projects"
+            title={<>Recent work and <em className="serif-accent text-[#0083CB]">updates.</em></>}
           />
           <Link href="/projects" className="flex items-center gap-1.5 text-[14px] font-bold text-[#0083CB]">
             All projects <ArrowRight size={15} />
@@ -209,10 +220,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ——— 7. Testimonials on light brand-green tint ——— */}
+      {/* ——— 7. Testimonials — serif pull-quotes, micro attributions ——— */}
       <section className="border-t border-[#D8E5DB] bg-[#EDF5EF]">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-          <SectionHeading center kicker="Client notes" title="Trusted for engineering, not just installation." />
+          <SectionHeading center size="lg" kicker="05 · Client notes" title={<>Trusted for <em className="serif-accent text-[#1E7A3C]">engineering,</em> not just installation.</>} />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               ['Logistics depot, Malegaon', 'EVN combined our rooftop plant and depot charging in a single project. Bills are down 68% in six months.'],
@@ -220,8 +231,8 @@ export default function HomePage() {
               ['Warehouse, Malegaon', '120 kW plant with scheduled fleet charging. Safety-first execution, reliable service.'],
             ].map(([who, quote]) => (
               <figure key={who} className="flex flex-col border border-[#D8E5DB] border-t-4 border-t-[#1E7A3C] bg-white p-6" style={{ borderRadius: 6 }}>
-                <blockquote className="flex-1 text-[14px] leading-relaxed text-[#42545F]">&ldquo;{quote}&rdquo;</blockquote>
-                <figcaption className="mt-5 border-t border-[#E2E8EC] pt-4 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0C1E28]">{who}</figcaption>
+                <blockquote className="quote-ed flex-1 text-[#14242E]">&ldquo;{quote}&rdquo;</blockquote>
+                <figcaption className="micro mt-6 border-t border-[#E2E8EC] pt-4 text-[#0C1E28]">{who}</figcaption>
               </figure>
             ))}
           </div>

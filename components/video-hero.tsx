@@ -31,34 +31,41 @@ export function VideoHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E28]/70 via-transparent to-[#0C1E28]/25" />
 
       <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-14 sm:pb-20 sm:pt-20">
-        {/* metric badge */}
+        {/* campaign micro-label — top area */}
         <p
-          className="hero-rise flex items-center gap-3 text-[13px] font-semibold text-white/85 sm:text-[15px]"
+          className="hero-rise micro flex items-center gap-3 text-white/70"
           style={{ animationDelay: '0.05s' }}
         >
-          <span className="relative flex size-3.5">
+          <span className="relative flex size-3">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2EA3E0] opacity-75" />
-            <span className="relative inline-flex size-3.5 rounded-full bg-[#2EA3E0]" />
+            <span className="relative inline-flex size-3 rounded-full bg-[#2EA3E0]" />
           </span>
-          2.4 MW+ solar installed across Maharashtra
+          2.4 MW+ solar installed — Maharashtra
         </p>
 
-        <div className="mt-6 grid items-end gap-12 lg:grid-cols-2">
-          {/* left */}
+        {/* edge micro-label, desktop only */}
+        <p aria-hidden className="vertical-micro micro absolute right-6 top-24 hidden text-white/40 xl:block">
+          EVN Solar — Rooftop · EV Charging
+        </p>
+
+        <div className="mt-8 grid items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
+          {/* left — HERO composition: oversized grotesk, intentional breaks,
+              weight contrast 900/500, serif-italic focal word */}
           <div>
-            <h1
-              className="hero-rise section-title max-w-xl text-[34px] text-white sm:text-[52px]"
-              style={{ animationDelay: '0.15s' }}
-            >
-              Power your home, business and EV on sunlight.
+            <h1 className="hero-rise hero-display text-white" style={{ animationDelay: '0.15s' }}>
+              Power your
+              <br />
+              home, business
+              <br />
+              <span className="thin">& EV on </span>
+              <em className="serif-accent text-[#8FD6A4]">sunlight.</em>
             </h1>
             <p
-              className="hero-rise mt-5 max-w-lg text-[16px] leading-relaxed text-white/75 sm:text-[18px]"
+              className="hero-rise mt-7 max-w-md text-[15.5px] font-normal leading-relaxed text-white/65"
               style={{ animationDelay: '0.3s' }}
             >
               Rooftop solar, ground-mounted plants, solar carports and EV
-              charging — engineered as one system,{' '}
-              <span className="text-white">so you cut the bill and drive on sunshine.</span>
+              charging — engineered as one system.
             </p>
             <div className="hero-rise mt-8 flex flex-wrap gap-3" style={{ animationDelay: '0.45s' }}>
               <Link

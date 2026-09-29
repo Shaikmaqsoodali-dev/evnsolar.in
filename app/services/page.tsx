@@ -34,7 +34,7 @@ export default function ServicesPage() {
     <main className="bg-white">
       <PageIntro
         kicker="Solar services"
-        title="Solar for every roof, plot and parking lot."
+        title={<>Solar for every roof, plot and <em className="serif-accent text-[#0083CB]">parking lot.</em></>}
         lede="On-grid, hybrid and battery-ready systems with engineering drawings, DISCOM liaison and verified generation — not just installation."
         meta={['On-grid · Hybrid · Battery-ready', 'Tier-1 modules, tested inverters', 'Subsidy & net-metering handled']}
         crumb={[['Solar', '/services']]}
