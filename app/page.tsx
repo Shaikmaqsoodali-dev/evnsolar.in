@@ -2,60 +2,12 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { SectionHeading, CtaBand } from '@/components/site-chrome'
+import { VideoHero } from '@/components/video-hero'
 
 export default function HomePage() {
   return (
     <main className="bg-white">
-      {/* ——— 1. HERO, Premier-style full-bleed slider ——— */}
-      <section className="relative overflow-hidden bg-[#0C1E28] text-white">
-        <img
-          src={IMG.solarField}
-          alt="Solar plant at sunrise"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0C1E28] via-[#0C1E28]/82 to-[#0C1E28]/15" />
-        <div className="relative mx-auto max-w-7xl px-6 pb-16 pt-16 sm:pb-24 sm:pt-24">
-          <p className="flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.22em] text-white/70">
-            <span className="inline-block h-[2px] w-10 bg-[#2EA3E0]" aria-hidden />
-            EVN Solar Energy Solutions
-          </p>
-          <h1 className="section-title mt-5 max-w-3xl text-[34px] text-white sm:text-[54px]">
-            For a future tomorrow,
-            <br />
-            let&rsquo;s go solar today.
-          </h1>
-          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-white/75">
-            Rooftop solar, ground-mounted plants, solar carports and EV charging —
-            surveyed, designed, installed and serviced by one accountable team
-            across Maharashtra.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#0083CB] px-7 py-3.5 text-[14px] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-[#00659D]"
-              style={{ borderRadius: 4 }}
-            >
-              Get a free quote <ArrowRight size={16} />
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 border border-white/40 px-7 py-3.5 text-[14px] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:border-white hover:bg-white hover:text-[#0C1E28]"
-              style={{ borderRadius: 4 }}
-            >
-              Our solutions
-            </Link>
-          </div>
-          {/* slider markers, Premier-style */}
-          <div className="mt-12 flex items-center gap-2" aria-hidden>
-            <span className="h-[3px] w-10 bg-white" />
-            <span className="h-[3px] w-6 bg-white/35" />
-            <span className="h-[3px] w-6 bg-white/35" />
-            <span className="ml-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/50">
-              Rooftop · Ground-mount · EV charging
-            </span>
-          </div>
-        </div>
-      </section>
+      <VideoHero />
 
       {/* ——— scope strip ——— */}
       <section className="border-b border-[#E2E8EC] bg-white">
