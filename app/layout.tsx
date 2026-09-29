@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'EV & Solar | Clean Energy. Smarter Mobility.',
-  description: 'EVN Solar Energy Solutions helps homes and businesses generate cleaner energy, use it intelligently and prepare for a more electric future.',
+  title: 'Solar | Power Your Future with Reliable Solar Solutions',
+  description: 'EVN Solar Energy Solutions — rooftop solar, ground-mounted systems, solar carports, EV charging, maintenance and 24x7 support across India.',
   generator: 'v0.app',
   icons: {
     icon: [
