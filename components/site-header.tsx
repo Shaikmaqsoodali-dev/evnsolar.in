@@ -13,7 +13,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-white">
       {/* utility bar */}
-      <div className="bg-[#0C1E28] text-white">
+      <div className="bg-[#0083CB] text-white">
         <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-6 text-[12px] tracking-wide">
           <p className="text-white/70">
             MNRE-aligned systems · Nashik — Malegaon — Maharashtra
@@ -28,7 +28,7 @@ export function SiteHeader() {
       </div>
 
       {/* main bar */}
-      <div className="border-b border-[#E2E8EC]">
+      <div className="border-b-2 border-b-[#0083CB]">
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-6">
           <Link href="/" className="flex items-center gap-3">
             <img

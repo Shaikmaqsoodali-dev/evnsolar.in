@@ -66,7 +66,7 @@ export function PageIntro({
         {meta && (
           <dl className="mt-8 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-3" style={{ borderRadius: 8 }}>
             {meta.map((m) => (
-              <div key={m} className="bg-[#F4F6F8] px-5 py-4 text-[13.5px] font-medium text-[#42545F]">
+              <div key={m} className="bg-[#E7F2F9] px-5 py-4 text-[13.5px] font-medium text-[#0C1E28]">
                 {m}
               </div>
             ))}
@@ -122,6 +122,7 @@ const FOOT_COLS: [string, [string, string][]][] = [
 export function SiteFooter() {
   return (
     <footer className="bg-[#0C1E28] text-white">
+      <div className="h-1.5" style={{ background: 'linear-gradient(90deg, #0083CB 0%, #12A9E2 50%, #1E7A3C 100%)' }} aria-hidden />
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-14">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr]">
           <div>

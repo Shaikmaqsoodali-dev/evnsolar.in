@@ -9,8 +9,8 @@ export default function HomePage() {
     <main className="bg-white">
       <VideoHero />
 
-      {/* ——— scope strip ——— */}
-      <section className="border-b border-[#E2E8EC] bg-white">
+      {/* ——— scope strip: brand blue band ——— */}
+      <section className="bg-[#0083CB]">
         <div className="mx-auto grid max-w-7xl sm:grid-cols-4">
           {[
             ['Residential', '1–10 kW rooftop systems'],
@@ -18,9 +18,9 @@ export default function HomePage() {
             ['Industrial', 'MW-scale + O&M contracts'],
             ['EV & fleet', 'AC + DC charging'],
           ].map(([t, d]) => (
-            <div key={t} className="border-b border-[#E2E8EC] px-6 py-5 last:border-0 sm:border-b-0 sm:border-r sm:last:border-0">
-              <p className="text-[14px] font-bold uppercase tracking-[0.06em] text-[#0C1E28]">{t}</p>
-              <p className="mt-0.5 text-[13px] text-[#5B6D77]">{d}</p>
+            <div key={t} className="border-b border-white/20 px-6 py-5 last:border-0 sm:border-b-0 sm:border-r sm:last:border-0">
+              <p className="text-[14px] font-bold uppercase tracking-[0.06em] text-white">{t}</p>
+              <p className="mt-0.5 text-[13px] text-white/75">{d}</p>
             </div>
           ))}
         </div>
@@ -101,14 +101,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ——— 4. PRODUCTS, Premier "Turning sunlight into energy" pattern ——— */}
-      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <SectionHeading
-          center
-          kicker="Products & solutions"
-          title="Turning sunlight into energy."
-          lede="Four factory-tested disciplines — each with drawings, protection design and a monitoring handover."
-        />
+      {/* ——— 4. PRODUCTS on light brand-blue tint ——— */}
+      <section className="bg-[#EAF3F9]">
+        <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+          <SectionHeading
+            center
+            kicker="Products & solutions"
+            title="Turning sunlight into energy."
+            lede="Four factory-tested disciplines — each with drawings, protection design and a monitoring handover."
+          />
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { img: IMG.rooftop, tag: '1–100 kW', t: 'Rooftop solar', d: 'On-grid and hybrid systems for homes, shops and factories.', href: '/services' },
@@ -130,31 +131,35 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
+        </div>
       </section>
 
-      {/* ——— 5. TECHNOLOGY strip, Premier "technology at work" pattern ——— */}
-      <section className="border-y border-[#E2E8EC] bg-[#F4F6F8]">
+      {/* ——— 5. TECHNOLOGY on deep brand-navy ——— */}
+      <section className="bg-[#0C1E28] text-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#0083CB]">Technology</p>
-            <h2 className="section-title mt-3 text-[28px] text-[#0C1E28] sm:text-[34px]">
+            <p className="flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.22em] text-[#2EA3E0]">
+              <span className="inline-block h-[2px] w-8 bg-[#2EA3E0]" aria-hidden />
+              Technology
+            </p>
+            <h2 className="section-title mt-3 text-[28px] text-white sm:text-[34px]">
               Leading-edge technology at work.
             </h2>
-            <p className="mt-4 text-[15.5px] leading-relaxed text-[#5B6D77]">
+            <p className="mt-4 text-[15.5px] leading-relaxed text-white/70">
               High-efficiency TOPCon modules, tested string and micro-inverters,
               and OCPP chargers — commissioned with insulation, earthing and
               protection tests you receive in writing.
             </p>
-            <div className="mt-7 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-2" style={{ borderRadius: 6 }}>
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {[
                 ['High-efficiency modules', 'TOPCon arrays sized from shadow analysis.'],
                 ['Tested inverters', 'String + micro options, monitored per MPPT.'],
                 ['Engineered structures', 'Galvanised, wind-rated, waterproof options.'],
                 ['Protected & metered', 'Earthing, surge, net-metering included.'],
               ].map(([t, d]) => (
-                <div key={t} className="bg-white p-5">
-                  <p className="text-[14px] font-bold text-[#0C1E28]">{t}</p>
-                  <p className="mt-1 text-[13px] text-[#5B6D77]">{d}</p>
+                <div key={t} className="border border-white/15 bg-white/5 p-5" style={{ borderRadius: 6 }}>
+                  <p className="text-[14px] font-bold text-white">{t}</p>
+                  <p className="mt-1 text-[13px] leading-relaxed text-white/60">{d}</p>
                 </div>
               ))}
             </div>
@@ -204,8 +209,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ——— 7. Testimonials ——— */}
-      <section className="border-t border-[#E2E8EC] bg-white">
+      {/* ——— 7. Testimonials on light brand-green tint ——— */}
+      <section className="border-t border-[#D8E5DB] bg-[#EDF5EF]">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <SectionHeading center kicker="Client notes" title="Trusted for engineering, not just installation." />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -214,7 +219,7 @@ export default function HomePage() {
               ['Homeowner, Nashik', '5 kW rooftop with a 7.4 kW home charger. Subsidy paperwork handled; the app shows every unit.'],
               ['Warehouse, Malegaon', '120 kW plant with scheduled fleet charging. Safety-first execution, reliable service.'],
             ].map(([who, quote]) => (
-              <figure key={who} className="flex flex-col border border-[#E2E8EC] bg-[#F4F6F8] p-6" style={{ borderRadius: 6 }}>
+              <figure key={who} className="flex flex-col border border-[#D8E5DB] border-t-4 border-t-[#1E7A3C] bg-white p-6" style={{ borderRadius: 6 }}>
                 <blockquote className="flex-1 text-[14px] leading-relaxed text-[#42545F]">&ldquo;{quote}&rdquo;</blockquote>
                 <figcaption className="mt-5 border-t border-[#E2E8EC] pt-4 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0C1E28]">{who}</figcaption>
               </figure>
