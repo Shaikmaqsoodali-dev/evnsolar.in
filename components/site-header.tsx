@@ -68,7 +68,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              className="font-display hidden bg-[#008ED6] px-5 py-2.5 text-[13px] font-semibold tracking-[-0.01em] text-white transition-colors hover:bg-[#00659D] sm:block"
+              className="btn-shine font-display hidden bg-[#008ED6] px-5 py-2.5 text-[13px] font-semibold tracking-[-0.01em] text-white transition-colors hover:bg-[#00659D] sm:block"
               style={{ borderRadius: 6 }}
             >
               Get a quote

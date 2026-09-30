@@ -234,9 +234,89 @@ export function CountUp({
 }
 
 /* ------------------------------------------------------------------ */
-/* Marquee — infinite brand ticker. Pauses on hover, off for           */
-/* reduced-motion.                                                     */
+/* ScrollProgress — thin brand-gradient bar tracking page scroll.      */
 /* ------------------------------------------------------------------ */
+export function ScrollProgress({ className }: { className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || prefersReducedMotion()) return;
+
+    let raf = 0;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, doc.scrollTop / max)) : 0;
+      el.style.transform = `scaleX(${p.toFixed(4)})`;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        raf = requestAnimationFrame(update);
+      }
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      aria-hidden
+      className={cn(
+        'bg-brand-grad fixed inset-x-0 top-0 z-[60] h-[3px] origin-left scale-x-0',
+        className,
+      )}
+    />
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Tilt — pointer-driven 3D card tilt. Fine pointers only, subtle.     */
+/* ------------------------------------------------------------------ */
+export function Tilt({
+  children,
+  className,
+  max = 6,
+}: {
+  children: ReactNode;
+  className?: string;
+  max?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el || prefersReducedMotion()) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    const r = el.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(900px) rotateX(${(-py * max).toFixed(2)}deg) rotateY(${(px * max).toFixed(2)}deg)`;
+  };
+
+  const reset = () => {
+    if (ref.current) ref.current.style.transform = '';
+  };
+
+  return (
+    <div ref={ref} onMouseMove={onMove} onMouseLeave={reset} className={cn('tilt', className)}>
+      {children}
+    </div>
+  );
+}
 export function Marquee({
   items,
   className,

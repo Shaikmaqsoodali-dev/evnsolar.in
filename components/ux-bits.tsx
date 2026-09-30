@@ -82,7 +82,7 @@ export function FloatCta() {
     <Link
       href="/contact"
       aria-label="Get a free quote"
-      className="font-display fixed bottom-[66px] right-4 z-50 flex items-center gap-2 bg-[#008ED6] py-3 pl-4 pr-4 text-[13px] font-semibold tracking-[-0.01em] text-white shadow-[0_12px_32px_rgba(0,142,214,0.45)] transition-all hover:bg-[#00659D] sm:bottom-6 sm:right-6 sm:py-3.5 sm:pl-5 sm:pr-5"
+      className="btn-shine font-display fixed bottom-[66px] right-4 z-50 flex items-center gap-2 bg-[#008ED6] py-3 pl-4 pr-4 text-[13px] font-semibold tracking-[-0.01em] text-white shadow-[0_12px_32px_rgba(0,142,214,0.45)] transition-all hover:bg-[#00659D] sm:bottom-6 sm:right-6 sm:py-3.5 sm:pl-5 sm:pr-5"
       style={{ borderRadius: 999 }}
     >
       <span className="relative flex size-2 shrink-0" aria-hidden>

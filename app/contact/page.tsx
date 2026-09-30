@@ -95,7 +95,7 @@ export default function ContactPage() {
                 <span className="mb-1.5 block text-[13px] font-semibold text-[#071D26]">Monthly bill / requirement</span>
                 <textarea required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={5} placeholder="e.g. 450 units/month, Nashik, planning an EV next year…" className="field w-full resize-none border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }} />
               </label>
-              <button type="submit" className="inline-flex w-full items-center justify-center gap-2 bg-[#008ED6] py-3.5 text-[15px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
+              <button type="submit" className="btn-shine inline-flex w-full items-center justify-center gap-2 bg-[#008ED6] py-3.5 text-[15px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
                 Request free site assessment <Send size={16} />
               </button>
               <p className="text-center text-[12.5px] text-[#5B6D77]">No spam. An engineer responds — usually within one working day.</p>

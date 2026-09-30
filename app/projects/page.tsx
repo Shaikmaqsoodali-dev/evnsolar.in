@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
-import { Stagger } from '@/components/motion'
+import { Stagger, Tilt } from '@/components/motion'
 
 export const metadata = { title: 'Projects — EVN Solar Energy Solutions' }
 
@@ -28,7 +28,8 @@ export default function ProjectsPage() {
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" step={90}>
           {PROJECTS.map(({ img, sector, size, t, d }) => (
-            <article key={t} className="group lift border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
+            <Tilt key={t}>
+            <article className="group lift border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
               <div className="overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
@@ -41,6 +42,7 @@ export default function ProjectsPage() {
                 <p className="card-desc mt-2 text-[#50656A]" style={{ fontSize: '13px' }}>{d}</p>
               </div>
             </article>
+            </Tilt>
           ))}
         </Stagger>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border border-[#E2E8EC] bg-[#F4F6F8] p-6 sm:flex-row sm:items-center" style={{ borderRadius: 8 }}>

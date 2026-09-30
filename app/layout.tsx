@@ -4,6 +4,7 @@ import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
 import { BackToTop, FloatCta, MobileCtaBar } from '@/components/ux-bits'
+import { ScrollProgress } from '@/components/motion'
 
 /* BODY - Inter: paragraphs, lists, UI text. Readable at 14-16px. */
 const body = Inter({
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${body.variable} ${display.variable} ${grot.variable} ${serifEd.variable} ${tech.variable}`}>
       <body className="bg-white text-[#071D26] antialiased">
+        <ScrollProgress />
         <SiteHeader />
         {children}
         <SiteFooter />

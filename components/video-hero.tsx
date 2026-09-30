@@ -24,7 +24,7 @@ export function VideoHero() {
         playsInline
         preload="metadata"
         poster={IMG.solarField}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="hero-zoom absolute inset-0 h-full w-full object-cover"
       >
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
@@ -71,7 +71,7 @@ export function VideoHero() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="font-display inline-flex items-center gap-2 bg-white px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-[#071D26] transition-colors hover:bg-[#E8EEF1]"
+                  className="btn-shine font-display inline-flex items-center gap-2 bg-white px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-[#071D26] transition-colors hover:bg-[#E8EEF1]"
                   style={{ borderRadius: 6 }}
                 >
                   Get a free site assessment <ArrowRight size={15} />

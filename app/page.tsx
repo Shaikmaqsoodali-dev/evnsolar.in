@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { CtaBand } from '@/components/site-chrome'
-import { CountUp, Marquee, Parallax, Reveal, Stagger } from '@/components/motion'
+import { CountUp, Marquee, Parallax, Reveal, Stagger, Tilt } from '@/components/motion'
 import { VideoHero } from '@/components/video-hero'
 
 const TICKER = [
@@ -147,7 +147,8 @@ export default function HomePage() {
               { img: IMG.carport, tag: 'EV-ready', t: 'Solar carports', d: 'Parking that generates power, pre-wired for chargers.', href: '/services' },
               { img: IMG.evCharge, tag: '7.4-60 kW', t: 'EV charging', d: 'AC and DC chargers with load management and billing.', href: '/ev-charging' },
             ].map(({ img, tag, t, d, href }) => (
-              <Link key={t} href={href} className="group lift block h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_14px_40px_rgba(7,29,38,0.12)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
+              <Tilt key={t} className="h-full">
+              <Link href={href} className="group lift block h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_14px_40px_rgba(7,29,38,0.12)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
                 <div className="relative overflow-hidden">
                   <img src={img} alt={t} className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" />
                   <span className={`absolute left-3 top-3 px-2 py-1 text-[10.5px] font-semibold uppercase tracking-[0.06em] text-white ${href === '/ev-charging' ? 'bg-[#3BB54A]' : 'bg-[#008ED6]'}`} style={{ borderRadius: 4, fontFamily: 'var(--font-body)' }}>{tag}</span>
@@ -159,6 +160,7 @@ export default function HomePage() {
                   <p className="card-desc mt-1.5 text-[#42565D]">{d}</p>
                 </div>
               </Link>
+              </Tilt>
             ))}
           </Stagger>
         </div>
@@ -234,7 +236,8 @@ export default function HomePage() {
             { img: IMG.ground, cat: 'Industrial · Malegaon', t: '120 kW ground-mounted plant', d: 'Scheduled fleet charging with generation and load reporting.' },
             { img: IMG.carport, cat: 'Commercial · Campus', t: '40 kW solar carport, EV-ready', d: 'Shaded parking with charger conduits and lighting.' },
           ].map(({ img, cat, t, d }) => (
-            <article key={t} className="group lift h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(7,29,38,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
+            <Tilt key={t} className="h-full">
+            <article className="group lift h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(7,29,38,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
               <div className="overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
@@ -244,6 +247,7 @@ export default function HomePage() {
                 <p className="card-desc mt-1.5 text-[#42565D]">{d}</p>
               </div>
             </article>
+            </Tilt>
           ))}
         </Stagger>
       </section>

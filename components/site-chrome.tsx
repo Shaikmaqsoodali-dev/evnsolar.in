@@ -112,8 +112,10 @@ export function CtaBand() {
   return (
     <section className="bg-[#071D26]">
       <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <div className="bg-brand-grad grid gap-8 p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 10 }}>
-          <div>
+        <div className="bg-brand-grad relative grid gap-8 overflow-hidden p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 10 }}>
+          <div className="orb left-[-8%] top-[-30%] size-72 bg-[#25C7E8]/40" aria-hidden />
+          <div className="orb orb-2 bottom-[-40%] right-[-6%] size-80 bg-[#3BB54A]/40" aria-hidden />
+          <div className="relative">
             <p className="micro text-white/85">
               Free site assessment
             </p>
@@ -131,10 +133,10 @@ export function CtaBand() {
               working day.
             </p>
           </div>
-          <div className="flex flex-col gap-3 lg:items-end">
+          <div className="relative flex flex-col gap-3 lg:items-end">
             <Link
               href="/contact"
-              className="font-display inline-flex items-center justify-center gap-2 bg-white px-7 py-3.5 text-[13px] font-semibold tracking-[-0.01em] text-[#071D26] transition-all hover:bg-[#071D26] hover:text-white"
+              className="btn-shine font-display inline-flex items-center justify-center gap-2 bg-white px-7 py-3.5 text-[13px] font-semibold tracking-[-0.01em] text-[#071D26] transition-all hover:bg-[#071D26] hover:text-white"
               style={{ borderRadius: 6 }}
             >
               Request assessment <ArrowRight size={17} />

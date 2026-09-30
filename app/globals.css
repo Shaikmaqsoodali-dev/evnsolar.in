@@ -103,6 +103,59 @@ header a {
   animation-play-state: paused;
 }
 
+/* 3D tilt — buttery trailing motion via slow expo transition */
+.tilt {
+  transition: transform 0.6s var(--ease-expo);
+  transform-style: preserve-3d;
+}
+
+/* Slow Ken Burns drift for hero media */
+.hero-zoom {
+  animation: hero-zoom 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes hero-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.09); }
+}
+
+/* Light sweep across primary buttons on hover */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(105deg, transparent 40%, rgb(255 255 255 / 0.45) 50%, transparent 60%);
+  transform: translateX(-130%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+.btn-shine:hover::after {
+  transform: translateX(130%);
+}
+
+/* Drifting glow orbs for gradient panels */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+  animation: orb-drift 14s ease-in-out infinite alternate;
+}
+.orb-2 {
+  animation-duration: 18s;
+  animation-delay: -6s;
+}
+@keyframes orb-drift {
+  from { transform: translate3d(-6%, -4%, 0) scale(1); }
+  to { transform: translate3d(7%, 6%, 0) scale(1.15); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mv {
     opacity: 1;
@@ -110,8 +163,16 @@ header a {
     filter: none;
     transition: none;
   }
-  .marquee-track {
+  .marquee-track,
+  .hero-zoom,
+  .orb {
     animation: none;
+  }
+  .btn-shine::after {
+    display: none;
+  }
+  .tilt {
+    transition: none;
   }
   .lift:hover {
     transform: none;

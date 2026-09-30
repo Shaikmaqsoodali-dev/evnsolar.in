@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 import { Faq } from '@/components/ux-bits'
-import { Stagger } from '@/components/motion'
+import { Stagger, Tilt } from '@/components/motion'
 
 export const metadata = { title: 'Pricing — EVN Solar Energy Solutions' }
 
@@ -34,9 +34,9 @@ export default function PricingPage() {
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Stagger className="grid gap-6 lg:grid-cols-3" step={110}>
           {PLANS.map(({ name, big, small, d, feat, cta, featured }) => (
+            <Tilt key={name}>
             <div
-              key={name}
-              className={`lift flex flex-col overflow-hidden border p-8 ${featured ? 'border-[#071D26] bg-[#071D26] text-white' : 'border-[#E2E8EC] bg-white hover:border-[#25C7E8]'}`}
+              className={`lift flex h-full flex-col overflow-hidden border p-8 ${featured ? 'border-[#071D26] bg-[#071D26] text-white' : 'border-[#E2E8EC] bg-white hover:border-[#25C7E8]'}`}
               style={{ borderRadius: 10 }}
             >
               {featured && (
@@ -70,6 +70,7 @@ export default function PricingPage() {
                 {cta} <ArrowRight size={15} />
               </Link>
             </div>
+            </Tilt>
           ))}
         </Stagger>
 

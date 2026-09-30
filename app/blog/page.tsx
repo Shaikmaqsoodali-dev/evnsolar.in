@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
-import { Stagger } from '@/components/motion'
+import { Stagger, Tilt } from '@/components/motion'
 
 export const metadata = { title: 'Blog — EVN Solar Energy Solutions' }
 
@@ -27,7 +27,8 @@ export default function BlogPage() {
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" step={90}>
           {POSTS.map(({ img, cat, date, t, d }) => (
-            <Link key={t} href="/contact" className="group lift border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
+            <Tilt key={t}>
+            <Link href="/contact" className="group lift block border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
               <div className="overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
@@ -42,6 +43,7 @@ export default function BlogPage() {
                 </p>
               </div>
             </Link>
+            </Tilt>
           ))}
         </Stagger>
       </section>
