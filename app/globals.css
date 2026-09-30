@@ -3,9 +3,9 @@
 @import 'shadcn/tailwind.css';
 
 @theme {
-  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-grot: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-grot: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-serif-ed: 'DM Serif Display', Georgia, serif;
   --font-tech: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -31,9 +31,9 @@
   --muted-tx: #42565d;
   --body-tx: #33474e;
 
-  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-grot: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-grot: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-serif-ed: 'DM Serif Display', Georgia, serif;
   --font-tech: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -58,9 +58,9 @@ h1,
 h2,
 h3,
 .font-display {
-  font-family: var(--font-grot);
-  letter-spacing: 0;
-  line-height: 1.12;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.06;
   text-wrap: balance;
 }
 
@@ -163,6 +163,14 @@ header a {
     filter: none;
     transition: none;
   }
+  .scroll-words .sw-word {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+  .line-mask > span { transform: none; animation: none; }
+  .scroll-cue .cue-line::after { animation: none; }
   .marquee-track,
   .hero-zoom,
   .orb {
@@ -180,23 +188,24 @@ header a {
 }
 
 .section-title {
-  font-family: var(--font-grot);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.015em;
-  line-height: 1.1;
+  font-family: var(--font-display);
+  font-weight: 650;
+  text-transform: none;
+  letter-spacing: -0.025em;
+  line-height: 1.06;
   text-wrap: balance;
 }
 
-/* 1. HERO - homepage only. Uppercase grotesk, comfortable leading. */
+/* 1. HERO — Brandvertise style: sentence-case Inter Tight, tight tracking,
+   open-yet-compact leading, serif-italic accent for the emotional clause. */
 .hero-display {
-  font-family: var(--font-grot);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.005em;
-  line-height: 1.04;
+  font-family: var(--font-display);
+  font-weight: 650;
+  text-transform: none;
+  letter-spacing: -0.032em;
+  line-height: 1.02;
   text-wrap: balance;
-  font-size: clamp(40px, 5vw, 68px);
+  font-size: clamp(44px, 6.4vw, 78px);
   overflow-wrap: break-word;
 }
 .hero-display .hero-heavy {
@@ -206,14 +215,16 @@ header a {
   font-weight: 500;
   color: inherit;
 }
+/* Serif accent = DM Serif italic, slightly larger optical size, like Brandvertise. */
 .hero-display .editorial-accent,
-.hero-display .serif-accent {
+.hero-display .serif-accent,
+.hero-display em {
   display: inline;
-  font-family: inherit;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1em;
-  letter-spacing: inherit;
+  font-family: var(--font-serif-ed);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05em;
+  letter-spacing: -0.015em;
 }
 
 /* 1b. SUBPAGE HERO - sentence case so it contrasts with uppercase section heads. */
@@ -245,25 +256,31 @@ header a {
   letter-spacing: -0.01em;
 }
 
-/* 2. SECTION HEADINGS - uppercase but calm: positive tracking, open leading, smaller. */
+/* 2. SECTION HEADINGS — Brandvertise style: sentence case, tight tracking,
+   serif-italic tail. e.g. "Turning sunlight *into energy.*" */
 .sx {
-  font-family: var(--font-grot);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.015em;
-  line-height: 1.12;
+  font-family: var(--font-display);
+  font-weight: 650;
+  text-transform: none;
+  letter-spacing: -0.028em;
+  line-height: 1.05;
   text-wrap: balance;
   overflow-wrap: break-word;
 }
-.sx-xl { font-size: clamp(30px, 3.2vw, 44px); }
-.sx-lg { font-size: clamp(27px, 2.8vw, 38px); }
-.sx-md { font-size: clamp(23px, 2.4vw, 31px); }
+.sx-xl { font-size: clamp(34px, 4.2vw, 56px); }
+.sx-lg { font-size: clamp(30px, 3.6vw, 46px); }
+.sx-md { font-size: clamp(26px, 3vw, 38px); }
 .sx .thin {
   font-weight: 500;
 }
 .sx .editorial-accent,
-.sx .serif-accent {
-  font-size: 1em;
+.sx .serif-accent,
+.sx em {
+  font-family: var(--font-serif-ed);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
+  letter-spacing: -0.015em;
 }
 
 .cta-bold { font-weight: 700; letter-spacing: 0.01em; }
@@ -281,39 +298,40 @@ header a {
 }
 .sx-index.on-dark { color: rgb(255 255 255 / 0.12); }
 
-/* 3. NUMBERS - grotesk numerals, sans labels. */
+/* 3. NUMBERS - Inter Tight numerals, tight tracking. */
 .stat-number {
-  font-family: var(--font-grot);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 650;
+  letter-spacing: -0.03em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  font-size: clamp(30px, 3vw, 42px);
+  font-size: clamp(32px, 3.4vw, 46px);
 }
 .stat-unit {
-  font-family: var(--font-grot);
+  font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.5em;
   letter-spacing: 0;
   margin-left: 0.1em;
 }
 
-/* 4. EYEBROWS - clean sans, never mono. Mono eyebrows looked cheap/terminal-like. */
+/* 4. EYEBROWS — Brandvertise pill: small, bold, pill-bordered, accent coloured. */
 .micro {
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  font-size: 12.5px;
   line-height: 1.5;
 }
 .micro-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  border: 1px solid currentcolor;
+  border: 1px solid color-mix(in srgb, currentcolor 35%, transparent);
   border-radius: 999px;
-  padding: 0.45em 1em;
+  padding: 0.4em 0.95em;
+  background: color-mix(in srgb, currentcolor 8%, transparent);
 }
 .micro-corner {
   position: absolute;
@@ -333,11 +351,11 @@ header a {
 }
 .card-cat--on-dark { color: #fff; }
 .card-title {
-  font-family: var(--font-grot);
+  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 16px;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
+  font-size: 17px;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
 }
 .card-desc {
   font-family: var(--font-body);
@@ -480,17 +498,105 @@ img {
   line-height: 1.75;
 }
 
+/* ---- Scroll-down motion (Brandvertise-style) ---- */
+/* Word-by-word scroll-linked fill: words start dim/blurred, resolve on scroll. */
+.scroll-words {
+  --sw-dim: 0.16;
+}
+.scroll-words .sw-word {
+  display: inline-block;
+  opacity: var(--sw-dim);
+  filter: blur(6px);
+  transform: translate3d(0, 0.35em, 0);
+  transition:
+    opacity 0.7s ease,
+    filter 0.7s ease,
+    transform 0.7s var(--ease-expo);
+  will-change: opacity, filter, transform;
+}
+.scroll-words .sw-word.is-on {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+.scroll-words .sw-word em,
+.scroll-words .sw-word .serif-accent {
+  font-family: var(--font-serif-ed);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
+  letter-spacing: -0.015em;
+}
+
+/* Scroll-linked fade/rise: hero content drifts up + fades as you scroll down. */
+.scroll-fade {
+  will-change: opacity, transform, filter;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Line-mask entrance for hero lines: each line slides up from an overflow mask. */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.line-mask > span {
+  display: block;
+  transform: translateY(110%);
+  animation: line-rise 1.1s var(--ease-expo) forwards;
+}
+@keyframes line-rise {
+  to { transform: translateY(0); }
+}
+
+/* Scroll-down cue: mouse / line with travelling dot, like Brandvertise surf hint. */
+.scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.scroll-cue .cue-line {
+  position: relative;
+  width: 1px;
+  height: 44px;
+  background: rgb(255 255 255 / 0.25);
+  overflow: hidden;
+}
+.scroll-cue .cue-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -40%;
+  width: 100%;
+  height: 40%;
+  background: #fff;
+  animation: cue-drop 1.8s var(--ease-expo) infinite;
+}
+@keyframes cue-drop {
+  0% { top: -40%; }
+  60%, 100% { top: 110%; }
+}
+.scroll-cue .cue-text {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 10.5px;
+}
+
 /* Responsive guards */
 @media (max-width: 1023px) {
-  .hero-display { font-size: clamp(38px, 6.5vw, 56px); }
+  .hero-display { font-size: clamp(40px, 7vw, 60px); }
   .page-hero { font-size: clamp(30px, 5.5vw, 44px); }
 }
 @media (max-width: 767px) {
   body { font-size: 15px; }
-  .hero-display { font-size: clamp(34px, 9vw, 44px); line-height: 1.06; }
+  .hero-display { font-size: clamp(36px, 10vw, 48px); line-height: 1.04; }
   .page-hero { font-size: clamp(28px, 8vw, 38px); line-height: 1.08; }
-  .sx-xl { font-size: clamp(27px, 7.5vw, 36px); }
-  .sx-lg { font-size: clamp(25px, 7vw, 33px); }
+  .sx-xl { font-size: clamp(30px, 8vw, 40px); }
+  .sx-lg { font-size: clamp(28px, 7.5vw, 37px); }
   .stat-number { font-size: clamp(28px, 9vw, 38px); }
   .quote-ed { font-size: 16.5px; }
 }

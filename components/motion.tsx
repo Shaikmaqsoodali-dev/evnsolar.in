@@ -317,6 +317,117 @@ export function Tilt({
     </div>
   );
 }
+/* ------------------------------------------------------------------ */
+/* ScrollWords — Brandvertise-style scroll-down text reveal.           */
+/* Words resolve (opacity/blur/rise) as you scroll the heading into    */
+/* view, with a per-word stagger. Accent words: wrap in *…* to get     */
+/* DM Serif italic, e.g. "Turning sunlight *into energy.*"             */
+/* ------------------------------------------------------------------ */
+export function ScrollWords({
+  text,
+  className,
+  as: Tag = 'h2',
+  stagger = 70,
+}: {
+  text: string;
+  className?: string;
+  as?: 'h1' | 'h2' | 'h3' | 'p';
+  stagger?: number;
+}) {
+  const { ref, seen } = useInView<HTMLDivElement>(0.25);
+
+  // Parse *accent* spans into words, keeping accent flags.
+  const words: { w: string; accent: boolean }[] = [];
+  const parts = text.split(/(\*[^*]+\*)/g);
+  for (const part of parts) {
+    if (!part) continue;
+    const accent = part.startsWith('*') && part.endsWith('*');
+    const clean = accent ? part.slice(1, -1) : part;
+    for (const w of clean.split(/\s+/)) {
+      if (w) words.push({ w, accent });
+    }
+  }
+
+  return (
+    <Tag ref={ref as never} className={cn('scroll-words', className)} aria-label={text.replaceAll('*', '')}>
+      {words.map(({ w, accent }, i) => (
+        <span key={i} aria-hidden>
+          <span
+            className={cn('sw-word', seen && 'is-on')}
+            style={{ transitionDelay: seen ? `${Math.min(i * stagger, 900)}ms` : '0ms' }}
+          >
+            {accent ? <em>{w}</em> : w}
+          </span>
+          {i < words.length - 1 ? ' ' : ''}
+        </span>
+      ))}
+    </Tag>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* ScrollFade — content gently drifts up + fades as you scroll past.   */
+/* Use on hero blocks so scrolling down feels cinematic.               */
+/* distance: px of rise across one viewport of travel. fade: how much  */
+/* opacity is lost by the time the block leaves the viewport.          */
+/* ------------------------------------------------------------------ */
+export function ScrollFade({
+  children,
+  className,
+  distance = 90,
+  fade = 0.55,
+}: {
+  children: ReactNode;
+  className?: string;
+  distance?: number;
+  fade?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || prefersReducedMotion()) return;
+
+    let raf = 0;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // 0 when block centre is at viewport centre; grows as you scroll down.
+      const progress = Math.max(0, (vh / 2 - (r.top + r.height / 2)) / vh + 0.5);
+      const p = Math.min(1, Math.max(0, progress - 0.5));
+      const y = -(p * distance);
+      const o = 1 - p * fade;
+      el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
+      el.style.opacity = o.toFixed(3);
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        raf = requestAnimationFrame(update);
+      }
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [distance, fade]);
+
+  return (
+    <div ref={ref} className={cn('scroll-fade', className)}>
+      {children}
+    </div>
+  );
+}
+
 export function Marquee({
   items,
   className,

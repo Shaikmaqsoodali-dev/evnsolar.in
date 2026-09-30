@@ -1,26 +1,26 @@
 import type { Metadata, Viewport } from 'next'
-import { Space_Grotesk, Inter, DM_Serif_Display, IBM_Plex_Mono } from 'next/font/google'
+import { Inter_Tight, DM_Serif_Display, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
 import { BackToTop, FloatCta, MobileCtaBar } from '@/components/ux-bits'
 import { ScrollProgress } from '@/components/motion'
 
-/* BODY - Inter: paragraphs, lists, UI text. Readable at 14-16px. */
-const body = Inter({
+/* BODY + DISPLAY — Inter Tight like Brandvertise: tight, sentence-case, one sans everywhere. */
+const body = Inter_Tight({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 })
-/* DISPLAY - Space Grotesk: headings, numbers, nav, buttons only. Never body copy. */
-const display = Space_Grotesk({
+/* DISPLAY — same Inter Tight family, semibold–bold for headlines. Serif accent carries the contrast. */
+const display = Inter_Tight({
   subsets: ['latin'],
   variable: '--font-display',
   weight: ['500', '600', '700'],
   display: 'swap',
 })
-const grot = Space_Grotesk({
+const grot = Inter_Tight({
   subsets: ['latin'],
   variable: '--font-grot',
   weight: ['500', '600', '700'],

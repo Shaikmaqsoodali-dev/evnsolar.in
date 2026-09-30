@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Star } from 'lucide-react'
 import { IMG } from '@/lib/brand'
-import { Reveal } from '@/components/motion'
+import { Reveal, ScrollFade } from '@/components/motion'
 
 const VIDEO_SRC =
   'https://res.cloudinary.com/qxjpbgh6/video/upload/v1790691758/evn_videoplayback_2.mp4'
@@ -34,7 +34,7 @@ export function VideoHero() {
       <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-14 sm:pb-20 sm:pt-20">
         <Reveal variant="fade" delay={50}>
           <p
-            className="micro flex items-center gap-2.5 text-white/85"
+            className="micro micro-pill text-white/85"
           >
             <span className="inline-block size-2 rounded-full bg-[#25C7E8]" aria-hidden />
             2.4 MW+ solar installed across Maharashtra
@@ -45,19 +45,14 @@ export function VideoHero() {
           EVN Solar — Rooftop · EV Charging
         </p>
 
+        <ScrollFade distance={110} fade={0.6}>
         <div className="mt-8 grid items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
           <div>
-            <Reveal variant="blur" delay={160}>
               <h1 className="hero-display text-white">
-                Power your
-                <br />
-                home, business
-                <br />
-                and EV on
-                <br />
-                sunlight.
+                <span className="line-mask"><span style={{ animationDelay: '120ms' }}>Power your home,</span></span>
+                <span className="line-mask"><span style={{ animationDelay: '230ms' }}>business and EV</span></span>
+                <span className="line-mask"><span style={{ animationDelay: '340ms' }}>on <em>sunlight.</em></span></span>
               </h1>
-            </Reveal>
             <Reveal variant="up" delay={320}>
               <p
                 className="mt-5 max-w-md text-[15.5px] font-normal leading-[1.7] text-white/75"
@@ -127,6 +122,7 @@ export function VideoHero() {
             </div>
           </Reveal>
         </div>
+        </ScrollFade>
 
         {/* trust row */}
         <Reveal variant="fade" delay={760}>
@@ -142,11 +138,17 @@ export function VideoHero() {
               ))}
             </span>
           </p>
-          <div className="flex flex-wrap gap-x-7 gap-y-2 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-white/45">
-            <span>Residential</span>
-            <span>Commercial</span>
-            <span>Industrial</span>
-            <span>Fleet & EV</span>
+          <div className="flex flex-wrap items-center gap-x-7 gap-y-2">
+            <span className="scroll-cue" aria-hidden>
+              <span className="cue-line" />
+              <span className="cue-text text-white/60">Scroll to explore</span>
+            </span>
+            <div className="flex flex-wrap gap-x-7 gap-y-2 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-white/45">
+              <span>Residential</span>
+              <span>Commercial</span>
+              <span>Industrial</span>
+              <span>Fleet & EV</span>
+            </div>
           </div>
           </div>
         </Reveal>

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { CtaBand } from '@/components/site-chrome'
-import { CountUp, Marquee, Parallax, Reveal, Stagger, Tilt } from '@/components/motion'
+import { CountUp, Marquee, Parallax, Reveal, ScrollWords, Stagger, Tilt } from '@/components/motion'
 import { VideoHero } from '@/components/video-hero'
 
 const TICKER = [
@@ -61,13 +61,13 @@ export default function HomePage() {
           </div>
         </Reveal>
         <Reveal variant="right" delay={120}>
-          <p className="micro flex items-center gap-3 text-[#008ED6]">
-            <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
+          <p className="micro micro-pill text-[#008ED6]">
             About us
           </p>
-          <h2 className="sx sx-lg mt-4 text-[#071D26]">
-            EVN Solar<br />let&rsquo;s go solar.
-          </h2>
+          <ScrollWords
+            text="EVN Solar, *let's go solar.*"
+            className="sx sx-lg mt-4 text-[#071D26]"
+          />
           <p className="mt-4 max-w-lg text-[15px] font-normal leading-[1.75] text-[#33474E]">
             Offering engineered solar and EV-charging solutions, EVN Solar designs
             every site as one electrical system — generation sized to your bill
@@ -128,14 +128,13 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="micro flex items-center justify-center gap-3 text-[#008ED6]">
-              <span className="inline-block h-px w-8 bg-[#25C7E8]" aria-hidden />
+            <p className="micro micro-pill text-[#008ED6]">
               Products & solutions
-              <span className="inline-block h-px w-8 bg-[#25C7E8]" aria-hidden />
             </p>
-            <h2 className="sx sx-lg mt-4 text-[#071D26]">
-              Turning sunlight into energy.
-            </h2>
+            <ScrollWords
+              text="Turning sunlight *into energy.*"
+              className="sx sx-lg mt-4 text-[#071D26]"
+            />
             <p className="mx-auto mt-4 max-w-xl text-[15px] font-normal leading-[1.75] text-[#33474E]">
               Four factory-tested disciplines — each with drawings, protection design and a monitoring handover.
             </p>
@@ -170,13 +169,13 @@ export default function HomePage() {
       <section className="bg-[#EAF7EE]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
           <Reveal variant="left">
-            <p className="micro flex items-center gap-3 text-[#008ED6]">
-              <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
+            <p className="micro micro-pill text-[#008ED6]">
               Technology
             </p>
-            <h2 className="sx sx-lg mt-4 text-[#071D26]">
-              Leading-edge technology at work.
-            </h2>
+            <ScrollWords
+              text="Leading-edge technology *at work.*"
+              className="sx sx-lg mt-4 text-[#071D26]"
+            />
             <p className="mt-4 max-w-lg text-[15px] font-normal leading-[1.75] text-[#33474E]">
               High-efficiency TOPCon modules, tested string and micro-inverters,
               and OCPP chargers — commissioned with insulation, earthing and
@@ -218,13 +217,13 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl bg-white px-6 py-14 sm:py-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="micro flex items-center gap-3 text-[#008ED6]">
-              <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
+            <p className="micro micro-pill text-[#008ED6]">
               News & projects
             </p>
-            <h2 className="sx sx-md mt-4 text-[#071D26]">
-              Recent work and updates.
-            </h2>
+            <ScrollWords
+              text="Recent work *and updates.*"
+              className="sx sx-md mt-4 text-[#071D26]"
+            />
           </div>
           <Link href="/projects" className="font-display flex items-center gap-1.5 text-[13px] font-semibold text-[#008ED6]">
             All projects <ArrowRight size={14} />
@@ -257,14 +256,13 @@ export default function HomePage() {
         <div className="h-1" style={{ background: 'linear-gradient(90deg, #3BB54A 0%, #25C7E8 50%, #008ED6 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="micro flex items-center justify-center gap-3 text-[#25C7E8]">
-              <span className="inline-block h-px w-8 bg-[#3BB54A]" aria-hidden />
+            <p className="micro micro-pill text-[#25C7E8]">
               Client notes
-              <span className="inline-block h-px w-8 bg-[#3BB54A]" aria-hidden />
             </p>
-            <h2 className="sx sx-md mt-4 text-white">
-              Trusted for engineering, not just installation.
-            </h2>
+            <ScrollWords
+              text="Trusted for engineering, *not just installation.*"
+              className="sx sx-md mt-4 text-white"
+            />
           </div>
           <Stagger className="mt-10 grid gap-5 md:grid-cols-3" variant="scale" step={110}>
             {[
