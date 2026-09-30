@@ -3,7 +3,7 @@ import { Space_Grotesk, Inter, DM_Serif_Display, IBM_Plex_Mono } from 'next/font
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
-import { BackToTop, MobileCtaBar } from '@/components/ux-bits'
+import { BackToTop, FloatCta, MobileCtaBar } from '@/components/ux-bits'
 
 /* BODY - Inter: paragraphs, lists, UI text. Readable at 14-16px. */
 const body = Inter({
@@ -68,6 +68,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <SiteFooter />
         <BackToTop />
+        <FloatCta />
         <MobileCtaBar />
         <div className="h-[54px] bg-[#071D26] sm:hidden" aria-hidden />
       </body>

@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { ArrowUp, ChevronRight, Phone } from 'lucide-react'
+import { ArrowRight, ArrowUp, ChevronRight, Phone } from 'lucide-react'
 import { Reveal as MotionReveal } from '@/components/motion'
 
 export function Reveal({
@@ -64,11 +65,34 @@ export function BackToTop() {
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="Back to top"
-      className="fixed bottom-20 right-5 z-50 grid size-11 place-items-center bg-[#071D26] text-white shadow-lg transition-colors hover:bg-[#008ED6] sm:bottom-6"
+      className="fixed bottom-[124px] right-4 z-50 grid size-11 place-items-center bg-[#071D26] text-white shadow-lg transition-colors hover:bg-[#008ED6] sm:bottom-[100px] sm:right-6"
       style={{ borderRadius: 8 }}
     >
       <ArrowUp size={19} />
     </button>
+  )
+}
+
+export function FloatCta() {
+  const pathname = usePathname()
+  // Redundant on the contact page itself.
+  if (pathname === '/contact') return null
+
+  return (
+    <Link
+      href="/contact"
+      aria-label="Get a free quote"
+      className="font-display fixed bottom-[66px] right-4 z-50 flex items-center gap-2 bg-[#008ED6] py-3 pl-4 pr-4 text-[13px] font-semibold tracking-[-0.01em] text-white shadow-[0_12px_32px_rgba(0,142,214,0.45)] transition-all hover:bg-[#00659D] sm:bottom-6 sm:right-6 sm:py-3.5 sm:pl-5 sm:pr-5"
+      style={{ borderRadius: 999 }}
+    >
+      <span className="relative flex size-2 shrink-0" aria-hidden>
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#6FDF8F] opacity-75 motion-reduce:animate-none" />
+        <span className="relative inline-flex size-2 rounded-full bg-[#6FDF8F]" />
+      </span>
+      <span className="sm:hidden">Free Quote</span>
+      <span className="hidden sm:inline">Get Free Quote</span>
+      <ArrowRight size={15} />
+    </Link>
   )
 }
 
