@@ -2,13 +2,29 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { CtaBand } from '@/components/site-chrome'
-import { Reveal } from '@/components/ux-bits'
+import { CountUp, Marquee, Parallax, Reveal, Stagger } from '@/components/motion'
 import { VideoHero } from '@/components/video-hero'
+
+const TICKER = [
+  'MNRE-aligned engineering',
+  'Tier-1 modules',
+  '2.4 MW+ installed',
+  '1,000+ projects delivered',
+  '120+ EV points',
+  '5-year service support',
+  'PM Surya Ghar guidance',
+]
 
 export default function HomePage() {
   return (
     <main className="bg-white">
       <VideoHero />
+
+      <Marquee
+        items={TICKER}
+        duration={36}
+        className="border-y border-white/10 bg-[#04141C] py-3.5 text-white/75"
+      />
 
       {/* scope strip */}
       <section className="border-b border-[#E2E8EC] bg-white">
@@ -30,8 +46,10 @@ export default function HomePage() {
       {/* ABOUT */}
       <section className="bg-[#E9F4FB]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
-        <Reveal>
-          <img src={IMG.engineer1} alt="EVN engineering team on site" className="aspect-[16/10] w-full object-cover" style={{ borderRadius: 6 }} />
+        <Reveal variant="left">
+          <Parallax className="aspect-[16/10] rounded-md" speed={0.09}>
+            <img src={IMG.engineer1} alt="EVN engineering team on site" className="h-full w-full object-cover" />
+          </Parallax>
           <div className="mt-3 grid grid-cols-2 gap-3">
             <img src={IMG.rooftop} alt="Rooftop solar array" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 6 }} />
             <div className="bg-brand-grad flex flex-col justify-center p-6 text-white" style={{ borderRadius: 6 }}>
@@ -42,7 +60,7 @@ export default function HomePage() {
             </div>
           </div>
         </Reveal>
-        <Reveal delay={120}>
+        <Reveal variant="right" delay={120}>
           <p className="micro flex items-center gap-3 text-[#008ED6]">
             <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
             About us
@@ -92,13 +110,13 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 grid max-w-5xl sm:grid-cols-4">
             {[
-              ['2.4 MW+', 'Solar installed'],
-              ['1,000+', 'Projects delivered'],
-              ['120+', 'EV points installed'],
-              ['5-yr', 'Service support'],
-            ].map(([v, l], i) => (
+              { v: 2.4, d: 1, s: ' MW+', l: 'Solar installed' },
+              { v: 1000, d: 0, s: '+', l: 'Projects delivered' },
+              { v: 120, d: 0, s: '+', l: 'EV points installed' },
+              { v: 5, d: 0, s: '-yr', l: 'Service support' },
+            ].map(({ v, d, s, l }, i) => (
               <div key={l} className={`px-6 py-2 text-center ${i !== 0 ? 'sm:border-l sm:border-white/10' : ''}`}>
-                <p className="stat-number text-white">{v}</p>
+                <p className="stat-number text-white"><CountUp to={v} decimals={d} suffix={s} /></p>
                 <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.12em] text-white/50">{l}</p>
               </div>
             ))}
@@ -122,15 +140,14 @@ export default function HomePage() {
               Four factory-tested disciplines — each with drawings, protection design and a monitoring handover.
             </p>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" itemClassName="h-full" step={90}>
             {[
               { img: IMG.rooftop, tag: '1-100 kW', t: 'Rooftop solar', d: 'On-grid and hybrid systems for homes, shops and factories.', href: '/services' },
               { img: IMG.ground, tag: '100 kW-2 MW', t: 'Ground-mounted', d: 'Land plants with SCADA-ready monitoring and O&M.', href: '/services' },
               { img: IMG.carport, tag: 'EV-ready', t: 'Solar carports', d: 'Parking that generates power, pre-wired for chargers.', href: '/services' },
               { img: IMG.evCharge, tag: '7.4-60 kW', t: 'EV charging', d: 'AC and DC chargers with load management and billing.', href: '/ev-charging' },
             ].map(({ img, tag, t, d, href }) => (
-              <Reveal key={t} className="h-full">
-              <Link href={href} className="group lift block h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_14px_40px_rgba(7,29,38,0.12)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
+              <Link key={t} href={href} className="group lift block h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_14px_40px_rgba(7,29,38,0.12)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
                 <div className="relative overflow-hidden">
                   <img src={img} alt={t} className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" />
                   <span className={`absolute left-3 top-3 px-2 py-1 text-[10.5px] font-semibold uppercase tracking-[0.06em] text-white ${href === '/ev-charging' ? 'bg-[#3BB54A]' : 'bg-[#008ED6]'}`} style={{ borderRadius: 4, fontFamily: 'var(--font-body)' }}>{tag}</span>
@@ -142,16 +159,15 @@ export default function HomePage() {
                   <p className="card-desc mt-1.5 text-[#42565D]">{d}</p>
                 </div>
               </Link>
-              </Reveal>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* TECHNOLOGY */}
       <section className="bg-[#EAF7EE]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
-          <Reveal>
+          <Reveal variant="left">
             <p className="micro flex items-center gap-3 text-[#008ED6]">
               <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
               Technology
@@ -178,8 +194,11 @@ export default function HomePage() {
               ))}
             </div>
           </Reveal>
-          <Reveal delay={120}>
-            <img src={IMG.panel} alt="Solar module close-up" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 6 }} />
+          <Reveal variant="right" delay={120}>
+          <div>
+            <Parallax className="aspect-[4/3] rounded-md" speed={0.09}>
+              <img src={IMG.panel} alt="Solar module close-up" className="h-full w-full object-cover" />
+            </Parallax>
             <div className="mt-3 flex items-center justify-between border border-[#CBE3D4] bg-white px-5 py-3.5" style={{ borderRadius: 6 }}>
               <p className="text-[13.5px] font-normal text-[#42565D]">
                 <span className="font-display font-semibold text-[#071D26]">Module efficiency to 23%+</span> — generation verified in-app
@@ -188,6 +207,7 @@ export default function HomePage() {
                 Details <ArrowUpRight size={14} />
               </Link>
             </div>
+          </div>
           </Reveal>
         </div>
       </section>
@@ -208,14 +228,13 @@ export default function HomePage() {
             All projects <ArrowRight size={14} />
           </Link>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <Stagger className="mt-10 grid gap-5 md:grid-cols-3" itemClassName="h-full" step={100}>
           {[
             { img: IMG.rooftop, cat: 'Residential · Nashik', t: '5 kW rooftop + 7.4 kW home charger', d: 'Battery-ready hybrid with subsidy filing and app monitoring.' },
             { img: IMG.ground, cat: 'Industrial · Malegaon', t: '120 kW ground-mounted plant', d: 'Scheduled fleet charging with generation and load reporting.' },
             { img: IMG.carport, cat: 'Commercial · Campus', t: '40 kW solar carport, EV-ready', d: 'Shaded parking with charger conduits and lighting.' },
           ].map(({ img, cat, t, d }) => (
-            <Reveal key={t} className="h-full">
-            <article className="group lift h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(7,29,38,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
+            <article key={t} className="group lift h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(7,29,38,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
               <div className="overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
@@ -225,9 +244,8 @@ export default function HomePage() {
                 <p className="card-desc mt-1.5 text-[#42565D]">{d}</p>
               </div>
             </article>
-            </Reveal>
           ))}
-        </div>
+        </Stagger>
       </section>
 
       {/* TESTIMONIALS */}
@@ -244,7 +262,7 @@ export default function HomePage() {
               Trusted for engineering, not just installation.
             </h2>
           </div>
-          <Reveal className="mt-10 grid gap-5 md:grid-cols-3">
+          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" variant="scale" step={110}>
             {[
               ['Logistics depot, Malegaon', 'EVN combined our rooftop plant and depot charging in a single project. Bills are down 68% in six months.'],
               ['Homeowner, Nashik', '5 kW rooftop with a 7.4 kW home charger. Subsidy paperwork handled; the app shows every unit.'],
@@ -255,7 +273,7 @@ export default function HomePage() {
                 <figcaption className="quote-by mt-6 border-t border-white/10 pt-4 text-[#6FDF8F]">{who}</figcaption>
               </figure>
             ))}
-          </Reveal>
+          </Stagger>
         </div>
       </section>
 

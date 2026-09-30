@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { LOGO_URL } from '@/lib/brand'
 import { Breadcrumbs } from '@/components/ux-bits'
 import { MotionGrid } from '@/components/ui/motion-grid'
+import { Reveal } from '@/components/motion'
 
 export function Kicker({ children, center = false }: { children: string; center?: boolean }) {
   return (
@@ -73,22 +74,34 @@ export function PageIntro({
       className="border-b border-[#E2E8EC] bg-[#F2F7F4]"
     >
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
-        {crumb && <Breadcrumbs trail={crumb} />}
-        <Kicker>{kicker}</Kicker>
-        <h1 className="page-hero mt-5 max-w-4xl text-[#071D26]">
-          {title}
-        </h1>
+        {crumb && (
+          <Reveal variant="fade" delay={0}>
+            <Breadcrumbs trail={crumb} />
+          </Reveal>
+        )}
+        <Reveal variant="up" delay={70}>
+          <Kicker>{kicker}</Kicker>
+        </Reveal>
+        <Reveal variant="blur" delay={150}>
+          <h1 className="page-hero mt-5 max-w-4xl text-[#071D26]">
+            {title}
+          </h1>
+        </Reveal>
         {lede && (
-          <p className="mt-5 max-w-2xl text-[17px] font-normal leading-relaxed text-[#50656A]">{lede}</p>
+          <Reveal variant="up" delay={250}>
+            <p className="mt-5 max-w-2xl text-[17px] font-normal leading-relaxed text-[#50656A]">{lede}</p>
+          </Reveal>
         )}
         {meta && (
-          <dl className="mt-8 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-3" style={{ borderRadius: 8 }}>
-            {meta.map((m) => (
-              <div key={m} className="font-tech bg-[#E7F2F9] px-5 py-4 text-[10px] uppercase tracking-[0.12em] text-[#071D26]">
-                {m}
-              </div>
-            ))}
-          </dl>
+          <Reveal variant="up" delay={330}>
+            <dl className="mt-8 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-3" style={{ borderRadius: 8 }}>
+              {meta.map((m) => (
+                <div key={m} className="font-tech bg-[#E7F2F9] px-5 py-4 text-[10px] uppercase tracking-[0.12em] text-[#071D26]">
+                  {m}
+                </div>
+              ))}
+            </dl>
+          </Reveal>
         )}
       </div>
     </MotionGrid>

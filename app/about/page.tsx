@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
-import { Reveal } from '@/components/ux-bits'
+import { Parallax, Reveal, Stagger } from '@/components/motion'
 
 export const metadata = { title: 'About — EVN Solar Energy Solutions' }
 
@@ -18,8 +18,10 @@ export default function AboutPage() {
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
-        <div>
-          <img src={IMG.engineer1} alt="Solar installation team at work" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 8 }} />
+        <Reveal variant="left">
+          <Parallax className="aspect-[4/3] rounded-lg" speed={0.09}>
+            <img src={IMG.engineer1} alt="Solar installation team at work" className="h-full w-full object-cover" />
+          </Parallax>
           <div className="mt-3 grid grid-cols-2 gap-3">
             <img src={IMG.engineer2} alt="Engineer commissioning equipment" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 8 }} />
             <div className="flex flex-col justify-center bg-[#071D26] p-6 text-[#F7F4EC]" style={{ borderRadius: 8 }}>
@@ -27,8 +29,8 @@ export default function AboutPage() {
               <p className="micro mt-2 text-[#6FDF8F]">Years of combined clean-energy engineering practice on the team</p>
             </div>
           </div>
-        </div>
-        <div>
+        </Reveal>
+        <Reveal variant="right" delay={120}>
           <SectionHeading
             kicker="Our position"
             title={<>Clean power you can measure. Miles <em className="editorial-accent text-[#008ED6]">you can trust.</em></>}
@@ -57,13 +59,13 @@ export default function AboutPage() {
               Talk to an engineer
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-y border-[#BFDDF2] bg-[#E9F4FB]">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <SectionHeading kicker="Principles" title="What we stand for." />
-          <Reveal className="mt-10 grid gap-5 md:grid-cols-3">
+          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" step={100}>
             {[
               ['Engineering first', 'Survey, drawings, safety and testing — before and after installation. No shortcuts to hit a price.'],
               ['Right-sized solar', 'Rooftop, ground-mount and carports sized for verified generation, not brochure wattage.'],
@@ -74,7 +76,7 @@ export default function AboutPage() {
                 <p className="mt-2 text-[14.5px] leading-relaxed text-[#5B6D77]">{d}</p>
               </div>
             ))}
-          </Reveal>
+          </Stagger>
         </div>
       </section>
 

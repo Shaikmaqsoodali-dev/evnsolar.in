@@ -73,34 +73,45 @@ header a {
   font-family: var(--font-grot);
 }
 
-/* video-hero entrance */
-@keyframes hero-rise {
-  from {
-    opacity: 0;
-    transform: translateY(-18px);
-    filter: blur(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+/* ---- Motion system (components/motion.tsx) ---- */
+:root {
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-rise {
+.mv {
   opacity: 0;
-  animation: hero-rise 0.6s ease-out forwards;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s var(--ease-expo),
+    filter 0.9s ease;
+  will-change: opacity, transform, filter;
+}
+.mv[data-variant='up'] { transform: translate3d(0, 30px, 0); }
+.mv[data-variant='left'] { transform: translate3d(-38px, 0, 0); }
+.mv[data-variant='right'] { transform: translate3d(38px, 0, 0); }
+.mv[data-variant='scale'] { transform: translate3d(0, 14px, 0) scale(0.94); }
+.mv[data-variant='blur'] { transform: translate3d(0, 18px, 0); filter: blur(12px); }
+.mv.is-in { opacity: 1; transform: none; filter: blur(0); }
+
+.marquee-track {
+  animation: marquee var(--marquee-t, 32s) linear infinite;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-rise {
+  .mv {
     opacity: 1;
-    animation: none;
-  }
-  .reveal {
-    opacity: 1;
-    translate: none;
+    transform: none;
+    filter: none;
     transition: none;
+  }
+  .marquee-track {
+    animation: none;
   }
   .lift:hover {
     transform: none;
@@ -384,18 +395,6 @@ section[id] {
 }
 .lift:hover {
   transform: translateY(-4px);
-}
-
-/* Scroll-reveal (driven by <Reveal/> in ux-bits) */
-.reveal {
-  opacity: 0;
-  translate: 0 20px;
-  transition: opacity 0.7s ease, translate 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-  will-change: opacity, translate;
-}
-.reveal.is-in {
-  opacity: 1;
-  translate: 0 0;
 }
 
 /* Form fields: brand focus treatment */

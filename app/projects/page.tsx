@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
-import { Reveal } from '@/components/ux-bits'
+import { Stagger } from '@/components/motion'
 
 export const metadata = { title: 'Projects — EVN Solar Energy Solutions' }
 
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
         crumb={[['Projects', '/projects']]}
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <Reveal className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" step={90}>
           {PROJECTS.map(({ img, sector, size, t, d }) => (
             <article key={t} className="group lift border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
               <div className="overflow-hidden">
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
               </div>
             </article>
           ))}
-        </Reveal>
+        </Stagger>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border border-[#E2E8EC] bg-[#F4F6F8] p-6 sm:flex-row sm:items-center" style={{ borderRadius: 8 }}>
           <p className="text-[15px] text-[#42545F]">
             <span className="font-semibold text-[#071D26]">Have a similar site?</span> Send your bill and photos — we respond with size, generation and subsidy breakup.

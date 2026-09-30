@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowUp, ChevronRight, Phone } from 'lucide-react'
+import { Reveal as MotionReveal } from '@/components/motion'
 
 export function Reveal({
   children,
@@ -13,37 +14,10 @@ export function Reveal({
   className?: string
   delay?: number
 }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [seen, setSeen] = useState(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setSeen(true)
-      return
-    }
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setSeen(true)
-          io.disconnect()
-        }
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -6% 0px' },
-    )
-    io.observe(el)
-    return () => io.disconnect()
-  }, [])
-
   return (
-    <div
-      ref={ref}
-      className={`reveal ${seen ? 'is-in' : ''} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
+    <MotionReveal variant="up" className={className} delay={delay}>
       {children}
-    </div>
+    </MotionReveal>
   )
 }
 

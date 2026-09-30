@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
-import { Faq, Reveal } from '@/components/ux-bits'
+import { Faq } from '@/components/ux-bits'
+import { Stagger } from '@/components/motion'
 
 export const metadata = { title: 'Pricing — EVN Solar Energy Solutions' }
 
@@ -31,7 +32,7 @@ export default function PricingPage() {
         crumb={[['Pricing', '/pricing']]}
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <Reveal className="grid gap-6 lg:grid-cols-3">
+        <Stagger className="grid gap-6 lg:grid-cols-3" step={110}>
           {PLANS.map(({ name, big, small, d, feat, cta, featured }) => (
             <div
               key={name}
@@ -70,7 +71,7 @@ export default function PricingPage() {
               </Link>
             </div>
           ))}
-        </Reveal>
+        </Stagger>
 
         <div className="mt-14">
           <SectionHeading kicker="Commercial terms" title="How pricing and payment work." />

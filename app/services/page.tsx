@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
-import { Faq, Reveal } from '@/components/ux-bits'
+import { Faq } from '@/components/ux-bits'
+import { Reveal } from '@/components/motion'
 
 export const metadata = { title: 'Solar Services — EVN Solar Energy Solutions' }
 
@@ -43,7 +44,7 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="space-y-8">
           {SERVICES.map(({ img, n, tag, t, d, points }, i) => (
-            <Reveal key={t}>
+            <Reveal key={t} variant={i % 2 ? 'right' : 'left'}>
             <article className={`lift grid gap-0 overflow-hidden border border-[#E2E8EC] bg-white hover:border-[#25C7E8] lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`} style={{ borderRadius: 10 }}>
               <div className="relative min-h-[280px]">
                 <img src={img} alt={t} className="absolute inset-0 h-full w-full object-cover" />

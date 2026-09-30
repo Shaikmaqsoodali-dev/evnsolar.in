@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
-import { Faq, Reveal } from '@/components/ux-bits'
+import { Faq } from '@/components/ux-bits'
+import { CountUp, Parallax, Reveal, Stagger } from '@/components/motion'
 
 export const metadata = { title: 'EV Charging — EVN Solar Energy Solutions' }
 
@@ -18,8 +19,10 @@ export default function EvChargingPage() {
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
-        <div>
-          <img src={IMG.evCharge} alt="Electric vehicle charging" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 8 }} />
+        <Reveal variant="left">
+          <Parallax className="aspect-[4/3] rounded-lg" speed={0.09}>
+            <img src={IMG.evCharge} alt="Electric vehicle charging" className="h-full w-full object-cover" />
+          </Parallax>
           <div className="mt-3 grid grid-cols-2 gap-3">
             <div className="border border-[#E2E8EC] bg-[#F4F6F8] p-5" style={{ borderRadius: 8 }}>
               <p className="font-display text-[20px] font-semibold text-[#071D26]">7.4–22 kW</p>
@@ -30,8 +33,8 @@ export default function EvChargingPage() {
               <p className="font-tech mt-1 text-[9px] uppercase tracking-[0.12em] text-[#25C7E8]">DC fast charging for fleets</p>
             </div>
           </div>
-        </div>
-        <div>
+        </Reveal>
+        <Reveal variant="right" delay={120}>
           <SectionHeading
             kicker="Solar + EV together"
             title={<>Fuel the car from the roof, <em className="editorial-accent text-[#008ED6]">not the grid.</em></>}
@@ -53,20 +56,20 @@ export default function EvChargingPage() {
             ))}
           </ul>
           <dl className="mt-7 grid grid-cols-3 gap-6 border-t border-[#E2E8EC] pt-6">
-            {[['120', '+', 'EV points installed'], ['60', 'kW', 'Max DC output'], ['24', '×7', 'Remote monitoring']].map(([v, u, l]) => (
+            {[{ v: 120, u: '+', l: 'EV points installed' }, { v: 60, u: 'kW', l: 'Max DC output' }, { v: 24, u: '×7', l: 'Remote monitoring' }].map(({ v, u, l }) => (
               <div key={l}>
-                <dt className="stat-number text-[#071D26]" style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)' }}>{v}<span className="stat-unit text-[#008ED6]">{u}</span></dt>
+                <dt className="stat-number text-[#071D26]" style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)' }}><CountUp to={v} /><span className="stat-unit text-[#008ED6]">{u}</span></dt>
                 <dd className="micro mt-2 text-[#5B6D77]">{l}</dd>
               </div>
             ))}
           </dl>
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-y border-[#CBE3D4] bg-[#EAF7EE]">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <SectionHeading kicker="Configurations" title="Choose the setup that fits the site." />
-          <Reveal className="mt-10 grid gap-6 md:grid-cols-3">
+          <Stagger className="mt-10 grid gap-6 md:grid-cols-3" step={100}>
             {[
               ['Home charging', '7.4 kW smart AC charger with app, scheduling and solar-priority mode.', 'Single-phase ready · App + RFID'],
               ['Workplace & commercial', 'Multi-point 7.4–22 kW with load balancing and staff billing.', 'Load balancing · Billing reports'],
@@ -78,7 +81,7 @@ export default function EvChargingPage() {
                 <p className="font-tech mt-4 border-t border-[#E2E8EC] pt-4 text-[10px] uppercase tracking-[0.12em] text-[#50656A]">{specs}</p>
               </div>
             ))}
-          </Reveal>
+          </Stagger>
           <div className="mt-6 flex flex-col gap-4 border border-[#E2E8EC] bg-white p-6 sm:flex-row sm:items-center sm:justify-between" style={{ borderRadius: 8 }}>
             <p className="max-w-2xl text-[14.5px] text-[#42545F]">
               <span className="font-semibold text-[#071D26]">Unsure about sanction load?</span> Send a photo of your meter and main breaker — we confirm feasibility before you pay anything.

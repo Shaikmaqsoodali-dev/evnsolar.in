@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Star } from 'lucide-react'
 import { IMG } from '@/lib/brand'
+import { Reveal } from '@/components/motion'
 
 const VIDEO_SRC =
   'https://res.cloudinary.com/qxjpbgh6/video/upload/v1790691758/evn_videoplayback_2.mp4'
@@ -31,13 +32,14 @@ export function VideoHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#071D26]/70 via-transparent to-[#071D26]/25" />
 
       <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-14 sm:pb-20 sm:pt-20">
-        <p
-          className="hero-rise micro flex items-center gap-2.5 text-white/85"
-          style={{ animationDelay: '0.05s' }}
-        >
-          <span className="inline-block size-2 rounded-full bg-[#25C7E8]" aria-hidden />
-          2.4 MW+ solar installed across Maharashtra
-        </p>
+        <Reveal variant="fade" delay={50}>
+          <p
+            className="micro flex items-center gap-2.5 text-white/85"
+          >
+            <span className="inline-block size-2 rounded-full bg-[#25C7E8]" aria-hidden />
+            2.4 MW+ solar installed across Maharashtra
+          </p>
+        </Reveal>
 
         <p aria-hidden className="vertical-micro absolute right-6 top-24 hidden text-white/40 xl:block">
           EVN Solar — Rooftop · EV Charging
@@ -45,43 +47,48 @@ export function VideoHero() {
 
         <div className="mt-8 grid items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
           <div>
-            <h1 className="hero-rise hero-display text-white" style={{ animationDelay: '0.15s' }}>
-              Power your
-              <br />
-              home, business
-              <br />
-              and EV on
-              <br />
-              sunlight.
-            </h1>
-            <p
-              className="hero-rise mt-5 max-w-md text-[15.5px] font-normal leading-[1.7] text-white/75"
-              style={{ animationDelay: '0.3s' }}
-            >
-              Rooftop solar, ground-mounted plants, solar carports and EV
-              charging — engineered as one system, so you cut the bill and
-              drive on sunshine.
-            </p>
-            <div className="hero-rise mt-7 flex flex-wrap gap-3" style={{ animationDelay: '0.45s' }}>
-              <Link
-                href="/contact"
-                className="font-display inline-flex items-center gap-2 bg-white px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-[#071D26] transition-colors hover:bg-[#E8EEF1]"
-                style={{ borderRadius: 6 }}
+            <Reveal variant="blur" delay={160}>
+              <h1 className="hero-display text-white">
+                Power your
+                <br />
+                home, business
+                <br />
+                and EV on
+                <br />
+                sunlight.
+              </h1>
+            </Reveal>
+            <Reveal variant="up" delay={320}>
+              <p
+                className="mt-5 max-w-md text-[15.5px] font-normal leading-[1.7] text-white/75"
               >
-                Get a free site assessment <ArrowRight size={15} />
-              </Link>
-              <Link
-                href="/services"
-                className="font-display inline-flex items-center gap-2 border border-white/40 px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-white transition-colors hover:border-white hover:bg-white/10"
-                style={{ borderRadius: 6 }}
-              >
-                Explore solutions
-              </Link>
-            </div>
+                Rooftop solar, ground-mounted plants, solar carports and EV
+                charging — engineered as one system, so you cut the bill and
+                drive on sunshine.
+              </p>
+            </Reveal>
+            <Reveal variant="up" delay={460}>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="font-display inline-flex items-center gap-2 bg-white px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-[#071D26] transition-colors hover:bg-[#E8EEF1]"
+                  style={{ borderRadius: 6 }}
+                >
+                  Get a free site assessment <ArrowRight size={15} />
+                </Link>
+                <Link
+                  href="/services"
+                  className="font-display inline-flex items-center gap-2 border border-white/40 px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-white transition-colors hover:border-white hover:bg-white/10"
+                  style={{ borderRadius: 6 }}
+                >
+                  Explore solutions
+                </Link>
+              </div>
+            </Reveal>
           </div>
 
           {/* right: testimonial glass card */}
-          <div className="hero-rise lg:pb-2" style={{ animationDelay: '0.6s' }}>
+          <Reveal variant="scale" delay={600} className="lg:pb-2">
             <div
               className="ml-auto w-full border border-white/20 bg-[#0E2A38]/60 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-md sm:max-w-[340px]"
               style={{ borderRadius: 10 }}
@@ -118,14 +125,14 @@ export function VideoHero() {
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* trust row */}
-        <div
-          className="hero-rise mt-12 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-white/15 pt-5"
-          style={{ animationDelay: '0.75s' }}
-        >
+        <Reveal variant="fade" delay={760}>
+          <div
+            className="mt-12 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-white/15 pt-5"
+          >
           <p className="flex items-center gap-2 text-[13px] font-normal text-white/65">
             <span className="font-display text-[16px] font-bold text-white">5.0</span>
             rated service, MNRE-aligned engineering
@@ -141,7 +148,8 @@ export function VideoHero() {
             <span>Industrial</span>
             <span>Fleet & EV</span>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
-import { Reveal } from '@/components/ux-bits'
+import { Stagger } from '@/components/motion'
 
 export const metadata = { title: 'Blog — EVN Solar Energy Solutions' }
 
@@ -25,7 +25,7 @@ export default function BlogPage() {
         crumb={[['Blog', '/blog']]}
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <Reveal className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" step={90}>
           {POSTS.map(({ img, cat, date, t, d }) => (
             <Link key={t} href="/contact" className="group lift border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
               <div className="overflow-hidden">
@@ -43,7 +43,7 @@ export default function BlogPage() {
               </div>
             </Link>
           ))}
-        </Reveal>
+        </Stagger>
       </section>
       <CtaBand />
     </main>
