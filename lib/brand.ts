@@ -10,7 +10,7 @@ export const IMG = {
   rooftop: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790692980/Rooftop_solar_panel_array_installed_202606130858-1024x765.jpeg.webp',
   ground: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80',
   carport: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790769254/csm_Solar-Carports-Header.webp',
-  panel: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80',
+  panel: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790769730/Maintenance_upgrades.png',
   engineer1: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790768743/solar.webp',
   engineer2: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=700&q=80',
   blog1: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=800&q=80',
