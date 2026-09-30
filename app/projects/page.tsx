@@ -16,10 +16,10 @@ const PROJECTS = [
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-[#5da96b]">
+    <main className="bg-[#F2F7F4]">
       <PageIntro
         kicker="Projects"
-        title={<>Work we will stand behind <em className="serif-accent text-[#0083CB]">in writing.</em></>}
+        title={<>Work we will stand behind <em className="editorial-accent text-[#008ED6]">in writing.</em></>}
         lede="A selection of residential, commercial and industrial installations across Maharashtra. Every project includes drawings, test records and a monitoring handover."
         meta={['2.4 MW+ installed', 'Residential to MW-scale', 'Drawings & test records included']}
         crumb={[['Projects', '/projects']]}
@@ -33,20 +33,20 @@ export default function ProjectsPage() {
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#0083CB]">{sector}</p>
-                  <p className="shrink-0 border border-[#E2E8EC] bg-[#F4F6F8] px-2.5 py-1 text-[12px] font-semibold text-[#42545F]" style={{ borderRadius: 6 }}>{size}</p>
+                  <p className="card-cat">{sector}</p>
+                  <p className="font-tech shrink-0 border border-[#E2E8EC] bg-[#F4F6F8] px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] text-[#50656A]" style={{ borderRadius: 6 }}>{size}</p>
                 </div>
-                <h2 className="font-display mt-3 text-[19px] font-semibold text-[#0C1E28]">{t}</h2>
-                <p className="mt-2 text-[14px] leading-relaxed text-[#5B6D77]">{d}</p>
+                <h2 className="card-title mt-3 text-[#071D26]" style={{ fontSize: '19px' }}>{t}</h2>
+                <p className="card-desc mt-2 text-[#50656A]" style={{ fontSize: '13px' }}>{d}</p>
               </div>
             </article>
           ))}
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border border-[#E2E8EC] bg-[#F4F6F8] p-6 sm:flex-row sm:items-center" style={{ borderRadius: 8 }}>
           <p className="text-[15px] text-[#42545F]">
-            <span className="font-semibold text-[#0C1E28]">Have a similar site?</span> Send your bill and photos — we respond with size, generation and subsidy breakup.
+            <span className="font-semibold text-[#071D26]">Have a similar site?</span> Send your bill and photos — we respond with size, generation and subsidy breakup.
           </p>
-          <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 bg-[#0083CB] px-6 py-3 text-[14px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
+          <Link href="/contact" className="font-display inline-flex shrink-0 items-center gap-2 bg-[#008ED6] px-6 py-3 text-[13px] font-semibold tracking-[-0.01em] text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
             Discuss your site <ArrowRight size={15} />
           </Link>
         </div>

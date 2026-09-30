@@ -1,160 +1,159 @@
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
-import { SectionHeading, CtaBand } from '@/components/site-chrome'
+import { CtaBand } from '@/components/site-chrome'
 import { VideoHero } from '@/components/video-hero'
 
 export default function HomePage() {
   return (
-    <main className="bg-[#5da96b]">
+    <main className="bg-white">
       <VideoHero />
 
-      {/* ——— scope strip: brand blue band ——— */}
-      <section className="bg-[#0083CB]">
+      {/* scope strip */}
+      <section className="border-b border-[#E2E8EC] bg-white">
         <div className="mx-auto grid max-w-7xl sm:grid-cols-4">
           {[
-            ['Residential', '1–10 kW rooftop systems'],
-            ['Commercial', '10–500 kW plants'],
+            ['Residential', '1-10 kW rooftop systems'],
+            ['Commercial', '10-500 kW plants'],
             ['Industrial', 'MW-scale + O&M contracts'],
-            ['EV & fleet', 'AC + DC charging'],
+            ['EV & Fleet', 'AC + DC charging'],
           ].map(([t, d]) => (
-            <div key={t} className="border-b border-white/20 px-6 py-5 last:border-0 sm:border-b-0 sm:border-r sm:last:border-0">
-              <p className="text-[14px] font-bold uppercase tracking-[0.06em] text-white">{t}</p>
-              <p className="mt-0.5 text-[13px] text-white/75">{d}</p>
+            <div key={t} className="border-b border-[#E2E8EC] px-6 py-4 last:border-0 sm:border-b-0 sm:border-r sm:last:border-0">
+              <p className="font-display text-[12px] font-semibold uppercase tracking-[0.08em] text-[#071D26]">{t}</p>
+              <p className="mt-1 text-[12.5px] font-normal text-[#64787F]">{d}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ——— 2. ABOUT, Premier "LET'S GO SOLAR" pattern ——— */}
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
-        <div className="relative">
-          <img src={IMG.engineer1} alt="EVN engineering team on site" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 6 }} />
+      {/* ABOUT */}
+      <section className="mx-auto grid max-w-7xl gap-12 bg-white px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
+        <div>
+          <img src={IMG.engineer1} alt="EVN engineering team on site" className="aspect-[16/10] w-full object-cover" style={{ borderRadius: 6 }} />
           <div className="mt-3 grid grid-cols-2 gap-3">
             <img src={IMG.rooftop} alt="Rooftop solar array" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 6 }} />
-            <div className="flex flex-col justify-center bg-[#0083CB] p-6 text-white" style={{ borderRadius: 6 }}>
-              <p className="stat-number" style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)' }}>25<span className="stat-unit">+</span></p>
-              <p className="fineprint mt-2 uppercase leading-snug tracking-[0.12em] text-white/80" style={{ fontWeight: 600 }}>
+            <div className="flex flex-col justify-center bg-[#008ED6] p-6 text-white" style={{ borderRadius: 6 }}>
+              <p className="stat-number text-white">25<span style={{ fontSize: '0.6em' }}>+</span></p>
+              <p className="mt-2 text-[12px] font-medium uppercase leading-snug tracking-[0.08em] text-white/90">
                 Years of clean-energy engineering practice
               </p>
             </div>
           </div>
         </div>
-        <div className="relative">
-          <p className="micro text-[#5B6D77]">01 · About us</p>
-          <h2 className="sx sx-xl mt-4 text-[#0C1E28]">
-            EVN Solar —
-            <br />
-            let&rsquo;s go <em className="serif-accent text-[#0083CB]">solar.</em>
+        <div>
+          <p className="micro flex items-center gap-3 text-[#008ED6]">
+            <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
+            About us
+          </p>
+          <h2 className="sx sx-lg mt-4 text-[#071D26]">
+            EVN Solar<br />let&rsquo;s go solar.
           </h2>
-          <p className="mt-5 text-[15.5px] leading-relaxed text-[#5B6D77]">
+          <p className="mt-4 max-w-lg text-[15px] font-normal leading-[1.75] text-[#33474E]">
             Offering engineered solar and EV-charging solutions, EVN Solar designs
             every site as one electrical system — generation sized to your bill
             and your kilometres, with protection, approvals and monitoring
             included from day one.
           </p>
-          <ul className="mt-7 space-y-3 border-t border-[#E2E8EC] pt-7">
+          <ul className="mt-6 divide-y divide-[#EAEFF2] border-y border-[#EAEFF2]">
             {[
               'Load study, shadow analysis and structure check before quote',
               'Tier-1 modules, tested inverters, galvanised structures',
               'DISCOM liaison with PM Surya Ghar subsidy support',
               'Monitoring handover with 5-year service support',
             ].map((li) => (
-              <li key={li} className="flex items-start gap-3 text-[14.5px] text-[#14242E]">
-                <span className="mt-0.5 grid size-6 shrink-0 place-items-center bg-[#0083CB] text-white" style={{ borderRadius: 4 }}>
-                  <Check size={14} />
+              <li key={li} className="flex items-start gap-3 py-3 text-[14.5px] font-normal leading-relaxed text-[#071D26]">
+                <span className="mt-1 grid size-5 shrink-0 place-items-center bg-[#008ED6] text-white" style={{ borderRadius: 4 }}>
+                  <Check size={12} strokeWidth={3} />
                 </span>
                 {li}
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/about" className="inline-flex items-center gap-2 bg-[#0C1E28] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.08em] text-white hover:bg-[#1a323f]" style={{ borderRadius: 4 }}>
-              More about us <ArrowRight size={15} />
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/about" className="font-display inline-flex items-center gap-2 bg-[#071D26] px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-white hover:bg-[#1a323f]" style={{ borderRadius: 6 }}>
+              More about us <ArrowRight size={14} />
             </Link>
-            <Link href="/projects" className="border border-[#CBD6DD] px-6 py-3 text-[13px] font-bold uppercase tracking-[0.08em] text-[#0C1E28] hover:border-[#0083CB] hover:text-[#0083CB]" style={{ borderRadius: 4 }}>
+            <Link href="/projects" className="font-display border border-[#CBD6DD] px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-[#071D26] hover:border-[#008ED6] hover:text-[#008ED6]" style={{ borderRadius: 6 }}>
               Selected work
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ——— 3. NUMBERS band — numerals as visual objects ——— */}
-      <section className="bg-[#0C1E28] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-14 sm:py-16">
-          <p className="micro text-center text-white/55">
+      {/* NUMBERS */}
+      <section className="bg-[#071D26] text-white">
+        <div className="mx-auto max-w-7xl px-6 py-12 sm:py-14">
+          <p className="micro text-center text-white/40">
             EVN Solar in numbers
           </p>
-          <div className="mx-auto mt-10 grid max-w-5xl gap-px overflow-hidden bg-white/15 text-center sm:grid-cols-4" style={{ borderRadius: 6 }}>
+          <div className="mx-auto mt-8 grid max-w-5xl sm:grid-cols-4">
             {[
-              ['2.4', 'MW+', 'Solar installed'],
-              ['1,000', '+', 'Projects delivered'],
-              ['120', '+', 'EV points installed'],
-              ['5', '-yr', 'Service support'],
-            ].map(([v, u, l]) => (
-              <div key={l} className="bg-[#0C1E28] px-6 py-8">
-                <p className="stat-number text-white">{v}<span className="stat-unit text-[#2EA3E0]">{u}</span></p>
-                <p className="micro mx-auto mt-3 max-w-[160px] text-white/55">{l}</p>
+              ['2.4 MW+', 'Solar installed'],
+              ['1,000+', 'Projects delivered'],
+              ['120+', 'EV points installed'],
+              ['5-yr', 'Service support'],
+            ].map(([v, l], i) => (
+              <div key={l} className={`px-6 py-2 text-center ${i !== 0 ? 'sm:border-l sm:border-white/10' : ''}`}>
+                <p className="stat-number text-white">{v}</p>
+                <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.12em] text-white/50">{l}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ——— 4. PRODUCTS — asymmetric heading, ghost index, serif accent ——— */}
-      <section className="bg-[#EAF3F9]">
+      {/* PRODUCTS */}
+      <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-xl">
-              <p className="micro text-[#0083CB]">02 · Products & solutions</p>
-              <h2 className="sx sx-xl mt-4 text-[#0C1E28]">
-                Turning sunlight
-                <br />
-                <em className="serif-accent text-[#0083CB]">into energy.</em>
-              </h2>
-              <p className="mt-4 max-w-md text-[15px] font-normal leading-relaxed text-[#5B6D77]">
-                Four factory-tested disciplines — each with drawings, protection design and a monitoring handover.
-              </p>
-            </div>
-            <span aria-hidden className="sx-index hidden select-none sm:block">02</span>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="micro flex items-center justify-center gap-3 text-[#008ED6]">
+              <span className="inline-block h-px w-8 bg-[#25C7E8]" aria-hidden />
+              Products & solutions
+              <span className="inline-block h-px w-8 bg-[#25C7E8]" aria-hidden />
+            </p>
+            <h2 className="sx sx-lg mt-4 text-[#071D26]">
+              Turning sunlight into energy.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-[15px] font-normal leading-[1.75] text-[#33474E]">
+              Four factory-tested disciplines — each with drawings, protection design and a monitoring handover.
+            </p>
           </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { img: IMG.rooftop, tag: '1–100 kW', t: 'Rooftop solar', d: 'On-grid and hybrid systems for homes, shops and factories.', href: '/services' },
-            { img: IMG.ground, tag: '100 kW–2 MW', t: 'Ground-mounted', d: 'Land plants with SCADA-ready monitoring and O&M.', href: '/services' },
-            { img: IMG.carport, tag: 'EV-ready', t: 'Solar carports', d: 'Parking that generates power, pre-wired for chargers.', href: '/services' },
-            { img: IMG.evCharge, tag: '7.4–60 kW', t: 'EV charging', d: 'AC and DC chargers with load management and billing.', href: '/ev-charging' },
-          ].map(({ img, tag, t, d, href }) => (
-            <Link key={t} href={href} className="group border border-[#E2E8EC] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(12,30,40,0.12)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
-              <div className="relative overflow-hidden">
-                <img src={img} alt={t} className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" />
-                <span className="absolute left-4 top-4 bg-[#0C1E28]/90 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-white" style={{ borderRadius: 4 }}>{tag}</span>
-              </div>
-              <div className="p-5">
-                <p className="flex items-center justify-between font-display text-[16px] font-bold uppercase tracking-[0.02em] text-[#0C1E28]">
-                  {t} <ArrowUpRight size={16} className="text-[#0083CB]" />
-                </p>
-                <p className="mt-1.5 text-[13.5px] leading-relaxed text-[#5B6D77]">{d}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { img: IMG.rooftop, tag: '1-100 kW', t: 'Rooftop solar', d: 'On-grid and hybrid systems for homes, shops and factories.', href: '/services' },
+              { img: IMG.ground, tag: '100 kW-2 MW', t: 'Ground-mounted', d: 'Land plants with SCADA-ready monitoring and O&M.', href: '/services' },
+              { img: IMG.carport, tag: 'EV-ready', t: 'Solar carports', d: 'Parking that generates power, pre-wired for chargers.', href: '/services' },
+              { img: IMG.evCharge, tag: '7.4-60 kW', t: 'EV charging', d: 'AC and DC chargers with load management and billing.', href: '/ev-charging' },
+            ].map(({ img, tag, t, d, href }) => (
+              <Link key={t} href={href} className="group border border-[#E2E8EC] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,29,38,0.12)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
+                <div className="relative overflow-hidden">
+                  <img src={img} alt={t} className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" />
+                  <span className="absolute left-3 top-3 bg-[#008ED6] px-2 py-1 text-[10.5px] font-semibold uppercase tracking-[0.06em] text-white" style={{ borderRadius: 4, fontFamily: 'var(--font-body)' }}>{tag}</span>
+                </div>
+                <div className="p-5">
+                  <p className="card-title flex items-center justify-between text-[#071D26]">
+                    {t} <ArrowUpRight size={16} className="card-arrow" />
+                  </p>
+                  <p className="card-desc mt-1.5 text-[#42565D]">{d}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ——— 5. TECHNOLOGY on deep brand-navy ——— */}
-      <section className="bg-[#0C1E28] text-white">
+      {/* TECHNOLOGY */}
+      <section className="bg-[#F4F6F8]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="micro text-[#2EA3E0]">
-              <span className="micro-pill">03 · Technology</span>
+            <p className="micro flex items-center gap-3 text-[#008ED6]">
+              <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
+              Technology
             </p>
-            <h2 className="sx sx-xl mt-5 text-white">
-              Leading-edge
-              <br />
-              technology <em className="serif-accent text-[#2EA3E0]">at work.</em>
+            <h2 className="sx sx-lg mt-4 text-[#071D26]">
+              Leading-edge technology at work.
             </h2>
-            <p className="mt-4 text-[15.5px] leading-relaxed text-white/70">
+            <p className="mt-4 max-w-lg text-[15px] font-normal leading-[1.75] text-[#33474E]">
               High-efficiency TOPCon modules, tested string and micro-inverters,
               and OCPP chargers — commissioned with insulation, earthing and
               protection tests you receive in writing.
@@ -166,9 +165,9 @@ export default function HomePage() {
                 ['Engineered structures', 'Galvanised, wind-rated, waterproof options.'],
                 ['Protected & metered', 'Earthing, surge, net-metering included.'],
               ].map(([t, d]) => (
-                <div key={t} className="border border-white/15 bg-white/5 p-5" style={{ borderRadius: 6 }}>
-                  <p className="text-[14px] font-bold text-white">{t}</p>
-                  <p className="mt-1 text-[13px] leading-relaxed text-white/60">{d}</p>
+                <div key={t} className="border border-[#E2E8EC] bg-white p-5" style={{ borderRadius: 6 }}>
+                  <p className="tech-label text-[#071D26]">{t}</p>
+                  <p className="tech-desc mt-1.5 text-[#42565D]">{d}</p>
                 </div>
               ))}
             </div>
@@ -176,10 +175,10 @@ export default function HomePage() {
           <div>
             <img src={IMG.panel} alt="Solar module close-up" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 6 }} />
             <div className="mt-3 flex items-center justify-between border border-[#E2E8EC] bg-white px-5 py-3.5" style={{ borderRadius: 6 }}>
-              <p className="text-[13px] font-medium text-[#42545F]">
-                <span className="font-bold text-[#0C1E28]">Module efficiency to 23%+</span> — generation verified in-app
+              <p className="text-[13.5px] font-normal text-[#42565D]">
+                <span className="font-display font-semibold text-[#071D26]">Module efficiency to 23%+</span> — generation verified in-app
               </p>
-              <Link href="/services" className="flex shrink-0 items-center gap-1 text-[13px] font-bold text-[#0083CB]">
+              <Link href="/services" className="font-display flex shrink-0 items-center gap-1 text-[13px] font-semibold text-[#008ED6]">
                 Details <ArrowUpRight size={14} />
               </Link>
             </div>
@@ -187,17 +186,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ——— 6. NEWS — right-offset heading, card titles in grotesk ——— */}
-      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+      {/* NEWS */}
+      <section className="mx-auto max-w-7xl bg-white px-6 py-14 sm:py-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading
-            align="right"
-            size="md"
-            kicker="04 · News & projects"
-            title={<>Recent work and <em className="serif-accent text-[#0083CB]">updates.</em></>}
-          />
-          <Link href="/projects" className="flex items-center gap-1.5 text-[14px] font-bold text-[#0083CB]">
-            All projects <ArrowRight size={15} />
+          <div className="max-w-2xl">
+            <p className="micro flex items-center gap-3 text-[#008ED6]">
+              <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
+              News & projects
+            </p>
+            <h2 className="sx sx-md mt-4 text-[#071D26]">
+              Recent work and updates.
+            </h2>
+          </div>
+          <Link href="/projects" className="font-display flex items-center gap-1.5 text-[13px] font-semibold text-[#008ED6]">
+            All projects <ArrowRight size={14} />
           </Link>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -206,40 +208,51 @@ export default function HomePage() {
             { img: IMG.ground, cat: 'Industrial · Malegaon', t: '120 kW ground-mounted plant', d: 'Scheduled fleet charging with generation and load reporting.' },
             { img: IMG.carport, cat: 'Commercial · Campus', t: '40 kW solar carport, EV-ready', d: 'Shaded parking with charger conduits and lighting.' },
           ].map(({ img, cat, t, d }) => (
-            <article key={t} className="group border border-[#E2E8EC] bg-white transition-shadow hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
+            <article key={t} className="group border border-[#E2E8EC] bg-white transition-shadow hover:shadow-[0_12px_36px_rgba(7,29,38,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
               <div className="overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
-              <div className="p-6">
-                <p className="text-[11.5px] font-bold uppercase tracking-[0.14em] text-[#0083CB]">{cat}</p>
-                <h3 className="font-display mt-2 text-[17px] font-bold text-[#0C1E28]">{t}</h3>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-[#5B6D77]">{d}</p>
+              <div className="p-5">
+                <p className="card-cat">{cat}</p>
+                <h3 className="card-title mt-2 text-[#071D26]">{t}</h3>
+                <p className="card-desc mt-1.5 text-[#42565D]">{d}</p>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* ——— 7. Testimonials — serif pull-quotes, micro attributions ——— */}
-      <section className="border-t border-[#D8E5DB] bg-[#EDF5EF]">
+      {/* TESTIMONIALS */}
+      <section className="border-t border-[#EAEFF2] bg-white">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-          <SectionHeading center size="lg" kicker="05 · Client notes" title={<>Trusted for <em className="serif-accent text-[#1E7A3C]">engineering,</em> not just installation.</>} />
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="micro flex items-center justify-center gap-3 text-[#008ED6]">
+              <span className="inline-block h-px w-8 bg-[#25C7E8]" aria-hidden />
+              Client notes
+              <span className="inline-block h-px w-8 bg-[#25C7E8]" aria-hidden />
+            </p>
+            <h2 className="sx sx-md mt-4 text-[#071D26]">
+              Trusted for engineering, not just installation.
+            </h2>
+          </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               ['Logistics depot, Malegaon', 'EVN combined our rooftop plant and depot charging in a single project. Bills are down 68% in six months.'],
               ['Homeowner, Nashik', '5 kW rooftop with a 7.4 kW home charger. Subsidy paperwork handled; the app shows every unit.'],
               ['Warehouse, Malegaon', '120 kW plant with scheduled fleet charging. Safety-first execution, reliable service.'],
             ].map(([who, quote]) => (
-              <figure key={who} className="flex flex-col border border-[#D8E5DB] border-t-4 border-t-[#1E7A3C] bg-white p-6" style={{ borderRadius: 6 }}>
-                <blockquote className="quote-ed flex-1 text-[#14242E]">&ldquo;{quote}&rdquo;</blockquote>
-                <figcaption className="micro mt-6 border-t border-[#E2E8EC] pt-4 text-[#0C1E28]">{who}</figcaption>
+              <figure key={who} className="flex flex-col border border-[#E2E8EC] bg-white p-6" style={{ borderRadius: 6 }}>
+                <blockquote className="quote-ed flex-1 text-[#071D26]">&ldquo;{quote}&rdquo;</blockquote>
+                <figcaption className="quote-by mt-6 border-t border-[#EAEFF2] pt-4 text-[#42565D]">{who}</figcaption>
               </figure>
             ))}
           </div>
         </div>
       </section>
 
-      <CtaBand />
+      <div className="bg-white">
+        <CtaBand />
+      </div>
     </main>
   )
 }

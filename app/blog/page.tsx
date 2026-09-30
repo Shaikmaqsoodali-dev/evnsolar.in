@@ -16,10 +16,10 @@ const POSTS = [
 
 export default function BlogPage() {
   return (
-    <main className="bg-[#5da96b]">
+    <main className="bg-[#F2F7F4]">
       <PageIntro
         kicker="Notes from site"
-        title={<>Practical guides, <em className="serif-accent text-[#0083CB]">not brochures.</em></>}
+        title={<>Practical guides, <em className="editorial-accent text-[#008ED6]">not brochures.</em></>}
         lede="Sizing worksheets, subsidy walkthroughs and maintenance checklists from our survey and service teams."
         crumb={[['Blog', '/blog']]}
       />
@@ -31,13 +31,13 @@ export default function BlogPage() {
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
               <div className="p-6">
-                <p className="flex items-center justify-between text-[12px] font-semibold uppercase tracking-[0.12em] text-[#0083CB]">
-                  {cat} <span className="font-medium normal-case tracking-normal text-[#8A9AA3]">{date}</span>
+                <p className="card-cat flex items-center justify-between">
+                  {cat} <span className="font-tech font-medium normal-case tracking-[0.04em] text-[#8A9AA3]">{date}</span>
                 </p>
-                <h2 className="font-display mt-2 text-[18px] font-semibold leading-snug text-[#0C1E28]">{t}</h2>
-                <p className="mt-2 text-[14px] leading-relaxed text-[#5B6D77]">{d}</p>
-                <p className="mt-4 flex items-center gap-1 text-[13.5px] font-semibold text-[#0C1E28] group-hover:text-[#0083CB]">
-                  Ask us about this <ArrowUpRight size={14} />
+                <h2 className="card-title mt-2 text-[#071D26]" style={{ fontSize: '18px', lineHeight: 1.35 }}>{t}</h2>
+                <p className="card-desc mt-2 text-[#50656A]" style={{ fontSize: '13px' }}>{d}</p>
+                <p className="font-display mt-4 flex items-center gap-1 text-[13px] font-semibold tracking-[-0.01em] text-[#071D26] group-hover:text-[#008ED6]">
+                  Ask us about this <ArrowUpRight size={14} className="card-arrow" />
                 </p>
               </div>
             </Link>

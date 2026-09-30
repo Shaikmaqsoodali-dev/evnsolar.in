@@ -31,10 +31,10 @@ const SERVICES = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-[#5da96b]">
+    <main className="bg-[#F2F7F4]">
       <PageIntro
         kicker="Solar services"
-        title={<>Solar for every roof, plot and <em className="serif-accent text-[#0083CB]">parking lot.</em></>}
+        title={<>Solar for every roof, plot and <em className="editorial-accent text-[#008ED6]">parking lot.</em></>}
         lede="On-grid, hybrid and battery-ready systems with engineering drawings, DISCOM liaison and verified generation — not just installation."
         meta={['On-grid · Hybrid · Battery-ready', 'Tier-1 modules, tested inverters', 'Subsidy & net-metering handled']}
         crumb={[['Solar', '/services']]}
@@ -46,24 +46,24 @@ export default function ServicesPage() {
             <article key={t} className={`grid gap-0 overflow-hidden border border-[#E2E8EC] lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`} style={{ borderRadius: 10 }}>
               <div className="relative min-h-[280px]">
                 <img src={img} alt={t} className="absolute inset-0 h-full w-full object-cover" />
-                <span className="absolute left-5 top-5 bg-[#0C1E28] px-3 py-1.5 text-[12px] font-semibold text-white" style={{ borderRadius: 6 }}>{tag}</span>
+                <span className="card-cat card-cat--on-dark absolute left-5 top-5 bg-[#071D26] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
               </div>
               <div className="p-8 sm:p-10">
-                <p className="text-[13px] font-semibold tabular-nums text-[#0083CB]">{n}</p>
-                <h2 className="font-display mt-2 text-[26px] font-semibold text-[#0C1E28]">{t}</h2>
+                <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#008ED6]">{n}</p>
+                <h2 className="font-display mt-2 text-[26px] font-semibold tracking-[-0.02em] text-[#071D26]">{t}</h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-[#5B6D77]">{d}</p>
                 <ul className="mt-6 space-y-2.5 border-t border-[#E2E8EC] pt-6">
                   {points.map((p) => (
                     <li key={p} className="flex items-start gap-2.5 text-[14.5px] text-[#14242E]">
-                      <Check size={17} className="mt-0.5 shrink-0 text-[#1E7A3C]" /> {p}
+                      <Check size={17} className="mt-0.5 shrink-0 text-[#008ED6]" /> {p}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <Link href="/contact" className="inline-flex items-center gap-2 bg-[#0083CB] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
+                  <Link href="/contact" className="inline-flex items-center gap-2 bg-[#008ED6] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
                     Get sizing <ArrowRight size={15} />
                   </Link>
-                  <Link href="/pricing" className="border border-[#CBD6DD] px-5 py-2.5 text-[14px] font-semibold text-[#0C1E28] hover:border-[#0083CB] hover:text-[#0083CB]" style={{ borderRadius: 6 }}>
+                  <Link href="/pricing" className="border border-[#CBD6DD] px-5 py-2.5 text-[14px] font-semibold text-[#071D26] hover:border-[#008ED6] hover:text-[#008ED6]" style={{ borderRadius: 6 }}>
                     Sizes & pricing
                   </Link>
                 </div>
@@ -75,7 +75,7 @@ export default function ServicesPage() {
 
       <section className="border-t border-[#E2E8EC] bg-[#F4F6F8]">
         <div className="mx-auto max-w-7xl px-6 py-14">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#0083CB]">Included in every project</p>
+          <p className="micro text-[#008ED6]">Included in every project</p>
           <div className="mt-5 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-3" style={{ borderRadius: 8 }}>
             {['Earthing & lightning protection', 'Surge, MCB & MCCB protection', 'Cable routing & labelling', 'Generation & consumption monitoring', 'DISCOM & subsidy documentation', 'Handover training & manuals'].map((x) => (
               <p key={x} className="bg-white px-5 py-4 text-[14px] font-medium text-[#14242E]">{x}</p>
@@ -85,8 +85,8 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#0083CB]">Common questions</p>
-        <h2 className="section-title mt-3 text-[26px] text-[#0C1E28] sm:text-[32px]">Before you ask.</h2>
+        <p className="micro text-[#008ED6]">Common questions</p>
+        <h2 className="section-title mt-3 text-[26px] text-[#071D26] sm:text-[32px]">Before you ask.</h2>
         <div className="mt-8">
           <Faq
             items={[

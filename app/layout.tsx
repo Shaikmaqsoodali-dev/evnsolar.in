@@ -1,35 +1,48 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Montserrat, Archivo, Fraunces } from 'next/font/google'
+import { Space_Grotesk, Inter, DM_Serif_Display, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
 import { BackToTop, MobileCtaBar } from '@/components/ux-bits'
 
-const body = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
-const display = Montserrat({
+/* BODY - Inter: paragraphs, lists, UI text. Readable at 14-16px. */
+const body = Inter({
+  subsets: ['latin'],
+  variable: '--font-body',
+  weight: ['400', '500', '600'],
+  display: 'swap',
+})
+/* DISPLAY - Space Grotesk: headings, numbers, nav, buttons only. Never body copy. */
+const display = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['500', '600', '700', '800'],
+  weight: ['500', '600', '700'],
   display: 'swap',
 })
-/* Editorial grotesk for oversized headlines — tight, high-contrast scale */
-const grot = Archivo({
+const grot = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-grot',
-  weight: ['500', '700', '800', '900'],
+  weight: ['500', '600', '700'],
   display: 'swap',
 })
-/* Editorial serif for italic accent words + pull quotes */
-const serifEd = Fraunces({
+/* QUOTES ONLY - DM Serif italic for testimonial quotes. Nowhere else. */
+const serifEd = DM_Serif_Display({
   subsets: ['latin'],
   variable: '--font-serif-ed',
   style: ['normal', 'italic'],
-  weight: ['400', '500', '600'],
+  weight: ['400'],
+  display: 'swap',
+})
+/* DATA ONLY - IBM Plex Mono: stat numbers labels + footer meta. Not eyebrows. */
+const tech = IBM_Plex_Mono({
+  subsets: ['latin'],
+  variable: '--font-tech',
+  weight: ['400', '500'],
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'EVN Solar Energy Solutions — Rooftop Solar & EV Charging, Maharashtra',
+  title: 'EVN Solar Energy Solutions - Rooftop Solar & EV Charging, Maharashtra',
   description:
     'EVN Solar Energy Solutions designs and installs rooftop solar, ground-mounted plants, solar carports and EV charging infrastructure. Site survey, DISCOM liaison, subsidy support and 5-year service.',
   icons: {
@@ -44,19 +57,19 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#5da96b',
+  themeColor: '#071D26',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${body.variable} ${display.variable} ${grot.variable} ${serifEd.variable}`}>
-      <body className="bg-[#5da96b] text-[#14242E] antialiased">
+    <html lang="en" className={`${body.variable} ${display.variable} ${grot.variable} ${serifEd.variable} ${tech.variable}`}>
+      <body className="bg-white text-[#071D26] antialiased">
         <SiteHeader />
         {children}
         <SiteFooter />
         <BackToTop />
         <MobileCtaBar />
-        <div className="h-[54px] bg-[#5da96b] sm:hidden" aria-hidden />
+        <div className="h-[54px] bg-[#071D26] sm:hidden" aria-hidden />
       </body>
     </html>
   )

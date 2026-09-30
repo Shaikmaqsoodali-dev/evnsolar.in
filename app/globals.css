@@ -2,20 +2,40 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+@theme {
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-grot: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-serif-ed: 'DM Serif Display', Georgia, serif;
+  --font-tech: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
 :root {
-  --brand: #0083cb;
-  --brand-dark: #00659d;
-  --brand-ink: #0c1e28;
-  --accent: #1e7a3c;
-  --paper: #5da96b;
-  --wash: #f4f6f8;
-  --ink: #14242e;
-  --muted: #5b6d77;
+  --navy: #071d26;
+  --green: #3bb54a;
+  --green-bright: #6fdf8f;
+  --blue: #008ed6;
+  --cyan: #25c7e8;
+  --offwhite: #f2f7f4;
+  --warmwhite: #f7f4ec;
+  --muted: #789096;
   --line: #e2e8ec;
-  --font-display: 'Montserrat', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-grot: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-serif-ed: 'Fraunces', Georgia, serif;
+
+  --brand: #008ed6;
+  --brand-dark: #00659d;
+  --brand-ink: #071d26;
+  --accent: #3bb54a;
+  --paper: #f2f7f4;
+  --wash: #f4f6f8;
+  --ink: #071d26;
+  --muted-tx: #42565d;
+  --body-tx: #33474e;
+
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-grot: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-serif-ed: 'DM Serif Display', Georgia, serif;
+  --font-tech: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 html {
@@ -24,26 +44,36 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: #fff;
+  color: var(--body-tx);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15.5px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+/* Display type is HEADINGS ONLY. Body copy never uses it. */
 h1,
 h2,
 h3,
 .font-display {
   font-family: var(--font-grot);
-  letter-spacing: -0.015em;
-  line-height: 1.05;
+  letter-spacing: 0;
+  line-height: 1.12;
   text-wrap: balance;
 }
 
-/* video-hero entrance (dependency-free TimelineAnimation equivalent) */
+p {
+  text-wrap: pretty;
+}
+
+nav a,
+header a {
+  font-family: var(--font-grot);
+}
+
+/* video-hero entrance */
 @keyframes hero-rise {
   from {
     opacity: 0;
@@ -68,100 +98,133 @@ h3,
     animation: none;
   }
 }
-.section-title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  line-height: 1.12;
-}
 
-/* Legacy alias — maps old uniform titles onto the editorial scale */
 .section-title {
   font-family: var(--font-grot);
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.015em;
-  line-height: 0.98;
+  letter-spacing: 0.015em;
+  line-height: 1.1;
   text-wrap: balance;
 }
 
-/* ——— Place-wise editorial typography ——— */
-
-/* 1. HERO: oversized grotesk, tight leading, compositional — never auto-wrapped */
+/* 1. HERO - homepage only. Uppercase grotesk, comfortable leading. */
 .hero-display {
   font-family: var(--font-grot);
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.03em;
-  line-height: 0.92;
+  letter-spacing: 0.005em;
+  line-height: 1.04;
   text-wrap: balance;
-  font-size: clamp(3rem, 8.5vw, 6.75rem);
+  font-size: clamp(40px, 5vw, 68px);
+  overflow-wrap: break-word;
+}
+.hero-display .hero-heavy {
+  font-weight: 700;
 }
 .hero-display .thin {
   font-weight: 500;
-  letter-spacing: -0.02em;
+  color: inherit;
+}
+.hero-display .editorial-accent,
+.hero-display .serif-accent {
+  display: inline;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: inherit;
 }
 
-/* Serif italic accent word inside grotesk headlines — the art-director contrast */
-.serif-accent {
+/* 1b. SUBPAGE HERO - sentence case so it contrasts with uppercase section heads. */
+.page-hero {
+  font-family: var(--font-grot);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  font-size: clamp(32px, 4vw, 52px);
+}
+.page-hero .editorial-accent,
+.page-hero .serif-accent {
   font-family: var(--font-serif-ed);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Serif accent ONLY inside sentence-case headings + quotes. Never in all-caps. */
+.serif-accent,
+.editorial-accent {
+  font-family: var(--font-serif-ed);
+  font-style: italic;
+  font-weight: 400;
   text-transform: none;
   letter-spacing: -0.01em;
 }
 
-/* 2. SECTION HEADINGS: editorial grotesk, per-place scale via .sx-xl / .sx-lg */
+/* 2. SECTION HEADINGS - uppercase but calm: positive tracking, open leading, smaller. */
 .sx {
   font-family: var(--font-grot);
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.015em;
-  line-height: 0.98;
+  letter-spacing: 0.015em;
+  line-height: 1.12;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
-.sx-xl { font-size: clamp(2.1rem, 4.6vw, 3.6rem); }
-.sx-lg { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
-.sx-md { font-size: clamp(1.35rem, 2.4vw, 1.9rem); }
+.sx-xl { font-size: clamp(30px, 3.2vw, 44px); }
+.sx-lg { font-size: clamp(27px, 2.8vw, 38px); }
+.sx-md { font-size: clamp(23px, 2.4vw, 31px); }
+.sx .thin {
+  font-weight: 500;
+}
+.sx .editorial-accent,
+.sx .serif-accent {
+  font-size: 1em;
+}
 
-/* Oversized ghost index numeral beside section headings */
+.cta-bold { font-weight: 700; letter-spacing: 0.01em; }
+.cta-med { font-weight: 500; letter-spacing: 0.01em; }
+
+/* Ghost index numeral - subtle, not outlined neon. */
 .sx-index {
   font-family: var(--font-grot);
-  font-weight: 900;
-  font-size: clamp(3.4rem, 7vw, 5.5rem);
+  font-weight: 700;
+  font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 1;
-  letter-spacing: -0.04em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px #0083cb;
+  letter-spacing: -0.02em;
+  color: #dbe7ee;
   user-select: none;
 }
-.sx-index.on-dark { -webkit-text-stroke-color: #2ea3e0; }
+.sx-index.on-dark { color: rgb(255 255 255 / 0.12); }
 
-/* 3. PRICE / KEY NUMBER as visual object — numeral dominates, unit small */
+/* 3. NUMBERS - grotesk numerals, sans labels. */
 .stat-number {
   font-family: var(--font-grot);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
   font-variant-numeric: tabular-nums;
-  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  font-size: clamp(30px, 3vw, 42px);
 }
 .stat-unit {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.42em;
-  letter-spacing: 0.08em;
-  vertical-align: super;
+  font-family: var(--font-grot);
+  font-weight: 600;
+  font-size: 0.5em;
+  letter-spacing: 0;
+  margin-left: 0.1em;
 }
 
-/* 4. BADGE / LABEL / CATEGORY — compact uppercase micro treatments */
+/* 4. EYEBROWS - clean sans, never mono. Mono eyebrows looked cheap/terminal-like. */
 .micro {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-size: 11.5px;
   line-height: 1.5;
 }
 .micro-pill {
@@ -178,33 +241,109 @@ h3,
   left: 0.9rem;
 }
 
-/* 6. SMALL INFO — quiet, spaced, never bold */
-.fineprint {
-  font-size: 12.5px;
+/* Cards - normal-case titles (readable), sans body. No mono. */
+.card-cat {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--blue);
+}
+.card-cat--on-dark { color: #fff; }
+.card-title {
+  font-family: var(--font-grot);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+.card-desc {
+  font-family: var(--font-body);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.card-arrow {
+  color: var(--blue);
+}
+
+.tech-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.tech-desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13.5px;
   line-height: 1.7;
 }
 
-/* Editorial pull-quote — serif italic, generous scale */
+.fineprint {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+
+/* Quotes - the ONLY place serif is used. Sans attribution. */
 .quote-ed {
   font-family: var(--font-serif-ed);
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
-  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  letter-spacing: 0;
+  line-height: 1.6;
+  font-size: 17.5px;
   text-wrap: pretty;
 }
+.quote-by {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10.5px;
+  line-height: 1.6;
+}
 
-/* Vertical micro-label for edges/corners */
+.foot-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 10.5px;
+  line-height: 1.6;
+}
+.foot-link {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.foot-copy {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+
 .vertical-micro {
   writing-mode: vertical-rl;
   rotate: 180deg;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  font-size: 10.5px;
+  text-transform: uppercase;
 }
 
 ::selection {
-  background: #0083cb;
+  background: var(--blue);
   color: #fff;
 }
 
@@ -212,11 +351,25 @@ img {
   max-width: 100%;
 }
 
-/* thin editorial rules + tables */
 .rule {
   border-color: var(--line);
 }
 
 .prose-tight p {
-  line-height: 1.65;
+  line-height: 1.75;
+}
+
+/* Responsive guards */
+@media (max-width: 1023px) {
+  .hero-display { font-size: clamp(38px, 6.5vw, 56px); }
+  .page-hero { font-size: clamp(30px, 5.5vw, 44px); }
+}
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .hero-display { font-size: clamp(34px, 9vw, 44px); line-height: 1.06; }
+  .page-hero { font-size: clamp(28px, 8vw, 38px); line-height: 1.08; }
+  .sx-xl { font-size: clamp(27px, 7.5vw, 36px); }
+  .sx-lg { font-size: clamp(25px, 7vw, 33px); }
+  .stat-number { font-size: clamp(28px, 9vw, 38px); }
+  .quote-ed { font-size: 16.5px; }
 }

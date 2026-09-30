@@ -8,10 +8,10 @@ export const metadata = { title: 'EV Charging — EVN Solar Energy Solutions' }
 
 export default function EvChargingPage() {
   return (
-    <main className="bg-[#5da96b]">
+    <main className="bg-[#F2F7F4]">
       <PageIntro
         kicker="EV charging infrastructure"
-        title={<>Charge at home, at work — preferably <em className="serif-accent text-[#1E7A3C]">on sunlight.</em></>}
+        title={<>Charge at home, at work — preferably <em className="editorial-accent text-[#008ED6]">on sunlight.</em></>}
         lede="7.4–60 kW AC and DC chargers with load management, solar-priority charging, billing and fleet reporting for homes, offices and depots."
         meta={['7.4–22 kW AC · 30–60 kW DC', 'OCPP with remote diagnostics', 'Load study before you pay']}
         crumb={[['EV Charging', '/ev-charging']]}
@@ -22,19 +22,19 @@ export default function EvChargingPage() {
           <img src={IMG.evCharge} alt="Electric vehicle charging" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 8 }} />
           <div className="mt-3 grid grid-cols-2 gap-3">
             <div className="border border-[#E2E8EC] bg-[#F4F6F8] p-5" style={{ borderRadius: 8 }}>
-              <p className="font-display text-[20px] font-semibold text-[#0C1E28]">7.4–22 kW</p>
+              <p className="font-display text-[20px] font-semibold text-[#071D26]">7.4–22 kW</p>
               <p className="mt-1 text-[13px] text-[#5B6D77]">AC home & workplace charging</p>
             </div>
-            <div className="bg-[#0C1E28] p-5 text-white" style={{ borderRadius: 8 }}>
-              <p className="font-display text-[20px] font-semibold">30–60 kW</p>
-              <p className="mt-1 text-[13px] text-white/65">DC fast charging for fleets</p>
+            <div className="bg-[#071D26] p-5 text-[#F7F4EC]" style={{ borderRadius: 8 }}>
+              <p className="font-display text-[20px] font-semibold tracking-[-0.02em]">30–60 kW</p>
+              <p className="font-tech mt-1 text-[9px] uppercase tracking-[0.12em] text-[#25C7E8]">DC fast charging for fleets</p>
             </div>
           </div>
         </div>
         <div>
           <SectionHeading
             kicker="Solar + EV together"
-            title={<>Fuel the car from the roof, <em className="serif-accent text-[#0083CB]">not the grid.</em></>}
+            title={<>Fuel the car from the roof, <em className="editorial-accent text-[#008ED6]">not the grid.</em></>}
             lede="A 5 kW rooftop generates roughly 20–22 units a day — about 120–150 km of driving. We size solar for your current bill plus your EV kilometres, and set charging priority accordingly."
           />
           <ul className="mt-7 space-y-3 border-t border-[#E2E8EC] pt-7">
@@ -45,7 +45,7 @@ export default function EvChargingPage() {
               'OCPP chargers with remote diagnostics and service',
             ].map((li) => (
               <li key={li} className="flex items-start gap-3 text-[15px] text-[#14242E]">
-                <span className="mt-0.5 grid size-6 shrink-0 place-items-center bg-[#1E7A3C] text-white" style={{ borderRadius: 6 }}>
+                <span className="mt-0.5 grid size-6 shrink-0 place-items-center bg-[#008ED6] text-white" style={{ borderRadius: 6 }}>
                   <Check size={14} />
                 </span>
                 {li}
@@ -55,7 +55,7 @@ export default function EvChargingPage() {
           <dl className="mt-7 grid grid-cols-3 gap-6 border-t border-[#E2E8EC] pt-6">
             {[['120', '+', 'EV points installed'], ['60', 'kW', 'Max DC output'], ['24', '×7', 'Remote monitoring']].map(([v, u, l]) => (
               <div key={l}>
-                <dt className="stat-number text-[#0C1E28]" style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)' }}>{v}<span className="stat-unit text-[#1E7A3C]">{u}</span></dt>
+                <dt className="stat-number text-[#071D26]" style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)' }}>{v}<span className="stat-unit text-[#008ED6]">{u}</span></dt>
                 <dd className="micro mt-2 text-[#5B6D77]">{l}</dd>
               </div>
             ))}
@@ -73,17 +73,17 @@ export default function EvChargingPage() {
               ['Fleet & DC fast', '30–60 kW DC fast with depot layout and solar + storage integration.', 'Depot design · OCPP + CMS'],
             ].map(([t, d, specs]) => (
               <div key={t} className="border border-[#E2E8EC] bg-white p-7" style={{ borderRadius: 8 }}>
-                <p className="font-display text-[18px] font-semibold text-[#0C1E28]">{t}</p>
+                <p className="font-display text-[18px] font-semibold text-[#071D26]">{t}</p>
                 <p className="mt-2 text-[14.5px] leading-relaxed text-[#5B6D77]">{d}</p>
-                <p className="mt-4 border-t border-[#E2E8EC] pt-4 text-[13px] font-medium text-[#42545F]">{specs}</p>
+                <p className="font-tech mt-4 border-t border-[#E2E8EC] pt-4 text-[10px] uppercase tracking-[0.12em] text-[#50656A]">{specs}</p>
               </div>
             ))}
           </div>
           <div className="mt-6 flex flex-col gap-4 border border-[#E2E8EC] bg-white p-6 sm:flex-row sm:items-center sm:justify-between" style={{ borderRadius: 8 }}>
             <p className="max-w-2xl text-[14.5px] text-[#42545F]">
-              <span className="font-semibold text-[#0C1E28]">Unsure about sanction load?</span> Send a photo of your meter and main breaker — we confirm feasibility before you pay anything.
+              <span className="font-semibold text-[#071D26]">Unsure about sanction load?</span> Send a photo of your meter and main breaker — we confirm feasibility before you pay anything.
             </p>
-            <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 bg-[#1E7A3C] px-6 py-3 text-[14px] font-semibold text-white hover:bg-[#165c2d]" style={{ borderRadius: 6 }}>
+            <Link href="/contact" className="font-display inline-flex shrink-0 items-center gap-2 bg-[#008ED6] px-6 py-3 text-[13px] font-semibold tracking-[-0.01em] text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
               Check feasibility <ArrowRight size={15} />
             </Link>
           </div>
@@ -91,8 +91,8 @@ export default function EvChargingPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#0083CB]">Common questions</p>
-        <h2 className="section-title mt-3 text-[26px] text-[#0C1E28] sm:text-[32px]">Before you ask.</h2>
+        <p className="micro text-[#008ED6]">Common questions</p>
+        <h2 className="section-title mt-3 text-[26px] text-[#071D26] sm:text-[32px]">Before you ask.</h2>
         <div className="mt-8">
           <Faq
             items={[

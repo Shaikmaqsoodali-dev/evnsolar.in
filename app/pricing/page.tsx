@@ -22,10 +22,10 @@ const PLANS = [
 
 export default function PricingPage() {
   return (
-    <main className="bg-[#5da96b]">
+    <main className="bg-[#F2F7F4]">
       <PageIntro
         kicker="Sizes & pricing"
-        title={<>Start with the right size. <em className="serif-accent text-[#0083CB]">Expand later.</em></>}
+        title={<>Start with the right size. <em className="editorial-accent text-[#008ED6]">Expand later.</em></>}
         lede="Indicative starting points. Your final proposal follows a site survey and includes a generation estimate, subsidy breakup and payment schedule."
         meta={['Survey before final quote', 'PM Surya Ghar guidance', 'EMI & staged payments']}
         crumb={[['Pricing', '/pricing']]}
@@ -35,32 +35,32 @@ export default function PricingPage() {
           {PLANS.map(({ name, big, small, d, feat, cta, featured }) => (
             <div
               key={name}
-              className={`flex flex-col border p-8 ${featured ? 'border-[#0C1E28] bg-[#0C1E28] text-white' : 'border-[#E2E8EC] bg-white'}`}
+              className={`flex flex-col border p-8 ${featured ? 'border-[#071D26] bg-[#071D26] text-white' : 'border-[#E2E8EC] bg-white'}`}
               style={{ borderRadius: 10 }}
             >
               <div className="flex items-center justify-between gap-3">
-                <p className={`text-[13px] font-semibold uppercase tracking-[0.12em] ${featured ? 'text-white/60' : 'text-[#0083CB]'}`}>{name}</p>
+                <p className={`text-[13px] font-semibold uppercase tracking-[0.12em] ${featured ? 'text-white/60' : 'text-[#008ED6]'}`}>{name}</p>
                 {featured && (
-                  <span className="bg-[#0083CB] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white" style={{ borderRadius: 6 }}>
+                  <span className="bg-[#008ED6] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white" style={{ borderRadius: 6 }}>
                     Most specified
                   </span>
                 )}
               </div>
-              <p className={`stat-number mt-4 ${featured ? 'text-white' : 'text-[#0C1E28]'}`} style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)' }}>
+              <p className={`stat-number mt-4 ${featured ? 'text-white' : 'text-[#071D26]'}`} style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)' }}>
                 {big}
               </p>
-              <p className={`micro mt-1 ${featured ? 'text-[#2EA3E0]' : 'text-[#0083CB]'}`}>{small}</p>
+              <p className={`micro mt-1 ${featured ? 'text-[#25C7E8]' : 'text-[#008ED6]'}`}>{small}</p>
               <p className={`mt-2 text-[14px] leading-relaxed ${featured ? 'text-white/65' : 'text-[#5B6D77]'}`}>{d}</p>
               <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${featured ? 'border-white/15' : 'border-[#E2E8EC]'}`}>
                 {feat.map((f) => (
                   <li key={f} className={`flex items-start gap-2.5 text-[14px] ${featured ? 'text-white/85' : 'text-[#14242E]'}`}>
-                    <Check size={16} className={`mt-0.5 shrink-0 ${featured ? 'text-[#7BD88F]' : 'text-[#1E7A3C]'}`} /> {f}
+                    <Check size={16} className={`mt-0.5 shrink-0 ${featured ? 'text-[#6FDF8F]' : 'text-[#008ED6]'}`} /> {f}
                   </li>
                 ))}
               </ul>
               <Link
                 href="/contact"
-                className={`mt-7 inline-flex items-center justify-center gap-2 px-6 py-3 text-[14px] font-semibold ${featured ? 'bg-white text-[#0C1E28] hover:bg-[#E8EEF1]' : 'bg-[#0083CB] text-white hover:bg-[#00659D]'}`}
+                className={`mt-7 inline-flex items-center justify-center gap-2 px-6 py-3 text-[14px] font-semibold ${featured ? 'bg-white text-[#071D26] hover:bg-[#E8EEF1]' : 'bg-[#008ED6] text-white hover:bg-[#00659D]'}`}
                 style={{ borderRadius: 6 }}
               >
                 {cta} <ArrowRight size={15} />
@@ -78,8 +78,8 @@ export default function PricingPage() {
               ['Warranty', '25-yr modules · 5-yr service', 'Product and performance warranties documented at handover.'],
             ].map(([k, t, d]) => (
               <div key={t} className="bg-white p-7">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#0083CB]">{k}</p>
-                <p className="font-display mt-2 text-[17px] font-semibold text-[#0C1E28]">{t}</p>
+                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#008ED6]">{k}</p>
+                <p className="font-display mt-2 text-[17px] font-semibold text-[#071D26]">{t}</p>
                 <p className="mt-2 text-[14px] leading-relaxed text-[#5B6D77]">{d}</p>
               </div>
             ))}

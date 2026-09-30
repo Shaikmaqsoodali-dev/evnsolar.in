@@ -6,13 +6,13 @@ import { Breadcrumbs } from '@/components/ux-bits'
 export function Kicker({ children, center = false }: { children: string; center?: boolean }) {
   return (
     <p
-      className={`flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.22em] text-[#0083CB] ${
+      className={`micro flex items-center gap-3 text-[#008ED6] ${
         center ? 'justify-center' : ''
       }`}
     >
-      <span className="inline-block h-[2px] w-8 bg-[#0083CB]" aria-hidden />
+      <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
       {children}
-      {center && <span className="inline-block h-[2px] w-8 bg-[#0083CB]" aria-hidden />}
+      {center && <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />}
     </p>
   )
 }
@@ -38,11 +38,11 @@ export function SectionHeading({
   return (
     <div className={`max-w-2xl ${alignCls}`}>
       <Kicker center={a === 'center'}>{kicker}</Kicker>
-      <h2 className={`sx sx-${size} mt-4 text-[#0C1E28]`}>
+      <h2 className={`sx sx-${size} mt-4 text-[#071D26]`}>
         {title}
       </h2>
       {lede && (
-        <p className={`mt-4 text-[15px] font-normal leading-relaxed text-[#5B6D77] ${a === 'center' ? 'mx-auto' : ''}`}>
+        <p className={`mt-4 text-[15px] font-normal leading-relaxed text-[#50656A] ${a === 'center' ? 'mx-auto' : ''}`}>
           {lede}
         </p>
       )}
@@ -64,20 +64,20 @@ export function PageIntro({
   crumb?: [string, string][]
 }) {
   return (
-    <section className="border-b border-[#E2E8EC] bg-[#5da96b]">
+    <section className="border-b border-[#E2E8EC] bg-[#F2F7F4]">
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
         {crumb && <Breadcrumbs trail={crumb} />}
         <Kicker>{kicker}</Kicker>
-        <h1 className="sx sx-xl mt-5 max-w-3xl text-[#0C1E28]">
+        <h1 className="page-hero mt-5 max-w-4xl text-[#071D26]">
           {title}
         </h1>
         {lede && (
-          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-[#5B6D77]">{lede}</p>
+          <p className="mt-5 max-w-2xl text-[17px] font-normal leading-relaxed text-[#50656A]">{lede}</p>
         )}
         {meta && (
           <dl className="mt-8 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-3" style={{ borderRadius: 8 }}>
             {meta.map((m) => (
-              <div key={m} className="bg-[#E7F2F9] px-5 py-4 text-[13.5px] font-medium text-[#0C1E28]">
+              <div key={m} className="font-tech bg-[#E7F2F9] px-5 py-4 text-[10px] uppercase tracking-[0.12em] text-[#071D26]">
                 {m}
               </div>
             ))}
@@ -90,19 +90,22 @@ export function PageIntro({
 
 export function CtaBand() {
   return (
-    <section className="bg-[#5da96b]">
+    <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <div className="grid gap-8 border border-[#E2E8EC] bg-[#0C1E28] p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 10 }}>
+        <div className="grid gap-8 border border-[#E2E8EC] bg-[#071D26] p-8 text-[#F7F4EC] sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 10 }}>
           <div>
-            <p className="micro text-white/55">
+            <p className="micro text-[#25C7E8]">
               Free site assessment
             </p>
-            <h2 className="sx sx-lg mt-4 max-w-xl text-white">
-              Send us your electricity bill.
+            <h2 className="sx sx-lg mt-4 max-w-xl text-[#F7F4EC]">
+              <span className="cta-bold">Send us your
               <br />
-              We&rsquo;ll size the <em className="serif-accent text-[#8FD6A4]">right system.</em>
+              electricity bill.</span>
+              <br />
+              <span className="cta-med">We&rsquo;ll size the</span>{' '}
+              <em className="editorial-accent text-[#6FDF8F]">right system.</em>
             </h2>
-            <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-white/65">
+            <p className="mt-3 max-w-xl text-[15px] font-normal leading-relaxed text-[#F7F4EC]/70">
               Share monthly units, terrace or parking photos, and any EV plans. You receive a
               system size, generation estimate and subsidy breakup — usually within one
               working day.
@@ -111,12 +114,12 @@ export function CtaBand() {
           <div className="flex flex-col gap-3 lg:items-end">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-[#0083CB] px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#00659D]"
+              className="font-display inline-flex items-center justify-center gap-2 bg-[#008ED6] px-7 py-3.5 text-[13px] font-semibold tracking-[-0.01em] text-white transition-colors hover:bg-[#00659D]"
               style={{ borderRadius: 6 }}
             >
               Request assessment <ArrowRight size={17} />
             </Link>
-            <a href="tel:+917040506295" className="text-[14px] font-medium text-white/75 hover:text-white">
+            <a href="tel:+917040506295" className="font-tech text-[10px] uppercase tracking-[0.12em] text-[#F7F4EC]/60 hover:text-[#F7F4EC]">
               or call +91 70405 06295
             </a>
           </div>
@@ -134,41 +137,41 @@ const FOOT_COLS: [string, [string, string][]][] = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#0C1E28] text-white">
-      <div className="h-1.5" style={{ background: 'linear-gradient(90deg, #0083CB 0%, #12A9E2 50%, #1E7A3C 100%)' }} aria-hidden />
+    <footer className="bg-[#071D26] text-[#F7F4EC]">
+      <div className="h-1.5" style={{ background: 'linear-gradient(90deg, #008ED6 0%, #25C7E8 50%, #3BB54A 100%)' }} aria-hidden />
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-14">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr]">
           <div>
             <div className="flex items-center gap-3">
               <img src={LOGO_URL} alt="EVN Solar" className="h-11 w-auto bg-white object-contain px-1.5 py-1" style={{ borderRadius: 6 }} />
               <div className="leading-none">
-                <p className="font-display text-[17px] font-semibold">EV&amp;SOLAR</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-white/55">
+                <p className="font-display text-[17px] font-bold tracking-[-0.02em]">EV&amp;SOLAR</p>
+                <p className="font-tech mt-1 text-[9px] uppercase tracking-[0.12em] text-[#F7F4EC]/50">
                   EVN Solar Energy Solutions
                 </p>
               </div>
             </div>
-            <p className="mt-5 max-w-sm text-[14px] leading-relaxed text-white/60">
+            <p className="mt-5 max-w-sm text-[14px] font-normal leading-relaxed text-[#F7F4EC]/60">
               Rooftop and ground-mounted solar, solar carports and EV charging
               infrastructure — surveyed, designed, installed and serviced by one
               accountable team across Maharashtra.
             </p>
-            <div className="mt-6 space-y-1.5 text-[14px]">
-              <p><a href="mailto:info@evnsolar.in" className="text-white/80 hover:text-white">info@evnsolar.in</a></p>
-              <p><a href="tel:+917040506295" className="text-white/80 hover:text-white">+91 70405 06295</a></p>
-              <p className="text-white/50">79 Mahada Colony, Malegaon 423203</p>
+            <div className="mt-6 space-y-1.5 text-[13px]">
+              <p><a href="mailto:info@evnsolar.in" className="text-[#F7F4EC]/75 hover:text-[#F7F4EC]">info@evnsolar.in</a></p>
+              <p><a href="tel:+917040506295" className="text-[#F7F4EC]/75 hover:text-[#F7F4EC]">+91 70405 06295</a></p>
+              <p className="text-[#F7F4EC]/45">79 Mahada Colony, Malegaon 423203</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             {FOOT_COLS.map(([title, links]) => (
               <div key={title}>
-                <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-white/50">{title}</p>
+                <p className="foot-title text-[#F7F4EC]/45">{title}</p>
                 <ul className="mt-4 space-y-2.5">
                   {links.map(([label, href]) => (
                     <li key={label}>
-                      <Link href={href} className="group inline-flex items-center gap-1 text-[14px] text-white/75 hover:text-white">
+                      <Link href={href} className="foot-link group inline-flex items-center gap-1 text-[#F7F4EC]/70 hover:text-[#F7F4EC]">
                         {label}
-                        <ArrowUpRight size={13} className="opacity-0 transition-opacity group-hover:opacity-60" />
+                        <ArrowUpRight size={13} className="text-[#25C7E8] opacity-0 transition-opacity group-hover:opacity-70" />
                       </Link>
                     </li>
                   ))}
@@ -177,7 +180,7 @@ export function SiteFooter() {
             ))}
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-[12.5px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="foot-copy mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-[#F7F4EC]/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 EVN Solar Energy Solutions Pvt. Ltd. All rights reserved.</p>
           <p>Works: 79 Mahada Colony, Malegaon 423203, Maharashtra, India · MNRE-aligned · 5-year service</p>
         </div>
