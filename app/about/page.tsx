@@ -1,40 +1,20 @@
 import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
-import { Kicker, SectionHeading, CtaBand } from '@/components/site-chrome'
-import { Breadcrumbs } from '@/components/ux-bits'
-import { MotionGrid } from '@/components/ui/motion-grid'
+import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 
 export const metadata = { title: 'About — EVN Solar Energy Solutions' }
 
 export default function AboutPage() {
   return (
     <main className="bg-[#F2F7F4]">
-      <MotionGrid
-        speed="3s"
-        opacity={0.15}
-        enableGlow={true}
-        lineColor="20, 184, 166"
-        className="border-b border-[#E2E8EC] bg-[#F2F7F4]"
-      >
-        <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
-          <Breadcrumbs trail={[['About', '/about']]} />
-          <Kicker>About EVN Solar</Kicker>
-          <h1 className="page-hero mt-5 max-w-4xl text-[#071D26]">
-            An energy contractor built for generation and <em className="editorial-accent text-[#008ED6]">mobility.</em>
-          </h1>
-          <p className="mt-5 max-w-2xl text-[17px] font-normal leading-relaxed text-[#50656A]">
-            EVN Solar Energy Solutions designs rooftop solar, ground-mounted plants, solar carports and EV charging as one engineered system — safe, monitored and subsidy-ready.
-          </p>
-          <dl className="mt-8 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-3" style={{ borderRadius: 8 }}>
-            {['Based in Malegaon, serving Maharashtra', 'Residential · Commercial · Industrial', 'In-house survey, install & service'].map((m) => (
-              <div key={m} className="font-tech bg-[#E7F2F9] px-5 py-4 text-[10px] uppercase tracking-[0.12em] text-[#071D26]">
-                {m}
-              </div>
-            ))}
-          </dl>
-        </div>
-      </MotionGrid>
+      <PageIntro
+        kicker="About EVN Solar"
+        title={<>An energy contractor built for generation and <em className="editorial-accent text-[#008ED6]">mobility.</em></>}
+        lede="EVN Solar Energy Solutions designs rooftop solar, ground-mounted plants, solar carports and EV charging as one engineered system — safe, monitored and subsidy-ready."
+        meta={['Based in Malegaon, serving Maharashtra', 'Residential · Commercial · Industrial', 'In-house survey, install & service']}
+        crumb={[['About', '/about']]}
+      />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
         <div>

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { LOGO_URL } from '@/lib/brand'
 import { Breadcrumbs } from '@/components/ux-bits'
+import { MotionGrid } from '@/components/ui/motion-grid'
 
 export function Kicker({ children, center = false }: { children: string; center?: boolean }) {
   return (
@@ -64,7 +65,13 @@ export function PageIntro({
   crumb?: [string, string][]
 }) {
   return (
-    <section className="border-b border-[#E2E8EC] bg-[#F2F7F4]">
+    <MotionGrid
+      speed="3s"
+      opacity={0.15}
+      enableGlow={true}
+      lineColor="20, 184, 166"
+      className="border-b border-[#E2E8EC] bg-[#F2F7F4]"
+    >
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
         {crumb && <Breadcrumbs trail={crumb} />}
         <Kicker>{kicker}</Kicker>
@@ -84,7 +91,7 @@ export function PageIntro({
           </dl>
         )}
       </div>
-    </section>
+    </MotionGrid>
   )
 }
 
