@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { CtaBand } from '@/components/site-chrome'
+import { Reveal } from '@/components/ux-bits'
 import { VideoHero } from '@/components/video-hero'
 
 export default function HomePage() {
@@ -27,20 +28,21 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT */}
-      <section className="mx-auto grid max-w-7xl gap-12 bg-white px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
-        <div>
+      <section className="bg-[#E9F4FB]">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
+        <Reveal>
           <img src={IMG.engineer1} alt="EVN engineering team on site" className="aspect-[16/10] w-full object-cover" style={{ borderRadius: 6 }} />
           <div className="mt-3 grid grid-cols-2 gap-3">
             <img src={IMG.rooftop} alt="Rooftop solar array" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 6 }} />
-            <div className="flex flex-col justify-center bg-[#008ED6] p-6 text-white" style={{ borderRadius: 6 }}>
+            <div className="bg-brand-grad flex flex-col justify-center p-6 text-white" style={{ borderRadius: 6 }}>
               <p className="stat-number text-white">25<span style={{ fontSize: '0.6em' }}>+</span></p>
               <p className="mt-2 text-[12px] font-medium uppercase leading-snug tracking-[0.08em] text-white/90">
                 Years of clean-energy engineering practice
               </p>
             </div>
           </div>
-        </div>
-        <div>
+        </Reveal>
+        <Reveal delay={120}>
           <p className="micro flex items-center gap-3 text-[#008ED6]">
             <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
             About us
@@ -73,15 +75,17 @@ export default function HomePage() {
             <Link href="/about" className="font-display inline-flex items-center gap-2 bg-[#071D26] px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-white hover:bg-[#1a323f]" style={{ borderRadius: 6 }}>
               More about us <ArrowRight size={14} />
             </Link>
-            <Link href="/projects" className="font-display border border-[#CBD6DD] px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-[#071D26] hover:border-[#008ED6] hover:text-[#008ED6]" style={{ borderRadius: 6 }}>
+            <Link href="/projects" className="font-display border border-[#CBD6DD] bg-white px-6 py-3 text-[12.5px] font-semibold tracking-[0.02em] text-[#071D26] hover:border-[#008ED6] hover:text-[#008ED6]" style={{ borderRadius: 6 }}>
               Selected work
             </Link>
           </div>
+        </Reveal>
         </div>
       </section>
 
       {/* NUMBERS */}
       <section className="bg-[#071D26] text-white">
+        <div className="h-1" style={{ background: 'linear-gradient(90deg, #008ED6 0%, #25C7E8 50%, #3BB54A 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-12 sm:py-14">
           <p className="micro text-center text-white/40">
             EVN Solar in numbers
@@ -125,27 +129,29 @@ export default function HomePage() {
               { img: IMG.carport, tag: 'EV-ready', t: 'Solar carports', d: 'Parking that generates power, pre-wired for chargers.', href: '/services' },
               { img: IMG.evCharge, tag: '7.4-60 kW', t: 'EV charging', d: 'AC and DC chargers with load management and billing.', href: '/ev-charging' },
             ].map(({ img, tag, t, d, href }) => (
-              <Link key={t} href={href} className="group border border-[#E2E8EC] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,29,38,0.12)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
+              <Reveal key={t} className="h-full">
+              <Link href={href} className="group lift block h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_14px_40px_rgba(7,29,38,0.12)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
                 <div className="relative overflow-hidden">
                   <img src={img} alt={t} className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" />
-                  <span className="absolute left-3 top-3 bg-[#008ED6] px-2 py-1 text-[10.5px] font-semibold uppercase tracking-[0.06em] text-white" style={{ borderRadius: 4, fontFamily: 'var(--font-body)' }}>{tag}</span>
+                  <span className={`absolute left-3 top-3 px-2 py-1 text-[10.5px] font-semibold uppercase tracking-[0.06em] text-white ${href === '/ev-charging' ? 'bg-[#3BB54A]' : 'bg-[#008ED6]'}`} style={{ borderRadius: 4, fontFamily: 'var(--font-body)' }}>{tag}</span>
                 </div>
                 <div className="p-5">
                   <p className="card-title flex items-center justify-between text-[#071D26]">
-                    {t} <ArrowUpRight size={16} className="card-arrow" />
+                    {t} <ArrowUpRight size={16} className="card-arrow transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </p>
                   <p className="card-desc mt-1.5 text-[#42565D]">{d}</p>
                 </div>
               </Link>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* TECHNOLOGY */}
-      <section className="bg-[#F4F6F8]">
+      <section className="bg-[#EAF7EE]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
-          <div>
+          <Reveal>
             <p className="micro flex items-center gap-3 text-[#008ED6]">
               <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
               Technology
@@ -165,16 +171,16 @@ export default function HomePage() {
                 ['Engineered structures', 'Galvanised, wind-rated, waterproof options.'],
                 ['Protected & metered', 'Earthing, surge, net-metering included.'],
               ].map(([t, d]) => (
-                <div key={t} className="border border-[#E2E8EC] bg-white p-5" style={{ borderRadius: 6 }}>
+                <div key={t} className="border border-[#CBE3D4] bg-white p-5" style={{ borderRadius: 6 }}>
                   <p className="tech-label text-[#071D26]">{t}</p>
                   <p className="tech-desc mt-1.5 text-[#42565D]">{d}</p>
                 </div>
               ))}
             </div>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal delay={120}>
             <img src={IMG.panel} alt="Solar module close-up" className="aspect-[4/3] w-full object-cover" style={{ borderRadius: 6 }} />
-            <div className="mt-3 flex items-center justify-between border border-[#E2E8EC] bg-white px-5 py-3.5" style={{ borderRadius: 6 }}>
+            <div className="mt-3 flex items-center justify-between border border-[#CBE3D4] bg-white px-5 py-3.5" style={{ borderRadius: 6 }}>
               <p className="text-[13.5px] font-normal text-[#42565D]">
                 <span className="font-display font-semibold text-[#071D26]">Module efficiency to 23%+</span> — generation verified in-app
               </p>
@@ -182,7 +188,7 @@ export default function HomePage() {
                 Details <ArrowUpRight size={14} />
               </Link>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -208,7 +214,8 @@ export default function HomePage() {
             { img: IMG.ground, cat: 'Industrial · Malegaon', t: '120 kW ground-mounted plant', d: 'Scheduled fleet charging with generation and load reporting.' },
             { img: IMG.carport, cat: 'Commercial · Campus', t: '40 kW solar carport, EV-ready', d: 'Shaded parking with charger conduits and lighting.' },
           ].map(({ img, cat, t, d }) => (
-            <article key={t} className="group border border-[#E2E8EC] bg-white transition-shadow hover:shadow-[0_12px_36px_rgba(7,29,38,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
+            <Reveal key={t} className="h-full">
+            <article className="group lift h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(7,29,38,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
               <div className="overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
@@ -218,41 +225,41 @@ export default function HomePage() {
                 <p className="card-desc mt-1.5 text-[#42565D]">{d}</p>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="border-t border-[#EAEFF2] bg-white">
+      <section className="bg-[#071D26] text-white">
+        <div className="h-1" style={{ background: 'linear-gradient(90deg, #3BB54A 0%, #25C7E8 50%, #008ED6 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="micro flex items-center justify-center gap-3 text-[#008ED6]">
-              <span className="inline-block h-px w-8 bg-[#25C7E8]" aria-hidden />
+            <p className="micro flex items-center justify-center gap-3 text-[#25C7E8]">
+              <span className="inline-block h-px w-8 bg-[#3BB54A]" aria-hidden />
               Client notes
-              <span className="inline-block h-px w-8 bg-[#25C7E8]" aria-hidden />
+              <span className="inline-block h-px w-8 bg-[#3BB54A]" aria-hidden />
             </p>
-            <h2 className="sx sx-md mt-4 text-[#071D26]">
+            <h2 className="sx sx-md mt-4 text-white">
               Trusted for engineering, not just installation.
             </h2>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <Reveal className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               ['Logistics depot, Malegaon', 'EVN combined our rooftop plant and depot charging in a single project. Bills are down 68% in six months.'],
               ['Homeowner, Nashik', '5 kW rooftop with a 7.4 kW home charger. Subsidy paperwork handled; the app shows every unit.'],
               ['Warehouse, Malegaon', '120 kW plant with scheduled fleet charging. Safety-first execution, reliable service.'],
             ].map(([who, quote]) => (
-              <figure key={who} className="flex flex-col border border-[#E2E8EC] bg-white p-6" style={{ borderRadius: 6 }}>
-                <blockquote className="quote-ed flex-1 text-[#071D26]">&ldquo;{quote}&rdquo;</blockquote>
-                <figcaption className="quote-by mt-6 border-t border-[#EAEFF2] pt-4 text-[#42565D]">{who}</figcaption>
+              <figure key={who} className="flex flex-col border border-white/10 bg-white/[0.05] p-6" style={{ borderRadius: 6 }}>
+                <blockquote className="quote-ed flex-1 text-white">&ldquo;{quote}&rdquo;</blockquote>
+                <figcaption className="quote-by mt-6 border-t border-white/10 pt-4 text-[#6FDF8F]">{who}</figcaption>
               </figure>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <div className="bg-white">
-        <CtaBand />
-      </div>
+      <CtaBand />
     </main>
   )
 }

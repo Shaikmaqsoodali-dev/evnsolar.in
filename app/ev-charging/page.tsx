@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
-import { Faq } from '@/components/ux-bits'
+import { Faq, Reveal } from '@/components/ux-bits'
 
 export const metadata = { title: 'EV Charging — EVN Solar Energy Solutions' }
 
@@ -63,22 +63,22 @@ export default function EvChargingPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#E2E8EC] bg-[#F4F6F8]">
+      <section className="border-y border-[#CBE3D4] bg-[#EAF7EE]">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <SectionHeading kicker="Configurations" title="Choose the setup that fits the site." />
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <Reveal className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               ['Home charging', '7.4 kW smart AC charger with app, scheduling and solar-priority mode.', 'Single-phase ready · App + RFID'],
               ['Workplace & commercial', 'Multi-point 7.4–22 kW with load balancing and staff billing.', 'Load balancing · Billing reports'],
               ['Fleet & DC fast', '30–60 kW DC fast with depot layout and solar + storage integration.', 'Depot design · OCPP + CMS'],
             ].map(([t, d, specs]) => (
-              <div key={t} className="border border-[#E2E8EC] bg-white p-7" style={{ borderRadius: 8 }}>
+              <div key={t} className="lift border border-[#CBE3D4] bg-white p-7" style={{ borderRadius: 8 }}>
                 <p className="font-display text-[18px] font-semibold text-[#071D26]">{t}</p>
                 <p className="mt-2 text-[14.5px] leading-relaxed text-[#5B6D77]">{d}</p>
                 <p className="font-tech mt-4 border-t border-[#E2E8EC] pt-4 text-[10px] uppercase tracking-[0.12em] text-[#50656A]">{specs}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
           <div className="mt-6 flex flex-col gap-4 border border-[#E2E8EC] bg-white p-6 sm:flex-row sm:items-center sm:justify-between" style={{ borderRadius: 8 }}>
             <p className="max-w-2xl text-[14.5px] text-[#42545F]">
               <span className="font-semibold text-[#071D26]">Unsure about sanction load?</span> Send a photo of your meter and main breaker — we confirm feasibility before you pay anything.

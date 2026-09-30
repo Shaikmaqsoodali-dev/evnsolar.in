@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
+import { Reveal } from '@/components/ux-bits'
 
 export const metadata = { title: 'About — EVN Solar Energy Solutions' }
 
@@ -59,26 +60,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#E2E8EC] bg-[#F4F6F8]">
+      <section className="border-y border-[#BFDDF2] bg-[#E9F4FB]">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <SectionHeading kicker="Principles" title="What we stand for." />
-          <div className="mt-10 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] md:grid-cols-3" style={{ borderRadius: 8 }}>
+          <Reveal className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               ['Engineering first', 'Survey, drawings, safety and testing — before and after installation. No shortcuts to hit a price.'],
               ['Right-sized solar', 'Rooftop, ground-mount and carports sized for verified generation, not brochure wattage.'],
               ['EV readiness', 'Every project is evaluated for current and future charging load, including sanction load.'],
             ].map(([t, d]) => (
-              <div key={t} className="bg-white p-7">
+              <div key={t} className="lift border border-[#BFDDF2] bg-white p-7" style={{ borderRadius: 8 }}>
                 <p className="font-display text-[18px] font-semibold text-[#071D26]">{t}</p>
                 <p className="mt-2 text-[14.5px] leading-relaxed text-[#5B6D77]">{d}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <SectionHeading kicker="Delivery" title="A fixed four-stage process." />
+        <Reveal>
         <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
             ['01 — Survey', 'Load, shadow, roof and parking review with measurements and photos.'],
@@ -92,6 +94,7 @@ export default function AboutPage() {
             </li>
           ))}
         </ol>
+        </Reveal>
       </section>
 
       <CtaBand />

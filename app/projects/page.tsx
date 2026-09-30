@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
+import { Reveal } from '@/components/ux-bits'
 
 export const metadata = { title: 'Projects — EVN Solar Energy Solutions' }
 
@@ -25,9 +26,9 @@ export default function ProjectsPage() {
         crumb={[['Projects', '/projects']]}
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Reveal className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map(({ img, sector, size, t, d }) => (
-            <article key={t} className="group border border-[#E2E8EC] bg-white transition-shadow hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
+            <article key={t} className="group lift border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
               <div className="overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
@@ -41,7 +42,7 @@ export default function ProjectsPage() {
               </div>
             </article>
           ))}
-        </div>
+        </Reveal>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border border-[#E2E8EC] bg-[#F4F6F8] p-6 sm:flex-row sm:items-center" style={{ borderRadius: 8 }}>
           <p className="text-[15px] text-[#42545F]">
             <span className="font-semibold text-[#071D26]">Have a similar site?</span> Send your bill and photos — we respond with size, generation and subsidy breakup.

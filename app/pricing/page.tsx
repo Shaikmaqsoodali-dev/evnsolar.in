@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
-import { Faq } from '@/components/ux-bits'
+import { Faq, Reveal } from '@/components/ux-bits'
 
 export const metadata = { title: 'Pricing — EVN Solar Energy Solutions' }
 
@@ -31,13 +31,16 @@ export default function PricingPage() {
         crumb={[['Pricing', '/pricing']]}
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <div className="grid gap-6 lg:grid-cols-3">
+        <Reveal className="grid gap-6 lg:grid-cols-3">
           {PLANS.map(({ name, big, small, d, feat, cta, featured }) => (
             <div
               key={name}
-              className={`flex flex-col border p-8 ${featured ? 'border-[#071D26] bg-[#071D26] text-white' : 'border-[#E2E8EC] bg-white'}`}
+              className={`lift flex flex-col overflow-hidden border p-8 ${featured ? 'border-[#071D26] bg-[#071D26] text-white' : 'border-[#E2E8EC] bg-white hover:border-[#25C7E8]'}`}
               style={{ borderRadius: 10 }}
             >
+              {featured && (
+                <div className="-mx-8 -mt-8 h-1.5" style={{ background: 'linear-gradient(90deg, #008ED6 0%, #25C7E8 50%, #3BB54A 100%)' }} aria-hidden />
+              )}
               <div className="flex items-center justify-between gap-3">
                 <p className={`text-[13px] font-semibold uppercase tracking-[0.12em] ${featured ? 'text-white/60' : 'text-[#008ED6]'}`}>{name}</p>
                 {featured && (
@@ -67,18 +70,18 @@ export default function PricingPage() {
               </Link>
             </div>
           ))}
-        </div>
+        </Reveal>
 
         <div className="mt-14">
           <SectionHeading kicker="Commercial terms" title="How pricing and payment work." />
-          <div className="mt-8 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] md:grid-cols-3" style={{ borderRadius: 8 }}>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             {[
               ['Subsidy', 'PM Surya Ghar guidance', 'Eligibility check and application support for residential systems.'],
               ['Payments', 'EMI with staged milestones', 'Survey, installation and commissioning milestones — no full advance.'],
               ['Warranty', '25-yr modules · 5-yr service', 'Product and performance warranties documented at handover.'],
             ].map(([k, t, d]) => (
-              <div key={t} className="bg-white p-7">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#008ED6]">{k}</p>
+              <div key={t} className="lift border border-[#CBE3D4] bg-[#EAF7EE] p-7" style={{ borderRadius: 8 }}>
+                <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#1E7A34]">{k}</p>
                 <p className="font-display mt-2 text-[17px] font-semibold text-[#071D26]">{t}</p>
                 <p className="mt-2 text-[14px] leading-relaxed text-[#5B6D77]">{d}</p>
               </div>

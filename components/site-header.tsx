@@ -55,7 +55,7 @@ export function SiteHeader() {
                   href={href}
                   className={`font-display text-[13px] font-medium tracking-[0.01em] transition-colors ${
                     active
-                      ? 'font-semibold text-[#071D26]'
+                      ? 'font-semibold text-[#008ED6] underline decoration-[#3BB54A] decoration-2 underline-offset-8'
                       : 'text-[#50656A] hover:text-[#008ED6]'
                   }`}
                 >

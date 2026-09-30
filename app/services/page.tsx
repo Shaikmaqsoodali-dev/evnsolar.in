@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
-import { Faq } from '@/components/ux-bits'
+import { Faq, Reveal } from '@/components/ux-bits'
 
 export const metadata = { title: 'Solar Services — EVN Solar Energy Solutions' }
 
@@ -41,9 +41,10 @@ export default function ServicesPage() {
       />
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <div className="space-y-12">
+        <div className="space-y-8">
           {SERVICES.map(({ img, n, tag, t, d, points }, i) => (
-            <article key={t} className={`grid gap-0 overflow-hidden border border-[#E2E8EC] lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`} style={{ borderRadius: 10 }}>
+            <Reveal key={t}>
+            <article className={`lift grid gap-0 overflow-hidden border border-[#E2E8EC] bg-white hover:border-[#25C7E8] lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`} style={{ borderRadius: 10 }}>
               <div className="relative min-h-[280px]">
                 <img src={img} alt={t} className="absolute inset-0 h-full w-full object-cover" />
                 <span className="card-cat card-cat--on-dark absolute left-5 top-5 bg-[#071D26] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
@@ -69,16 +70,18 @@ export default function ServicesPage() {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-[#E2E8EC] bg-[#F4F6F8]">
+      <section className="bg-[#071D26]">
+        <div className="h-1" style={{ background: 'linear-gradient(90deg, #008ED6 0%, #25C7E8 50%, #3BB54A 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-14">
-          <p className="micro text-[#008ED6]">Included in every project</p>
-          <div className="mt-5 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-3" style={{ borderRadius: 8 }}>
+          <p className="micro text-[#25C7E8]">Included in every project</p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {['Earthing & lightning protection', 'Surge, MCB & MCCB protection', 'Cable routing & labelling', 'Generation & consumption monitoring', 'DISCOM & subsidy documentation', 'Handover training & manuals'].map((x) => (
-              <p key={x} className="bg-white px-5 py-4 text-[14px] font-medium text-[#14242E]">{x}</p>
+              <p key={x} className="border border-white/10 bg-white/[0.06] px-5 py-4 text-[14px] font-medium text-white" style={{ borderRadius: 8 }}>{x}</p>
             ))}
           </div>
         </div>

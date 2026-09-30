@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Check, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { PageIntro } from '@/components/site-chrome'
+import { Reveal } from '@/components/ux-bits'
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false)
@@ -18,15 +19,15 @@ export default function ContactPage() {
       />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:py-20 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
+        <Reveal>
           <div className="space-y-3">
             {[
               { icon: Phone, t: 'Call / WhatsApp', d: '+91 70405 06295 · 9am–7pm', href: 'tel:+917040506295' },
               { icon: Mail, t: 'Email', d: 'info@evnsolar.in', href: 'mailto:info@evnsolar.in' },
               { icon: MapPin, t: 'Office', d: '79 Mahada Colony, Malegaon 423203', href: 'https://maps.google.com/?q=Malegaon+Maharashtra' },
             ].map(({ icon: Icon, t, d, href }) => (
-              <a key={t} href={href} className="flex items-center gap-4 border border-[#E2E8EC] bg-white p-5 transition-colors hover:border-[#008ED6]" style={{ borderRadius: 8 }}>
-                <span className="grid size-11 shrink-0 place-items-center border border-[#E2E8EC] bg-[#F4F6F8] text-[#008ED6]" style={{ borderRadius: 6 }}>
+              <a key={t} href={href} className="lift flex items-center gap-4 border border-[#E2E8EC] bg-white p-5 transition-colors hover:border-[#008ED6]" style={{ borderRadius: 8 }}>
+                <span className="grid size-11 shrink-0 place-items-center bg-[#008ED6] text-white" style={{ borderRadius: 6 }}>
                   <Icon size={19} />
                 </span>
                 <span>
@@ -36,19 +37,20 @@ export default function ContactPage() {
               </a>
             ))}
           </div>
-          <div className="mt-4 bg-[#071D26] p-6 text-[#F7F4EC]" style={{ borderRadius: 8 }}>
-            <p className="tech-label text-[#6FDF8F]">For the fastest quote, include</p>
-            <ul className="mt-3 space-y-2 text-[13px] font-normal leading-relaxed text-[#F7F4EC]/65">
+          <div className="bg-brand-grad mt-4 p-6 text-white" style={{ borderRadius: 8 }}>
+            <p className="tech-label text-white">For the fastest quote, include</p>
+            <ul className="mt-3 space-y-2 text-[13px] font-normal leading-relaxed text-white/85">
               {['Latest electricity bill (units consumed + sanctioned load)', 'Terrace or parking photos with a Google Maps location', 'EV model or expected monthly driving kilometres'].map((x) => (
                 <li key={x} className="flex gap-2.5">
-                  <Check size={15} className="mt-1 shrink-0 text-[#6FDF8F]" /> {x}
+                  <Check size={15} className="mt-1 shrink-0 text-white" /> {x}
                 </li>
               ))}
             </ul>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="border border-[#E2E8EC] bg-[#F4F6F8] p-7 sm:p-9" style={{ borderRadius: 10 }}>
+        <Reveal delay={120}>
+        <div className="border border-[#BFDDF2] bg-white p-7 shadow-[0_18px_50px_rgba(0,142,214,0.10)] sm:p-9" style={{ borderRadius: 10 }}>
           {sent ? (
             <div className="py-14 text-center">
               <span className="mx-auto grid size-12 place-items-center bg-[#008ED6] text-white" style={{ borderRadius: 8 }}>
@@ -72,16 +74,16 @@ export default function ContactPage() {
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="block">
                   <span className="mb-1.5 block text-[13px] font-semibold text-[#071D26]">Full name</span>
-                  <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" className="w-full border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }} />
+                  <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" className="field w-full border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }} />
                 </label>
                 <label className="block">
                   <span className="mb-1.5 block text-[13px] font-semibold text-[#071D26]">Phone</span>
-                  <input required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+91 …" className="w-full border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }} />
+                  <input required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+91 …" className="field w-full border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }} />
                 </label>
               </div>
               <label className="block">
                 <span className="mb-1.5 block text-[13px] font-semibold text-[#071D26]">Requirement</span>
-                <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} className="w-full border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }}>
+                <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} className="field w-full border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }}>
                   <option>Home rooftop</option>
                   <option>Home solar + EV charger</option>
                   <option>Commercial / industrial solar</option>
@@ -91,7 +93,7 @@ export default function ContactPage() {
               </label>
               <label className="block">
                 <span className="mb-1.5 block text-[13px] font-semibold text-[#071D26]">Monthly bill / requirement</span>
-                <textarea required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={5} placeholder="e.g. 450 units/month, Nashik, planning an EV next year…" className="w-full resize-none border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }} />
+                <textarea required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={5} placeholder="e.g. 450 units/month, Nashik, planning an EV next year…" className="field w-full resize-none border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }} />
               </label>
               <button type="submit" className="inline-flex w-full items-center justify-center gap-2 bg-[#008ED6] py-3.5 text-[15px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
                 Request free site assessment <Send size={16} />
@@ -100,6 +102,7 @@ export default function ContactPage() {
             </form>
           )}
         </div>
+        </Reveal>
       </section>
     </main>
   )

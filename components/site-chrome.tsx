@@ -97,22 +97,22 @@ export function PageIntro({
 
 export function CtaBand() {
   return (
-    <section className="bg-white">
+    <section className="bg-[#071D26]">
       <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <div className="grid gap-8 border border-[#E2E8EC] bg-[#071D26] p-8 text-[#F7F4EC] sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 10 }}>
+        <div className="bg-brand-grad grid gap-8 p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 10 }}>
           <div>
-            <p className="micro text-[#25C7E8]">
+            <p className="micro text-white/85">
               Free site assessment
             </p>
-            <h2 className="sx sx-lg mt-4 max-w-xl text-[#F7F4EC]">
+            <h2 className="sx sx-lg mt-4 max-w-xl text-white">
               <span className="cta-bold">Send us your
               <br />
               electricity bill.</span>
               <br />
               <span className="cta-med">We&rsquo;ll size the</span>{' '}
-              <em className="editorial-accent text-[#6FDF8F]">right system.</em>
+              <em className="editorial-accent text-white">right system.</em>
             </h2>
-            <p className="mt-3 max-w-xl text-[15px] font-normal leading-relaxed text-[#F7F4EC]/70">
+            <p className="mt-3 max-w-xl text-[15px] font-normal leading-relaxed text-white/85">
               Share monthly units, terrace or parking photos, and any EV plans. You receive a
               system size, generation estimate and subsidy breakup — usually within one
               working day.
@@ -121,12 +121,12 @@ export function CtaBand() {
           <div className="flex flex-col gap-3 lg:items-end">
             <Link
               href="/contact"
-              className="font-display inline-flex items-center justify-center gap-2 bg-[#008ED6] px-7 py-3.5 text-[13px] font-semibold tracking-[-0.01em] text-white transition-colors hover:bg-[#00659D]"
+              className="font-display inline-flex items-center justify-center gap-2 bg-white px-7 py-3.5 text-[13px] font-semibold tracking-[-0.01em] text-[#071D26] transition-all hover:bg-[#071D26] hover:text-white"
               style={{ borderRadius: 6 }}
             >
               Request assessment <ArrowRight size={17} />
             </Link>
-            <a href="tel:+917040506295" className="font-tech text-[10px] uppercase tracking-[0.12em] text-[#F7F4EC]/60 hover:text-[#F7F4EC]">
+            <a href="tel:+917040506295" className="font-tech text-[10px] uppercase tracking-[0.12em] text-white/75 hover:text-white">
               or call +91 70405 06295
             </a>
           </div>

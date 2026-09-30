@@ -1,8 +1,51 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUp, ChevronRight, Phone } from 'lucide-react'
+
+export function Reveal({
+  children,
+  className = '',
+  delay = 0,
+}: {
+  children: React.ReactNode
+  className?: string
+  delay?: number
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [seen, setSeen] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setSeen(true)
+      return
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSeen(true)
+          io.disconnect()
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -6% 0px' },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={`reveal ${seen ? 'is-in' : ''} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  )
+}
 
 export function Breadcrumbs({ trail }: { trail: [string, string][] }) {
   return (

@@ -97,6 +97,14 @@ header a {
     opacity: 1;
     animation: none;
   }
+  .reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+  .lift:hover {
+    transform: none;
+  }
 }
 
 .section-title {
@@ -345,6 +353,59 @@ header a {
 ::selection {
   background: var(--blue);
   color: #fff;
+}
+
+/* ---- Brand color system (from EV&Solar logo) ---- */
+:root {
+  --wash-blue: #e9f4fb;
+  --wash-green: #eaf7ee;
+  --brand-grad: linear-gradient(120deg, #00659d 0%, #008ed6 45%, #25c7e8 78%, #3bb54a 135%);
+}
+
+.bg-brand-grad {
+  background: var(--brand-grad);
+}
+
+/* Sticky-header offset for any anchored section */
+section[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Accessible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Card lift on hover — pair with existing shadow hovers */
+.lift {
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Scroll-reveal (driven by <Reveal/> in ux-bits) */
+.reveal {
+  opacity: 0;
+  translate: 0 20px;
+  transition: opacity 0.7s ease, translate 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, translate;
+}
+.reveal.is-in {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Form fields: brand focus treatment */
+.field {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgb(37 199 232 / 0.25);
+  outline: none;
 }
 
 img {
