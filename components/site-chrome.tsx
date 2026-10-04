@@ -1,5 +1,45 @@
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
+
+export function InstagramIcon({ size = 15, className }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  )
+}
+
+export function FacebookIcon({ size = 15, className }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  )
+}
 import { LOGO_URL } from '@/lib/brand'
 import { Breadcrumbs } from '@/components/ux-bits'
 import { MotionGrid } from '@/components/ui/motion-grid'
@@ -236,6 +276,26 @@ export function SiteFooter() {
               <p><a href="mailto:info@evnsolar.in" className="text-[#F7F4EC]/75 hover:text-[#F7F4EC]">info@evnsolar.in</a></p>
               <p><a href="tel:+917040506295" className="text-[#F7F4EC]/75 hover:text-[#F7F4EC]">+91 70405 06295</a></p>
               <p className="text-[#F7F4EC]/45">79 Mahada Colony, Malegaon 423203</p>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-2.5">
+              <a
+                href="https://www.instagram.com/evnsolar.in/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2.5 border border-white/15 px-4 py-2.5 text-[13px] font-medium text-[#F7F4EC]/75 transition-colors hover:border-[#25C7E8] hover:text-white"
+                style={{ borderRadius: 8 }}
+              >
+                <InstagramIcon size={15} className="text-[#25C7E8]" /> @evnsolar.in
+              </a>
+              <a
+                href="https://www.facebook.com/evsolar.in"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2.5 border border-white/15 px-4 py-2.5 text-[13px] font-medium text-[#F7F4EC]/75 transition-colors hover:border-[#25C7E8] hover:text-white"
+                style={{ borderRadius: 8 }}
+              >
+                <FacebookIcon size={15} className="text-[#25C7E8]" /> @evsolar.in
+              </a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Check, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { FacebookIcon, InstagramIcon } from '@/components/site-chrome'
 import { PageIntro } from '@/components/site-chrome'
 import { Reveal } from '@/components/ux-bits'
 
@@ -27,6 +28,8 @@ export default function ContactPage() {
               { icon: Phone, t: 'Call / WhatsApp', d: '+91 70405 06295 · 9am–7pm', href: 'tel:+917040506295' },
               { icon: Mail, t: 'Email', d: 'info@evnsolar.in', href: 'mailto:info@evnsolar.in' },
               { icon: MapPin, t: 'Office', d: '79 Mahada Colony, Malegaon 423203', href: 'https://maps.google.com/?q=Malegaon+Maharashtra' },
+              { icon: InstagramIcon, t: 'Instagram', d: '@evnsolar.in', href: 'https://www.instagram.com/evnsolar.in/' },
+              { icon: FacebookIcon, t: 'Facebook', d: '@evsolar.in', href: 'https://www.facebook.com/evsolar.in' },
             ].map(({ icon: Icon, t, d, href }) => (
               <a key={t} href={href} className="lift flex items-center gap-4 border border-[#E2E8EC] bg-white p-5 transition-colors hover:border-[#008ED6]" style={{ borderRadius: 8 }}>
                 <span className="grid size-11 shrink-0 place-items-center bg-[#008ED6] text-white" style={{ borderRadius: 6 }}>
