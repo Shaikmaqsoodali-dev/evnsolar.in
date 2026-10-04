@@ -16,6 +16,8 @@ export default function ContactPage() {
         title={<>Tell us your bill. <em className="editorial-accent text-[#008ED6]">We&apos;ll do the math.</em></>}
         lede="Call, email or send the form below. Include monthly units, roof or parking photos and any EV plans for the fastest, most accurate quote."
         crumb={[['Contact', '/contact']]}
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791109850/Solar_EV_Dashboard_Over_Cityscape.png"
+        imageAlt="Solar EV dashboard over cityscape"
       />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:py-20 lg:grid-cols-[0.9fr_1.1fr]">

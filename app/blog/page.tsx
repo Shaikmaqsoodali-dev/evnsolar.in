@@ -23,6 +23,8 @@ export default function BlogPage() {
         title={<>Practical guides, <em className="editorial-accent text-[#008ED6]">not brochures.</em></>}
         lede="Sizing worksheets, subsidy walkthroughs and maintenance checklists from our survey and service teams."
         crumb={[['Blog', '/blog']]}
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar-Water-Heater.webp"
+        imageAlt="Solar water heater"
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" step={90}>
