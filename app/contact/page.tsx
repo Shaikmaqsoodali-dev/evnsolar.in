@@ -106,6 +106,37 @@ export default function ContactPage() {
         </div>
         </Reveal>
       </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-14 sm:pb-20">
+        <Reveal>
+          <div className="overflow-hidden border border-[#E2E8EC] bg-white" style={{ borderRadius: 10 }}>
+            <div className="flex flex-col gap-2 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="flex items-center gap-2.5 text-[14px] font-semibold text-[#071D26]">
+                <span className="grid size-8 place-items-center bg-[#008ED6] text-white" style={{ borderRadius: 6 }}>
+                  <MapPin size={16} />
+                </span>
+                79 Mahada Colony, Malegaon 423203, Maharashtra
+              </p>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=79+Mahada+Colony+Malegaon+Maharashtra+423203"
+                target="_blank"
+                rel="noreferrer"
+                className="font-display text-[13px] font-semibold text-[#008ED6] hover:text-[#00659D]"
+              >
+                Get directions →
+              </a>
+            </div>
+            <iframe
+              title="EVN Solar office location map — 79 Mahada Colony, Malegaon"
+              src="https://www.google.com/maps?q=79%20Mahada%20Colony%2C%20Malegaon%2C%20Maharashtra%20423203&output=embed"
+              className="h-[320px] w-full border-0 sm:h-[400px]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        </Reveal>
+      </section>
     </main>
   )
 }
