@@ -69,6 +69,56 @@ export function PageIntro({
   image?: string
   imageAlt?: string
 }) {
+  if (image) {
+    return (
+      <section className="relative overflow-hidden border-b border-[#071D26] bg-[#071D26]">
+        <img
+          src={image}
+          alt={imageAlt}
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+        />
+        {/* Left-heavy dark gradient: photo stays visible right, text readable left */}
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#071D26]/90 via-[#071D26]/55 to-[#071D26]/15" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#071D26]/60 via-transparent to-[#071D26]/10" />
+        <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
+          {crumb && (
+            <Reveal variant="fade" delay={0}>
+              <Breadcrumbs trail={crumb} dark />
+            </Reveal>
+          )}
+          <Reveal variant="up" delay={70}>
+            <p className="micro flex items-center gap-3 text-[#25C7E8]">
+              <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
+              {kicker}
+            </p>
+          </Reveal>
+          <Reveal variant="blur" delay={150}>
+            <h1 className="page-hero mt-5 max-w-4xl text-white [&_em]:text-[#25C7E8]">
+              {title}
+            </h1>
+          </Reveal>
+          {lede && (
+            <Reveal variant="up" delay={250}>
+              <p className="mt-5 max-w-2xl text-[17px] font-normal leading-relaxed text-white/75">{lede}</p>
+            </Reveal>
+          )}
+          {meta && (
+            <Reveal variant="up" delay={330}>
+              <dl className="mt-8 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-3" style={{ borderRadius: 8 }}>
+                {meta.map((m) => (
+                  <div key={m} className="font-tech bg-[#071D26]/60 px-5 py-4 text-[10px] uppercase tracking-[0.12em] text-white backdrop-blur-sm">
+                    {m}
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
+          )}
+        </div>
+      </section>
+    )
+  }
+
   return (
     <MotionGrid
       speed="3s"
@@ -77,20 +127,6 @@ export function PageIntro({
       lineColor="20, 184, 166"
       className="border-b border-[#E2E8EC] bg-[#F2F7F4]"
     >
-      {image && (
-        <>
-          <img
-            src={image}
-            alt={imageAlt}
-            aria-hidden={imageAlt ? undefined : true}
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="eager"
-          />
-          {/* Light overlay keeps existing dark titles/breadcrumbs readable; subtle dark gradient at bottom aids contrast */}
-          <div aria-hidden className="absolute inset-0 bg-[#F2F7F4]/85" />
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#F2F7F4]/60 via-transparent to-[#F2F7F4]/40" />
-        </>
-      )}
       <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
         {crumb && (
           <Reveal variant="fade" delay={0}>

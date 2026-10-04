@@ -22,23 +22,23 @@ export function Reveal({
   )
 }
 
-export function Breadcrumbs({ trail }: { trail: [string, string][] }) {
+export function Breadcrumbs({ trail, dark = false }: { trail: [string, string][]; dark?: boolean }) {
   return (
     <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-1.5 text-[13px]">
-      <Link href="/" className="font-medium text-[#5B6D77] hover:text-[#008ED6]">
+      <Link href="/" className={`font-medium ${dark ? 'text-white/70 hover:text-white' : 'text-[#5B6D77] hover:text-[#008ED6]'}`}>
         Home
       </Link>
       {trail.map(([label, href], i) => {
         const last = i === trail.length - 1
         return (
           <span key={label} className="flex items-center gap-1.5">
-            <ChevronRight size={13} className="text-[#9AA9B2]" />
+            <ChevronRight size={13} className={dark ? 'text-white/40' : 'text-[#9AA9B2]'} />
             {last ? (
-              <span aria-current="page" className="font-semibold text-[#071D26]">
+              <span aria-current="page" className={`font-semibold ${dark ? 'text-white' : 'text-[#071D26]'}`}>
                 {label}
               </span>
             ) : (
-              <Link href={href} className="font-medium text-[#5B6D77] hover:text-[#008ED6]">
+              <Link href={href} className={`font-medium ${dark ? 'text-white/70 hover:text-white' : 'text-[#5B6D77] hover:text-[#008ED6]'}`}>
                 {label}
               </Link>
             )}
