@@ -26,23 +26,6 @@ export default function HomePage() {
         className="border-y border-white/10 bg-[#04141C] py-3.5 text-white/75"
       />
 
-      {/* scope strip */}
-      <section className="border-b border-[#E2E8EC] bg-white">
-        <div className="mx-auto grid max-w-7xl sm:grid-cols-4">
-          {[
-            ['Residential', '1-10 kW rooftop systems'],
-            ['Commercial', '10-500 kW plants'],
-            ['Industrial', 'MW-scale + O&M contracts'],
-            ['EV & Fleet', 'AC + DC charging'],
-          ].map(([t, d]) => (
-            <div key={t} className="border-b border-[#E2E8EC] px-6 py-4 last:border-0 sm:border-b-0 sm:border-r sm:last:border-0">
-              <p className="font-display text-[12px] font-semibold uppercase tracking-[0.08em] text-[#071D26]">{t}</p>
-              <p className="mt-1 text-[12.5px] font-normal text-[#64787F]">{d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ABOUT */}
       <section className="bg-[#E9F4FB]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">

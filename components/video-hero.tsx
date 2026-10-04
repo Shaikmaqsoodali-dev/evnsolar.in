@@ -123,35 +123,6 @@ export function VideoHero() {
           </Reveal>
         </div>
         </ScrollFade>
-
-        {/* trust row */}
-        <Reveal variant="fade" delay={760}>
-          <div
-            className="mt-12 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-white/15 pt-5"
-          >
-          <p className="flex items-center gap-2 text-[13px] font-normal text-white/65">
-            <span className="font-display text-[16px] font-bold text-white">5.0</span>
-            rated service, MNRE-aligned engineering
-            <span className="flex gap-0.5" aria-hidden>
-              {[1, 2, 3, 4, 5].map((s) => (
-                <Star key={s} size={10} className="fill-[#FFC531] text-[#FFC531]" />
-              ))}
-            </span>
-          </p>
-          <div className="flex flex-wrap items-center gap-x-7 gap-y-2">
-            <span className="scroll-cue" aria-hidden>
-              <span className="cue-line" />
-              <span className="cue-text text-white/60">Scroll to explore</span>
-            </span>
-            <div className="flex flex-wrap gap-x-7 gap-y-2 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-white/45">
-              <span>Residential</span>
-              <span>Commercial</span>
-              <span>Industrial</span>
-              <span>Fleet & EV</span>
-            </div>
-          </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   )
