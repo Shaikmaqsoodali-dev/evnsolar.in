@@ -104,8 +104,8 @@ export default function SolarPanelsGuidePost() {
         title={<>Best solar panels for home in India, <em className="editorial-accent text-[#008ED6]">explained.</em></>}
         lede="Ten panel options Indian homeowners commonly compare — what each technology means, who each brand suits, and how to choose the right one for your roof."
         crumb={[['Blog', '/blog'], ['Best solar panels for home', '/blog/best-solar-panels-home-india']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791122119/02-tata-power-solar-panels-300-400w.webp"
-        imageAlt="Solar panels installed for home use"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791122118/03-navitas-solar-multi-crystalline-solar-panels.webp"
+        imageAlt="Rows of solar panels in a solar field"
       />
 
       <article className="mx-auto max-w-4xl px-6 py-14 sm:py-20">
