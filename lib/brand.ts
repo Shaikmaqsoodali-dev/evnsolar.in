@@ -9,6 +9,7 @@ export const IMG = {
   evCharge: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=80',
   rooftop: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790692980/Rooftop_solar_panel_array_installed_202606130858-1024x765.jpeg.webp',
   ground: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80',
+  industrial: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Industrial-Solar.webp',
   carport: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790769254/csm_Solar-Carports-Header.webp',
   panel: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790770236/Maintenance_upgrades_2.png',
   engineer1: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790768743/solar.webp',

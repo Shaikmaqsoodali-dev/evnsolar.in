@@ -8,7 +8,7 @@ export const metadata = { title: 'Projects — EVN Solar Energy Solutions' }
 
 const PROJECTS = [
   { img: IMG.rooftop, sector: 'Residential · Nashik', size: '5 kW + 7.4 kW charger', t: 'Rooftop with home EV charging', d: 'Battery-ready hybrid, subsidy filing and app-based generation tracking for a two-storey home.' },
-  { img: IMG.ground, sector: 'Industrial · Malegaon', size: '120 kW', t: 'Ground-mounted plant + fleet charging', d: 'Land-optimized rows with scheduled depot charging and monthly generation reporting.' },
+  { img: IMG.industrial, sector: 'Industrial · Malegaon', size: '120 kW', t: 'Ground-mounted plant + fleet charging', d: 'Land-optimized rows with scheduled depot charging and monthly generation reporting.' },
   { img: IMG.carport, sector: 'Commercial · Office campus', size: '40 kW', t: 'Solar carport, EV-ready', d: 'Waterproof parking structure with charger conduits, lighting and CCTV provision.' },
   { img: IMG.panel, sector: 'Commercial · Hospital', size: '30 kW', t: 'Hospital rooftop with O&M', d: 'High-uptime design with cleaning plan, thermography and annual maintenance contract.' },
   { img: IMG.evCharge, sector: 'Fleet · Logistics depot', size: '60 kW DC + 22 kW AC', t: 'Depot charging hub', d: 'DC fast plus multi-point AC with load management, RFID billing and fleet reports.' },

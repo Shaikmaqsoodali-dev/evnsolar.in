@@ -232,7 +232,7 @@ export default function HomePage() {
         <Stagger className="mt-10 grid gap-5 md:grid-cols-3" itemClassName="h-full" step={100}>
           {[
             { img: IMG.rooftop, cat: 'Residential · Nashik', t: '5 kW rooftop + 7.4 kW home charger', d: 'Battery-ready hybrid with subsidy filing and app monitoring.' },
-            { img: IMG.ground, cat: 'Industrial · Malegaon', t: '120 kW ground-mounted plant', d: 'Scheduled fleet charging with generation and load reporting.' },
+            { img: IMG.industrial, cat: 'Industrial · Malegaon', t: '120 kW ground-mounted plant', d: 'Scheduled fleet charging with generation and load reporting.' },
             { img: IMG.carport, cat: 'Commercial · Campus', t: '40 kW solar carport, EV-ready', d: 'Shaded parking with charger conduits and lighting.' },
           ].map(({ img, cat, t, d }) => (
             <Tilt key={t} className="h-full">
