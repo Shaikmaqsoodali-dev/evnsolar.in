@@ -96,7 +96,6 @@ export function PageIntro({
   kicker,
   title,
   lede,
-  meta,
   crumb,
   image,
   imageAlt = '',
@@ -104,7 +103,6 @@ export function PageIntro({
   kicker: string
   title: React.ReactNode
   lede?: string
-  meta?: string[]
   crumb?: [string, string][]
   image?: string
   imageAlt?: string
@@ -143,17 +141,6 @@ export function PageIntro({
               <p className="mt-5 max-w-2xl text-[17px] font-normal leading-relaxed text-white/75">{lede}</p>
             </Reveal>
           )}
-          {meta && (
-            <Reveal variant="up" delay={330}>
-              <dl className="mt-8 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-3" style={{ borderRadius: 8 }}>
-                {meta.map((m) => (
-                  <div key={m} className="font-tech bg-[#071D26]/60 px-5 py-4 text-[10px] uppercase tracking-[0.12em] text-white backdrop-blur-sm">
-                    {m}
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
-          )}
         </div>
       </section>
     )
@@ -184,17 +171,6 @@ export function PageIntro({
         {lede && (
           <Reveal variant="up" delay={250}>
             <p className="mt-5 max-w-2xl text-[17px] font-normal leading-relaxed text-[#50656A]">{lede}</p>
-          </Reveal>
-        )}
-        {meta && (
-          <Reveal variant="up" delay={330}>
-            <dl className="mt-8 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-3" style={{ borderRadius: 8 }}>
-              {meta.map((m) => (
-                <div key={m} className="font-tech bg-[#E7F2F9] px-5 py-4 text-[10px] uppercase tracking-[0.12em] text-[#071D26]">
-                  {m}
-                </div>
-              ))}
-            </dl>
           </Reveal>
         )}
       </div>

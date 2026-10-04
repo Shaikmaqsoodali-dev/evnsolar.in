@@ -37,7 +37,6 @@ export default function ServicesPage() {
         kicker="Solar services"
         title={<>Solar for every roof, plot and <em className="editorial-accent text-[#008ED6]">parking lot.</em></>}
         lede="On-grid, hybrid and battery-ready systems with engineering drawings, DISCOM liaison and verified generation — not just installation."
-        meta={['On-grid · Hybrid · Battery-ready', 'Tier-1 modules, tested inverters', 'Subsidy & net-metering handled']}
         crumb={[['Solar', '/services']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Rooftop_solar_installation.webp"
         imageAlt="Rooftop solar installation"

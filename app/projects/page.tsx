@@ -22,7 +22,6 @@ export default function ProjectsPage() {
         kicker="Projects"
         title={<>Work we will stand behind <em className="editorial-accent text-[#008ED6]">in writing.</em></>}
         lede="A selection of residential, commercial and industrial installations across Maharashtra. Every project includes drawings, test records and a monitoring handover."
-        meta={['2.4 MW+ installed', 'Residential to MW-scale', 'Drawings & test records included']}
         crumb={[['Projects', '/projects']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar_carport_EV-ready_parking.jpg"
         imageAlt="Solar carport EV-ready parking"

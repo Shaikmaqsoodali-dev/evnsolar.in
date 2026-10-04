@@ -111,7 +111,6 @@ export default function AboutPage() {
           </>
         }
         lede="EVN Solar is a renewable energy solutions company focused on making solar power and electric mobility more accessible, reliable, and practical for homes, businesses, and industries."
-        meta={['Homes · Businesses · Industries', 'Solar + EV charging', 'Consultation to ongoing support']}
         crumb={[['About', '/about']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar-Panel-Installation.png"
         imageAlt="Rooftop solar panels against a clear sky"

@@ -14,7 +14,6 @@ export default function EvChargingPage() {
         kicker="EV charging infrastructure"
         title={<>Charge at home, at work — preferably <em className="editorial-accent text-[#008ED6]">on sunlight.</em></>}
         lede="7.4–60 kW AC and DC chargers with load management, solar-priority charging, billing and fleet reporting for homes, offices and depots."
-        meta={['7.4–22 kW AC · 30–60 kW DC', 'OCPP with remote diagnostics', 'Load study before you pay']}
         crumb={[['EV Charging', '/ev-charging']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106732/Electric_vehicle_charging.png"
         imageAlt="Electric vehicle charging"

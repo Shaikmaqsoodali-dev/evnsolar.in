@@ -28,7 +28,6 @@ export default function PricingPage() {
         kicker="Sizes & pricing"
         title={<>Start with the right size. <em className="editorial-accent text-[#008ED6]">Expand later.</em></>}
         lede="Indicative starting points. Your final proposal follows a site survey and includes a generation estimate, subsidy breakup and payment schedule."
-        meta={['Survey before final quote', 'PM Surya Ghar guidance', 'EMI & staged payments']}
         crumb={[['Pricing', '/pricing']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791109850/Solar_EV_Dashboard_Over_Cityscape.png"
         imageAlt="Solar EV dashboard over cityscape"
