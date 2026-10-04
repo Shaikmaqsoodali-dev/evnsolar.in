@@ -30,8 +30,8 @@ export default function PricingPage() {
         lede="Indicative starting points. Your final proposal follows a site survey and includes a generation estimate, subsidy breakup and payment schedule."
         meta={['Survey before final quote', 'PM Surya Ghar guidance', 'EMI & staged payments']}
         crumb={[['Pricing', '/pricing']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791109963/EV_Solar_Facility_at_Sunset_1.png"
-        imageAlt="EV solar facility at sunset"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791109850/Solar_EV_Dashboard_Over_Cityscape.png"
+        imageAlt="Solar EV dashboard over cityscape"
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Stagger className="grid gap-6 lg:grid-cols-3" step={110}>
