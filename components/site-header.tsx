@@ -76,21 +76,13 @@ export function SiteHeader() {
           <div
             className={cn(
               'mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 transition-all duration-500',
-              scrolled ? 'h-16' : 'h-[76px]',
+              scrolled ? 'h-20' : 'h-[92px]',
             )}
           >
             {/* logo lockup */}
-            <Link href="/" className="group flex shrink-0 items-center gap-3" aria-label="EVN Solar home">
-              <span className="grid size-11 place-items-center overflow-hidden rounded-xl bg-white ring-1 ring-[#E2E8EC] transition-shadow duration-300 group-hover:shadow-[0_6px_20px_rgba(0,142,214,0.25)]">
-                <img src={LOGO_URL} alt="" className="h-9 w-9 object-contain" />
-              </span>
-              <span className="leading-none">
-                <span className="block text-[19px] font-bold tracking-[-0.03em] text-[#071D26]">
-                  EV<span className="text-[#008ED6]">&amp;</span>SOLAR
-                </span>
-                <span className="mt-1 block text-[8.5px] font-semibold uppercase tracking-[0.18em] text-[#789096]">
-                  EVN Solar Energy Solutions
-                </span>
+            <Link href="/" className="group flex shrink-0 items-center" aria-label="EVN Solar home">
+              <span className="grid h-16 w-auto place-items-center overflow-hidden rounded-2xl bg-white px-2 ring-1 ring-[#E2E8EC] transition-shadow duration-300 group-hover:shadow-[0_6px_20px_rgba(0,142,214,0.25)]">
+                <img src={LOGO_URL} alt="EVN Solar" className="h-14 w-auto object-contain" />
               </span>
             </Link>
 
@@ -158,9 +150,7 @@ export function SiteHeader() {
         <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#008ED6]/25 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#3BB54A]/20 blur-[100px]" />
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-          <span className="text-[17px] font-bold tracking-[-0.02em]">
-            EV<span className="text-[#25C7E8]">&amp;</span>SOLAR
-          </span>
+          <img src={LOGO_URL} alt="EVN Solar" className="h-12 w-auto rounded-xl bg-white px-2 object-contain" />
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
