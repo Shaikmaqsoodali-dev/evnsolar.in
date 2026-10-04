@@ -3,11 +3,11 @@
 @import 'shadcn/tailwind.css';
 
 @theme {
-  --font-display: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-sans: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-grot: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-serif-ed: 'DM Serif Display', Georgia, serif;
-  --font-tech: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: 'Manrope', Arial, Helvetica, sans-serif;
+  --font-sans: 'Manrope', Arial, Helvetica, sans-serif;
+  --font-grot: 'Manrope', Arial, Helvetica, sans-serif;
+  --font-serif-ed: 'Roboto', Arial, Helvetica, sans-serif;
+  --font-tech: 'Manrope', Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -31,11 +31,11 @@
   --muted-tx: #42565d;
   --body-tx: #33474e;
 
-  --font-display: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-grot: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-serif-ed: 'DM Serif Display', Georgia, serif;
-  --font-tech: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: 'Manrope', Arial, Helvetica, sans-serif;
+  --font-body: 'Manrope', Arial, Helvetica, sans-serif;
+  --font-grot: 'Manrope', Arial, Helvetica, sans-serif;
+  --font-serif-ed: 'Roboto', Arial, Helvetica, sans-serif;
+  --font-tech: 'Manrope', Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -46,32 +46,60 @@ body {
   margin: 0;
   background: #fff;
   color: var(--body-tx);
-  font-family: var(--font-body);
-  font-size: 15.5px;
-  line-height: 1.7;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.875em;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Display type is HEADINGS ONLY. Body copy never uses it. */
+/* SUKI / Energium type: Manrope headings, weight 700, zero tracking, open leading. */
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 .font-display {
-  font-family: var(--font-display);
-  letter-spacing: -0.02em;
-  line-height: 1.06;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-style: normal;
+  text-transform: none;
   text-wrap: balance;
 }
+h1 { line-height: 1.1em; }
+h2 { line-height: 1.25em; }
+h3 { line-height: 1.4167em; }
+h4 { line-height: 1.6em; }
+h5 { line-height: 1.7776em; }
+h6 { line-height: 1.75em; }
 
 p {
   text-wrap: pretty;
+  line-height: 1.875em;
 }
 
 nav a,
 header a {
-  font-family: var(--font-grot);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 500;
 }
+
+/* SUKI buttons — Manrope 14px / 500, zero tracking. */
+button,
+input[type='submit'],
+input[type='button'],
+.cta-bold,
+.cta-med,
+.energium-button {
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+}
+.cta-bold { font-weight: 700; font-size: 14px; }
+.cta-med { font-weight: 500; font-size: 14px; }
 
 /* ---- Motion system (components/motion.tsx) ---- */
 :root {
@@ -188,141 +216,143 @@ header a {
 }
 
 .section-title {
-  font-family: var(--font-display);
-  font-weight: 650;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-transform: none;
-  letter-spacing: -0.025em;
-  line-height: 1.06;
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height: 1.25em;
   text-wrap: balance;
 }
 
-/* 1. HERO — Brandvertise style: sentence-case Inter Tight, tight tracking,
-   open-yet-compact leading, serif-italic accent for the emotional clause. */
+/* 1. HERO — SUKI / Energium style: Manrope 700–800, zero tracking, 1.1 leading.
+   Desktop h1 60px, tablet 45px. */
 .hero-display {
-  font-family: var(--font-display);
-  font-weight: 650;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 800;
   text-transform: none;
-  letter-spacing: -0.032em;
-  line-height: 1.02;
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height: 1.1em;
   text-wrap: balance;
-  font-size: clamp(44px, 6.4vw, 78px);
+  font-size: clamp(38px, 4.6vw, 60px);
   overflow-wrap: break-word;
 }
 .hero-display .hero-heavy {
-  font-weight: 700;
+  font-weight: 800;
 }
 .hero-display .thin {
-  font-weight: 500;
+  font-weight: 700;
   color: inherit;
 }
-/* Serif accent = DM Serif italic, slightly larger optical size, like Brandvertise. */
+/* SUKI has no serif-italic accent — accent words stay Manrope bold, inherit colour. */
 .hero-display .editorial-accent,
 .hero-display .serif-accent,
 .hero-display em {
   display: inline;
-  font-family: var(--font-serif-ed);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.05em;
-  letter-spacing: -0.015em;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1em;
+  letter-spacing: 0;
 }
 
-/* 1b. SUBPAGE HERO - sentence case so it contrasts with uppercase section heads. */
+/* 1b. SUBPAGE HERO — Manrope 700, SUKI h1 scale. */
 .page-hero {
-  font-family: var(--font-grot);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: none;
-  letter-spacing: -0.02em;
-  line-height: 1.06;
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height: 1.1em;
   text-wrap: balance;
   overflow-wrap: break-word;
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(32px, 4vw, 60px);
 }
 .page-hero .editorial-accent,
 .page-hero .serif-accent {
-  font-family: var(--font-serif-ed);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 
-/* Serif accent ONLY inside sentence-case headings + quotes. Never in all-caps. */
+/* Accent spans = same Manrope bold, never italic serif. */
 .serif-accent,
 .editorial-accent {
-  font-family: var(--font-serif-ed);
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
   text-transform: none;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
-/* 2. SECTION HEADINGS — Brandvertise style: sentence case, tight tracking,
-   serif-italic tail. e.g. "Turning sunlight *into energy.*" */
+/* 2. SECTION HEADINGS — SUKI h2: Manrope 700, 35px / 1.25. */
 .sx {
-  font-family: var(--font-display);
-  font-weight: 650;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-transform: none;
-  letter-spacing: -0.028em;
-  line-height: 1.05;
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height: 1.25em;
   text-wrap: balance;
   overflow-wrap: break-word;
 }
-.sx-xl { font-size: clamp(34px, 4.2vw, 56px); }
-.sx-lg { font-size: clamp(30px, 3.6vw, 46px); }
-.sx-md { font-size: clamp(26px, 3vw, 38px); }
+.sx-xl { font-size: clamp(30px, 3.4vw, 45px); line-height: 1.2em; }
+.sx-lg { font-size: clamp(28px, 3vw, 35px); line-height: 1.25em; }
+.sx-md { font-size: clamp(22px, 2.4vw, 25px); line-height: 1.4167em; }
 .sx .thin {
-  font-weight: 500;
+  font-weight: 700;
 }
 .sx .editorial-accent,
 .sx .serif-accent,
 .sx em {
-  font-family: var(--font-serif-ed);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.06em;
-  letter-spacing: -0.015em;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 0;
 }
 
-.cta-bold { font-weight: 700; letter-spacing: 0.01em; }
-.cta-med { font-weight: 500; letter-spacing: 0.01em; }
+/* (cta-bold / cta-med defined with buttons above) */
 
-/* Ghost index numeral - subtle, not outlined neon. */
+/* Ghost index numeral — SUKI step-bg-number: Manrope 700. */
 .sx-index {
-  font-family: var(--font-grot);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   color: #dbe7ee;
   user-select: none;
 }
 .sx-index.on-dark { color: rgb(255 255 255 / 0.12); }
 
-/* 3. NUMBERS - Inter Tight numerals, tight tracking. */
+/* 3. NUMBERS — SUKI result-box: Manrope 700, tabular numerals. */
 .stat-number {
-  font-family: var(--font-display);
-  font-weight: 650;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1em;
   font-variant-numeric: tabular-nums;
-  font-size: clamp(32px, 3.4vw, 46px);
+  font-size: clamp(30px, 3vw, 42px);
 }
 .stat-unit {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.5em;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 0.55em;
   letter-spacing: 0;
   margin-left: 0.1em;
 }
 
-/* 4. EYEBROWS — Brandvertise pill: small, bold, pill-bordered, accent coloured. */
+/* 4. EYEBROWS — SUKI subheading style: Manrope 700, uppercase, open tracking. */
 .micro {
-  font-family: var(--font-body);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 12.5px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.6em;
 }
 .micro-pill {
   display: inline-flex;
@@ -339,104 +369,104 @@ header a {
   left: 0.9rem;
 }
 
-/* Cards - normal-case titles (readable), sans body. No mono. */
+/* Cards — SUKI service-item: Manrope title 700 + 16px/1.875 excerpt. */
 .card-cat {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 11px;
-  line-height: 1.5;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  line-height: 1.6em;
   color: var(--blue);
 }
 .card-cat--on-dark { color: #fff; }
 .card-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: -0.015em;
-  line-height: 1.3;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 1.6em;
 }
 .card-desc {
-  font-family: var(--font-body);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.875em;
 }
 .card-arrow {
   color: var(--blue);
 }
 
 .tech-label {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 11px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.6em;
 }
 .tech-desc {
-  font-family: var(--font-body);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 400;
-  font-size: 13.5px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.875em;
 }
 
 .fineprint {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 1.7;
+  line-height: 1.875em;
 }
 
-/* Quotes - the ONLY place serif is used. Sans attribution. */
+/* Quotes — SUKI testimonial: Manrope 400, open leading. Attribution Manrope 700 uppercase. */
 .quote-ed {
-  font-family: var(--font-serif-ed);
-  font-style: italic;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 1.6;
-  font-size: 17.5px;
+  line-height: 1.875em;
+  font-size: 16px;
   text-wrap: pretty;
 }
 .quote-by {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 10.5px;
-  line-height: 1.6;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  line-height: 1.6em;
 }
 
 .foot-title {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 10.5px;
-  line-height: 1.6;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  line-height: 1.6em;
 }
 .foot-link {
-  font-family: var(--font-body);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 400;
-  font-size: 13.5px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.875em;
 }
 .foot-copy {
-  font-family: var(--font-body);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 400;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  line-height: 1.7;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.875em;
 }
 
 .vertical-micro {
   writing-mode: vertical-rl;
   rotate: 180deg;
-  font-family: var(--font-body);
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  font-size: 10.5px;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -495,7 +525,7 @@ img {
 }
 
 .prose-tight p {
-  line-height: 1.75;
+  line-height: 1.875em;
 }
 
 /* ---- Scroll-down motion (Brandvertise-style) ---- */
@@ -521,11 +551,11 @@ img {
 }
 .scroll-words .sw-word em,
 .scroll-words .sw-word .serif-accent {
-  font-family: var(--font-serif-ed);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.06em;
-  letter-spacing: -0.015em;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 0;
 }
 
 /* Scroll-linked fade/rise: hero content drifts up + fades as you scroll down. */
@@ -579,24 +609,24 @@ img {
   60%, 100% { top: 110%; }
 }
 .scroll-cue .cue-text {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  font-size: 12px;
 }
 
-/* Responsive guards */
+/* Responsive guards — SUKI h1 45px tablet / 60px desktop. */
 @media (max-width: 1023px) {
-  .hero-display { font-size: clamp(40px, 7vw, 60px); }
-  .page-hero { font-size: clamp(30px, 5.5vw, 44px); }
+  .hero-display { font-size: clamp(36px, 6vw, 45px); line-height: 1.1em; }
+  .page-hero { font-size: clamp(30px, 5.5vw, 45px); }
 }
 @media (max-width: 767px) {
-  body { font-size: 15px; }
-  .hero-display { font-size: clamp(36px, 10vw, 48px); line-height: 1.04; }
-  .page-hero { font-size: clamp(28px, 8vw, 38px); line-height: 1.08; }
-  .sx-xl { font-size: clamp(30px, 8vw, 40px); }
-  .sx-lg { font-size: clamp(28px, 7.5vw, 37px); }
-  .stat-number { font-size: clamp(28px, 9vw, 38px); }
-  .quote-ed { font-size: 16.5px; }
+  body { font-size: 16px; }
+  .hero-display { font-size: clamp(32px, 9vw, 38px); line-height: 1.15em; }
+  .page-hero { font-size: clamp(28px, 8vw, 35px); line-height: 1.2em; }
+  .sx-xl { font-size: clamp(28px, 8vw, 35px); line-height: 1.25em; }
+  .sx-lg { font-size: clamp(25px, 7vw, 30px); line-height: 1.3em; }
+  .stat-number { font-size: clamp(28px, 9vw, 35px); }
+  .quote-ed { font-size: 16px; }
 }

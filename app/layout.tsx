@@ -1,44 +1,43 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter_Tight, DM_Serif_Display, IBM_Plex_Mono } from 'next/font/google'
+import { Manrope, Roboto } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
 import { BackToTop, FloatCta, MobileCtaBar } from '@/components/ux-bits'
 import { ScrollProgress } from '@/components/motion'
 
-/* BODY + DISPLAY — Inter Tight like Brandvertise: tight, sentence-case, one sans everywhere. */
-const body = Inter_Tight({
+/* BODY + DISPLAY — SUKI / Energium reference: Manrope everywhere (body 400, headings 700). */
+const body = Manrope({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 })
-/* DISPLAY — same Inter Tight family, semibold–bold for headlines. Serif accent carries the contrast. */
-const display = Inter_Tight({
+/* DISPLAY — same Manrope family, bold headings like SUKI h1–h6. */
+const display = Manrope({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['500', '600', '700'],
+  weight: ['600', '700', '800'],
   display: 'swap',
 })
-const grot = Inter_Tight({
+const grot = Manrope({
   subsets: ['latin'],
   variable: '--font-grot',
-  weight: ['500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 })
-/* QUOTES ONLY - DM Serif italic for testimonial quotes. Nowhere else. */
-const serifEd = DM_Serif_Display({
+/* SPECIAL TITLES — Roboto regular for subheadings / backward titles, like SUKI. */
+const serifEd = Roboto({
   subsets: ['latin'],
   variable: '--font-serif-ed',
-  style: ['normal', 'italic'],
-  weight: ['400'],
+  weight: ['400', '500'],
   display: 'swap',
 })
-/* DATA ONLY - IBM Plex Mono: stat numbers labels + footer meta. Not eyebrows. */
-const tech = IBM_Plex_Mono({
+/* META / BUTTONS — Manrope 500 (SUKI buttons 14px/500). Kept under --font-tech name so existing classes keep working. */
+const tech = Manrope({
   subsets: ['latin'],
   variable: '--font-tech',
-  weight: ['400', '500'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 })
 
