@@ -25,7 +25,7 @@ export default function ContactPage() {
         <Reveal>
           <div className="space-y-3">
             {[
-              { icon: Phone, t: 'Call / WhatsApp', d: '+91 70405 06295 · 9am–7pm', href: 'tel:+917040506295' },
+              { icon: Phone, t: 'Call / WhatsApp', d: '+91 70405 06295, 9am-7pm', href: 'tel:+917040506295' },
               { icon: Mail, t: 'Email', d: 'info@evnsolar.in', href: 'mailto:info@evnsolar.in' },
               { icon: MapPin, t: 'Office', d: '79 Mahada Colony, Malegaon 423203', href: 'https://maps.google.com/?q=Malegaon+Maharashtra' },
               { icon: InstagramIcon, t: 'Instagram', d: '@evnsolar.in', href: 'https://www.instagram.com/evnsolar.in/' },
@@ -101,9 +101,9 @@ export default function ContactPage() {
                 <textarea required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={5} placeholder="e.g. 450 units/month, Nashik, planning an EV next year…" className="field w-full resize-none border border-[#CBD6DD] bg-white px-4 py-3 text-[14.5px] outline-none focus:border-[#008ED6]" style={{ borderRadius: 6 }} />
               </label>
               <button type="submit" className="btn-shine inline-flex w-full items-center justify-center gap-2 bg-[#008ED6] py-3.5 text-[15px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
-                Request free site assessment <Send size={16} />
+                Get a free site assessment <Send size={16} />
               </button>
-              <p className="text-center text-[12.5px] text-[#5B6D77]">No spam. An engineer responds — usually within one working day.</p>
+              <p className="text-center text-[12.5px] text-[#5B6D77]">No spam. An engineer responds, usually within one working day.</p>
             </form>
           )}
         </div>
@@ -130,7 +130,7 @@ export default function ContactPage() {
               </a>
             </div>
             <iframe
-              title="EVN Solar office location map — 79 Mahada Colony, Malegaon"
+              title="EVN Solar office location map - 79 Mahada Colony, Malegaon"
               src="https://www.google.com/maps?q=79%20Mahada%20Colony%2C%20Malegaon%2C%20Maharashtra%20423203&output=embed"
               className="h-[320px] w-full border-0 sm:h-[400px]"
               loading="lazy"

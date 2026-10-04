@@ -44,16 +44,13 @@ export default function HomePage() {
           </div>
         </Reveal>
         <Reveal variant="right" delay={120}>
-          <p className="micro micro-pill text-[#008ED6]">
-            About us
-          </p>
           <ScrollWords
             text="EVN Solar, *let's go solar.*"
             className="sx sx-lg mt-4 text-[#071D26]"
           />
           <p className="mt-4 max-w-lg text-[15px] font-normal leading-[1.75] text-[#33474E]">
             Offering engineered solar and EV-charging solutions, EVN Solar designs
-            every site as one electrical system — generation sized to your bill
+            every site as one electrical system, with generation sized to your bill
             and your kilometres, with protection, approvals and monitoring
             included from day one.
           </p>
@@ -88,10 +85,7 @@ export default function HomePage() {
       <section className="bg-[#071D26] text-white">
         <div className="h-1" style={{ background: 'linear-gradient(90deg, #008ED6 0%, #25C7E8 50%, #3BB54A 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-12 sm:py-14">
-          <p className="micro text-center text-white/40">
-            EVN Solar in numbers
-          </p>
-          <div className="mx-auto mt-8 grid max-w-5xl sm:grid-cols-4">
+          <div className="mx-auto mt-2 grid max-w-5xl sm:grid-cols-4">
             {[
               { v: 2.4, d: 1, s: ' MW+', l: 'Solar installed' },
               { v: 1000, d: 0, s: '+', l: 'Projects delivered' },
@@ -119,7 +113,7 @@ export default function HomePage() {
               className="sx sx-lg mt-4 text-[#071D26]"
             />
             <p className="mx-auto mt-4 max-w-xl text-[15px] font-normal leading-[1.75] text-[#33474E]">
-              Four factory-tested disciplines — each with drawings, protection design and a monitoring handover.
+              Four factory-tested disciplines, each with drawings, protection design and a monitoring handover.
             </p>
           </div>
           <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" itemClassName="h-full" step={90}>
@@ -152,16 +146,13 @@ export default function HomePage() {
       <section className="bg-[#EAF7EE]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
           <Reveal variant="left">
-            <p className="micro micro-pill text-[#008ED6]">
-              Technology
-            </p>
             <ScrollWords
               text="Leading-edge technology *at work.*"
               className="sx sx-lg mt-4 text-[#071D26]"
             />
             <p className="mt-4 max-w-lg text-[15px] font-normal leading-[1.75] text-[#33474E]">
               High-efficiency TOPCon modules, tested string and micro-inverters,
-              and OCPP chargers — commissioned with insulation, earthing and
+              and OCPP chargers, commissioned with insulation, earthing and
               protection tests you receive in writing.
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -184,8 +175,8 @@ export default function HomePage() {
               <img src={IMG.panel} alt="Solar module close-up" className="h-full w-full object-cover" />
             </Parallax>
             <div className="mt-3 flex items-center justify-between border border-[#CBE3D4] bg-white px-5 py-3.5" style={{ borderRadius: 6 }}>
-              <p className="text-[13.5px] font-normal text-[#42565D]">
-                <span className="font-display font-semibold text-[#071D26]">Module efficiency to 23%+</span> — generation verified in-app
+                <p className="text-[13.5px] font-normal text-[#42565D]">
+                <span className="font-display font-semibold text-[#071D26]">Module efficiency to 23%+</span>, generation verified in-app
               </p>
               <Link href="/services" className="font-display flex shrink-0 items-center gap-1 text-[13px] font-semibold text-[#008ED6]">
                 Details <ArrowUpRight size={14} />
@@ -200,9 +191,6 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl bg-white px-6 py-14 sm:py-20">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="micro micro-pill text-[#008ED6]">
-              News & projects
-            </p>
             <ScrollWords
               text="Recent work *and updates.*"
               className="sx sx-md mt-4 text-[#071D26]"
@@ -214,9 +202,9 @@ export default function HomePage() {
         </div>
         <Stagger className="mt-10 grid gap-5 md:grid-cols-3" itemClassName="h-full" step={100}>
           {[
-            { img: IMG.rooftop, cat: 'Residential · Nashik', t: '5 kW rooftop + 7.4 kW home charger', d: 'Battery-ready hybrid with subsidy filing and app monitoring.' },
-            { img: IMG.industrial, cat: 'Industrial · Malegaon', t: '120 kW ground-mounted plant', d: 'Scheduled fleet charging with generation and load reporting.' },
-            { img: IMG.carport, cat: 'Commercial · Campus', t: '40 kW solar carport, EV-ready', d: 'Shaded parking with charger conduits and lighting.' },
+            { img: IMG.rooftop, cat: 'Residential, Nashik', t: '5 kW rooftop + 7.4 kW home charger', d: 'Battery-ready hybrid with subsidy filing and app monitoring.' },
+            { img: IMG.industrial, cat: 'Industrial, Malegaon', t: '120 kW ground-mounted plant', d: 'Scheduled fleet charging with generation and load reporting.' },
+            { img: IMG.carport, cat: 'Commercial, Campus', t: '40 kW solar carport, EV-ready', d: 'Shaded parking with charger conduits and lighting.' },
           ].map(({ img, cat, t, d }) => (
             <Tilt key={t} className="h-full">
             <article className="group lift h-full border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(7,29,38,0.10)]" style={{ borderRadius: 6, overflow: 'hidden' }}>
@@ -239,9 +227,6 @@ export default function HomePage() {
         <div className="h-1" style={{ background: 'linear-gradient(90deg, #3BB54A 0%, #25C7E8 50%, #008ED6 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="micro micro-pill text-[#25C7E8]">
-              Client notes
-            </p>
             <ScrollWords
               text="Trusted for engineering, *not just installation.*"
               className="sx sx-md mt-4 text-white"

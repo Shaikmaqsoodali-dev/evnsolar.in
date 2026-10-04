@@ -4,20 +4,20 @@ import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 import { Faq } from '@/components/ux-bits'
 import { Stagger, Tilt } from '@/components/motion'
 
-export const metadata = { title: 'Pricing — EVN Solar Energy Solutions' }
+export const metadata = { title: 'Pricing | EVN Solar Energy Solutions' }
 
 const PLANS = [
   {
     name: 'Home Essential', big: '3 kW', small: 'onwards', d: 'For households looking to cut the grid bill with a straightforward on-grid rooftop.',
-    feat: ['Rooftop on-grid system', 'Generation monitoring app', 'Net-metering assistance', '5-year service support'], cta: 'Get home quote', featured: false,
+    feat: ['Rooftop on-grid system', 'Generation monitoring app', 'Net-metering assistance', '5-year service support'], cta: 'Get a free site assessment', featured: false,
   },
   {
     name: 'Home + EV', big: '5 kW+', small: 'with 7.4 kW charger', d: 'Our most specified bundle: solar sized for the bill plus EV kilometres, with one charger.',
-    feat: ['Solar + home EV charging', 'Load balancing, solar priority', 'Battery-ready hybrid option', 'Subsidy and EMI assistance', 'Priority support'], cta: 'Get EV bundle quote', featured: true,
+    feat: ['Solar + home EV charging', 'Load balancing, solar priority', 'Battery-ready hybrid option', 'Subsidy and EMI assistance', 'Priority support'], cta: 'Get a free site assessment', featured: true,
   },
   {
     name: 'Commercial / Fleet', big: '50 kW+', small: 'custom sized', d: 'Sheds, ground mounts and carports with multi-point or DC fast charging.',
-    feat: ['Ground, shed & carport plants', 'DC fast + multi-point AC', 'Billing, RFID, fleet reports', 'O&M contracts'], cta: 'Talk to sales', featured: false,
+    feat: ['Ground, shed & carport plants', 'DC fast + multi-point AC', 'Billing, RFID, fleet reports', 'O&M contracts'], cta: 'Get a free site assessment', featured: false,
   },
 ]
 
@@ -76,12 +76,12 @@ export default function PricingPage() {
         </Stagger>
 
         <div className="mt-14">
-          <SectionHeading kicker="Commercial terms" title="How pricing and payment work." />
+          <SectionHeading title="How pricing and payment work." />
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {[
               ['Subsidy', 'PM Surya Ghar guidance', 'Eligibility check and application support for residential systems.'],
-              ['Payments', 'EMI with staged milestones', 'Survey, installation and commissioning milestones — no full advance.'],
-              ['Warranty', '25-yr modules · 5-yr service', 'Product and performance warranties documented at handover.'],
+              ['Payments', 'EMI with staged milestones', 'Survey, installation and commissioning milestones, no full advance.'],
+              ['Warranty', '25-yr modules, 5-yr service', 'Product and performance warranties documented at handover.'],
             ].map(([k, t, d]) => (
               <div key={t} className="lift border border-[#CBE3D4] bg-[#EAF7EE] p-7" style={{ borderRadius: 8 }}>
                 <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#1E7A34]">{k}</p>
@@ -92,13 +92,13 @@ export default function PricingPage() {
           </div>
         </div>
         <div className="mt-14">
-          <SectionHeading kicker="Questions" title="Pricing questions, answered." />
+          <SectionHeading title="Pricing questions, answered." />
           <div className="mt-8">
             <Faq
               items={[
-                ['Why no fixed price list?', 'Shadow, roof strength, cable distance and sanction load change the cost materially. A fixed list would either overcharge you or hide extras — the survey-first quote is more honest.'],
+                ['Why no fixed price list?', 'Shadow, roof strength, cable distance and sanction load change the cost materially. A fixed list would either overcharge you or hide extras. The survey-first quote is more honest.'],
                 ['How do staged payments work?', 'A small advance on survey confirmation, the bulk on material delivery and installation, and the balance only after commissioning and app handover.'],
-                ['Is EMI available?', 'Yes, through partner financiers for residential systems, typically 12–60 months. We share options with your quote.'],
+                ['Is EMI available?', 'Yes, through partner financiers for residential systems, typically 12-60 months. We share options with your quote.'],
                 ['What subsidy can I get?', 'Under PM Surya Ghar, eligible homes receive central assistance directly to their bank account. We check eligibility and file the application for you.'],
               ]}
             />

@@ -67,7 +67,7 @@ export function SectionHeading({
   align = 'left',
   size = 'lg',
 }: {
-  kicker: string
+  kicker?: string
   title: React.ReactNode
   lede?: string
   center?: boolean
@@ -79,7 +79,7 @@ export function SectionHeading({
     a === 'center' ? 'mx-auto text-center' : a === 'right' ? 'ml-auto text-right' : ''
   return (
     <div className={`max-w-2xl ${alignCls}`}>
-      <Kicker center={a === 'center'}>{kicker}</Kicker>
+      {kicker ? <Kicker center={a === 'center'}>{kicker}</Kicker> : null}
       <h2 className={`sx sx-${size} mt-4 text-[#071D26]`}>
         {title}
       </h2>
@@ -199,7 +199,7 @@ export function CtaBand() {
             </h2>
             <p className="mt-3 max-w-xl text-[15px] font-normal leading-relaxed text-white/85">
               Share monthly units, terrace or parking photos, and any EV plans. You receive a
-              system size, generation estimate and subsidy breakup — usually within one
+              system size, generation estimate and subsidy breakup, usually within one
               working day.
             </p>
           </div>
@@ -209,7 +209,7 @@ export function CtaBand() {
               className="btn-shine font-display inline-flex items-center justify-center gap-2 bg-white px-7 py-3.5 text-[13px] font-semibold tracking-[-0.01em] text-[#071D26] transition-all hover:bg-[#071D26] hover:text-white"
               style={{ borderRadius: 6 }}
             >
-              Request assessment <ArrowRight size={17} />
+              Get a free site assessment <ArrowRight size={17} />
             </Link>
             <a href="tel:+917040506295" className="font-tech text-[10px] uppercase tracking-[0.12em] text-white/75 hover:text-white">
               or call +91 70405 06295
@@ -245,7 +245,7 @@ export function SiteFooter() {
             </div>
             <p className="mt-5 max-w-sm text-[14px] font-normal leading-relaxed text-[#F7F4EC]/60">
               Rooftop and ground-mounted solar, solar carports and EV charging
-              infrastructure — surveyed, designed, installed and serviced by one
+              infrastructure, surveyed, designed, installed and serviced by one
               accountable team across Maharashtra.
             </p>
             <div className="mt-6 space-y-1.5 text-[13px]">
@@ -294,7 +294,7 @@ export function SiteFooter() {
         </div>
         <div className="foot-copy mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-[#F7F4EC]/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 EVN Solar Energy Solutions Pvt. Ltd. All rights reserved.</p>
-          <p>Works: 79 Mahada Colony, Malegaon 423203, Maharashtra, India · MNRE-aligned · 5-year service</p>
+          <p>Works: 79 Mahada Colony, Malegaon 423203, Maharashtra, India. MNRE-aligned, 5-year service</p>
         </div>
       </div>
     </footer>

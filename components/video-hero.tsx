@@ -42,7 +42,7 @@ export function VideoHero() {
         </Reveal>
 
         <p aria-hidden className="vertical-micro absolute right-6 top-24 hidden text-white/40 xl:block">
-          EVN Solar — Rooftop · EV Charging
+          EVN Solar - Rooftop and EV Charging
         </p>
 
         <ScrollFade distance={110} fade={0.6}>
@@ -57,9 +57,8 @@ export function VideoHero() {
               <p
                 className="mt-5 max-w-md text-[15.5px] font-normal leading-[1.7] text-white/75"
               >
-                Rooftop solar, ground-mounted plants, solar carports and EV
-                charging — engineered as one system, so you cut the bill and
-                drive on sunshine.
+                Rooftop solar, ground plants, carports and EV charging,
+                engineered as one system to cut your bill.
               </p>
             </Reveal>
             <Reveal variant="up" delay={460}>
@@ -112,7 +111,7 @@ export function VideoHero() {
                 </div>
                 <blockquote className="text-[14px] font-normal leading-[1.7] text-white/90">
                   &ldquo;EVN combined our rooftop plant and depot charging in one
-                  project. Generation reporting just works — bills down 68% in
+                  project. Generation reporting just works. Bills down 68% in
                   six months.&rdquo;
                 </blockquote>
                 <p className="mt-2 text-[10.5px] font-semibold uppercase tracking-[0.1em] text-white/60">

@@ -44,7 +44,7 @@ export function SiteHeader() {
               </span>
               <span className="hidden sm:inline">Now booking site surveys</span>
               <span className="hidden items-center gap-1.5 text-white/35 md:inline-flex">
-                <MapPin size={11} /> Nashik — Malegaon — Maharashtra
+                <MapPin size={11} /> Nashik, Malegaon, Maharashtra
               </span>
             </p>
             <div className="flex items-center gap-4 text-[11.5px] font-medium">
@@ -205,7 +205,7 @@ export function SiteHeader() {
             Get a free site assessment <ArrowRight size={16} />
           </Link>
           <p className="mt-4 text-center text-[12px] font-medium tracking-wide text-white/50">
-            +91 70405 06295 · info@evnsolar.in
+            +91 70405 06295, info@evnsolar.in
           </p>
         </div>
       </div>

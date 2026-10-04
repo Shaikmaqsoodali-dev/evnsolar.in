@@ -4,9 +4,9 @@ import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Reveal, Stagger } from '@/components/motion'
 
 export const metadata = {
-  title: 'Best Solar Panels for Home in India — 10 Options Explained | EVN Solar',
+  title: 'Best Solar Panels for Home in India | 10 Options Explained | EVN Solar',
   description:
-    'A practical guide to 10 commonly used solar panel brands for Indian homes — monocrystalline, polycrystalline and multi-crystalline options, how to choose, and what to ask your installer.',
+    'A practical guide to 10 commonly used solar panel brands for Indian homes: monocrystalline, polycrystalline and multi-crystalline options, how to choose, and what to ask your installer.',
 }
 
 const PANELS = [
@@ -89,20 +89,20 @@ const TECH = [
 ]
 
 const CHECKLIST = [
-  'Measure your shadow-free roof area — it decides mono vs poly more than brand does.',
+  'Measure your shadow-free roof area. It decides mono vs poly more than brand does.',
   'Match system size to your monthly units and future load (including any EV plans).',
   'Compare product and performance warranties on the actual datasheet, not the brochure.',
   'Check the installer\u2019s scope: structure, wiring, earthing, net-metering and monitoring.',
-  'Ask who handles service claims — the dealer, the installer, or the manufacturer directly.',
+  'Ask who handles service claims: the dealer, the installer, or the manufacturer directly.',
 ]
 
 export default function SolarPanelsGuidePost() {
   return (
     <main className="bg-[#F2F7F4]">
       <PageIntro
-        kicker="Guides · Home solar"
+        kicker="Home solar guides"
         title={<>Best solar panels for home in India, <em className="editorial-accent text-[#008ED6]">explained.</em></>}
-        lede="Ten panel options Indian homeowners commonly compare — what each technology means, who each brand suits, and how to choose the right one for your roof."
+        lede="Ten panel options Indian homeowners commonly compare: what each technology means, who each brand suits, and how to choose the right one for your roof."
         crumb={[['Blog', '/blog'], ['Best solar panels for home', '/blog/best-solar-panels-home-india']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791122118/03-navitas-solar-multi-crystalline-solar-panels.webp"
         imageAlt="Rows of solar panels in a solar field"
@@ -115,7 +115,7 @@ export default function SolarPanelsGuidePost() {
             <strong className="font-semibold text-[#071D26]">roof space</strong>, your{' '}
             <strong className="font-semibold text-[#071D26]">budget</strong>, and your{' '}
             <strong className="font-semibold text-[#071D26]">monthly consumption</strong>. The brand matters less
-            than getting these three right — but since most homeowners compare the same set of names, here are
+            than getting these three right, but since most homeowners compare the same set of names, here are
             ten commonly used options in India, rewritten in plain language so you can compare them side by side.
           </p>
         </Reveal>
@@ -123,8 +123,8 @@ export default function SolarPanelsGuidePost() {
         {/* Technology primer */}
         <Reveal delay={80}>
           <div className="mt-10 border border-[#BFDDF2] bg-[#E9F4FB] p-7 sm:p-8" style={{ borderRadius: 10 }}>
-            <p className="micro flex items-center gap-3 text-[#008ED6]">
-              <Sun size={14} /> Panel types in 30 seconds
+            <p className="font-display flex items-center gap-3 text-[18px] font-semibold text-[#008ED6]">
+              <Sun size={16} /> Panel types in 30 seconds.
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
               {TECH.map(([t, h, d]) => (
@@ -169,7 +169,6 @@ export default function SolarPanelsGuidePost() {
         {/* How to choose */}
         <Reveal>
           <div className="mt-10 bg-[#071D26] p-7 text-white sm:p-9" style={{ borderRadius: 10 }}>
-            <p className="micro text-[#25C7E8]">Before you buy</p>
             <h2 className="sx sx-md mt-3 text-white">
               Five questions <em>worth asking.</em>
             </h2>
@@ -189,7 +188,7 @@ export default function SolarPanelsGuidePost() {
                 className="btn-shine font-display inline-flex items-center gap-2 bg-white px-6 py-3 text-[13.5px] font-semibold text-[#071D26] hover:bg-[#25C7E8]"
                 style={{ borderRadius: 6 }}
               >
-                Get panel advice <ArrowRight size={15} />
+                Get a free site assessment <ArrowRight size={15} />
               </Link>
               <Link
                 href="/blog"
@@ -204,7 +203,7 @@ export default function SolarPanelsGuidePost() {
 
         <Reveal delay={60}>
           <p className="fineprint mt-6 text-center text-[#789096]">
-            Brand line-ups, models and warranties change over time — confirm the current datasheet with your
+            Brand line-ups, models and warranties change over time. Confirm the current datasheet with your
             supplier or installer before deciding. This guide is educational and does not rank or endorse any brand.
           </p>
         </Reveal>

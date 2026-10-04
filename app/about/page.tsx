@@ -23,7 +23,7 @@ import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 import { Parallax, Reveal, Stagger } from '@/components/motion'
 
 export const metadata = {
-  title: 'About EVN Solar — Powering a Smarter, Cleaner Future',
+  title: 'About EVN Solar | Powering a Smarter, Cleaner Future',
   description:
     'EVN Solar is a renewable energy solutions company making solar power and electric mobility accessible, reliable and practical for homes, businesses and industries.',
 }
@@ -32,17 +32,17 @@ const WHAT_WE_DO = [
   {
     icon: Sun,
     title: 'Solar Energy Solutions',
-    desc: 'Efficient rooftop and commercial solar systems tailored to each customer\u2019s energy requirements — on-grid, off-grid, or hybrid, matched to property and energy goals.',
+    desc: 'Efficient rooftop and commercial solar systems tailored to each customer\u2019s energy requirements: on-grid, off-grid, or hybrid, matched to property and energy goals.',
   },
   {
     icon: ClipboardCheck,
     title: 'Solar EPC & Project Execution',
-    desc: 'Complete project lifecycle management — site assessment, engineering, system design, procurement, installation, testing and commissioning as a streamlined turnkey experience.',
+    desc: 'Complete project lifecycle management: site assessment, engineering, system design, procurement, installation, testing and commissioning as a streamlined turnkey experience.',
   },
   {
     icon: PlugZap,
     title: 'EV Charging Solutions',
-    desc: 'Reliable EV charging infrastructure for homes, businesses, commercial properties and other locations — convenient, practical and future-ready.',
+    desc: 'Reliable EV charging infrastructure for homes, businesses, commercial properties and other locations. Convenient, practical and future-ready.',
   },
   {
     icon: Wrench,
@@ -121,7 +121,6 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal variant="left">
             <SectionHeading
-              kicker="Introduction"
               title={
                 <>
                   Simple, dependable energy, <em className="editorial-accent text-[#008ED6]">built for the long term.</em>
@@ -135,7 +134,7 @@ export default function AboutPage() {
                 homes, businesses, and industries.
               </p>
               <p>
-                We provide end-to-end solar solutions — from consultation and system
+                We provide end-to-end solar solutions, from consultation and system
                 design to installation, commissioning, and ongoing support. Our approach
                 combines engineering expertise, quality equipment, and practical project
                 execution to deliver energy systems designed for long-term performance.
@@ -154,7 +153,7 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-2 border border-[#CBD6DD] bg-white px-6 py-3 text-[14px] font-semibold text-[#071D26] hover:border-[#008ED6] hover:text-[#008ED6]"
                 style={{ borderRadius: 6 }}
               >
-                Talk to our team
+                Get a free site assessment
               </Link>
             </div>
           </Reveal>
@@ -221,7 +220,7 @@ export default function AboutPage() {
             >
               <p className="text-[14.5px] font-normal leading-relaxed text-[#33474E]">
                 <span className="font-display font-semibold text-[#071D26]">Not sure which system fits?</span>{' '}
-                On-grid, off-grid, or hybrid — we help you choose the right system for your property and energy goals.
+                On-grid, off-grid, or hybrid. We help you choose the right system for your property and energy goals.
               </p>
               <Link
                 href="/services"
@@ -238,13 +237,12 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <SectionHeading
-            kicker="Our approach"
             title={
               <>
                 From first consultation <em className="editorial-accent text-[#008ED6]">to ongoing support.</em>
               </>
             }
-            lede="Every project begins with understanding the customer's energy requirements, available space, budget, and future needs — then develops into a solution that balances performance, reliability, and investment value."
+            lede="Every project begins with understanding the customer's energy requirements, available space, budget, and future needs, then develops into a solution that balances performance, reliability, and investment value."
           />
           <ol className="mt-10 grid gap-px overflow-hidden border border-[#E2E8EC] bg-[#E2E8EC] sm:grid-cols-2 lg:grid-cols-4" style={{ borderRadius: 8 }}>
             {APPROACH_STEPS.map(({ n, title, desc }, i) => (
@@ -281,7 +279,7 @@ export default function AboutPage() {
                   className="font-display mt-5 inline-flex items-center gap-2 bg-white px-5 py-2.5 text-[13px] font-semibold text-[#071D26] hover:bg-[#071D26] hover:text-white"
                   style={{ borderRadius: 6 }}
                 >
-                  Get in touch <ArrowRight size={14} />
+                  Get a free site assessment <ArrowRight size={14} />
                 </Link>
               </li>
             </Reveal>
@@ -299,7 +297,6 @@ export default function AboutPage() {
       <section className="border-y border-[#E2E8EC] bg-[#F2F7F4]">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <SectionHeading
-            kicker="Why EVN Solar"
             title={
               <>
                 A partner for <em className="editorial-accent text-[#008ED6]">the long term.</em>
@@ -359,7 +356,7 @@ export default function AboutPage() {
               >
                 <div className="orb left-[-10%] top-[-30%] size-64 bg-[#008ED6]/30" aria-hidden />
                 <div className="relative">
-                  <p className="micro flex items-center gap-3 text-[#25C7E8]">
+                  <p className="font-display flex items-center gap-3 text-[17px] font-semibold text-[#25C7E8]">
                     <span className="inline-block h-[2px] w-8 bg-[#25C7E8]" aria-hidden />
                     Our mission
                   </p>
@@ -398,7 +395,7 @@ export default function AboutPage() {
                 style={{ borderRadius: 10, background: 'linear-gradient(135deg, #E9F4FB 0%, #FFFFFF 55%, #EAF7EE 100%)' }}
               >
                 <div>
-                  <p className="micro flex items-center gap-3 text-[#008ED6]">
+                  <p className="font-display flex items-center gap-3 text-[17px] font-semibold text-[#008ED6]">
                     <span className="inline-block h-[2px] w-8 bg-[#008ED6]" aria-hidden />
                     Our vision
                   </p>
@@ -439,7 +436,7 @@ export default function AboutPage() {
                       className="font-display inline-flex items-center gap-2 border border-[#071D26]/20 bg-white px-6 py-3 text-[13px] font-semibold text-[#071D26] hover:border-[#008ED6] hover:text-[#008ED6]"
                       style={{ borderRadius: 6 }}
                     >
-                      Start a project
+                      Get a free site assessment <ArrowRight size={14} />
                     </Link>
                   </div>
                 </div>

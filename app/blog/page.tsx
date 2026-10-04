@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Reveal } from '@/components/motion'
 
-export const metadata = { title: 'Blog — EVN Solar Energy Solutions' }
+export const metadata = { title: 'Blog | EVN Solar Energy Solutions' }
 
 const GUIDE_PANELS = [
   { img: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791122120/01-spark-solar-polycrystalline-solar-panels.webp', name: 'Spark Solar' },
@@ -34,8 +34,8 @@ export default function BlogPage() {
           <div className="border border-[#E2E8EC] bg-white p-6 sm:p-8" style={{ borderRadius: 10 }}>
             <div className="flex flex-wrap items-end justify-between gap-3">
               <div>
-                <p className="card-cat">Buying guide · Oct 2026</p>
-                <h2 className="card-title mt-1.5 text-[#071D26]" style={{ fontSize: '19px' }}>Best solar panels for home in India — 10 options explained</h2>
+                <p className="card-cat">Buying guide, Oct 2026</p>
+                <h2 className="card-title mt-1.5 text-[#071D26]" style={{ fontSize: '19px' }}>Best solar panels for home in India: 10 options explained</h2>
                 <p className="card-desc mt-1.5 max-w-2xl text-[#50656A]">
                   Spark, Vikram, Tata, REC, Luminous, Loom and more: mono vs poly vs multi-crystalline,
                   who each suits, and five questions to ask before buying.
