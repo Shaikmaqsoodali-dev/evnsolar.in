@@ -11,7 +11,7 @@ const PROJECTS = [
   { img: IMG.industrial, sector: 'Industrial · Malegaon', size: '120 kW', t: 'Ground-mounted plant + fleet charging', d: 'Land-optimized rows with scheduled depot charging and monthly generation reporting.' },
   { img: IMG.carport, sector: 'Commercial · Office campus', size: '40 kW', t: 'Solar carport, EV-ready', d: 'Waterproof parking structure with charger conduits, lighting and CCTV provision.' },
   { img: IMG.panel, sector: 'Commercial · Hospital', size: '30 kW', t: 'Hospital rooftop with O&M', d: 'High-uptime design with cleaning plan, thermography and annual maintenance contract.' },
-  { img: IMG.evCharge, sector: 'Fleet · Logistics depot', size: '60 kW DC + 22 kW AC', t: 'Depot charging hub', d: 'DC fast plus multi-point AC with load management, RFID billing and fleet reports.' },
+  { img: IMG.fleetDepot, sector: 'Fleet · Logistics depot', size: '60 kW DC + 22 kW AC', t: 'Depot charging hub', d: 'DC fast plus multi-point AC with load management, RFID billing and fleet reports.' },
   { img: IMG.solarField, sector: 'Industrial · Farm', size: '250 kW', t: 'Captive ground-mounted plant', d: 'Captive generation with SCADA-ready monitoring and staged expansion provision.' },
 ]
 
