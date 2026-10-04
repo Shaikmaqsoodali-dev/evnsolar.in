@@ -24,6 +24,8 @@ export default function ProjectsPage() {
         lede="A selection of residential, commercial and industrial installations across Maharashtra. Every project includes drawings, test records and a monitoring handover."
         meta={['2.4 MW+ installed', 'Residential to MW-scale', 'Drawings & test records included']}
         crumb={[['Projects', '/projects']]}
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar_carport_EV-ready_parking.jpg"
+        imageAlt="Solar carport EV-ready parking"
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" step={90}>

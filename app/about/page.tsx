@@ -15,6 +15,8 @@ export default function AboutPage() {
         lede="EVN Solar Energy Solutions designs rooftop solar, ground-mounted plants, solar carports and EV charging as one engineered system — safe, monitored and subsidy-ready."
         meta={['Based in Malegaon, serving Maharashtra', 'Residential · Commercial · Industrial', 'In-house survey, install & service']}
         crumb={[['About', '/about']]}
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar-Panel-Installation.png"
+        imageAlt="Solar panel installation"
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">

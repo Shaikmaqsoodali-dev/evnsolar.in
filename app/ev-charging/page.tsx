@@ -16,6 +16,8 @@ export default function EvChargingPage() {
         lede="7.4–60 kW AC and DC chargers with load management, solar-priority charging, billing and fleet reporting for homes, offices and depots."
         meta={['7.4–22 kW AC · 30–60 kW DC', 'OCPP with remote diagnostics', 'Load study before you pay']}
         crumb={[['EV Charging', '/ev-charging']]}
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106732/Electric_vehicle_charging.png"
+        imageAlt="Electric vehicle charging"
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">

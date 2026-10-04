@@ -39,6 +39,8 @@ export default function ServicesPage() {
         lede="On-grid, hybrid and battery-ready systems with engineering drawings, DISCOM liaison and verified generation — not just installation."
         meta={['On-grid · Hybrid · Battery-ready', 'Tier-1 modules, tested inverters', 'Subsidy & net-metering handled']}
         crumb={[['Solar', '/services']]}
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Rooftop_solar_installation.webp"
+        imageAlt="Rooftop solar installation"
       />
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">

@@ -58,12 +58,16 @@ export function PageIntro({
   lede,
   meta,
   crumb,
+  image,
+  imageAlt = '',
 }: {
   kicker: string
   title: React.ReactNode
   lede?: string
   meta?: string[]
   crumb?: [string, string][]
+  image?: string
+  imageAlt?: string
 }) {
   return (
     <MotionGrid
@@ -73,7 +77,21 @@ export function PageIntro({
       lineColor="20, 184, 166"
       className="border-b border-[#E2E8EC] bg-[#F2F7F4]"
     >
-      <div className="mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
+      {image && (
+        <>
+          <img
+            src={image}
+            alt={imageAlt}
+            aria-hidden={imageAlt ? undefined : true}
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+          />
+          {/* Light overlay keeps existing dark titles/breadcrumbs readable; subtle dark gradient at bottom aids contrast */}
+          <div aria-hidden className="absolute inset-0 bg-[#F2F7F4]/85" />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#F2F7F4]/60 via-transparent to-[#F2F7F4]/40" />
+        </>
+      )}
+      <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
         {crumb && (
           <Reveal variant="fade" delay={0}>
             <Breadcrumbs trail={crumb} />
