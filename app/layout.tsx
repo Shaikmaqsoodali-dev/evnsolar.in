@@ -5,8 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 import { BackToTop, FloatCta, MobileCtaBar } from '@/components/ux-bits'
 import { ScrollProgress } from '@/components/motion'
 
-/* AGENCY TYPE SYSTEM — loaded via Google Fonts <link> (Turbopack-safe).
-   Display: Archivo 700/800 tight. Body: Plus Jakarta Sans. Accent: Instrument Serif italic. */
+/* SYSTEM TYPE — Arial / Inter system stacks only, no Google Fonts. */
 
 export const metadata: Metadata = {
   title: 'EVN Solar Energy Solutions - Rooftop Solar & EV Charging, Maharashtra',
@@ -30,14 +29,6 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className="bg-white text-[#072A45] antialiased">
         <ScrollProgress />
         <SiteHeader />

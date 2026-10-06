@@ -3,11 +3,11 @@
 @import 'shadcn/tailwind.css';
 
 @theme {
-  --font-display: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-grot: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif-ed: 'Instrument Serif', Georgia, serif;
-  --font-tech: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: Inter, Arial, Helvetica, sans-serif;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-grot: Inter, Arial, Helvetica, sans-serif;
+  --font-serif-ed: Arial, Helvetica, sans-serif;
+  --font-tech: Inter, Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -40,11 +40,11 @@
   --muted-tx: #54687A;
   --body-tx: #3E5162;
 
-  --font-display: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-grot: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif-ed: 'Instrument Serif', Georgia, serif;
-  --font-tech: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: Inter, Arial, Helvetica, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-grot: Inter, Arial, Helvetica, sans-serif;
+  --font-serif-ed: Arial, Helvetica, sans-serif;
+  --font-tech: Inter, Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -55,7 +55,7 @@ body {
   margin: 0;
   background: #fff;
   color: var(--body-tx);
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6em;
   font-weight: 400;
@@ -65,7 +65,7 @@ body {
   font-feature-settings: 'ss01', 'cv11', 'liga';
 }
 
-/* AGENCY type: Archivo 700/800 display, tight -0.03em, sentence-case. Body Plus Jakarta, -0.011em. */
+/* AGENCY type: Inter 700/800 display, tight -0.03em, sentence-case. Body Arial, -0.011em. */
 h1,
 h2,
 h3,
@@ -73,7 +73,7 @@ h4,
 h5,
 h6,
 .font-display {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   letter-spacing: -0.03em;
   word-spacing: 0;
@@ -92,24 +92,24 @@ p {
   text-wrap: pretty;
   line-height: 1.6em;
   letter-spacing: -0.011em;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav a,
 header a {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: -0.015em;
 }
 
-/* AGENCY buttons — Archivo 700, tighter tracking, less shouty than template. */
+/* AGENCY buttons — Inter 700, tighter tracking, less shouty than template. */
 button,
 input[type='submit'],
 input[type='button'],
 .cta-bold,
 .cta-med,
 .energium-button {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -231,7 +231,7 @@ input[type='button'],
 }
 
 .section-title {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   text-transform: none;
   letter-spacing: -0.028em;
@@ -240,9 +240,9 @@ input[type='button'],
   text-wrap: balance;
 }
 
-/* 1. HERO — AGENCY: Archivo 800, oversized, ultra-tight 0.96. Serif italic accent for contrast. */
+/* 1. HERO — AGENCY: Inter 800, oversized, ultra-tight 0.96. Serif italic accent for contrast. */
 .hero-display {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   text-transform: none;
   letter-spacing: -0.04em;
@@ -265,7 +265,7 @@ input[type='button'],
 .hero-display .serif-accent,
 .hero-display em {
   display: inline;
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1.04em;
@@ -275,9 +275,9 @@ input[type='button'],
   color: var(--solor-accent);
 }
 
-/* 1b. SUBPAGE HERO — Archivo 800, tight. */
+/* 1b. SUBPAGE HERO — Inter 800, tight. */
 .page-hero {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   text-transform: none;
   letter-spacing: -0.032em;
@@ -290,7 +290,7 @@ input[type='button'],
 }
 .page-hero .editorial-accent,
 .page-hero .serif-accent {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1.05em;
@@ -302,7 +302,7 @@ input[type='button'],
 
 .serif-accent,
 .editorial-accent {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: 400;
   text-transform: none;
@@ -311,9 +311,9 @@ input[type='button'],
   color: var(--solor-accent-dark);
 }
 
-/* 2. SECTION HEADINGS — AGENCY h2: Archivo 800, tight, large contrast. */
+/* 2. SECTION HEADINGS — AGENCY h2: Inter 800, tight, large contrast. */
 .sx {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   text-transform: none;
   letter-spacing: -0.03em;
@@ -333,7 +333,7 @@ input[type='button'],
 .sx .editorial-accent,
 .sx .serif-accent,
 .sx em {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1.06em;
@@ -341,9 +341,9 @@ input[type='button'],
   line-height: 0.9em;
 }
 
-/* Ghost index numeral — agency: Archivo 800, tabular, faded. */
+/* Ghost index numeral — agency: Inter 800, tabular, faded. */
 .sx-index {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 0.9;
@@ -354,9 +354,9 @@ input[type='button'],
 }
 .sx-index.on-dark { color: rgb(255 255 255 / 0.12); }
 
-/* 3. NUMBERS — agency counters: Archivo 800 tabular, tight. */
+/* 3. NUMBERS — agency counters: Inter 800 tabular, tight. */
 .stat-number {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 0.95em;
@@ -365,16 +365,16 @@ input[type='button'],
   font-feature-settings: 'ss01', 'tnum';
 }
 .stat-unit {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 0.5em;
   letter-spacing: -0.02em;
   margin-left: 0.08em;
 }
 
-/* 4. EYEBROWS — AGENCY kicker: Archivo 700 micro-label with rule, not dot-spam. */
+/* 4. EYEBROWS — AGENCY kicker: Inter 700 micro-label with rule, not dot-spam. */
 .micro {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -396,9 +396,9 @@ input[type='button'],
   left: 0.9rem;
 }
 
-/* Cards — AGENCY: Archivo 700 titles, Jakarta body, sharp tracking. */
+/* Cards — AGENCY: Inter 700 titles, Arial body, sharp tracking. */
 .card-cat {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -408,7 +408,7 @@ input[type='button'],
 }
 .card-cat--on-dark { color: var(--solor-accent); }
 .card-title {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 21px;
   letter-spacing: -0.022em;
@@ -417,7 +417,7 @@ input[type='button'],
 /* Icon-first cards: bold scannable titles, icon carries the meaning so
    photo + overlay + title never repeat the same words. */
 .card-title-strong {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 21px;
   letter-spacing: -0.022em;
@@ -445,7 +445,7 @@ input[type='button'],
   left: 0.9rem;
 }
 .photo-badge__label {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -461,7 +461,7 @@ input[type='button'],
 }
 /* ---- In-photo title UX: bold readable typography over images ----
    Usage: .photo-frame > img + .photo-scrim + .photo-caption(.photo-eyebrow + .photo-title)
-   Bold Archivo 800, white, strong scrim + text-shadow = scannable at a glance. */
+   Bold Inter 800, white, strong scrim + text-shadow = scannable at a glance. */
 .photo-frame {
   position: relative;
   overflow: hidden;
@@ -493,7 +493,7 @@ input[type='button'],
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 10.5px;
   letter-spacing: 0.18em;
@@ -510,7 +510,7 @@ input[type='button'],
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.6);
 }
 .photo-title {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   color: #fff;
   letter-spacing: -0.028em;
@@ -535,7 +535,7 @@ input[type='button'],
   letter-spacing: -0.024em;
 }
 .photo-sub {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 1.5em;
@@ -550,7 +550,7 @@ input[type='button'],
   text-shadow: 0 2px 18px rgb(3 18 30 / 0.55), 0 1px 3px rgb(3 18 30 / 0.7);
 }
 .card-desc {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14.5px;
   line-height: 1.6em;
@@ -561,7 +561,7 @@ input[type='button'],
 }
 
 .tech-label {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   text-transform: none;
   letter-spacing: -0.02em;
@@ -569,7 +569,7 @@ input[type='button'],
   line-height: 1.15em;
 }
 .tech-desc {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14.5px;
   line-height: 1.6em;
@@ -583,9 +583,9 @@ input[type='button'],
   line-height: 1.6em;
 }
 
-/* Quotes — AGENCY: Jakarta body, Archivo micro attribution. */
+/* Quotes — AGENCY: Arial body, Inter micro attribution. */
 .quote-ed {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.011em;
@@ -594,7 +594,7 @@ input[type='button'],
   text-wrap: pretty;
 }
 .quote-by {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -603,7 +603,7 @@ input[type='button'],
 }
 
 .foot-title {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -611,14 +611,14 @@ input[type='button'],
   line-height: 1.5em;
 }
 .foot-link {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14.5px;
   letter-spacing: -0.011em;
   line-height: 1.6em;
 }
 .foot-copy {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 12.5px;
   letter-spacing: -0.008em;
@@ -628,7 +628,7 @@ input[type='button'],
 .vertical-micro {
   writing-mode: vertical-rl;
   rotate: 180deg;
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: 0.2em;
   font-size: 11px;
@@ -668,7 +668,7 @@ input[type='button'],
 
 /* SOLOR step badge */
 .solor-step {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 800;
   letter-spacing: -0.02em;
   background: var(--solor-primary);
@@ -758,7 +758,7 @@ img {
 }
 .scroll-words .sw-word em,
 .scroll-words .sw-word .serif-accent {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1.06em;
@@ -817,7 +817,7 @@ img {
   60%, 100% { top: 110%; }
 }
 .scroll-cue .cue-text {
-  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;
