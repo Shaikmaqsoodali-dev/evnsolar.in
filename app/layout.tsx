@@ -1,45 +1,12 @@
 ﻿import type { Metadata, Viewport } from 'next'
-import { Rajdhani, Rubik } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
 import { BackToTop, FloatCta, MobileCtaBar } from '@/components/ux-bits'
 import { ScrollProgress } from '@/components/motion'
 
-/* BODY + DISPLAY — SOLOR reference: Rajdhani headings (600/700), Rubik body (400/500). */
-const body = Rubik({
-  subsets: ['latin'],
-  variable: '--font-body',
-  weight: ['400', '500', '600'],
-  display: 'swap',
-})
-/* DISPLAY — Rajdhani bold headings like Solor h1–h6. */
-const display = Rajdhani({
-  subsets: ['latin'],
-  variable: '--font-display',
-  weight: ['500', '600', '700'],
-  display: 'swap',
-})
-const grot = Rajdhani({
-  subsets: ['latin'],
-  variable: '--font-grot',
-  weight: ['500', '600', '700'],
-  display: 'swap',
-})
-/* SPECIAL TITLES — Rubik for subheadings, like Solor body. */
-const serifEd = Rubik({
-  subsets: ['latin'],
-  variable: '--font-serif-ed',
-  weight: ['400', '500'],
-  display: 'swap',
-})
-/* META / BUTTONS — Rajdhani 600 uppercase (Solor buttons). Kept under --font-tech name so existing classes keep working. */
-const tech = Rajdhani({
-  subsets: ['latin'],
-  variable: '--font-tech',
-  weight: ['500', '600', '700'],
-  display: 'swap',
-})
+/* AGENCY TYPE SYSTEM — loaded via Google Fonts <link> (Turbopack-safe).
+   Display: Archivo 700/800 tight. Body: Plus Jakarta Sans. Accent: Instrument Serif italic. */
 
 export const metadata: Metadata = {
   title: 'EVN Solar Energy Solutions - Rooftop Solar & EV Charging, Maharashtra',
@@ -62,7 +29,15 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${body.variable} ${display.variable} ${grot.variable} ${serifEd.variable} ${tech.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="bg-white text-[#072A45] antialiased">
         <ScrollProgress />
         <SiteHeader />

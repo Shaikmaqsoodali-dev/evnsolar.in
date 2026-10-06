@@ -3,11 +3,11 @@
 @import 'shadcn/tailwind.css';
 
 @theme {
-  --font-display: 'Rajdhani', Arial, Helvetica, sans-serif;
-  --font-sans: 'Rubik', Arial, Helvetica, sans-serif;
-  --font-grot: 'Rajdhani', Arial, Helvetica, sans-serif;
-  --font-serif-ed: 'Rubik', Arial, Helvetica, sans-serif;
-  --font-tech: 'Rajdhani', Arial, Helvetica, sans-serif;
+  --font-display: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-grot: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif-ed: 'Instrument Serif', Georgia, serif;
+  --font-tech: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 :root {
@@ -40,11 +40,11 @@
   --muted-tx: #54687A;
   --body-tx: #3E5162;
 
-  --font-display: 'Rajdhani', Arial, Helvetica, sans-serif;
-  --font-body: 'Rubik', Arial, Helvetica, sans-serif;
-  --font-grot: 'Rajdhani', Arial, Helvetica, sans-serif;
-  --font-serif-ed: 'Rubik', Arial, Helvetica, sans-serif;
-  --font-tech: 'Rajdhani', Arial, Helvetica, sans-serif;
+  --font-display: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-grot: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif-ed: 'Instrument Serif', Georgia, serif;
+  --font-tech: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 html {
@@ -55,15 +55,17 @@ body {
   margin: 0;
   background: #fff;
   color: var(--body-tx);
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-size: 16px;
-  line-height: 1.75em;
+  line-height: 1.6em;
   font-weight: 400;
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'cv11', 'liga';
 }
 
-/* SOLOR type: Rajdhani 600/700 headings, tight, title-case. Rubik 400 body. */
+/* AGENCY type: Archivo 700/800 display, tight -0.03em, sentence-case. Body Plus Jakarta, -0.011em. */
 h1,
 h2,
 h3,
@@ -71,45 +73,48 @@ h4,
 h5,
 h6,
 .font-display {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   word-spacing: 0;
   font-style: normal;
   text-transform: none;
   text-wrap: balance;
-  line-height: 1.15em;
+  line-height: 1.02em;
+  font-feature-settings: 'ss01', 'cv11', 'liga';
 }
-h1 { line-height: 1.05em; }
-h2 { line-height: 1.12em; }
-h3 { line-height: 1.2em; }
-h4 { line-height: 1.3em; }
+h1 { line-height: 0.98em; letter-spacing: -0.035em; }
+h2 { line-height: 1.02em; letter-spacing: -0.03em; }
+h3 { line-height: 1.08em; letter-spacing: -0.022em; }
+h4 { line-height: 1.15em; letter-spacing: -0.018em; }
 
 p {
   text-wrap: pretty;
-  line-height: 1.75em;
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  line-height: 1.6em;
+  letter-spacing: -0.011em;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 nav a,
 header a {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
-/* SOLOR buttons — Rajdhani 600 uppercase, wide tracking. */
+/* AGENCY buttons — Archivo 700, tighter tracking, less shouty than template. */
 button,
 input[type='submit'],
 input[type='button'],
 .cta-bold,
 .cta-med,
 .energium-button {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  letter-spacing: 0.06em;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
-.cta-bold { font-weight: 700; font-size: 15px; }
-.cta-med { font-weight: 600; font-size: 14px; }
+.cta-bold { font-weight: 800; font-size: 15px; }
+.cta-med { font-weight: 700; font-size: 14px; }
 
 /* ---- Motion system (components/motion.tsx) ---- */
 :root {
@@ -226,140 +231,155 @@ input[type='button'],
 }
 
 .section-title {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
   text-transform: none;
-  letter-spacing: 0;
+  letter-spacing: -0.028em;
   word-spacing: 0;
-  line-height: 1.12em;
+  line-height: 1.02em;
   text-wrap: balance;
 }
 
-/* 1. HERO — SOLOR: Rajdhani 700, 64px desktop, tight 1.05. */
+/* 1. HERO — AGENCY: Archivo 800, oversized, ultra-tight 0.96. Serif italic accent for contrast. */
 .hero-display {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
   text-transform: none;
-  letter-spacing: -0.01em;
-  word-spacing: 0;
-  line-height: 1.05em;
+  letter-spacing: -0.04em;
+  word-spacing: -0.02em;
+  line-height: 0.96em;
   text-wrap: balance;
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(48px, 6.4vw, 88px);
   overflow-wrap: break-word;
+  font-feature-settings: 'ss01', 'cv11', 'liga';
 }
 .hero-display .hero-heavy {
-  font-weight: 700;
+  font-weight: 800;
 }
 .hero-display .thin {
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   color: inherit;
 }
 .hero-display .editorial-accent,
 .hero-display .serif-accent,
 .hero-display em {
   display: inline;
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1em;
-  letter-spacing: -0.01em;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.04em;
+  letter-spacing: -0.015em;
+  line-height: 0.9em;
+  padding-right: 0.06em;
   color: var(--solor-accent);
 }
 
-/* 1b. SUBPAGE HERO — Rajdhani 700. */
+/* 1b. SUBPAGE HERO — Archivo 800, tight. */
 .page-hero {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
   text-transform: none;
-  letter-spacing: -0.01em;
-  word-spacing: 0;
-  line-height: 1.05em;
+  letter-spacing: -0.032em;
+  word-spacing: -0.01em;
+  line-height: 0.98em;
   text-wrap: balance;
   overflow-wrap: break-word;
-  font-size: clamp(34px, 4.4vw, 56px);
+  font-size: clamp(40px, 5.2vw, 68px);
+  font-feature-settings: 'ss01', 'cv11', 'liga';
 }
 .page-hero .editorial-accent,
 .page-hero .serif-accent {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05em;
   letter-spacing: -0.01em;
+  line-height: 0.9em;
+  padding-right: 0.05em;
   color: var(--solor-accent);
 }
 
 .serif-accent,
 .editorial-accent {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
   text-transform: none;
   letter-spacing: -0.01em;
+  line-height: 0.95em;
   color: var(--solor-accent-dark);
 }
 
-/* 2. SECTION HEADINGS — SOLOR h2: Rajdhani 700, 42px / 1.12. */
+/* 2. SECTION HEADINGS — AGENCY h2: Archivo 800, tight, large contrast. */
 .sx {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
   text-transform: none;
-  letter-spacing: -0.01em;
-  word-spacing: 0;
-  line-height: 1.12em;
+  letter-spacing: -0.03em;
+  word-spacing: -0.01em;
+  line-height: 1em;
   text-wrap: balance;
   overflow-wrap: break-word;
+  font-feature-settings: 'ss01', 'cv11', 'liga';
 }
-.sx-xl { font-size: clamp(32px, 3.8vw, 48px); line-height: 1.08em; }
-.sx-lg { font-size: clamp(30px, 3.4vw, 42px); line-height: 1.12em; }
-.sx-md { font-size: clamp(24px, 2.6vw, 30px); line-height: 1.2em; }
+.sx-xl { font-size: clamp(36px, 4.6vw, 60px); line-height: 0.98em; letter-spacing: -0.033em; }
+.sx-lg { font-size: clamp(32px, 4vw, 52px); line-height: 1em; letter-spacing: -0.03em; }
+.sx-md { font-size: clamp(26px, 3vw, 36px); line-height: 1.04em; letter-spacing: -0.025em; }
 .sx .thin {
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 .sx .editorial-accent,
 .sx .serif-accent,
 .sx em {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1em;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
+  letter-spacing: -0.01em;
+  line-height: 0.9em;
 }
 
-/* Ghost index numeral — Solor step numbers: Rajdhani 700. */
+/* Ghost index numeral — agency: Archivo 800, tabular, faded. */
 .sx-index {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
   font-size: clamp(3rem, 6vw, 4.5rem);
-  line-height: 1;
-  letter-spacing: 0;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
   color: #C2D4E2;
   user-select: none;
+  font-variant-numeric: tabular-nums;
 }
 .sx-index.on-dark { color: rgb(255 255 255 / 0.12); }
 
-/* 3. NUMBERS — Solor counters: Rajdhani 700. */
+/* 3. NUMBERS — agency counters: Archivo 800 tabular, tight. */
 .stat-number {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1em;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.95em;
   font-variant-numeric: tabular-nums;
-  font-size: clamp(34px, 3.4vw, 48px);
+  font-size: clamp(38px, 4vw, 56px);
+  font-feature-settings: 'ss01', 'tnum';
 }
 .stat-unit {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  font-size: 0.55em;
-  letter-spacing: 0;
-  margin-left: 0.1em;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.5em;
+  letter-spacing: -0.02em;
+  margin-left: 0.08em;
 }
 
-/* 4. EYEBROWS — SOLOR section tag: Rajdhani 600 uppercase, lime tick. */
+/* 4. EYEBROWS — AGENCY kicker: Archivo 700 micro-label with rule, not dot-spam. */
 .micro {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 14px;
-  line-height: 1.6em;
+  letter-spacing: 0.18em;
+  font-size: 11.5px;
+  line-height: 1.5em;
 }
 .micro-pill {
   display: inline-flex;
@@ -376,32 +396,32 @@ input[type='button'],
   left: 0.9rem;
 }
 
-/* Cards — Solor service-item: Rajdhani 600 title + Rubik 15px excerpt. */
+/* Cards — AGENCY: Archivo 700 titles, Jakarta body, sharp tracking. */
 .card-cat {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 13px;
-  line-height: 1.6em;
+  letter-spacing: 0.14em;
+  font-size: 11.5px;
+  line-height: 1.5em;
   color: var(--solor-accent-dark);
 }
 .card-cat--on-dark { color: var(--solor-accent); }
 .card-title {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: -0.01em;
-  line-height: 1.25em;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -0.022em;
+  line-height: 1.1em;
 }
 /* Icon-first cards: bold scannable titles, icon carries the meaning so
    photo + overlay + title never repeat the same words. */
 .card-title-strong {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: -0.01em;
-  line-height: 1.2em;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -0.022em;
+  line-height: 1.08em;
   text-wrap: balance;
 }
 .photo-badge {
@@ -425,10 +445,10 @@ input[type='button'],
   left: 0.9rem;
 }
 .photo-badge__label {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
@@ -441,7 +461,7 @@ input[type='button'],
 }
 /* ---- In-photo title UX: bold readable typography over images ----
    Usage: .photo-frame > img + .photo-scrim + .photo-caption(.photo-eyebrow + .photo-title)
-   Bold Rajdhani 700, white, strong scrim + text-shadow = scannable at a glance. */
+   Bold Archivo 800, white, strong scrim + text-shadow = scannable at a glance. */
 .photo-frame {
   position: relative;
   overflow: hidden;
@@ -473,10 +493,10 @@ input[type='button'],
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  font-size: 11.5px;
-  letter-spacing: 0.14em;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #62D984;
   text-shadow: 0 1px 2px rgb(0 0 0 / 0.8), 0 2px 10px rgb(0 0 0 / 0.6);
@@ -490,33 +510,36 @@ input[type='button'],
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.6);
 }
 .photo-title {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
   color: #fff;
-  letter-spacing: -0.01em;
-  line-height: 1.08em;
+  letter-spacing: -0.028em;
+  line-height: 1em;
   text-wrap: balance;
   overflow-wrap: break-word;
-  font-size: clamp(19px, 2.2vw, 24px);
-  margin-top: 0.3rem;
+  font-size: clamp(20px, 2.2vw, 25px);
+  margin-top: 0.35rem;
   text-shadow:
     0 1px 2px rgb(0 0 0 / 0.85),
     0 2px 14px rgb(0 0 0 / 0.65),
     0 4px 28px rgb(0 0 0 / 0.4);
 }
 .photo-title--lg {
-  font-size: clamp(22px, 2.8vw, 32px);
-  line-height: 1.05em;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 0.98em;
+  letter-spacing: -0.032em;
 }
 .photo-title--sm {
-  font-size: clamp(16px, 1.8vw, 19px);
-  line-height: 1.12em;
+  font-size: clamp(17px, 1.8vw, 20px);
+  line-height: 1.04em;
+  letter-spacing: -0.024em;
 }
 .photo-sub {
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 1.5em;
+  letter-spacing: -0.011em;
   color: rgb(255 255 255 / 0.85);
   margin-top: 0.25rem;
   text-shadow: 0 1px 2px rgb(0 0 0 / 0.8), 0 2px 8px rgb(0 0 0 / 0.5);
@@ -527,85 +550,88 @@ input[type='button'],
   text-shadow: 0 2px 18px rgb(3 18 30 / 0.55), 0 1px 3px rgb(3 18 30 / 0.7);
 }
 .card-desc {
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 1.75em;
+  font-size: 14.5px;
+  line-height: 1.6em;
+  letter-spacing: -0.011em;
 }
 .card-arrow {
   color: var(--solor-accent-dark);
 }
 
 .tech-label {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
   text-transform: none;
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
   font-size: 19px;
-  line-height: 1.3em;
+  line-height: 1.15em;
 }
 .tech-desc {
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 1.75em;
+  font-size: 14.5px;
+  line-height: 1.6em;
+  letter-spacing: -0.011em;
 }
 
 .fineprint {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.75em;
+  letter-spacing: -0.011em;
+  line-height: 1.6em;
 }
 
-/* Quotes — Solor testimonial: Rubik 400. Attribution Rajdhani 600 uppercase. */
+/* Quotes — AGENCY: Jakarta body, Archivo micro attribution. */
 .quote-ed {
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.75em;
-  font-size: 15.5px;
+  letter-spacing: -0.011em;
+  line-height: 1.6em;
+  font-size: 15px;
   text-wrap: pretty;
 }
 .quote-by {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 13px;
-  line-height: 1.6em;
+  letter-spacing: 0.14em;
+  font-size: 11.5px;
+  line-height: 1.5em;
 }
 
 .foot-title {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 15px;
-  line-height: 1.6em;
+  letter-spacing: 0.12em;
+  font-size: 12.5px;
+  line-height: 1.5em;
 }
 .foot-link {
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 1.75em;
+  font-size: 14.5px;
+  letter-spacing: -0.011em;
+  line-height: 1.6em;
 }
 .foot-copy {
-  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 0;
-  line-height: 1.75em;
+  font-size: 12.5px;
+  letter-spacing: -0.008em;
+  line-height: 1.6em;
 }
 
 .vertical-micro {
   writing-mode: vertical-rl;
   rotate: 180deg;
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  font-size: 13px;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-size: 11px;
   text-transform: uppercase;
 }
 
@@ -642,8 +668,9 @@ input[type='button'],
 
 /* SOLOR step badge */
 .solor-step {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   background: var(--solor-primary);
   color: var(--solor-accent);
   border-radius: 999px;
@@ -731,11 +758,12 @@ img {
 }
 .scroll-words .sw-word em,
 .scroll-words .sw-word .serif-accent {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1em;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
   letter-spacing: -0.01em;
+  line-height: 0.9em;
 }
 
 /* Scroll-linked fade/rise */
@@ -789,24 +817,24 @@ img {
   60%, 100% { top: 110%; }
 }
 .scroll-cue .cue-text {
-  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: 'Archivo', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 13px;
+  letter-spacing: 0.2em;
+  font-size: 11px;
 }
 
-/* Responsive guards — Solor h1 64 desktop / 40 mobile. */
+/* Responsive guards — AGENCY scale: hero 88 desktop / 40 mobile, tight throughout. */
 @media (max-width: 1023px) {
-  .hero-display { font-size: clamp(38px, 6vw, 50px); line-height: 1.05em; }
-  .page-hero { font-size: clamp(32px, 5.5vw, 46px); }
+  .hero-display { font-size: clamp(44px, 7vw, 64px); line-height: 0.98em; }
+  .page-hero { font-size: clamp(38px, 6vw, 56px); }
 }
 @media (max-width: 767px) {
-  body { font-size: 15.5px; }
-  .hero-display { font-size: clamp(34px, 9vw, 40px); line-height: 1.08em; }
-  .page-hero { font-size: clamp(30px, 8vw, 38px); line-height: 1.12em; }
-  .sx-xl { font-size: clamp(30px, 8vw, 38px); line-height: 1.12em; }
-  .sx-lg { font-size: clamp(28px, 7vw, 34px); line-height: 1.15em; }
-  .stat-number { font-size: clamp(32px, 9vw, 40px); }
-  .quote-ed { font-size: 15px; }
+  body { font-size: 15px; }
+  .hero-display { font-size: clamp(42px, 11vw, 52px); line-height: 0.98em; letter-spacing: -0.032em; }
+  .page-hero { font-size: clamp(36px, 9.5vw, 46px); line-height: 1em; }
+  .sx-xl { font-size: clamp(32px, 9vw, 42px); line-height: 1em; }
+  .sx-lg { font-size: clamp(30px, 8vw, 40px); line-height: 1.02em; }
+  .stat-number { font-size: clamp(34px, 10vw, 44px); }
+  .quote-ed { font-size: 14.5px; }
 }
