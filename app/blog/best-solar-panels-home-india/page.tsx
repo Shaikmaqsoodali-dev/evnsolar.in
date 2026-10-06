@@ -1,5 +1,6 @@
 ﻿import Link from 'next/link'
-import { ArrowLeft, ArrowRight, Check, Sun } from 'lucide-react'
+import { Check, Sun } from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Reveal, Stagger } from '@/components/motion'
 
@@ -188,14 +189,14 @@ export default function SolarPanelsGuidePost() {
                 className="btn-shine font-display inline-flex items-center gap-2 bg-white px-6 py-3 text-[13.5px] font-semibold text-[#072A45] hover:bg-[#62D984]"
                 style={{ borderRadius: 6 }}
               >
-                Get a free site assessment <ArrowRight size={15} />
+                Get a free site assessment <BrandArrow size={15} />
               </Link>
               <Link
                 href="/blog"
                 className="font-display inline-flex items-center gap-2 border border-white/25 px-6 py-3 text-[13.5px] font-semibold text-white hover:border-white/60"
                 style={{ borderRadius: 6 }}
               >
-                <ArrowLeft size={15} /> All guides
+                <BrandArrow direction="left" size={15} /> All guides
               </Link>
             </div>
           </div>

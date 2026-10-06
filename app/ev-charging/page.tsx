@@ -1,5 +1,6 @@
 ﻿import Link from 'next/link'
-import { ArrowRight, Check } from 'lucide-react'
+import { Building2, Check, Home, Truck } from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 import { Faq } from '@/components/ux-bits'
@@ -26,11 +27,13 @@ export default function EvChargingPage() {
           </Parallax>
           <div className="mt-3 grid grid-cols-2 gap-3">
             <div className="border border-[#D9E2EA] bg-[#F4F6F8] p-5" style={{ borderRadius: 8 }}>
-              <p className="font-display text-[20px] font-semibold text-[#072A45]">7.4-22 kW</p>
+              <Home size={18} className="text-[#0F88C7]" aria-hidden />
+              <p className="font-display mt-2 text-[20px] font-bold tracking-tight text-[#072A45]">7.4-22 kW</p>
               <p className="mt-1 text-[13px] text-[#54687A]">AC home & workplace charging</p>
             </div>
             <div className="bg-[#072A45] p-5 text-[#FFFFFF]" style={{ borderRadius: 8 }}>
-              <p className="font-display text-[20px] font-semibold tracking-[-0.02em]">30-60 kW</p>
+              <Truck size={18} className="text-[#62D984]" aria-hidden />
+              <p className="font-display mt-2 text-[20px] font-bold tracking-tight">30-60 kW</p>
               <p className="font-tech mt-1 text-[9px] uppercase tracking-[0.12em] text-[#62D984]">DC fast charging for fleets</p>
             </div>
           </div>
@@ -71,12 +74,15 @@ export default function EvChargingPage() {
           <SectionHeading title="Choose the setup that fits the site." />
           <Stagger className="mt-10 grid gap-6 md:grid-cols-3" step={100}>
             {[
-              ['Home charging', '7.4 kW smart AC charger with app, scheduling and solar-priority mode.', 'Single-phase ready, App + RFID'],
-              ['Workplace & commercial', 'Multi-point 7.4-22 kW with load balancing and staff billing.', 'Load balancing, Billing reports'],
-              ['Fleet & DC fast', '30-60 kW DC fast with depot layout and solar + storage integration.', 'Depot design, OCPP + CMS'],
-            ].map(([t, d, specs]) => (
-              <div key={t} className="lift border border-[#BFD9E8] bg-white p-7" style={{ borderRadius: 8 }}>
-                <p className="font-display text-[18px] font-semibold text-[#072A45]">{t}</p>
+              { icon: Home, t: 'Home charging', d: '7.4 kW smart AC charger with app, scheduling and solar-priority mode.', specs: 'Single-phase ready, App + RFID' },
+              { icon: Building2, t: 'Workplace & commercial', d: 'Multi-point 7.4-22 kW with load balancing and staff billing.', specs: 'Load balancing, Billing reports' },
+              { icon: Truck, t: 'Fleet & DC fast', d: '30-60 kW DC fast with depot layout and solar + storage integration.', specs: 'Depot design, OCPP + CMS' },
+            ].map(({ icon: Icon, t, d, specs }) => (
+              <div key={t} className="lift border border-[#BFD8E8] bg-white p-7" style={{ borderRadius: 8 }}>
+                <span className="title-icon size-11 bg-[#072A45] text-[#62D984]" aria-hidden>
+                  <Icon size={20} strokeWidth={2} />
+                </span>
+                <p className="font-display mt-4 text-[18px] font-bold tracking-tight text-[#072A45]">{t}</p>
                 <p className="mt-2 text-[14.5px] leading-relaxed text-[#54687A]">{d}</p>
                 <p className="font-tech mt-4 border-t border-[#D9E2EA] pt-4 text-[10px] uppercase tracking-[0.12em] text-[#54687A]">{specs}</p>
               </div>
@@ -87,7 +93,7 @@ export default function EvChargingPage() {
               <span className="font-semibold text-[#072A45]">Unsure about sanction load?</span> Send a photo of your meter and main breaker. We confirm feasibility before you pay anything.
             </p>
             <Link href="/contact" className="font-display inline-flex shrink-0 items-center gap-2 bg-[#0F88C7] px-6 py-3 text-[13px] font-semibold tracking-[-0.01em] text-white hover:bg-[#0B6AA0]" style={{ borderRadius: 6 }}>
-              Get a free site assessment <ArrowRight size={15} />
+              Get a free site assessment <BrandArrow size={15} />
             </Link>
           </div>
         </div>

@@ -1,5 +1,5 @@
 ﻿import Link from 'next/link'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 
 export function InstagramIcon({ size = 15, className }: { size?: number; className?: string }) {
   return (
@@ -203,7 +203,7 @@ export function CtaBand() {
               className="btn-shine inline-flex items-center justify-center gap-2 rounded-lg bg-[#62D984] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Get a free site assessment <ArrowRight size={17} />
+              Get a free site assessment <BrandArrow size={17} />
             </Link>
             <a href="tel:+917040506295" className="text-[13px] uppercase tracking-[0.1em] text-white/60 hover:text-white" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
               or call +91 70405 06295
@@ -293,7 +293,7 @@ export function SiteFooter() {
                     <li key={label}>
                       <Link href={href} className="foot-link group inline-flex items-center gap-1 text-white/65 hover:text-[#62D984]">
                         {label}
-                        <ArrowUpRight size={13} className="text-[#62D984] opacity-0 transition-opacity group-hover:opacity-70" />
+                        <BrandArrow direction="up-right" size={13} className="text-[#62D984] opacity-0 transition-opacity group-hover:opacity-70" />
                       </Link>
                     </li>
                   ))}

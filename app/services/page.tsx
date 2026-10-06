@@ -1,5 +1,18 @@
 ﻿import Link from 'next/link'
-import { ArrowRight, Check } from 'lucide-react'
+import {
+  ArrowLeftRight,
+  BatteryCharging,
+  Check,
+  Droplets,
+  Factory,
+  Fuel,
+  Home,
+  PlugZap,
+  Sun,
+  Gauge,
+  Wind,
+} from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Faq } from '@/components/ux-bits'
@@ -9,48 +22,48 @@ export const metadata = { title: 'Solar Services | EVN Solar Energy Solutions' }
 
 const SERVICES = [
   {
-    img: IMG.rooftop, n: '01', tag: 'On-grid / Off-grid, 1-100 kW', t: 'On-grid & off-grid rooftop systems',
+    img: IMG.rooftop, n: '01', icon: Home, badge: 'Rooftop', tag: 'On-grid / Off-grid, 1-100 kW', t: 'On-grid & off-grid rooftop systems',
     d: 'Tailored to meet diverse energy needs — on-grid solutions that connect to the local utility grid, and off-grid options for full independence. Designed for efficiency and reliability, ensuring a consistent power supply.',
     points: ['Load + shadow study before sizing', 'Net-metering or battery-ready design', 'Monitoring app with 5-year service'],
   },
   {
-    img: IMG.ground, n: '02', tag: 'Turnkey EPC, up to 1,607 MWp', t: 'Solar EPC services',
+    img: IMG.ground, n: '02', icon: Factory, badge: 'EPC', tag: 'Turnkey EPC, up to 1,607 MWp', t: 'Solar EPC services',
     d: 'We manage every aspect of solar project development, from initial design and procurement to final construction. Focus on quality assurance ensures each project meets the highest standards for performance and longevity.',
     points: ['Engineering, procurement, construction', 'Land liaison — 5,700+ acres delivered', 'Testing, commissioning & O&M'],
   },
   {
-    img: IMG.engineer2, n: '03', tag: 'MPPT / PWM, battery-safe', t: 'Solar charge controllers',
+    img: IMG.engineer2, n: '03', icon: Gauge, badge: 'MPPT', tag: 'MPPT / PWM, battery-safe', t: 'Solar charge controllers',
     d: 'Advanced controllers regulate power from solar panels to batteries, preventing overcharging and ensuring efficient energy storage. Extends battery life and enhances system performance.',
     points: ['Overcharge & deep-discharge protection', 'MPPT for higher harvest', 'Sized to panel + battery bank'],
   },
   {
-    img: IMG.fleetDepot, n: '04', tag: 'Solar + grid / DG hybrid', t: 'Solar hybrid power packs',
+    img: IMG.fleetDepot, n: '04', icon: BatteryCharging, badge: 'Hybrid', tag: 'Solar + grid / DG hybrid', t: 'Solar hybrid power packs',
     d: 'Combining solar energy with other power sources, our hybrid systems provide a reliable and uninterrupted power supply, adaptable to various applications and environments.',
     points: ['Uninterrupted supply for outages', 'Adaptable for home, shop, farm', 'Pre-wired for EV charging'],
   },
   {
-    img: IMG.panel, n: '05', tag: 'Tier-1, high-efficiency PV', t: 'Solar PV panels',
+    img: IMG.panel, n: '05', icon: Sun, badge: 'PV', tag: 'Tier-1, high-efficiency PV', t: 'Solar PV panels',
     d: 'High-quality photovoltaic panels that convert sunlight into electricity with exceptional efficiency, supporting a wide range of energy requirements — from homes to solar parks.',
     points: ['Tier-1 modules with warranty', 'TOPCon high-efficiency options', 'Structure + tilt engineered per roof'],
   },
   {
-    img: IMG.industrial, n: '06', tag: 'String / micro + UPS', t: 'Inverters & UPS systems',
+    img: IMG.industrial, n: '06', icon: PlugZap, badge: 'AC Power', tag: 'String / micro + UPS', t: 'Inverters & UPS systems',
     d: 'Our inverters convert DC power from solar panels into AC power for household or commercial use, while UPS systems ensure continuous power during outages, maintaining operational continuity.',
     points: ['String, hybrid & micro-inverters', 'UPS backup for critical loads', 'Surge, earthing & protection tested'],
   },
   {
-    img: IMG.solarField, n: '07', tag: 'DISCOM liaison included', t: 'Net metering solutions',
+    img: IMG.solarField, n: '07', icon: ArrowLeftRight, badge: 'Credits', tag: 'DISCOM liaison included', t: 'Net metering solutions',
     d: 'Feed excess solar energy back into the grid, earning credits on your utility bill and promoting environmental sustainability. We handle application, liaison and approvals end-to-end.',
     points: ['DISCOM application + follow-up', 'Bi-directional meter coordination', 'Subsidy filing under PM Surya Ghar'],
   },
 ]
 
 const PORTFOLIO = [
-  { t: 'Wind Turbines', d: 'Complementary wind assessment for hybrid sites.' },
-  { t: 'Solar Panels', d: 'Tier-1 PV for rooftop, ground and carport plants.' },
-  { t: 'Hydropower Plants', d: 'Advisory for small-hydro integration where viable.' },
-  { t: 'Fossil Resources', d: 'Transition planning — reduce diesel / grid dependence.' },
-  { t: 'Battery Materials', d: 'Storage sizing, lithium backup and hybrid packs.' },
+  { icon: Wind, t: 'Wind Turbines', d: 'Complementary wind assessment for hybrid sites.' },
+  { icon: Sun, t: 'Solar Panels', d: 'Tier-1 PV for rooftop, ground and carport plants.' },
+  { icon: Droplets, t: 'Hydropower Plants', d: 'Advisory for small-hydro integration where viable.' },
+  { icon: Fuel, t: 'Fossil Resources', d: 'Transition planning — reduce diesel / grid dependence.' },
+  { icon: BatteryCharging, t: 'Battery Materials', d: 'Storage sizing, lithium backup and hybrid packs.' },
 ]
 
 export default function ServicesPage() {
@@ -67,16 +80,25 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="space-y-8">
-          {SERVICES.slice(0, 2).map(({ img, n, tag, t, d, points }, i) => (
+          {SERVICES.slice(0, 2).map(({ img, n, icon: Icon, badge, tag, t, d, points }, i) => (
             <Reveal key={t} variant={i % 2 ? 'right' : 'left'}>
             <article className={`lift grid gap-0 overflow-hidden border border-[#D9E2EA] bg-white hover:border-[#62D984] lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`} style={{ borderRadius: 10 }}>
               <div className="relative min-h-[280px]">
-                <img src={img} alt={t} className="absolute inset-0 h-full w-full object-cover" />
+                <img src={img} alt={`${badge} system — illustrative photo`} className="absolute inset-0 h-full w-full object-cover" />
                 <span className="card-cat card-cat--on-dark absolute left-5 top-5 bg-[#072A45] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
+                <span className="photo-badge" aria-hidden>
+                  <Icon size={15} strokeWidth={2.2} />
+                  <span className="photo-badge__label">{badge}</span>
+                </span>
               </div>
               <div className="p-8 sm:p-10">
                 <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#0F88C7]">{n}</p>
-                <h2 className="font-display mt-2 text-[26px] font-semibold tracking-[-0.02em] text-[#072A45]">{t}</h2>
+                <h2 className="font-display mt-2 flex items-center gap-3 text-[26px] font-bold tracking-tight text-[#072A45]">
+                  <span className="title-icon size-11 bg-[#072A45] text-[#62D984]" aria-hidden>
+                    <Icon size={20} strokeWidth={2} />
+                  </span>
+                  {t}
+                </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-[#54687A]">{d}</p>
                 <ul className="mt-6 space-y-2.5 border-t border-[#D9E2EA] pt-6">
                   {points.map((p) => (
@@ -87,7 +109,7 @@ export default function ServicesPage() {
                 </ul>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Link href="/contact" className="inline-flex items-center gap-2 bg-[#0F88C7] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#0B6AA0]" style={{ borderRadius: 6 }}>
-                    Get a free site assessment <ArrowRight size={15} />
+                    Get a free site assessment <BrandArrow size={15} />
                   </Link>
                   <Link href="/pricing" className="border border-[#C3D2DE] px-5 py-2.5 text-[14px] font-semibold text-[#072A45] hover:border-[#0F88C7] hover:text-[#0F88C7]" style={{ borderRadius: 6 }}>
                     Sizes & pricing
@@ -99,16 +121,25 @@ export default function ServicesPage() {
           ))}
         </div>
         <Stagger className="mt-8 grid gap-5 md:grid-cols-2" itemClassName="h-full" step={100}>
-          {SERVICES.slice(2).map(({ img, n, tag, t, d, points }) => (
+          {SERVICES.slice(2).map(({ img, n, icon: Icon, badge, tag, t, d, points }) => (
             <Tilt key={t} className="h-full">
             <article className="group lift flex h-full flex-col overflow-hidden border border-[#D9E2EA] bg-white hover:border-[#62D984]" style={{ borderRadius: 10 }}>
               <div className="relative overflow-hidden">
-                <img src={img} alt={t} className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                <img src={img} alt={`${badge} system — illustrative photo`} className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                 <span className="card-cat card-cat--on-dark absolute left-5 top-5 bg-[#072A45] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
+                <span className="photo-badge" aria-hidden>
+                  <Icon size={15} strokeWidth={2.2} />
+                  <span className="photo-badge__label">{badge}</span>
+                </span>
               </div>
               <div className="flex flex-1 flex-col p-8">
                 <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#0F88C7]">{n}</p>
-                <h2 className="font-display mt-2 text-[26px] font-semibold tracking-[-0.02em] text-[#072A45]">{t}</h2>
+                <h2 className="font-display mt-2 flex items-center gap-3 text-[26px] font-bold tracking-tight text-[#072A45]">
+                  <span className="title-icon size-11 bg-[#072A45] text-[#62D984]" aria-hidden>
+                    <Icon size={20} strokeWidth={2} />
+                  </span>
+                  {t}
+                </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-[#54687A]">{d}</p>
                 <ul className="mt-6 flex-1 space-y-2.5 border-t border-[#D9E2EA] pt-6">
                   {points.map((p) => (
@@ -119,7 +150,7 @@ export default function ServicesPage() {
                 </ul>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Link href="/contact" className="inline-flex items-center gap-2 bg-[#0F88C7] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#0B6AA0]" style={{ borderRadius: 6 }}>
-                    Get a free site assessment <ArrowRight size={15} />
+                    Get a free site assessment <BrandArrow size={15} />
                   </Link>
                   <Link href="/pricing" className="border border-[#C3D2DE] px-5 py-2.5 text-[14px] font-semibold text-[#072A45] hover:border-[#0F88C7] hover:text-[#0F88C7]" style={{ borderRadius: 6 }}>
                     Sizes & pricing
@@ -142,9 +173,12 @@ export default function ServicesPage() {
             <h2 className="mt-1 text-[22px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>Beyond solar, we plan the full mix.</h2>
           </div>
           <div className="grid gap-px bg-[#D9E2EA] sm:grid-cols-2 lg:grid-cols-5">
-            {PORTFOLIO.map(({ t, d }) => (
+            {PORTFOLIO.map(({ icon: Icon, t, d }) => (
               <div key={t} className="bg-white px-5 py-6">
-                <p className="text-[15px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>{t}</p>
+                <span className="title-icon size-10 bg-[#EDF3F7] text-[#072A45]" aria-hidden>
+                  <Icon size={19} strokeWidth={2} />
+                </span>
+                <p className="mt-3 text-[15px] font-bold tracking-tight text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>{t}</p>
                 <p className="mt-1.5 text-[13.5px] leading-relaxed text-[#54687A]">{d}</p>
               </div>
             ))}

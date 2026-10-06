@@ -391,8 +391,47 @@ input[type='button'],
   font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 22px;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
   line-height: 1.25em;
+}
+/* Icon-first cards: bold scannable titles, icon carries the meaning so
+   photo + overlay + title never repeat the same words. */
+.card-title-strong {
+  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  line-height: 1.2em;
+  text-wrap: balance;
+}
+.photo-badge {
+  position: absolute;
+  left: 0.9rem;
+  bottom: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgb(7 42 69 / 0.88);
+  color: #62D984;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  backdrop-filter: blur(6px);
+}
+.photo-badge__label {
+  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+.title-icon {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
 }
 .card-desc {
   font-family: 'Rubik', Arial, Helvetica, sans-serif;
@@ -537,6 +576,22 @@ section[id] {
 }
 .lift:hover {
   transform: translateY(-4px);
+}
+
+/* Brand arrow — own icon. Subtle forward nudge on parent hover. */
+.brand-arrow {
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  flex-shrink: 0;
+}
+a:hover .brand-arrow--right,
+button:hover .brand-arrow--right,
+.group:hover .brand-arrow--right {
+  transform: translateX(2px);
+}
+a:hover .brand-arrow--up-right,
+button:hover .brand-arrow--up-right,
+.group:hover .brand-arrow--up-right {
+  transform: translate(1.5px, -1.5px);
 }
 
 /* Form fields: brand focus treatment */

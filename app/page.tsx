@@ -2,7 +2,25 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { ArrowRight, ArrowUpRight, Check, Phone } from 'lucide-react'
+import {
+  BatteryCharging,
+  Check,
+  Cpu,
+  Factory,
+  Gauge,
+  Home,
+  Leaf,
+  Phone,
+  PlugZap,
+  Award,
+  ShieldCheck,
+  Zap,
+  ClipboardList,
+  Search,
+  Wrench,
+  Sun,
+} from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { CtaBand, Kicker } from '@/components/site-chrome'
 import { CountUp, Marquee, Reveal, ScrollWords, Stagger, Tilt } from '@/components/motion'
@@ -20,31 +38,31 @@ const TICKER = [
 ]
 
 const SERVICES = [
-  { img: IMG.rooftop, t: 'On/Off-Grid Rooftop', d: 'On-grid for savings, off-grid for independence — sized to bill + shadow.', href: '/services' },
-  { img: IMG.engineer2, t: 'Solar EPC', d: 'Turnkey design, procurement & construction — 1,607 MWp delivered.', href: '/services' },
-  { img: IMG.panel, t: 'PV Panels & Inverters', d: 'Tier-1 PV, inverters + UPS for continuity and outage protection.', href: '/services' },
-  { img: IMG.fleetDepot, t: 'Hybrid Power Packs', d: 'Solar + grid backup for uninterrupted supply in any environment.', href: '/services' },
-  { img: IMG.ground, t: 'Charge Controllers', d: 'MPPT regulation that protects batteries and lifts harvest.', href: '/services' },
-  { img: IMG.solarField, t: 'Net Metering', d: 'Feed excess to the grid, earn credits — DISCOM filing included.', href: '/services' },
+  { img: IMG.rooftop, icon: Home, badge: 'Rooftop', t: 'On/Off-Grid Rooftop', d: 'On-grid for savings, off-grid for independence — sized to bill + shadow.', href: '/services' },
+  { img: IMG.engineer2, icon: Factory, badge: 'EPC', t: 'Solar EPC', d: 'Turnkey design, procurement & construction — 1,607 MWp delivered.', href: '/services' },
+  { img: IMG.panel, icon: Sun, badge: 'PV + Inverter', t: 'PV Panels & Inverters', d: 'Tier-1 PV, inverters + UPS for continuity and outage protection.', href: '/services' },
+  { img: IMG.fleetDepot, icon: BatteryCharging, badge: 'Hybrid', t: 'Hybrid Power Packs', d: 'Solar + grid backup for uninterrupted supply in any environment.', href: '/services' },
+  { img: IMG.ground, icon: Gauge, badge: 'MPPT', t: 'Charge Controllers', d: 'MPPT regulation that protects batteries and lifts harvest.', href: '/services' },
+  { img: IMG.solarField, icon: PlugZap, badge: 'Grid', t: 'Net Metering', d: 'Feed excess to the grid, earn credits — DISCOM filing included.', href: '/services' },
 ]
 
 const STEPS = [
-  { n: '01', t: 'Project Planning', d: 'Load study, shadow analysis and structure check before any quote is issued.' },
-  { n: '02', t: 'Research & Analysis', d: 'Generation modelling, DISCOM paperwork and subsidy filing handled for you.' },
-  { n: '03', t: 'Solar Installation', d: 'Galvanised structures, tested protection and app monitoring handover.' },
+  { n: '01', icon: ClipboardList, t: 'Project Planning', d: 'Load study, shadow analysis and structure check before any quote is issued.' },
+  { n: '02', icon: Search, t: 'Research & Analysis', d: 'Generation modelling, DISCOM paperwork and subsidy filing handled for you.' },
+  { n: '03', icon: Wrench, t: 'Solar Installation', d: 'Galvanised structures, tested protection and app monitoring handover.' },
 ]
 
 const BARS = [
-  { t: 'Solar Panels', v: 92 },
-  { t: 'Hybrid Energy', v: 85 },
-  { t: 'EV Charging', v: 78 },
+  { t: 'Solar Panels', v: 92, icon: Sun },
+  { t: 'Hybrid Energy', v: 85, icon: BatteryCharging },
+  { t: 'EV Charging', v: 78, icon: PlugZap },
 ]
 
 const WHY = [
-  { img: IMG.panel, t: 'Efficiency & Power', d: 'TOPCon arrays to 23%+ efficiency, sized from real shadow data.' },
-  { img: IMG.engineer1, t: 'Trust & Warranty', d: 'Written warranties, DISCOM liaison and 5-year service support.' },
-  { img: IMG.industrial, t: 'High Quality Work', d: 'Galvanised structures, earthing and surge tests you receive in writing.' },
-  { img: IMG.evCharge, t: '24×7 Support', d: 'Monitoring alerts plus call support across Nashik and Malegaon.' },
+  { img: IMG.panel, icon: Zap, badge: 'Output', t: 'Efficiency & Power', d: 'TOPCon arrays to 23%+ efficiency, sized from real shadow data.' },
+  { img: IMG.engineer1, icon: ShieldCheck, badge: 'Warranty', t: 'Trust & Warranty', d: 'Written warranties, DISCOM liaison and 5-year service support.' },
+  { img: IMG.industrial, icon: Award, badge: 'Quality', t: 'High Quality Work', d: 'Galvanised structures, earthing and surge tests you receive in writing.' },
+  { img: IMG.evCharge, icon: Phone, badge: '24×7', t: '24×7 Support', d: 'Monitoring alerts plus call support across Nashik and Malegaon.' },
 ]
 
 function SolarCalculator() {
@@ -103,7 +121,7 @@ function SolarCalculator() {
           className="btn-shine mt-5 inline-flex items-center gap-2 rounded-lg bg-[#072A45] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-[#33A94F] hover:text-[#072A45]"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          Get exact quote <ArrowRight size={15} />
+          Get exact quote <BrandArrow size={15} />
         </Link>
       </div>
     </div>
@@ -167,7 +185,7 @@ export default function HomePage() {
             </ul>
             <div className="mt-7">
               <Link href="/about" className="btn-shine inline-flex items-center gap-2 rounded-lg bg-[#072A45] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-[#33A94F] hover:text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>
-                More about us <ArrowRight size={15} />
+                More about us <BrandArrow size={15} />
               </Link>
             </div>
           </Reveal>
@@ -188,19 +206,28 @@ export default function HomePage() {
             </p>
           </div>
           <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" itemClassName="h-full" step={90}>
-            {SERVICES.map(({ img, t, d, href }) => (
+            {SERVICES.map(({ img, icon: Icon, badge, t, d, href }) => (
               <Tilt key={t} className="h-full">
                 <Link href={href} className="group lift block h-full overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.12)]">
                   <div className="relative overflow-hidden">
-                    <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+                    <img src={img} alt={`${badge} installation photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+                    <span className="photo-badge" aria-hidden>
+                      <Icon size={15} strokeWidth={2.2} />
+                      <span className="photo-badge__label">{badge}</span>
+                    </span>
                   </div>
                   <div className="flex items-start justify-between gap-4 p-5">
-                    <div>
-                      <h3 className="card-title text-[#072A45]">{t}</h3>
-                      <p className="card-desc mt-1.5 text-[#54687A]">{d}</p>
+                    <div className="flex items-start gap-3">
+                      <span className="title-icon size-10 bg-[#072A45] text-[#62D984]" aria-hidden>
+                        <Icon size={18} strokeWidth={2} />
+                      </span>
+                      <div>
+                        <h3 className="card-title-strong font-bold text-[#072A45]">{t}</h3>
+                        <p className="card-desc mt-1.5 text-[#54687A]">{d}</p>
+                      </div>
                     </div>
                     <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#EDF3F7] text-[#072A45] transition-colors group-hover:bg-[#62D984]" aria-hidden>
-                      <ArrowUpRight size={16} />
+                      <BrandArrow direction="up-right" size={16} />
                     </span>
                   </div>
                 </Link>
@@ -218,10 +245,13 @@ export default function HomePage() {
             <ScrollWords text="Our *Work Process.*" className="sx sx-lg mt-3 text-[#072A45]" />
           </div>
           <Stagger className="mt-10 grid gap-5 md:grid-cols-3" step={110}>
-            {STEPS.map(({ n, t, d }) => (
+            {STEPS.map(({ n, icon: Icon, t, d }) => (
               <div key={n} className="relative overflow-hidden rounded-xl border border-[#D9E2EA] bg-white p-7 text-center transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.10)]">
                 <span className="solor-step mx-auto size-14 text-[18px]">{n}</span>
-                <h3 className="mt-5 text-[22px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>{t}</h3>
+                <span className="title-icon mx-auto mt-4 size-11 bg-[#EDF3F7] text-[#072A45]" aria-hidden>
+                  <Icon size={20} strokeWidth={2} />
+                </span>
+                <h3 className="mt-4 text-[22px] font-bold tracking-tight text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>{t}</h3>
                 <p className="mx-auto mt-2 max-w-xs text-[14.5px] leading-relaxed text-[#54687A]">{d}</p>
                 <span aria-hidden className="sx-index pointer-events-none absolute -bottom-3 right-3 opacity-60">{n}</span>
               </div>
@@ -246,10 +276,15 @@ export default function HomePage() {
               Every site is metered and reported — generation, savings and charger use visible in one app.
             </p>
             <div className="mt-7 space-y-5">
-              {BARS.map(({ t, v }) => (
+              {BARS.map(({ t, v, icon: Icon }) => (
                 <div key={t}>
                   <div className="mb-2 flex items-center justify-between">
-                    <p className="text-[15px] font-semibold uppercase tracking-[0.06em]" style={{ fontFamily: 'var(--font-display)' }}>{t}</p>
+                    <p className="flex items-center gap-2 text-[15px] font-bold uppercase tracking-[0.06em]" style={{ fontFamily: 'var(--font-display)' }}>
+                      <span className="title-icon size-8 bg-white/10 text-[#62D984]" aria-hidden>
+                        <Icon size={16} strokeWidth={2.2} />
+                      </span>
+                      {t}
+                    </p>
                     <p className="text-[15px] font-bold text-[#62D984]" style={{ fontFamily: 'var(--font-display)' }}>{v}%</p>
                   </div>
                   <div className="h-2 overflow-hidden rounded-full bg-white/15">
@@ -280,7 +315,7 @@ export default function HomePage() {
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Link href="/contact" className="btn-shine inline-flex items-center gap-2 rounded-lg bg-[#62D984] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white" style={{ fontFamily: 'var(--font-display)' }}>
-                Contact now <ArrowRight size={15} />
+                Contact now <BrandArrow size={15} />
               </Link>
               <a href="tel:+917040506295" className="inline-flex items-center gap-2 rounded-lg border border-white/40 px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white/10" style={{ fontFamily: 'var(--font-display)' }}>
                 <Phone size={15} /> +91 70405 06295
@@ -298,13 +333,22 @@ export default function HomePage() {
             <ScrollWords text="Providing Solar *Energy Solutions.*" className="sx sx-lg mt-3 text-[#072A45]" />
           </div>
           <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" step={90}>
-            {WHY.map(({ img, t, d }) => (
+            {WHY.map(({ img, icon: Icon, badge, t, d }) => (
               <div key={t} className="group overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.10)]">
-                <div className="overflow-hidden">
-                  <img src={img} alt={t} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+                <div className="relative overflow-hidden">
+                  <img src={img} alt={`${badge} — illustrative photo`} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+                  <span className="photo-badge" aria-hidden>
+                    <Icon size={15} strokeWidth={2.2} />
+                    <span className="photo-badge__label">{badge}</span>
+                  </span>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-[19px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>{t}</h3>
+                  <h3 className="flex items-center gap-2.5 text-[19px] font-bold tracking-tight text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>
+                    <span className="title-icon size-9 bg-[#072A45] text-[#62D984]" aria-hidden>
+                      <Icon size={17} strokeWidth={2} />
+                    </span>
+                    {t}
+                  </h3>
                   <p className="mt-1.5 text-[14px] leading-relaxed text-[#54687A]">{d}</p>
                 </div>
               </div>
@@ -357,26 +401,30 @@ export default function HomePage() {
               <ScrollWords text="Our *Latest News.*" className="sx sx-lg mt-3 text-[#072A45]" />
             </div>
             <Link href="/blog" className="inline-flex items-center gap-1.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0B6AA0]" style={{ fontFamily: 'var(--font-display)' }}>
-              All articles <ArrowRight size={14} />
+              All articles <BrandArrow size={14} />
             </Link>
           </div>
           <Stagger className="mt-10 grid gap-5 md:grid-cols-3" itemClassName="h-full" step={100}>
             {[
-              { img: IMG.blog1, cat: 'Solar Technology', t: 'Exploring the Latest Innovations in Solar Technology', d: 'TOPCon gains, micro-inverters and what they mean for your terrace.' },
-              { img: IMG.blog2, cat: 'Sustainability', t: 'Solar Solutions for a Sustainable Tomorrow', d: 'How homes and depots pair solar with EV charging in one project.' },
-              { img: IMG.blog3, cat: 'Renewable Power', t: 'Advancements in Renewable Power & Storage', d: 'Hybrid inverters and batteries that ride through evening cuts.' },
-            ].map(({ img, cat, t, d }) => (
+              { img: IMG.blog1, icon: Cpu, badge: 'Tech', cat: 'Solar Technology', t: 'Exploring the Latest Innovations in Solar Technology', d: 'TOPCon gains, micro-inverters and what they mean for your terrace.' },
+              { img: IMG.blog2, icon: Leaf, badge: 'Green', cat: 'Sustainability', t: 'Solar Solutions for a Sustainable Tomorrow', d: 'How homes and depots pair solar with EV charging in one project.' },
+              { img: IMG.blog3, icon: BatteryCharging, badge: 'Storage', cat: 'Renewable Power', t: 'Advancements in Renewable Power & Storage', d: 'Hybrid inverters and batteries that ride through evening cuts.' },
+            ].map(({ img, icon: Icon, badge, cat, t, d }) => (
               <Tilt key={t} className="h-full">
                 <Link href="/blog" className="group lift block h-full overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_12px_36px_rgba(7,42,69,0.10)]">
-                  <div className="overflow-hidden">
-                    <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+                  <div className="relative overflow-hidden">
+                    <img src={img} alt={`${cat} — article cover photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+                    <span className="photo-badge" aria-hidden>
+                      <Icon size={15} strokeWidth={2.2} />
+                      <span className="photo-badge__label">{badge}</span>
+                    </span>
                   </div>
                   <div className="p-5">
                     <p className="card-cat">{cat}</p>
-                    <h3 className="card-title mt-2 text-[#072A45]">{t}</h3>
+                    <h3 className="card-title-strong mt-2 font-bold text-[#072A45]">{t}</h3>
                     <p className="card-desc mt-1.5 text-[#54687A]">{d}</p>
                     <p className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#0B6AA0]" style={{ fontFamily: 'var(--font-display)' }}>
-                      Read more <ArrowUpRight size={14} />
+                      Read more <BrandArrow direction="up-right" size={14} />
                     </p>
                   </div>
                 </Link>

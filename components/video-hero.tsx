@@ -1,5 +1,6 @@
 ﻿import Link from 'next/link'
-import { ArrowRight, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { Reveal, ScrollFade } from '@/components/motion'
 
@@ -67,7 +68,7 @@ export function VideoHero() {
                   className="btn-shine inline-flex items-center gap-2 rounded-lg bg-[#62D984] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  Our services <ArrowRight size={15} />
+                  Our services <BrandArrow size={15} />
                 </Link>
                 <Link
                   href="/contact"

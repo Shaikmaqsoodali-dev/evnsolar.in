@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { ArrowRight, ArrowUpRight, Mail, Menu, Phone, X } from 'lucide-react'
+import { Mail, Menu, Phone, X } from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 import { LOGO_URL, NAV_LINKS } from '@/lib/brand'
 import { cn } from '@/lib/utils'
 
@@ -79,13 +80,25 @@ export function SiteHeader() {
           <div
             className={cn(
               'mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 transition-all duration-500',
-              scrolled ? 'h-20' : 'h-[92px]',
+              scrolled ? 'h-24' : 'h-[112px]',
             )}
           >
-            {/* logo lockup — Solor left logo */}
+            {/* logo lockup — cropped to remove JPEG white padding, looks 2x bigger */}
             <Link href="/" className="group flex shrink-0 items-center" aria-label="EVN Solar home">
-              <span className="grid h-16 w-auto place-items-center overflow-hidden bg-white px-1 transition-opacity duration-300">
-                <img src={LOGO_URL} alt="EVN Solar" className="h-14 w-auto object-contain" />
+              <span
+                className={cn(
+                  'flex items-center justify-center overflow-hidden bg-white transition-all duration-500',
+                  scrolled ? 'h-[72px] w-[120px]' : 'h-[92px] w-[152px] lg:h-[100px] lg:w-[168px]',
+                )}
+              >
+                <img
+                  src={LOGO_URL}
+                  alt="EVN Solar"
+                  className={cn(
+                    'max-w-none object-cover object-center transition-all duration-500',
+                    scrolled ? 'h-[136px] w-[136px]' : 'h-[172px] w-[172px] lg:h-[188px] lg:w-[188px]',
+                  )}
+                />
               </span>
             </Link>
 
@@ -102,7 +115,7 @@ export function SiteHeader() {
                     href={href}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      'relative py-2 text-[15px] font-semibold uppercase tracking-[0.06em] transition-colors duration-300',
+                      'relative py-2 text-[15px] font-bold uppercase tracking-[0.06em] transition-colors duration-300',
                       active
                         ? 'text-[#072A45]'
                         : 'text-[#3E5162] hover:text-[#072A45]',
@@ -133,11 +146,11 @@ export function SiteHeader() {
               </a>
               <Link
                 href="/contact"
-                className="btn-shine group hidden items-center gap-2 rounded-lg bg-[#072A45] py-3 pl-6 pr-5 text-[14px] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-[#33A94F] hover:text-[#072A45] sm:inline-flex"
+                className="btn-shine group hidden items-center gap-2 rounded-lg bg-[#072A45] py-3 pl-6 pr-5 text-[14px] font-bold uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-[#33A94F] hover:text-[#072A45] sm:inline-flex"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
                 Contact us
-                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                <BrandArrow size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </Link>
               <button
                 onClick={() => setOpen(true)}
@@ -162,7 +175,9 @@ export function SiteHeader() {
         <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#62D984]/20 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#62D984]/10 blur-[100px]" />
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-          <img src={LOGO_URL} alt="EVN Solar" className="h-12 w-auto bg-white object-contain px-2" style={{ borderRadius: 6 }} />
+          <span className="flex h-[64px] w-[112px] items-center justify-center overflow-hidden bg-white" style={{ borderRadius: 8 }}>
+            <img src={LOGO_URL} alt="EVN Solar" className="h-[120px] w-[120px] max-w-none object-cover object-center" />
+          </span>
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
@@ -195,7 +210,8 @@ export function SiteHeader() {
                 >
                   {label}
                 </span>
-                <ArrowUpRight
+                <BrandArrow
+                  direction="up-right"
                   size={20}
                   className={cn(active ? 'text-[#62D984]' : 'text-white/30 group-hover:text-white')}
                 />
@@ -216,7 +232,7 @@ export function SiteHeader() {
             className="flex items-center justify-center gap-2 rounded-lg bg-[#62D984] py-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-[#072A45]"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Get a free site assessment <ArrowRight size={16} />
+            Get a free site assessment <BrandArrow size={16} />
           </Link>
           <p className="mt-4 text-center text-[13px] font-normal tracking-wide text-white/60" style={{ fontFamily: 'var(--font-body)' }}>
             +91 70405 06295 · info@evnsolar.in

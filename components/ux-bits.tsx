@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { ArrowRight, ArrowUp, ChevronRight, Phone } from 'lucide-react'
+import { ChevronRight, Phone } from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 import { Reveal as MotionReveal } from '@/components/motion'
 
 export function Reveal({
@@ -68,7 +69,7 @@ export function BackToTop() {
       className="fixed bottom-[124px] right-4 z-50 grid size-11 place-items-center bg-[#072A45] text-white shadow-lg transition-colors hover:bg-[#33A94F] hover:text-[#072A45] sm:bottom-[100px] sm:right-6"
       style={{ borderRadius: 8 }}
     >
-      <ArrowUp size={19} />
+      <BrandArrow direction="up" size={19} />
     </button>
   )
 }
@@ -91,7 +92,7 @@ export function FloatCta() {
       </span>
       <span className="sm:hidden">Free Quote</span>
       <span className="hidden sm:inline">Get Free Quote</span>
-      <ArrowRight size={15} />
+      <BrandArrow size={15} />
     </Link>
   )
 }

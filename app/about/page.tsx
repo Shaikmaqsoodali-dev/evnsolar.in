@@ -1,7 +1,5 @@
 ﻿import Link from 'next/link'
 import {
-  ArrowRight,
-  ArrowUpRight,
   ClipboardCheck,
   Compass,
   DraftingCompass,
@@ -18,6 +16,7 @@ import {
   Gauge,
   HeartHandshake,
 } from 'lucide-react'
+import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 import { Parallax, Reveal, Stagger } from '@/components/motion'
@@ -165,7 +164,7 @@ export default function AboutPage() {
                 className="btn-shine inline-flex items-center gap-2 bg-[#0F88C7] px-6 py-3 text-[14px] font-semibold text-white hover:bg-[#0B6AA0]"
                 style={{ borderRadius: 6 }}
               >
-                Explore our services <ArrowRight size={15} />
+                Explore our services <BrandArrow size={15} />
               </Link>
               <Link
                 href="/contact"
@@ -245,7 +244,7 @@ export default function AboutPage() {
                 href="/services"
                 className="font-display inline-flex shrink-0 items-center gap-1.5 text-[13.5px] font-semibold text-[#0F88C7] hover:text-[#0B6AA0]"
               >
-                Compare solutions <ArrowUpRight size={15} />
+                Compare solutions <BrandArrow direction="up-right" size={15} />
               </Link>
             </div>
           </Reveal>
@@ -274,7 +273,7 @@ export default function AboutPage() {
                   <p className="mt-1.5 text-[13.5px] font-normal leading-relaxed text-[#54687A]">{desc}</p>
                   {i < APPROACH_STEPS.length - 1 && (
                     <span className="mt-4 hidden text-[#0F88C7] lg:block" aria-hidden>
-                      <ArrowRight size={16} />
+                      <BrandArrow size={16} />
                     </span>
                   )}
                 </li>
@@ -298,7 +297,7 @@ export default function AboutPage() {
                   className="font-display mt-5 inline-flex items-center gap-2 bg-white px-5 py-2.5 text-[13px] font-semibold text-[#072A45] hover:bg-[#072A45] hover:text-white"
                   style={{ borderRadius: 6 }}
                 >
-                  Get a free site assessment <ArrowRight size={14} />
+                  Get a free site assessment <BrandArrow size={14} />
                 </Link>
               </li>
             </Reveal>
@@ -356,7 +355,7 @@ export default function AboutPage() {
                 href="/ev-charging"
                 className="font-display mt-4 inline-flex w-fit items-center gap-1.5 text-[13px] font-semibold text-white hover:text-[#62D984]"
               >
-                Explore EV charging <ArrowUpRight size={14} />
+                Explore EV charging <BrandArrow direction="up-right" size={14} />
               </Link>
             </div>
           </Stagger>
@@ -448,14 +447,14 @@ export default function AboutPage() {
                       className="btn-shine font-display inline-flex items-center gap-2 bg-[#072A45] px-6 py-3 text-[13px] font-semibold text-white hover:bg-[#0C3E63]"
                       style={{ borderRadius: 6 }}
                     >
-                      See our work <ArrowRight size={14} />
+                      See our work <BrandArrow size={14} />
                     </Link>
                     <Link
                       href="/contact"
                       className="font-display inline-flex items-center gap-2 border border-[#072A45]/20 bg-white px-6 py-3 text-[13px] font-semibold text-[#072A45] hover:border-[#0F88C7] hover:text-[#0F88C7]"
                       style={{ borderRadius: 6 }}
                     >
-                      Get a free site assessment <ArrowRight size={14} />
+                      Get a free site assessment <BrandArrow size={14} />
                     </Link>
                   </div>
                 </div>
