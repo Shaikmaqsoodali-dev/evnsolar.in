@@ -441,7 +441,7 @@ export function Marquee({
     <div className="flex shrink-0 items-center" aria-hidden={hidden || undefined}>
       {items.map((item) => (
         <span key={`${hidden ? 'b' : 'a'}-${item}`} className="flex items-center">
-          <span className="font-display whitespace-nowrap px-7 text-[12px] font-semibold uppercase tracking-[0.18em]">
+          <span className="whitespace-nowrap px-7 text-[12px] font-medium uppercase not-italic tracking-[0.16em]" style={{ fontFamily: 'var(--font-body)' }}>
             {item}
           </span>
           <span
