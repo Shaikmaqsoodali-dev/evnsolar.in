@@ -845,8 +845,8 @@ img {
 /* Responsive guards — AGENCY scale: hero 88 desktop / 40 mobile, comfortable throughout. */
 /* EVN Solar Navbar Logo — Larger */
 .navbar-logo {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   max-width: none;
   object-fit: contain;
   display: block;
@@ -854,8 +854,8 @@ img {
 }
 @media (max-width: 1023px) {
   .navbar-logo {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
   }
 }
 @media (max-width: 1023px) {

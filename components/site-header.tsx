@@ -83,7 +83,7 @@ export function SiteHeader() {
           <div
             className={cn(
               'mx-auto flex max-w-7xl items-center justify-between gap-4 overflow-visible px-6 transition-all duration-500',
-              scrolled ? 'h-[108px]' : 'h-[116px]',
+              scrolled ? 'h-[148px]' : 'h-[160px]',
             )}
           >
             {/* logo lockup — transparent PNG, no cropping needed */}
