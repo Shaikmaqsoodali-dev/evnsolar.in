@@ -72,7 +72,7 @@ export default function ServicesPage() {
         title={<>Solar EPC + products for every roof, plot and <em className="editorial-accent text-[#0F88C7]">parking lot.</em></>}
         lede="Turnkey EPC with 1,607 MWp delivered and 5,700+ acres acquired. On-grid, off-grid and hybrid systems with drawings, DISCOM liaison and verified generation."
         crumb={[['Solar', '/services']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Rooftop_solar_installation.webp"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791300322/WhatsApp_Image_2026-10-06_at_8.54.50_PM.jpg"
         imageAlt="Rooftop solar installation"
       />
 

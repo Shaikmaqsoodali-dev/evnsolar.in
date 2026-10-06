@@ -16,7 +16,7 @@ export default function EvChargingPage() {
         title={<>Charge at home, at work, preferably <em className="editorial-accent text-[#0F88C7]">on sunlight.</em></>}
         lede="7.4-60 kW AC and DC chargers with load management, solar-priority charging, billing and fleet reporting for homes, offices and depots."
         crumb={[['EV Charging', '/ev-charging']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106732/Electric_vehicle_charging.png"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791300322/WhatsApp_Image_2026-10-06_at_8.54.50_PM.jpg"
         imageAlt="Electric vehicle charging"
       />
 

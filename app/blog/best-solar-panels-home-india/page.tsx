@@ -105,7 +105,7 @@ export default function SolarPanelsGuidePost() {
         title={<>Best solar panels for home in India, <em className="editorial-accent text-[#0F88C7]">explained.</em></>}
         lede="Ten panel options Indian homeowners commonly compare: what each technology means, who each brand suits, and how to choose the right one for your roof."
         crumb={[['Blog', '/blog'], ['Best solar panels for home', '/blog/best-solar-panels-home-india']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791122118/03-navitas-solar-multi-crystalline-solar-panels.webp"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791300322/WhatsApp_Image_2026-10-06_at_8.54.50_PM.jpg"
         imageAlt="Rows of solar panels in a solar field"
       />
 
