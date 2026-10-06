@@ -4,20 +4,16 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import {
+  ArrowRight,
   ArrowUpRight,
   BadgeIndianRupee,
-  Building2,
   CarFront,
   ChevronDown,
-  Factory,
-  LayoutGrid,
   Mail,
   Menu,
   Mountain,
-  Newspaper,
   Phone,
   Sun,
-  Tag,
   Wrench,
   X,
   Zap,
@@ -25,31 +21,22 @@ import {
 import { IMG, LOGO_URL } from '@/lib/brand'
 import { cn } from '@/lib/utils'
 
-type DropKey = 'solar' | 'company' | null
+const LINKS: { label: string; href: string; accent?: boolean }[] = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Solar', href: '/services' },
+  { label: 'EV Charging', href: '/ev-charging', accent: true },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
+]
 
 const SOLAR_MENU = [
-  { icon: Sun, title: 'Rooftop Solar', desc: '1–100 kW homes & shops', href: '/services' },
-  { icon: Mountain, title: 'Ground-mounted', desc: 'Plants & farms', href: '/services' },
-  { icon: CarFront, title: 'Solar carports', desc: 'Park + power + charge', href: '/services' },
-  { icon: Wrench, title: 'O&M & AMC', desc: 'Cleaning, health checks', href: '/services' },
-]
-
-const COMPANY_MENU = [
-  { icon: Building2, title: 'About us', desc: 'Team & credentials', href: '/about' },
-  { icon: LayoutGrid, title: 'Projects', desc: 'Recent installs', href: '/projects' },
-  { icon: Tag, title: 'Pricing', desc: 'Subsidy math, plain', href: '/pricing' },
-  { icon: Newspaper, title: 'Blog', desc: 'Guides & updates', href: '/blog' },
-]
-
-const MOBILE_LINKS = [
-  { n: '01', label: 'Home', href: '/' },
-  { n: '02', label: 'About', href: '/about' },
-  { n: '03', label: 'Solar', href: '/services' },
-  { n: '04', label: 'EV Charging', href: '/ev-charging' },
-  { n: '05', label: 'Projects', href: '/projects' },
-  { n: '06', label: 'Pricing', href: '/pricing' },
-  { n: '07', label: 'Blog', href: '/blog' },
-  { n: '08', label: 'Contact', href: '/contact' },
+  { icon: Sun, title: 'Rooftop Solar', desc: '1–100 kW · homes, shops, offices', href: '/services' },
+  { icon: Mountain, title: 'Ground-mounted', desc: 'Plants, farms & open land', href: '/services' },
+  { icon: CarFront, title: 'Solar carports', desc: 'Park, power & charge', href: '/services' },
+  { icon: Wrench, title: 'O&M & AMC', desc: 'Cleaning, health checks, repairs', href: '/services' },
 ]
 
 function isActive(pathname: string, href: string) {
@@ -60,7 +47,7 @@ function isActive(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
-  const [drop, setDrop] = useState<DropKey>(null)
+  const [solarOpen, setSolarOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -78,14 +65,14 @@ export function SiteHeader() {
   }, [open])
 
   useEffect(() => {
-    setDrop(null)
+    setSolarOpen(false)
     setOpen(false)
   }, [pathname])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setDrop(null)
+        setSolarOpen(false)
         setOpen(false)
       }
     }
@@ -93,25 +80,18 @@ export function SiteHeader() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  const solarActive = isActive(pathname, '/services')
-  const companyActive =
-    isActive(pathname, '/about') ||
-    isActive(pathname, '/projects') ||
-    isActive(pathname, '/pricing') ||
-    isActive(pathname, '/blog')
-
   return (
     <>
-      <header className="sticky top-0 z-50">
+      <header className="sticky top-0 z-50" onMouseLeave={() => setSolarOpen(false)}>
         {/* ── utility strip ── */}
         <div
           className={cn(
             'overflow-hidden bg-[#072A45] text-white transition-all duration-500',
-            scrolled ? 'max-h-0' : 'max-h-12',
+            scrolled ? 'max-h-0' : 'max-h-10',
           )}
         >
-          <div className="mx-auto flex h-9 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
-            <p className="flex min-w-0 items-center gap-2 text-[12px] font-medium tracking-wide text-white/75">
+          <div className="mx-auto flex h-9 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
+            <p className="flex min-w-0 items-center gap-2 text-[12px] font-medium tracking-wide text-white/70">
               <span className="relative flex size-1.5 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#62D984] opacity-75" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-[#62D984]" />
@@ -119,300 +99,210 @@ export function SiteHeader() {
               <span className="truncate">
                 MNRE-registered contractor · Nashik — Malegaon
               </span>
-              <span className="hidden shrink-0 items-center gap-1 rounded-full border border-white/15 bg-white/5 px-2 py-0.5 text-[10.5px] font-bold uppercase tracking-[0.12em] text-[#62D984] md:inline-flex">
-                ★ 4.9 Google
+              <span className="hidden shrink-0 text-[11px] font-semibold text-[#62D984] md:inline">
+                ★ 4.9 on Google
               </span>
             </p>
-            <div className="flex shrink-0 items-center gap-4 text-[12px] font-medium text-white/75">
-              <a
-                href="mailto:info@evnsolar.in"
-                className="hidden items-center gap-1.5 transition-colors hover:text-white sm:inline-flex"
-              >
+            <div className="flex shrink-0 items-center gap-4 text-[12px] font-medium text-white/70">
+              <a href="mailto:info@evnsolar.in" className="hidden items-center gap-1.5 transition-colors hover:text-white sm:inline-flex">
                 <Mail size={12} className="text-[#62D984]" /> info@evnsolar.in
               </a>
-              <a
-                href="tel:+917040506295"
-                className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
-              >
+              <a href="tel:+917040506295" className="inline-flex items-center gap-1.5 transition-colors hover:text-white">
                 <Phone size={12} className="text-[#62D984]" /> +91 70405 06295
               </a>
             </div>
           </div>
         </div>
 
-        {/* ── floating nav ── */}
-        <div className="px-3 pt-3 sm:px-5">
+        {/* ── main bar ── */}
+        <div
+          className={cn(
+            'border-b bg-white/92 transition-all duration-500',
+            scrolled
+              ? 'border-[#D9E2EA] shadow-[0_12px_40px_-16px_rgba(7,42,69,0.25)] backdrop-blur-xl'
+              : 'border-transparent',
+          )}
+          style={{ backgroundColor: scrolled ? undefined : '#fff' }}
+        >
           <div
             className={cn(
-              'relative mx-auto max-w-7xl overflow-visible rounded-2xl border transition-all duration-500',
-              scrolled
-                ? 'border-[#D9E2EA] bg-white/90 shadow-[0_16px_48px_-16px_rgba(7,42,69,0.28)] backdrop-blur-xl'
-                : 'border-[#D9E2EA]/80 bg-white shadow-[0_10px_36px_-18px_rgba(7,42,69,0.25)]',
+              'mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 transition-all duration-500 sm:px-8',
+              scrolled ? 'h-[68px]' : 'h-[84px]',
             )}
           >
-            {/* signature gradient hairline */}
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-x-6 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#62D984] to-transparent opacity-80"
-            />
-
-            <div
-              className={cn(
-                'flex items-center justify-between gap-3 px-3 transition-all duration-500 sm:px-4',
-                scrolled ? 'h-[68px]' : 'h-[76px]',
-              )}
-            >
-              {/* brand — wide horizontal lockup, kept intact */}
-              <Link href="/" className="group flex min-w-0 items-center gap-3" aria-label="EVN Solar home">
-                <img
-                  src={LOGO_URL}
-                  alt="EVN Solar Energy Solutions"
-                  className="h-11 w-auto shrink-0 object-contain transition-transform duration-500 group-hover:scale-[1.03] sm:h-12"
-                />
-                <span className="hidden min-w-0 flex-col leading-none xl:flex">
-                  <span
-                    className="truncate text-[19px] font-extrabold italic tracking-[-0.03em] text-[#072A45]"
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    EVN Solar
-                  </span>
-                  <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[#5B6E80]">
-                    Rooftop · EV · O&amp;M
-                  </span>
-                </span>
-              </Link>
-
-              {/* desktop pill nav */}
-              <nav
-                aria-label="Primary"
-                className="hidden items-center gap-1 rounded-full border border-[#D9E2EA]/70 bg-[#EDF3F7]/70 p-1.5 lg:flex"
-                onMouseLeave={() => setDrop(null)}
-              >
-                <Link
-                  href="/"
-                  onMouseEnter={() => setDrop(null)}
-                  className={cn(
-                    'rounded-full px-4 py-2 text-[13px] font-bold uppercase tracking-[0.06em] transition-all duration-300',
-                    pathname === '/'
-                      ? 'bg-[#072A45] text-white shadow-[0_6px_16px_-6px_rgba(7,42,69,0.6)]'
-                      : 'text-[#3E5162] hover:bg-white hover:text-[#072A45] hover:shadow-sm',
-                  )}
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  Home
-                </Link>
-
-                {/* solar dropdown trigger */}
-                <div className="relative" onMouseEnter={() => setDrop('solar')}>
-                  <Link
-                    href="/services"
-                    aria-expanded={drop === 'solar'}
-                    className={cn(
-                      'flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-bold uppercase tracking-[0.06em] transition-all duration-300',
-                      solarActive
-                        ? 'bg-[#072A45] text-white shadow-[0_6px_16px_-6px_rgba(7,42,69,0.6)]'
-                        : 'text-[#3E5162] hover:bg-white hover:text-[#072A45] hover:shadow-sm',
-                    )}
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    Solar
-                    <ChevronDown
-                      size={13}
-                      strokeWidth={3}
-                      className={cn('transition-transform duration-300', drop === 'solar' && 'rotate-180')}
-                    />
-                  </Link>
-                </div>
-
-                <Link
-                  href="/ev-charging"
-                  onMouseEnter={() => setDrop(null)}
-                  className={cn(
-                    'flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-bold uppercase tracking-[0.06em] transition-all duration-300',
-                    isActive(pathname, '/ev-charging')
-                      ? 'bg-[#072A45] text-white shadow-[0_6px_16px_-6px_rgba(7,42,69,0.6)]'
-                      : 'text-[#3E5162] hover:bg-white hover:text-[#072A45] hover:shadow-sm',
-                  )}
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  <Zap size={13} strokeWidth={2.75} className={isActive(pathname, '/ev-charging') ? 'text-[#62D984]' : 'text-[#33A94F]'} />
-                  EV Charging
-                </Link>
-
-                {/* company dropdown trigger */}
-                <div className="relative" onMouseEnter={() => setDrop('company')}>
-                  <button
-                    type="button"
-                    aria-expanded={drop === 'company'}
-                    onClick={() => setDrop(drop === 'company' ? null : 'company')}
-                    className={cn(
-                      'flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-bold uppercase tracking-[0.06em] transition-all duration-300',
-                      companyActive
-                        ? 'bg-[#072A45] text-white shadow-[0_6px_16px_-6px_rgba(7,42,69,0.6)]'
-                        : 'text-[#3E5162] hover:bg-white hover:text-[#072A45] hover:shadow-sm',
-                    )}
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    Company
-                    <ChevronDown
-                      size={13}
-                      strokeWidth={3}
-                      className={cn('transition-transform duration-300', drop === 'company' && 'rotate-180')}
-                    />
-                  </button>
-                </div>
-
-                <Link
-                  href="/contact"
-                  onMouseEnter={() => setDrop(null)}
-                  className={cn(
-                    'rounded-full px-4 py-2 text-[13px] font-bold uppercase tracking-[0.06em] transition-all duration-300',
-                    isActive(pathname, '/contact')
-                      ? 'bg-[#072A45] text-white shadow-[0_6px_16px_-6px_rgba(7,42,69,0.6)]'
-                      : 'text-[#3E5162] hover:bg-white hover:text-[#072A45] hover:shadow-sm',
-                  )}
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  Contact
-                </Link>
-              </nav>
-
-              {/* actions */}
-              <div className="flex shrink-0 items-center gap-2">
-                <a
-                  href="tel:+917040506295"
-                  aria-label="Call EVN Solar"
-                  className="hidden size-10 place-items-center rounded-full border border-[#D9E2EA] text-[#072A45] transition-all hover:border-[#072A45] hover:bg-[#072A45] hover:text-[#62D984] xl:grid"
-                >
-                  <Phone size={15} />
-                </a>
-                <Link
-                  href="/contact"
-                  className="btn-shine group hidden items-center gap-2 rounded-xl bg-[#072A45] py-2.5 pl-5 pr-4 text-[13px] font-bold uppercase tracking-[0.07em] text-white transition-all duration-300 hover:bg-[#33A94F] hover:text-[#072A45] hover:shadow-[0_10px_24px_-8px_rgba(51,169,79,0.7)] sm:inline-flex"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  Get a quote
-                  <span className="grid size-6 place-items-center rounded-full bg-[#62D984] text-[#072A45] transition-colors duration-300 group-hover:bg-[#072A45] group-hover:text-[#62D984]">
-                    <ArrowUpRight size={14} strokeWidth={2.75} />
-                  </span>
-                </Link>
-                <button
-                  onClick={() => setOpen(true)}
-                  aria-label="Open menu"
-                  className="grid size-10 place-items-center rounded-xl bg-[#072A45] text-white transition-transform active:scale-95 lg:hidden"
-                >
-                  <Menu size={18} />
-                </button>
-              </div>
-            </div>
-
-            {/* ── dropdown panels (anchored to floating card) ── */}
-            <div onMouseLeave={() => setDrop(null)}>
-              {/* SOLAR mega panel */}
-              <div
+            {/* logo — image only, no duplicated wordmark */}
+            <Link href="/" className="group shrink-0" aria-label="EVN Solar home">
+              <img
+                src={LOGO_URL}
+                alt="EVN Solar Energy Solutions"
                 className={cn(
-                  'absolute inset-x-3 top-[calc(100%+10px)] z-50 transition-all duration-300 sm:inset-x-4',
-                  drop === 'solar'
-                    ? 'visible translate-y-0 opacity-100'
-                    : 'invisible -translate-y-2 opacity-0',
+                  'w-auto object-contain transition-all duration-500 group-hover:scale-[1.02]',
+                  scrolled ? 'h-11' : 'h-[52px]',
                 )}
-              >
-                <div className="overflow-hidden rounded-2xl border border-[#D9E2EA] bg-white shadow-[0_32px_80px_-24px_rgba(7,42,69,0.4)]">
-                  <div className="grid md:grid-cols-[1fr_280px]">
-                    <div className="grid gap-1 p-3 sm:grid-cols-2">
-                      {SOLAR_MENU.map((item) => (
-                        <Link
-                          key={item.title}
-                          href={item.href}
-                          onClick={() => setDrop(null)}
-                          className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-[#EDF3F7]"
-                        >
-                          <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#072A45] text-[#62D984] transition-colors duration-300 group-hover:bg-[#33A94F] group-hover:text-white">
-                            <item.icon size={17} />
-                          </span>
-                          <span className="min-w-0">
-                            <span className="flex items-center gap-1.5 text-[14px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>
-                              {item.title}
-                              <ArrowUpRight size={13} className="text-[#33A94F] opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
-                            </span>
-                            <span className="mt-0.5 block text-[12.5px] font-normal text-[#5B6E80]">{item.desc}</span>
-                          </span>
-                        </Link>
-                      ))}
+              />
+            </Link>
+
+            {/* desktop nav — quiet editorial links */}
+            <nav aria-label="Primary" className="hidden items-center gap-7 xl:gap-8 lg:flex">
+              {LINKS.map((l) => {
+                const active = isActive(pathname, l.href)
+                if (l.label === 'Solar') {
+                  return (
+                    <div key="Solar" className="relative" onMouseEnter={() => setSolarOpen(true)}>
                       <Link
-                        href="/pricing"
-                        onClick={() => setDrop(null)}
-                        className="group flex items-center justify-between gap-3 rounded-xl bg-[#EDF3F7] p-3 transition-colors hover:bg-[#072A45] sm:col-span-2"
+                        href="/services"
+                        aria-expanded={solarOpen}
+                        className={cn(
+                          'group flex items-center gap-1 py-2 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors duration-200',
+                          active || solarOpen ? 'text-[#072A45]' : 'text-[#46586A] hover:text-[#072A45]',
+                        )}
+                        style={{ fontFamily: 'var(--font-display)' }}
                       >
-                        <span className="flex items-center gap-3">
-                          <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#62D984] text-[#072A45] transition-colors group-hover:bg-white">
-                            <BadgeIndianRupee size={17} />
-                          </span>
-                          <span className="text-[13.5px] font-bold text-[#072A45] transition-colors group-hover:text-white" style={{ fontFamily: 'var(--font-display)' }}>
-                            ₹78,000 subsidy — check what you pay after MNRE
-                          </span>
-                        </span>
-                        <ArrowUpRight size={16} className="shrink-0 text-[#33A94F] transition-colors group-hover:text-[#62D984]" />
+                        Solar
+                        <ChevronDown
+                          size={13}
+                          strokeWidth={3}
+                          className={cn('text-[#33A94F] transition-transform duration-300', solarOpen && 'rotate-180')}
+                        />
+                        <span
+                          aria-hidden
+                          className={cn(
+                            'absolute -bottom-0.5 left-0 h-[2px] w-full origin-left rounded-full bg-[#33A94F] transition-transform duration-300',
+                            active || solarOpen ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
+                          )}
+                        />
                       </Link>
                     </div>
-                    <div className="relative hidden min-h-[240px] overflow-hidden md:block">
-                      <img src={IMG.rooftop} alt="Rooftop solar array" className="absolute inset-0 h-full w-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#051E33]/95 via-[#051E33]/40 to-transparent" />
-                      <div className="absolute inset-x-0 bottom-0 p-5">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#62D984]">Installed &amp; serviced</p>
-                        <p className="mt-1 text-[22px] font-extrabold italic leading-tight text-white" style={{ fontFamily: 'var(--font-display)' }}>
-                          3.2 MW across Maharashtra
-                        </p>
-                        <Link
-                          href="/projects"
-                          onClick={() => setDrop(null)}
-                          className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-2 text-[12px] font-bold uppercase tracking-[0.08em] text-white backdrop-blur transition-colors hover:bg-[#62D984] hover:text-[#072A45]"
-                          style={{ fontFamily: 'var(--font-display)' }}
-                        >
-                          See installs <ArrowUpRight size={13} />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  )
+                }
+                return (
+                  <Link
+                    key={l.label}
+                    href={l.href}
+                    onMouseEnter={() => setSolarOpen(false)}
+                    className={cn(
+                      'group relative flex items-center gap-1.5 py-2 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors duration-200',
+                      active ? 'text-[#072A45]' : 'text-[#46586A] hover:text-[#072A45]',
+                    )}
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {l.accent && <Zap size={13} strokeWidth={2.75} className="text-[#33A94F]" />}
+                    {l.label}
+                    <span
+                      aria-hidden
+                      className={cn(
+                        'absolute -bottom-0.5 left-0 h-[2px] w-full origin-left rounded-full bg-[#33A94F] transition-transform duration-300',
+                        active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
+                      )}
+                    />
+                  </Link>
+                )
+              })}
+            </nav>
 
-              {/* COMPANY panel */}
-              <div
-                className={cn(
-                  'absolute right-3 top-[calc(100%+10px)] z-50 w-[320px] transition-all duration-300 sm:right-4',
-                  drop === 'company'
-                    ? 'visible translate-y-0 opacity-100'
-                    : 'invisible -translate-y-2 opacity-0',
-                )}
+            {/* actions */}
+            <div className="flex shrink-0 items-center gap-5">
+              <a
+                href="tel:+917040506295"
+                className="hidden items-center gap-2 text-[13px] font-bold text-[#072A45] transition-colors hover:text-[#33A94F] xl:inline-flex"
+                style={{ fontFamily: 'var(--font-display)' }}
               >
-                <div className="overflow-hidden rounded-2xl border border-[#D9E2EA] bg-white p-2 shadow-[0_32px_80px_-24px_rgba(7,42,69,0.4)]">
-                  {COMPANY_MENU.map((item) => (
+                <span className="grid size-9 place-items-center rounded-full border border-[#D9E2EA]">
+                  <Phone size={14} />
+                </span>
+                +91 70405 06295
+              </a>
+              <Link
+                href="/contact"
+                className="btn-shine group hidden items-center gap-2.5 rounded-xl bg-[#072A45] py-3 pl-6 pr-3 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition-all duration-300 hover:bg-[#0A3A5E] hover:shadow-[0_14px_30px_-10px_rgba(7,42,69,0.6)] sm:inline-flex"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Get a quote
+                <span className="grid size-7 place-items-center rounded-full bg-[#62D984] text-[#072A45] transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight size={15} strokeWidth={2.75} />
+                </span>
+              </Link>
+              <button
+                onClick={() => setOpen(true)}
+                aria-label="Open menu"
+                className="grid size-11 place-items-center rounded-xl bg-[#072A45] text-white transition-transform active:scale-95 lg:hidden"
+              >
+                <Menu size={19} />
+              </button>
+            </div>
+          </div>
+
+          {/* ── Solar mega panel — full-width editorial ── */}
+          <div
+            className={cn(
+              'absolute inset-x-0 top-full hidden transition-all duration-300 lg:block',
+              solarOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-3 opacity-0',
+            )}
+          >
+            {/* hover bridge */}
+            <div className="h-1.5 w-full" />
+            <div className="px-5 sm:px-8">
+              <div className="mx-auto grid max-w-7xl grid-cols-[260px_1fr_300px] gap-8 overflow-hidden rounded-2xl border border-[#D9E2EA] bg-white p-8 shadow-[0_40px_90px_-30px_rgba(7,42,69,0.45)]">
+                {/* intro */}
+                <div className="flex flex-col justify-center border-r border-[#D9E2EA]/70 pr-8">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#33A94F]">
+                    Solar solutions
+                  </p>
+                  <p
+                    className="mt-2 text-[24px] font-extrabold italic leading-[1.15] tracking-[-0.02em] text-[#072A45]"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    Cut your bill by up to 90%
+                  </p>
+                  <Link
+                    href="/services"
+                    onClick={() => setSolarOpen(false)}
+                    className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:text-[#33A94F]"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    All solar services <ArrowRight size={14} />
+                  </Link>
+                </div>
+                {/* links */}
+                <div className="grid grid-cols-2 content-center gap-1.5">
+                  {SOLAR_MENU.map((item) => (
                     <Link
                       key={item.title}
                       href={item.href}
-                      onClick={() => setDrop(null)}
-                      className="group flex items-center gap-3 rounded-xl p-3 transition-colors hover:bg-[#EDF3F7]"
+                      onClick={() => setSolarOpen(false)}
+                      className="group flex items-start gap-3.5 rounded-xl p-3.5 transition-colors hover:bg-[#EDF3F7]"
                     >
-                      <span className="grid size-9 shrink-0 place-items-center rounded-lg border border-[#D9E2EA] bg-white text-[#072A45] transition-colors duration-300 group-hover:border-[#072A45] group-hover:bg-[#072A45] group-hover:text-[#62D984]">
-                        <item.icon size={15} />
+                      <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#EDF3F7] text-[#072A45] transition-all duration-300 group-hover:bg-[#072A45] group-hover:text-[#62D984]">
+                        <item.icon size={18} strokeWidth={2} />
                       </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-[14px] font-bold leading-tight text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>
+                      <span>
+                        <span className="flex items-center gap-1.5 text-[15px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>
                           {item.title}
                         </span>
-                        <span className="block text-[12px] font-normal text-[#5B6E80]">{item.desc}</span>
+                        <span className="mt-0.5 block text-[13px] font-normal leading-snug text-[#5B6E80]">
+                          {item.desc}
+                        </span>
                       </span>
-                      <ArrowUpRight size={14} className="shrink-0 text-[#D9E2EA] transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-[#33A94F]" />
                     </Link>
                   ))}
-                  <div className="mt-1 flex items-center gap-2 rounded-xl bg-[#072A45] p-3 text-white">
-                    <Factory size={15} className="shrink-0 text-[#62D984]" />
-                    <p className="text-[12px] font-medium leading-snug text-white/85">
-                      Commercial plant? <Link href="/contact" onClick={() => setDrop(null)} className="font-bold text-[#62D984] underline-offset-2 hover:underline">Talk to an engineer →</Link>
+                </div>
+                {/* photo card */}
+                <Link
+                  href="/pricing"
+                  onClick={() => setSolarOpen(false)}
+                  className="group relative block overflow-hidden rounded-xl"
+                >
+                  <img src={IMG.rooftop} alt="Rooftop solar array" className="h-full min-h-[220px] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#051E33]/95 via-[#051E33]/30 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#62D984]">
+                      <BadgeIndianRupee size={14} /> ₹78,000 subsidy
+                    </p>
+                    <p className="mt-1 text-[17px] font-extrabold italic leading-snug text-white" style={{ fontFamily: 'var(--font-display)' }}>
+                      See what you pay after MNRE
                     </p>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -427,7 +317,6 @@ export function SiteHeader() {
         )}
         aria-hidden={!open}
       >
-        {/* glow + grid texture */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -right-24 -top-24 size-80 rounded-full bg-[#62D984]/20 blur-[110px]" />
           <div className="absolute -bottom-32 -left-24 size-96 rounded-full bg-[#0F88C7]/20 blur-[110px]" />
@@ -443,13 +332,8 @@ export function SiteHeader() {
         </div>
 
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4">
-          <span className="flex items-center gap-2.5">
-            <span className="grid h-10 place-items-center overflow-hidden rounded-xl bg-white px-2">
-              <img src={LOGO_URL} alt="EVN Solar" className="h-8 w-auto object-contain" />
-            </span>
-            <span className="text-[16px] font-extrabold italic tracking-[-0.02em]" style={{ fontFamily: 'var(--font-display)' }}>
-              EVN Solar
-            </span>
+          <span className="inline-flex items-center rounded-xl bg-white px-2.5 py-1.5">
+            <img src={LOGO_URL} alt="EVN Solar" className="h-8 w-auto object-contain" />
           </span>
           <button
             onClick={() => setOpen(false)}
@@ -460,9 +344,9 @@ export function SiteHeader() {
           </button>
         </div>
 
-        <nav className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center gap-0.5 overflow-y-auto px-5" aria-label="Mobile">
-          {MOBILE_LINKS.map((l, i) => {
-            const active = pathname === l.href
+        <nav className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center overflow-y-auto px-5" aria-label="Mobile">
+          {LINKS.map((l, i) => {
+            const active = isActive(pathname, l.href)
             return (
               <Link
                 key={l.label}
@@ -473,15 +357,15 @@ export function SiteHeader() {
                   'group flex items-center gap-4 border-b border-white/10 py-3 transition-all duration-500',
                   open ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0',
                 )}
-                style={{ transitionDelay: open ? `${60 + i * 50}ms` : '0ms' }}
+                style={{ transitionDelay: open ? `${60 + i * 45}ms` : '0ms' }}
               >
                 <span className={cn('text-[11px] font-bold tracking-[0.2em]', active ? 'text-[#62D984]' : 'text-white/35')}>
-                  {l.n}
+                  {String(i + 1).padStart(2, '0')}
                 </span>
                 <span
                   className={cn(
-                    'flex-1 text-[27px] font-extrabold italic leading-none tracking-[-0.02em] transition-colors',
-                    active ? 'text-[#62D984]' : 'text-white group-active:text-[#62D984]',
+                    'flex-1 text-[26px] font-extrabold italic leading-none tracking-[-0.02em] transition-colors',
+                    active ? 'text-[#62D984]' : 'text-white',
                   )}
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
@@ -492,7 +376,7 @@ export function SiteHeader() {
                     'grid size-9 place-items-center rounded-full border transition-all',
                     active
                       ? 'border-[#62D984] bg-[#62D984] text-[#072A45]'
-                      : 'border-white/15 text-white/40 group-active:border-[#62D984] group-active:text-[#62D984]',
+                      : 'border-white/15 text-white/40',
                   )}
                 >
                   <ArrowUpRight size={15} />
