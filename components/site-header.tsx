@@ -137,7 +137,7 @@ export function SiteHeader() {
                 alt="EVN Solar Energy Solutions"
                 className={cn(
                   'w-auto object-contain transition-all duration-500 group-hover:scale-[1.02]',
-                  scrolled ? 'h-11' : 'h-[52px]',
+                  scrolled ? 'h-10' : 'h-12',
                 )}
               />
             </Link>
@@ -153,7 +153,7 @@ export function SiteHeader() {
                         href="/services"
                         aria-expanded={solarOpen}
                         className={cn(
-                          'group flex items-center gap-1 py-2 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors duration-200',
+                          'group flex items-center gap-1 py-2 text-[12px] font-bold uppercase tracking-[0.07em] transition-colors duration-200',
                           active || solarOpen ? 'text-[#072A45]' : 'text-[#46586A] hover:text-[#072A45]',
                         )}
                         style={{ fontFamily: 'var(--font-display)' }}
@@ -181,7 +181,7 @@ export function SiteHeader() {
                     href={l.href}
                     onMouseEnter={() => setSolarOpen(false)}
                     className={cn(
-                      'group relative flex items-center gap-1.5 py-2 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors duration-200',
+                      'group relative flex items-center gap-1.5 py-2 text-[12px] font-bold uppercase tracking-[0.07em] transition-colors duration-200',
                       active ? 'text-[#072A45]' : 'text-[#46586A] hover:text-[#072A45]',
                     )}
                     style={{ fontFamily: 'var(--font-display)' }}
@@ -249,7 +249,7 @@ export function SiteHeader() {
                     Solar solutions
                   </p>
                   <p
-                    className="mt-2 text-[24px] font-extrabold italic leading-[1.15] tracking-[-0.02em] text-[#072A45]"
+                    className="mt-2 text-[20px] font-extrabold italic leading-[1.15] tracking-[-0.02em] text-[#072A45]"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
                     Cut your bill by up to 90%
@@ -276,7 +276,7 @@ export function SiteHeader() {
                         <item.icon size={18} strokeWidth={2} />
                       </span>
                       <span>
-                        <span className="flex items-center gap-1.5 text-[15px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>
+                        <span className="flex items-center gap-1.5 text-[14px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>
                           {item.title}
                         </span>
                         <span className="mt-0.5 block text-[13px] font-normal leading-snug text-[#5B6E80]">
@@ -364,7 +364,7 @@ export function SiteHeader() {
                 </span>
                 <span
                   className={cn(
-                    'flex-1 text-[26px] font-extrabold italic leading-none tracking-[-0.02em] transition-colors',
+                    'flex-1 text-[22px] font-extrabold italic leading-none tracking-[-0.02em] transition-colors',
                     active ? 'text-[#62D984]' : 'text-white',
                   )}
                   style={{ fontFamily: 'var(--font-display)' }}
