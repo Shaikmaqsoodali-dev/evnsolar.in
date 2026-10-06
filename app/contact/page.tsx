@@ -17,7 +17,7 @@ export default function ContactPage() {
         title={<>Tell us your bill. <em className="editorial-accent text-[#0F88C7]">We&apos;ll do the math.</em></>}
         lede="Call, email or send the form below. Include monthly units, roof or parking photos and any EV plans for the fastest, most accurate quote."
         crumb={[['Contact', '/contact']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791300322/WhatsApp_Image_2026-10-06_at_8.54.50_PM.jpg"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791289886/Modern_EV_and_Solar_Support_Centre.png"
         imageAlt="Modern EV and Solar Support Centre"
       />
 

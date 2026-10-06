@@ -111,7 +111,7 @@ export default function AboutPage() {
         }
         lede="Established in 2020, we have grown into a well-established turnkey solar EPC player — with 1,607 MWp implemented and 5,700+ acres acquired for customers across India."
         crumb={[['About', '/about']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791300322/WhatsApp_Image_2026-10-06_at_8.54.50_PM.jpg"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar-Panel-Installation.png"
         imageAlt="Rooftop solar panels against a clear sky"
       />
 
