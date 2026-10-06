@@ -30,8 +30,8 @@ export default function PricingPage() {
         title={<>Start with the right size. <em className="editorial-accent text-[#0F88C7]">Expand later.</em></>}
         lede="Indicative starting points. Your final proposal follows a site survey and includes a generation estimate, subsidy breakup and payment schedule."
         crumb={[['Pricing', '/pricing']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791109850/Solar_EV_Dashboard_Over_Cityscape.png"
-        imageAlt="Solar EV dashboard over cityscape"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791292104/WhatsApp_Image_2026-10-06_at_6.37.59_PM.jpg"
+        imageAlt="EVN Solar pricing banner"
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Stagger className="grid gap-6 lg:grid-cols-3" step={110}>
