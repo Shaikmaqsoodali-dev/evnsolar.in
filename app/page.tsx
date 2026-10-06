@@ -209,11 +209,16 @@ export default function HomePage() {
             {SERVICES.map(({ img, icon: Icon, badge, t, d, href }) => (
               <Tilt key={t} className="h-full">
                 <Link href={href} className="group lift block h-full overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.12)]">
-                  <div className="relative overflow-hidden">
-                    <img src={img} alt={`${badge} installation photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
-                    <span className="photo-badge" aria-hidden>
+                  <div className="photo-frame relative overflow-hidden">
+                    <img src={img} alt={`${t} — ${badge} installation photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+                    <span aria-hidden className="photo-scrim" />
+                    <span className="photo-badge photo-badge--top" aria-hidden>
                       <Icon size={15} strokeWidth={2.2} />
                       <span className="photo-badge__label">{badge}</span>
+                    </span>
+                    <span aria-hidden className="photo-caption">
+                      <span className="photo-eyebrow">{badge}</span>
+                      <span className="photo-title">{t}</span>
                     </span>
                   </div>
                   <div className="flex items-start justify-between gap-4 p-5">
@@ -264,7 +269,15 @@ export default function HomePage() {
       <section className="bg-[#072A45] text-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
           <Reveal variant="left">
-            <img src={IMG.ground} alt="Solar plant at golden hour" className="aspect-[4/3] w-full rounded-xl object-cover" />
+            <div className="photo-frame rounded-xl">
+              <img src={IMG.ground} alt="Solar plant at golden hour" className="aspect-[4/3] w-full rounded-xl object-cover" />
+              <span aria-hidden className="photo-scrim rounded-xl" />
+              <span aria-hidden className="photo-caption">
+                <span className="photo-eyebrow">Energy progress</span>
+                <span className="photo-title photo-title--lg">Best solution for your solar energy</span>
+                <span className="photo-sub">Metered generation · savings · charger use</span>
+              </span>
+            </div>
           </Reveal>
           <Reveal variant="right" delay={120}>
             <p className="micro text-[#62D984]">
@@ -335,11 +348,16 @@ export default function HomePage() {
           <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" step={90}>
             {WHY.map(({ img, icon: Icon, badge, t, d }) => (
               <div key={t} className="group overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.10)]">
-                <div className="relative overflow-hidden">
-                  <img src={img} alt={`${badge} — illustrative photo`} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
-                  <span className="photo-badge" aria-hidden>
+                <div className="photo-frame relative overflow-hidden">
+                  <img src={img} alt={`${t} — ${badge} illustrative photo`} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+                  <span aria-hidden className="photo-scrim" />
+                  <span className="photo-badge photo-badge--top" aria-hidden>
                     <Icon size={15} strokeWidth={2.2} />
                     <span className="photo-badge__label">{badge}</span>
+                  </span>
+                  <span aria-hidden className="photo-caption">
+                    <span className="photo-eyebrow">{badge}</span>
+                    <span className="photo-title photo-title--sm">{t}</span>
                   </span>
                 </div>
                 <div className="p-5">
@@ -412,11 +430,16 @@ export default function HomePage() {
             ].map(({ img, icon: Icon, badge, cat, t, d }) => (
               <Tilt key={t} className="h-full">
                 <Link href="/blog" className="group lift block h-full overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_12px_36px_rgba(7,42,69,0.10)]">
-                  <div className="relative overflow-hidden">
-                    <img src={img} alt={`${cat} — article cover photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
-                    <span className="photo-badge" aria-hidden>
+                  <div className="photo-frame relative overflow-hidden">
+                    <img src={img} alt={`${t} — ${cat} article cover photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+                    <span aria-hidden className="photo-scrim" />
+                    <span className="photo-badge photo-badge--top" aria-hidden>
                       <Icon size={15} strokeWidth={2.2} />
                       <span className="photo-badge__label">{badge}</span>
+                    </span>
+                    <span aria-hidden className="photo-caption">
+                      <span className="photo-eyebrow">{cat}</span>
+                      <span className="photo-title photo-title--sm">{t}</span>
                     </span>
                   </div>
                   <div className="p-5">

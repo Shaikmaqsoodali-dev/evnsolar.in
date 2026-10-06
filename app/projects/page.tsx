@@ -32,11 +32,16 @@ export default function ProjectsPage() {
           {PROJECTS.map(({ img, icon: Icon, badge, sector, size, t, d }) => (
             <Tilt key={t}>
             <article className="group lift border border-[#D9E2EA] bg-white transition-shadow hover:border-[#62D984] hover:shadow-[0_12px_36px_rgba(7,42,69,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
-              <div className="relative overflow-hidden">
-                <img src={img} alt={`${sector} — ${badge} project photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
-                <span className="photo-badge" aria-hidden>
+              <div className="photo-frame relative overflow-hidden">
+                <img src={img} alt={`${t} — ${sector} ${badge} project photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                <span aria-hidden className="photo-scrim" />
+                <span className="photo-badge photo-badge--top" aria-hidden>
                   <Icon size={15} strokeWidth={2.2} />
                   <span className="photo-badge__label">{badge}</span>
+                </span>
+                <span aria-hidden className="photo-caption">
+                  <span className="photo-eyebrow">{sector} · {size}</span>
+                  <span className="photo-title photo-title--sm">{t}</span>
                 </span>
               </div>
               <div className="p-6">

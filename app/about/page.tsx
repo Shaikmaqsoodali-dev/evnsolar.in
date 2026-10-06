@@ -176,24 +176,43 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal variant="right" delay={120}>
-            <Parallax className="aspect-[4/3] overflow-hidden" speed={0.08}>
-              <img
-                src={IMG.engineer1}
-                alt="EVN Solar installation team at work"
-                className="h-full w-full rounded-lg object-cover"
-              />
-            </Parallax>
+            <div className="photo-frame overflow-hidden" style={{ borderRadius: 8 }}>
+              <Parallax className="aspect-[4/3] overflow-hidden" speed={0.08}>
+                <img
+                  src={IMG.engineer1}
+                  alt="EVN Solar installation team at work on rooftop"
+                  className="h-full w-full rounded-lg object-cover"
+                />
+              </Parallax>
+              <span aria-hidden className="photo-scrim" style={{ borderRadius: 8 }} />
+              <span aria-hidden className="photo-caption" style={{ paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>
+                <span className="photo-eyebrow">Since 2020 · 1,607 MWp</span>
+                <span className="photo-title photo-title--lg">Consultative solar EPC team</span>
+              </span>
+            </div>
             <div className="mt-3 grid grid-cols-2 gap-3">
-              <img
-                src={IMG.rooftop}
-                alt="Rooftop solar array"
-                className="aspect-[4/3] w-full rounded-lg object-cover"
-              />
-              <img
-                src={IMG.evCharge}
-                alt="EV charging"
-                className="aspect-[4/3] w-full rounded-lg object-cover"
-              />
+              <span className="photo-frame block overflow-hidden" style={{ borderRadius: 8 }}>
+                <img
+                  src={IMG.rooftop}
+                  alt="Rooftop solar array installed by EVN"
+                  className="aspect-[4/3] w-full rounded-lg object-cover"
+                />
+                <span aria-hidden className="photo-scrim" style={{ borderRadius: 8 }} />
+                <span aria-hidden className="photo-caption" style={{ paddingTop: '1.8rem', paddingLeft: '0.9rem', paddingRight: '0.9rem', paddingBottom: '0.75rem' }}>
+                  <span className="photo-title photo-title--sm" style={{ fontSize: '17px' }}>Rooftop solar arrays</span>
+                </span>
+              </span>
+              <span className="photo-frame block overflow-hidden" style={{ borderRadius: 8 }}>
+                <img
+                  src={IMG.evCharge}
+                  alt="EV charging powered by solar"
+                  className="aspect-[4/3] w-full rounded-lg object-cover"
+                />
+                <span aria-hidden className="photo-scrim" style={{ borderRadius: 8 }} />
+                <span aria-hidden className="photo-caption" style={{ paddingTop: '1.8rem', paddingLeft: '0.9rem', paddingRight: '0.9rem', paddingBottom: '0.75rem' }}>
+                  <span className="photo-title photo-title--sm" style={{ fontSize: '17px' }}>Solar + EV charging</span>
+                </span>
+              </span>
             </div>
           </Reveal>
         </div>

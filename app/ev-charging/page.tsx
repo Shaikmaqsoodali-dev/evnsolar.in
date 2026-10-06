@@ -22,9 +22,16 @@ export default function EvChargingPage() {
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:items-center">
         <Reveal variant="left">
-          <Parallax className="aspect-[4/3] rounded-lg" speed={0.09}>
-            <img src={IMG.evCharge} alt="Electric vehicle charging" className="h-full w-full object-cover" />
-          </Parallax>
+          <div className="photo-frame rounded-lg">
+            <Parallax className="aspect-[4/3] rounded-lg" speed={0.09}>
+              <img src={IMG.evCharge} alt="Electric vehicle charging powered by rooftop solar" className="h-full w-full object-cover" />
+            </Parallax>
+            <span aria-hidden className="photo-scrim rounded-lg" />
+            <span aria-hidden className="photo-caption" style={{ paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>
+              <span className="photo-eyebrow">Solar + EV together</span>
+              <span className="photo-title photo-title--lg">Charge on sunlight, not just grid</span>
+            </span>
+          </div>
           <div className="mt-3 grid grid-cols-2 gap-3">
             <div className="border border-[#D9E2EA] bg-[#F4F6F8] p-5" style={{ borderRadius: 8 }}>
               <Home size={18} className="text-[#0F88C7]" aria-hidden />
