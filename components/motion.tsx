@@ -445,7 +445,7 @@ export function Marquee({
             {item}
           </span>
           <span
-            className="inline-block size-1.5 shrink-0 rounded-full bg-[#3BB54A]"
+            className="inline-block size-1.5 shrink-0 rounded-full bg-[#89EA5F]"
             aria-hidden
           />
         </span>

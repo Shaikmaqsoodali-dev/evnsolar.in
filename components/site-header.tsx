@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { ArrowRight, ArrowUpRight, Mail, MapPin, Menu, Phone, X } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Mail, Menu, Phone, X } from 'lucide-react'
 import { LOGO_URL, NAV_LINKS } from '@/lib/brand'
 import { cn } from '@/lib/utils'
 
@@ -29,48 +29,51 @@ export function SiteHeader() {
   return (
     <>
       <header className="sticky top-0 z-50">
-        {/* ── utility strip: live status + contact ── */}
+        {/* ── SOLOR topbar: email + phone + socials ── */}
         <div
           className={cn(
-            'overflow-hidden bg-[#04141C] text-white transition-all duration-500',
+            'overflow-hidden bg-[#163300] text-white transition-all duration-500',
             scrolled ? 'max-h-0' : 'max-h-12',
           )}
         >
-          <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-6">
-            <p className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-white/70">
-              <span className="relative flex size-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#3BB54A] opacity-75" />
-                <span className="relative inline-flex size-1.5 rounded-full bg-[#3BB54A]" />
-              </span>
-              <span className="hidden sm:inline">Now booking site surveys</span>
-              <span className="hidden items-center gap-1.5 text-white/35 md:inline-flex">
-                <MapPin size={11} /> Nashik, Malegaon, Maharashtra
-              </span>
-            </p>
-            <div className="flex items-center gap-4 text-[11.5px] font-medium">
+          <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-6">
+            <div className="flex items-center gap-5 text-[13px] font-normal">
               <a
                 href="mailto:info@evnsolar.in"
-                className="hidden items-center gap-1.5 uppercase tracking-[0.1em] text-white/55 transition-colors hover:text-white sm:inline-flex"
+                className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-[#89EA5F]"
+                style={{ fontFamily: 'var(--font-body)' }}
               >
-                <Mail size={12} className="text-[#25C7E8]" /> info@evnsolar.in
+                <Mail size={13} className="text-[#89EA5F]" /> info@evnsolar.in
               </a>
               <a
                 href="tel:+917040506295"
-                className="inline-flex items-center gap-1.5 font-semibold tracking-wide text-white transition-colors hover:text-[#6FDF8F]"
+                className="hidden items-center gap-2 text-white/80 transition-colors hover:text-[#89EA5F] sm:inline-flex"
+                style={{ fontFamily: 'var(--font-body)' }}
               >
-                <Phone size={12} className="text-[#25C7E8]" /> +91 70405 06295
+                <Phone size={13} className="text-[#89EA5F]" /> +91 70405 06295
               </a>
+            </div>
+            <div className="flex items-center gap-3 text-white/70">
+              <span className="hidden text-[12px] uppercase tracking-[0.12em] text-white/50 md:inline" style={{ fontFamily: 'var(--font-display)' }}>
+                Nashik · Malegaon · Maharashtra
+              </span>
+              <span className="hidden h-4 w-px bg-white/15 md:inline-block" aria-hidden />
+              {['Instagram', 'Facebook', 'LinkedIn'].map((s) => (
+                <a key={s} href="#" aria-label={s} className="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-[#89EA5F]" style={{ fontFamily: 'var(--font-display)' }}>
+                  {s.slice(0, 2)}
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* ── main bar: glass on scroll ── */}
+        {/* ── SOLOR main header: logo left, nav center, Contact us right ── */}
         <div
           className={cn(
             'transition-all duration-500',
             scrolled
-              ? 'border-b border-[#E2E8EC]/80 bg-white/85 shadow-[0_8px_32px_rgba(7,29,38,0.10)] backdrop-blur-xl'
-              : 'border-b border-transparent bg-white',
+              ? 'border-b border-[#DFE5DC] bg-white/95 shadow-[0_8px_32px_rgba(22,51,0,0.10)] backdrop-blur-xl'
+              : 'border-b border-[#DFE5DC]/60 bg-white',
           )}
         >
           <div
@@ -79,16 +82,16 @@ export function SiteHeader() {
               scrolled ? 'h-20' : 'h-[92px]',
             )}
           >
-            {/* logo lockup */}
+            {/* logo lockup — Solor left logo */}
             <Link href="/" className="group flex shrink-0 items-center" aria-label="EVN Solar home">
-              <span className="grid h-16 w-auto place-items-center overflow-hidden rounded-2xl bg-white px-2 ring-1 ring-[#E2E8EC] transition-shadow duration-300 group-hover:shadow-[0_6px_20px_rgba(0,142,214,0.25)]">
+              <span className="grid h-16 w-auto place-items-center overflow-hidden bg-white px-1 transition-opacity duration-300">
                 <img src={LOGO_URL} alt="EVN Solar" className="h-14 w-auto object-contain" />
               </span>
             </Link>
 
-            {/* pill nav */}
+            {/* Solor nav — Rajdhani 600 uppercase */}
             <nav
-              className="hidden items-center gap-1 rounded-full border border-[#E2E8EC]/70 bg-[#F2F7F4]/80 p-1.5 lg:flex"
+              className="hidden items-center gap-7 lg:flex"
               aria-label="Primary"
             >
               {NAV_LINKS.map(([label, href]) => {
@@ -99,38 +102,47 @@ export function SiteHeader() {
                     href={href}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      'rounded-full px-3.5 py-2 text-[12.5px] font-semibold tracking-[-0.01em] transition-all duration-300',
+                      'relative py-2 text-[15px] font-semibold uppercase tracking-[0.06em] transition-colors duration-300',
                       active
-                        ? 'bg-[#071D26] text-white shadow-[0_4px_14px_rgba(7,29,38,0.35)]'
-                        : 'text-[#50656A] hover:bg-white hover:text-[#071D26] hover:shadow-sm',
+                        ? 'text-[#163300]'
+                        : 'text-[#4C554B] hover:text-[#163300]',
                     )}
+                    style={{ fontFamily: 'var(--font-display)' }}
                   >
                     {label}
+                    <span
+                      aria-hidden
+                      className={cn(
+                        'absolute -bottom-0.5 left-0 h-[2.5px] w-full origin-left rounded-full bg-[#89EA5F] transition-transform duration-300',
+                        active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
+                      )}
+                    />
                   </Link>
                 )
               })}
             </nav>
 
-            {/* actions */}
+            {/* Solor actions — Contact us button */}
             <div className="flex shrink-0 items-center gap-2.5">
               <a
                 href="tel:+917040506295"
                 aria-label="Call EVN Solar"
-                className="hidden size-10 place-items-center rounded-full border border-[#E2E8EC] text-[#071D26] transition-all hover:border-[#008ED6] hover:text-[#008ED6] md:grid"
+                className="hidden size-11 place-items-center rounded-full border border-[#DFE5DC] text-[#163300] transition-all hover:border-[#163300] hover:bg-[#163300] hover:text-[#89EA5F] md:grid"
               >
                 <Phone size={16} />
               </a>
               <Link
                 href="/contact"
-                className="btn-shine group hidden items-center gap-2 rounded-full bg-gradient-to-r from-[#00659D] via-[#008ED6] to-[#25C7E8] py-2.5 pl-5 pr-4 text-[13px] font-semibold tracking-[-0.01em] text-white shadow-[0_6px_20px_rgba(0,142,214,0.35)] transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98] sm:inline-flex"
+                className="btn-shine group hidden items-center gap-2 rounded-lg bg-[#163300] py-3 pl-6 pr-5 text-[14px] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-[#5EC73A] hover:text-[#163300] sm:inline-flex"
+                style={{ fontFamily: 'var(--font-display)' }}
               >
-                Get a quote
+                Contact us
                 <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </Link>
               <button
                 onClick={() => setOpen(true)}
                 aria-label="Open menu"
-                className="grid size-10 place-items-center rounded-full bg-[#071D26] text-white lg:hidden"
+                className="grid size-11 place-items-center rounded-lg bg-[#163300] text-white lg:hidden"
               >
                 <Menu size={18} />
               </button>
@@ -139,18 +151,18 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {/* ── mobile overlay menu ── */}
+      {/* ── mobile overlay menu — Solor dark green ── */}
       <div
         className={cn(
-          'fixed inset-0 z-[70] flex flex-col bg-[#04141C] text-white transition-all duration-500 lg:hidden',
+          'fixed inset-0 z-[70] flex flex-col bg-[#163300] text-white transition-all duration-500 lg:hidden',
           open ? 'visible opacity-100' : 'invisible opacity-0',
         )}
         aria-hidden={!open}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#008ED6]/25 blur-[100px]" />
-        <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#3BB54A]/20 blur-[100px]" />
+        <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#89EA5F]/20 blur-[100px]" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#89EA5F]/10 blur-[100px]" />
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-          <img src={LOGO_URL} alt="EVN Solar" className="h-12 w-auto rounded-xl bg-white px-2 object-contain" />
+          <img src={LOGO_URL} alt="EVN Solar" className="h-12 w-auto bg-white object-contain px-2" style={{ borderRadius: 6 }} />
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
@@ -176,15 +188,16 @@ export function SiteHeader() {
               >
                 <span
                   className={cn(
-                    'text-[26px] font-semibold tracking-[-0.025em] transition-colors',
-                    active ? 'text-[#25C7E8]' : 'text-white group-hover:text-[#6FDF8F]',
+                    'tracking-[0] transition-colors',
+                    active ? 'text-[#89EA5F]' : 'text-white group-hover:text-[#89EA5F]',
                   )}
+                  style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 28 }}
                 >
                   {label}
                 </span>
                 <ArrowUpRight
                   size={20}
-                  className={cn(active ? 'text-[#25C7E8]' : 'text-white/30 group-hover:text-white')}
+                  className={cn(active ? 'text-[#89EA5F]' : 'text-white/30 group-hover:text-white')}
                 />
               </Link>
             )
@@ -200,12 +213,13 @@ export function SiteHeader() {
             href="/contact"
             onClick={() => setOpen(false)}
             tabIndex={open ? 0 : -1}
-            className="flex items-center justify-center gap-2 rounded-full bg-white py-4 text-[14px] font-semibold text-[#071D26]"
+            className="flex items-center justify-center gap-2 rounded-lg bg-[#89EA5F] py-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-[#163300]"
+            style={{ fontFamily: 'var(--font-display)' }}
           >
             Get a free site assessment <ArrowRight size={16} />
           </Link>
-          <p className="mt-4 text-center text-[12px] font-medium tracking-wide text-white/50">
-            +91 70405 06295, info@evnsolar.in
+          <p className="mt-4 text-center text-[13px] font-normal tracking-wide text-white/60" style={{ fontFamily: 'var(--font-body)' }}>
+            +91 70405 06295 · info@evnsolar.in
           </p>
         </div>
       </div>

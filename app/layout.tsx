@@ -1,43 +1,43 @@
 import type { Metadata, Viewport } from 'next'
-import { Manrope, Roboto } from 'next/font/google'
+import { Rajdhani, Rubik } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
 import { SiteHeader } from '@/components/site-header'
 import { BackToTop, FloatCta, MobileCtaBar } from '@/components/ux-bits'
 import { ScrollProgress } from '@/components/motion'
 
-/* BODY + DISPLAY — SUKI / Energium reference: Manrope everywhere (body 400, headings 700). */
-const body = Manrope({
+/* BODY + DISPLAY — SOLOR reference: Rajdhani headings (600/700), Rubik body (400/500). */
+const body = Rubik({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600'],
   display: 'swap',
 })
-/* DISPLAY — same Manrope family, bold headings like SUKI h1–h6. */
-const display = Manrope({
+/* DISPLAY — Rajdhani bold headings like Solor h1–h6. */
+const display = Rajdhani({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['600', '700', '800'],
+  weight: ['500', '600', '700'],
   display: 'swap',
 })
-const grot = Manrope({
+const grot = Rajdhani({
   subsets: ['latin'],
   variable: '--font-grot',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['500', '600', '700'],
   display: 'swap',
 })
-/* SPECIAL TITLES — Roboto regular for subheadings / backward titles, like SUKI. */
-const serifEd = Roboto({
+/* SPECIAL TITLES — Rubik for subheadings, like Solor body. */
+const serifEd = Rubik({
   subsets: ['latin'],
   variable: '--font-serif-ed',
   weight: ['400', '500'],
   display: 'swap',
 })
-/* META / BUTTONS — Manrope 500 (SUKI buttons 14px/500). Kept under --font-tech name so existing classes keep working. */
-const tech = Manrope({
+/* META / BUTTONS — Rajdhani 600 uppercase (Solor buttons). Kept under --font-tech name so existing classes keep working. */
+const tech = Rajdhani({
   subsets: ['latin'],
   variable: '--font-tech',
-  weight: ['400', '500', '600', '700'],
+  weight: ['500', '600', '700'],
   display: 'swap',
 })
 
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#071D26',
+  themeColor: '#163300',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${body.variable} ${display.variable} ${grot.variable} ${serifEd.variable} ${tech.variable}`}>
-      <body className="bg-white text-[#071D26] antialiased">
+      <body className="bg-white text-[#163300] antialiased">
         <ScrollProgress />
         <SiteHeader />
         {children}
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <BackToTop />
         <FloatCta />
         <MobileCtaBar />
-        <div className="h-[54px] bg-[#071D26] sm:hidden" aria-hidden />
+        <div className="h-[54px] bg-[#163300] sm:hidden" aria-hidden />
       </body>
     </html>
   )
