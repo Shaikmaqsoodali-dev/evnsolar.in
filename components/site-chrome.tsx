@@ -246,7 +246,7 @@ export function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr]">
           <div>
             <div className="flex items-center gap-3">
-              <img src={LOGO_URL} alt="EVN Solar" className="h-11 w-auto bg-white object-contain px-1.5 py-1" style={{ borderRadius: 6 }} />
+              <img src={LOGO_URL} alt="EVN Solar" className="h-14 w-auto object-contain" />
               <div className="leading-none">
                 <p className="text-[19px] font-bold uppercase tracking-[0.02em]" style={{ fontFamily: 'var(--font-display)' }}>EV&amp;SOLAR</p>
                 <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-white/50" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>

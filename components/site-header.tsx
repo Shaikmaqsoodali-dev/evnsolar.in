@@ -83,23 +83,16 @@ export function SiteHeader() {
               scrolled ? 'h-24' : 'h-[112px]',
             )}
           >
-            {/* logo lockup — cropped to remove JPEG white padding, looks 2x bigger */}
+            {/* logo lockup — transparent PNG, no cropping needed */}
             <Link href="/" className="group flex shrink-0 items-center" aria-label="EVN Solar home">
-              <span
+              <img
+                src={LOGO_URL}
+                alt="EVN Solar"
                 className={cn(
-                  'flex items-center justify-center overflow-hidden bg-white transition-all duration-500',
-                  scrolled ? 'h-[72px] w-[120px]' : 'h-[92px] w-[152px] lg:h-[100px] lg:w-[168px]',
+                  'w-auto object-contain transition-all duration-500',
+                  scrolled ? 'h-[68px] lg:h-[76px]' : 'h-[84px] lg:h-[96px]',
                 )}
-              >
-                <img
-                  src={LOGO_URL}
-                  alt="EVN Solar"
-                  className={cn(
-                    'max-w-none object-cover object-center transition-all duration-500',
-                    scrolled ? 'h-[136px] w-[136px]' : 'h-[172px] w-[172px] lg:h-[188px] lg:w-[188px]',
-                  )}
-                />
-              </span>
+              />
             </Link>
 
             {/* Solor nav — Rajdhani 600 uppercase */}
@@ -175,9 +168,7 @@ export function SiteHeader() {
         <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#62D984]/20 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#62D984]/10 blur-[100px]" />
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-          <span className="flex h-[64px] w-[112px] items-center justify-center overflow-hidden bg-white" style={{ borderRadius: 8 }}>
-            <img src={LOGO_URL} alt="EVN Solar" className="h-[120px] w-[120px] max-w-none object-cover object-center" />
-          </span>
+          <img src={LOGO_URL} alt="EVN Solar" className="h-[72px] w-auto object-contain" />
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"

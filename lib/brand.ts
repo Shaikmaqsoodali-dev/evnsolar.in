@@ -1,5 +1,4 @@
-﻿export const LOGO_URL =
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/EV%20%26%20SOLAR%20LOGO%20final.jpg%20%284%29-mkVPCg09FJf5Yc550FUgAC2cI2EFi8.jpeg'
+﻿export const LOGO_URL = '/logo.png'
 
 export const GRADIENT =
   'linear-gradient(135deg, #0F88C7 0%, #33A94F 100%)'
