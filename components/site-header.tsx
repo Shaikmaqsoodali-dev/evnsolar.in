@@ -83,7 +83,7 @@ export function SiteHeader() {
           <div
             className={cn(
               'mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 transition-all duration-500',
-              scrolled ? 'h-24' : 'h-[112px]',
+              scrolled ? 'h-16' : 'h-20',
             )}
           >
             {/* logo lockup — transparent PNG, no cropping needed */}
@@ -92,8 +92,8 @@ export function SiteHeader() {
                 src={LOGO_URL}
                 alt="EVN Solar"
                 className={cn(
-                  'w-auto object-contain transition-all duration-500',
-                  scrolled ? 'h-[68px] lg:h-[76px]' : 'h-[84px] lg:h-[96px]',
+                  'w-auto max-w-[180px] object-contain transition-all duration-500',
+                  scrolled ? 'h-10 lg:h-11' : 'h-12 lg:h-[52px]',
                 )}
               />
             </Link>
@@ -171,7 +171,7 @@ export function SiteHeader() {
         <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#62D984]/20 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#62D984]/10 blur-[100px]" />
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-          <img src={LOGO_URL} alt="EVN Solar" className="h-[72px] w-auto object-contain" />
+          <img src={LOGO_URL} alt="EVN Solar" className="h-11 w-auto max-w-[170px] object-contain" />
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
