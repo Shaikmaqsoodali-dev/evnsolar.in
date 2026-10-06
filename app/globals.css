@@ -3,11 +3,12 @@
 @import 'shadcn/tailwind.css';
 
 @theme {
-  --font-display: Inter, Arial, Helvetica, sans-serif;
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-grot: Inter, Arial, Helvetica, sans-serif;
-  --font-serif-ed: Arial, Helvetica, sans-serif;
-  --font-tech: Inter, Arial, Helvetica, sans-serif;
+  --font-poppins: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-display: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-grot: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-serif-ed: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-tech: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -40,11 +41,11 @@
   --muted-tx: #54687A;
   --body-tx: #3E5162;
 
-  --font-display: Inter, Arial, Helvetica, sans-serif;
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-grot: Inter, Arial, Helvetica, sans-serif;
-  --font-serif-ed: Arial, Helvetica, sans-serif;
-  --font-tech: Inter, Arial, Helvetica, sans-serif;
+  --font-display: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-body: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-grot: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-serif-ed: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  --font-tech: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -55,17 +56,18 @@ body {
   margin: 0;
   background: #fff;
   color: var(--body-tx);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6em;
   font-weight: 400;
+  font-style: normal;
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'ss01', 'cv11', 'liga';
 }
 
-/* AGENCY type: Inter 700/800 display, tight -0.03em, sentence-case. Body Arial, -0.011em. */
+/* BRAND type: Poppins ExtraBold Italic display, tight -0.03em, sentence-case. Body Poppins, -0.011em. */
 h1,
 h2,
 h3,
@@ -73,11 +75,11 @@ h4,
 h5,
 h6,
 .font-display {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
   letter-spacing: -0.03em;
   word-spacing: 0;
-  font-style: normal;
+  font-style: italic;
   text-transform: none;
   text-wrap: balance;
   line-height: 1.02em;
@@ -92,12 +94,12 @@ p {
   text-wrap: pretty;
   line-height: 1.6em;
   letter-spacing: -0.011em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
 }
 
 nav a,
 header a {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: -0.015em;
 }
@@ -109,7 +111,7 @@ input[type='button'],
 .cta-bold,
 .cta-med,
 .energium-button {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -231,8 +233,9 @@ input[type='button'],
 }
 
 .section-title {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   text-transform: none;
   letter-spacing: -0.028em;
   word-spacing: 0;
@@ -240,10 +243,11 @@ input[type='button'],
   text-wrap: balance;
 }
 
-/* 1. HERO — AGENCY: Inter 800, oversized, ultra-tight 0.96. Serif italic accent for contrast. */
+/* 1. HERO — BRAND: Poppins ExtraBold Italic, oversized, ultra-tight 0.96. */
 .hero-display {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   text-transform: none;
   letter-spacing: -0.04em;
   word-spacing: -0.02em;
@@ -265,9 +269,9 @@ input[type='button'],
 .hero-display .serif-accent,
 .hero-display em {
   display: inline;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 1.04em;
   letter-spacing: -0.015em;
   line-height: 0.9em;
@@ -275,10 +279,11 @@ input[type='button'],
   color: var(--solor-accent);
 }
 
-/* 1b. SUBPAGE HERO — Inter 800, tight. */
+/* 1b. SUBPAGE HERO — Poppins ExtraBold Italic, tight. */
 .page-hero {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   text-transform: none;
   letter-spacing: -0.032em;
   word-spacing: -0.01em;
@@ -290,9 +295,9 @@ input[type='button'],
 }
 .page-hero .editorial-accent,
 .page-hero .serif-accent {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 1.05em;
   letter-spacing: -0.01em;
   line-height: 0.9em;
@@ -302,19 +307,20 @@ input[type='button'],
 
 .serif-accent,
 .editorial-accent {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 800;
   text-transform: none;
   letter-spacing: -0.01em;
   line-height: 0.95em;
   color: var(--solor-accent-dark);
 }
 
-/* 2. SECTION HEADINGS — AGENCY h2: Inter 800, tight, large contrast. */
+/* 2. SECTION HEADINGS — BRAND h2: Poppins ExtraBold Italic, tight, large contrast. */
 .sx {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   text-transform: none;
   letter-spacing: -0.03em;
   word-spacing: -0.01em;
@@ -333,18 +339,19 @@ input[type='button'],
 .sx .editorial-accent,
 .sx .serif-accent,
 .sx em {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 1.06em;
   letter-spacing: -0.01em;
   line-height: 0.9em;
 }
 
-/* Ghost index numeral — agency: Inter 800, tabular, faded. */
+/* Ghost index numeral — brand: Poppins ExtraBold Italic, tabular, faded. */
 .sx-index {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 0.9;
   letter-spacing: -0.04em;
@@ -354,10 +361,11 @@ input[type='button'],
 }
 .sx-index.on-dark { color: rgb(255 255 255 / 0.12); }
 
-/* 3. NUMBERS — agency counters: Inter 800 tabular, tight. */
+/* 3. NUMBERS — brand counters: Poppins ExtraBold Italic tabular, tight. */
 .stat-number {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   letter-spacing: -0.035em;
   line-height: 0.95em;
   font-variant-numeric: tabular-nums;
@@ -365,8 +373,9 @@ input[type='button'],
   font-feature-settings: 'ss01', 'tnum';
 }
 .stat-unit {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   font-size: 0.5em;
   letter-spacing: -0.02em;
   margin-left: 0.08em;
@@ -374,7 +383,7 @@ input[type='button'],
 
 /* 4. EYEBROWS — AGENCY kicker: Inter 700 micro-label with rule, not dot-spam. */
 .micro {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -398,7 +407,7 @@ input[type='button'],
 
 /* Cards — AGENCY: Inter 700 titles, Arial body, sharp tracking. */
 .card-cat {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -408,8 +417,9 @@ input[type='button'],
 }
 .card-cat--on-dark { color: var(--solor-accent); }
 .card-title {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   font-size: 21px;
   letter-spacing: -0.022em;
   line-height: 1.1em;
@@ -417,8 +427,9 @@ input[type='button'],
 /* Icon-first cards: bold scannable titles, icon carries the meaning so
    photo + overlay + title never repeat the same words. */
 .card-title-strong {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   font-size: 21px;
   letter-spacing: -0.022em;
   line-height: 1.08em;
@@ -445,7 +456,7 @@ input[type='button'],
   left: 0.9rem;
 }
 .photo-badge__label {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -493,7 +504,7 @@ input[type='button'],
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 10.5px;
   letter-spacing: 0.18em;
@@ -510,8 +521,9 @@ input[type='button'],
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.6);
 }
 .photo-title {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   color: #fff;
   letter-spacing: -0.028em;
   line-height: 1em;
@@ -535,7 +547,7 @@ input[type='button'],
   letter-spacing: -0.024em;
 }
 .photo-sub {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 1.5em;
@@ -550,8 +562,9 @@ input[type='button'],
   text-shadow: 0 2px 18px rgb(3 18 30 / 0.55), 0 1px 3px rgb(3 18 30 / 0.7);
 }
 .card-desc {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 400;
+  font-style: normal;
   font-size: 14.5px;
   line-height: 1.6em;
   letter-spacing: -0.011em;
@@ -561,16 +574,18 @@ input[type='button'],
 }
 
 .tech-label {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+  font-style: italic;
   text-transform: none;
   letter-spacing: -0.02em;
   font-size: 19px;
   line-height: 1.15em;
 }
 .tech-desc {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 400;
+  font-style: normal;
   font-size: 14.5px;
   line-height: 1.6em;
   letter-spacing: -0.011em;
@@ -585,7 +600,7 @@ input[type='button'],
 
 /* Quotes — AGENCY: Arial body, Inter micro attribution. */
 .quote-ed {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.011em;
@@ -594,7 +609,7 @@ input[type='button'],
   text-wrap: pretty;
 }
 .quote-by {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -603,7 +618,7 @@ input[type='button'],
 }
 
 .foot-title {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -611,14 +626,14 @@ input[type='button'],
   line-height: 1.5em;
 }
 .foot-link {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14.5px;
   letter-spacing: -0.011em;
   line-height: 1.6em;
 }
 .foot-copy {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 12.5px;
   letter-spacing: -0.008em;
@@ -628,7 +643,7 @@ input[type='button'],
 .vertical-micro {
   writing-mode: vertical-rl;
   rotate: 180deg;
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: 0.2em;
   font-size: 11px;
@@ -668,7 +683,7 @@ input[type='button'],
 
 /* SOLOR step badge */
 .solor-step {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
   letter-spacing: -0.02em;
   background: var(--solor-primary);
@@ -758,9 +773,9 @@ img {
 }
 .scroll-words .sw-word em,
 .scroll-words .sw-word .serif-accent {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 1.06em;
   letter-spacing: -0.01em;
   line-height: 0.9em;
@@ -817,7 +832,7 @@ img {
   60%, 100% { top: 110%; }
 }
 .scroll-cue .cue-text {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;

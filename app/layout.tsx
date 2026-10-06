@@ -5,7 +5,17 @@ import { SiteHeader } from '@/components/site-header'
 import { BackToTop, FloatCta, MobileCtaBar } from '@/components/ux-bits'
 import { ScrollProgress } from '@/components/motion'
 
-/* SYSTEM TYPE — Arial / Inter system stacks only, no Google Fonts. */
+import { Poppins } from 'next/font/google'
+
+/* BRAND TYPE — Poppins (self-hosted via next/font, no external requests).
+   Display: ExtraBold Italic (800 italic). Body/UI: Poppins 400-700. */
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+})
 
 export const metadata: Metadata = {
   title: 'EVN Solar Energy Solutions - Rooftop Solar & EV Charging, Maharashtra',
@@ -28,8 +38,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className="bg-white text-[#072A45] antialiased">
+    <html lang="en" className={poppins.variable}>
+      <body className={`${poppins.className} bg-white text-[#072A45] antialiased`}>
         <ScrollProgress />
         <SiteHeader />
         {children}
