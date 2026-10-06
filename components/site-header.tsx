@@ -153,7 +153,7 @@ export function SiteHeader() {
                         href="/services"
                         aria-expanded={solarOpen}
                         className={cn(
-                          'group flex items-center gap-1 py-2 text-[12px] font-bold uppercase tracking-[0.07em] transition-colors duration-200',
+                          'group flex items-center gap-1 py-2 text-[15px] font-bold uppercase tracking-[0.06em] transition-colors duration-200',
                           active || solarOpen ? 'text-[#072A45]' : 'text-[#46586A] hover:text-[#072A45]',
                         )}
                         style={{ fontFamily: 'var(--font-display)' }}
@@ -181,7 +181,7 @@ export function SiteHeader() {
                     href={l.href}
                     onMouseEnter={() => setSolarOpen(false)}
                     className={cn(
-                      'group relative flex items-center gap-1.5 py-2 text-[12px] font-bold uppercase tracking-[0.07em] transition-colors duration-200',
+                      'group relative flex items-center gap-1.5 py-2 text-[15px] font-bold uppercase tracking-[0.06em] transition-colors duration-200',
                       active ? 'text-[#072A45]' : 'text-[#46586A] hover:text-[#072A45]',
                     )}
                     style={{ fontFamily: 'var(--font-display)' }}
