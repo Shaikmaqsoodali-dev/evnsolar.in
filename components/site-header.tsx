@@ -127,7 +127,7 @@ export function SiteHeader() {
           <div
             className={cn(
               'mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 transition-all duration-500 sm:px-8',
-              scrolled ? 'h-[68px]' : 'h-[84px]',
+              scrolled ? 'h-[84px]' : 'h-[116px]',
             )}
           >
             {/* logo — image only, no duplicated wordmark */}
@@ -137,7 +137,7 @@ export function SiteHeader() {
                 alt="EVN Solar Energy Solutions"
                 className={cn(
                   'w-auto object-contain transition-all duration-500 group-hover:scale-[1.02]',
-                  scrolled ? 'h-10' : 'h-12',
+                  scrolled ? 'h-[68px]' : 'h-[100px]',
                 )}
               />
             </Link>
