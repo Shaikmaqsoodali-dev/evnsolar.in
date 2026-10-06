@@ -114,9 +114,9 @@ export function PageIntro({
           className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
         />
-        {/* Left-heavy dark gradient: photo stays visible right, text readable left */}
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#072A45]/95 via-[#072A45]/60 to-[#072A45]/15" />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#072A45]/60 via-transparent to-[#072A45]/10" />
+        {/* Lightened gradient: header photo clearly visible, text stays readable left */}
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#072A45]/80 via-[#072A45]/35 to-[#072A45]/5" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#072A45]/40 via-transparent to-transparent" />
         <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
           {crumb && (
             <Reveal variant="fade" delay={0}>

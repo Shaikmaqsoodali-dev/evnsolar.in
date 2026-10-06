@@ -18,6 +18,13 @@ export function VideoHero() {
   return (
     <section className="relative overflow-hidden bg-[#072A45] text-white">
       {/* background video */}
+      {/* Fallback photo — visible instantly + if video fails */}
+      <img
+        src={IMG.solarField}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <video
         autoPlay
         loop
@@ -25,12 +32,13 @@ export function VideoHero() {
         playsInline
         preload="metadata"
         poster={IMG.solarField}
-        className="hero-zoom absolute inset-0 h-full w-full object-cover"
+        className="hero-zoom absolute inset-0 h-full w-full object-cover brightness-[1.08] contrast-[1.04]"
       >
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#072A45] via-[#072A45]/80 to-[#072A45]/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#072A45]/70 via-transparent to-[#072A45]/25" />
+      {/* Lightened scrims — background video/photo stays clearly visible, text zone kept readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#072A45]/85 via-[#072A45]/40 to-[#072A45]/5" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#072A45]/55 via-transparent to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-14 sm:pb-20 sm:pt-20">
         <Reveal variant="fade" delay={50}>

@@ -310,8 +310,8 @@ export default function HomePage() {
 
       {/* 6 — CTA BANNER (Solor: Have Questions? Call Us) */}
       <section className="relative overflow-hidden">
-        <img src={IMG.solarField} alt="Solar panels under blue sky" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-[#072A45]/80" />
+        <img src={IMG.solarField} alt="Solar panels under blue sky" className="absolute inset-0 h-full w-full object-cover brightness-[1.06]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#072A45]/70 via-[#072A45]/40 to-[#072A45]/15" />
         <div className="relative mx-auto flex max-w-7xl flex-col items-center px-6 py-14 text-center sm:py-20">
           <Reveal variant="up">
             <p className="micro justify-center text-[#62D984]">
