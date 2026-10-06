@@ -63,8 +63,9 @@ export default function ContactPage() {
               </span>
               <h2 className="font-display mt-5 text-[24px] font-semibold text-[#072A45]">Request received.</h2>
               <p className="mx-auto mt-2 max-w-sm text-[14.5px] text-[#54687A]">
-                Thank you{form.name ? `, ${form.name}` : ''}. Our engineers will call
-                {form.phone ? ` ${form.phone}` : ' you'} back within one working day.
+                Thank you{form.name ? `, ${form.name}` : ''}. Your request has opened in WhatsApp
+                {form.phone ? ` (${form.phone})` : ''} — just press send there, and our engineers will call
+                back within one working day. You can also reach us directly on +91 70405 06295.
               </p>
               <button
                 onClick={() => setSent(false)}
@@ -75,7 +76,7 @@ export default function ContactPage() {
               </button>
             </div>
           ) : (
-            <form onSubmit={(e) => { e.preventDefault(); setSent(true) }} className="space-y-5">
+            <form onSubmit={(e) => { e.preventDefault(); const msg = `New site assessment request:%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0ARequirement: ${encodeURIComponent(form.type)}%0ADetails: ${encodeURIComponent(form.message)}`; window.open(`https://wa.me/917040506295?text=${msg}`, '_blank'); setSent(true) }} className="space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="block">
                   <span className="mb-1.5 block text-[13px] font-semibold text-[#072A45]">Full name</span>

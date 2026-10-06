@@ -2,15 +2,13 @@
 import {
   ArrowLeftRight,
   BatteryCharging,
+  CarFront,
   Check,
-  Droplets,
   Factory,
-  Fuel,
   Home,
   PlugZap,
   Sun,
   Gauge,
-  Wind,
 } from 'lucide-react'
 import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
@@ -18,7 +16,7 @@ import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Faq } from '@/components/ux-bits'
 import { Reveal, Stagger, Tilt } from '@/components/motion'
 
-export const metadata = { title: 'Solar Services | EVN Solar Energy Solutions' }
+export const metadata = { title: 'Solar Services | EVN Solar Energy Solutions', description: 'Turnkey solar EPC in Maharashtra: on/off-grid rooftop, ground-mounted plants, carports, inverters, storage and net-metering with DISCOM liaison and subsidy support.' }
 
 const SERVICES = [
   {
@@ -59,11 +57,11 @@ const SERVICES = [
 ]
 
 const PORTFOLIO = [
-  { icon: Wind, t: 'Wind Turbines', d: 'Complementary wind assessment for hybrid sites.' },
-  { icon: Sun, t: 'Solar Panels', d: 'Tier-1 PV for rooftop, ground and carport plants.' },
-  { icon: Droplets, t: 'Hydropower Plants', d: 'Advisory for small-hydro integration where viable.' },
-  { icon: Fuel, t: 'Fossil Resources', d: 'Transition planning — reduce diesel / grid dependence.' },
-  { icon: BatteryCharging, t: 'Battery Materials', d: 'Storage sizing, lithium backup and hybrid packs.' },
+  { icon: Home, t: 'Rooftop Plants', d: 'On-grid, hybrid and battery-ready systems for homes and shops.' },
+  { icon: Factory, t: 'Ground-Mounted Plants', d: 'Land-optimized rows with SCADA-ready monitoring.' },
+  { icon: CarFront, t: 'Solar Carports', d: 'Waterproof parking structures, EV-charger ready.' },
+  { icon: PlugZap, t: 'EV Charging', d: '7.4-60 kW AC and DC chargers with billing and load management.' },
+  { icon: BatteryCharging, t: 'Storage & Hybrid', d: 'Lithium backup and hybrid packs for outage protection.' },
 ]
 
 export default function ServicesPage() {
@@ -159,8 +157,8 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-6 pb-14 sm:pb-20">
         <div className="overflow-hidden rounded-xl border border-[#D9E2EA] bg-white">
           <div className="border-b border-[#D9E2EA] px-6 py-5 sm:px-8">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#0F88C7]" style={{ fontFamily: 'var(--font-display)' }}>Our services — energy portfolio</p>
-            <h2 className="mt-1 text-[22px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>Beyond solar, we plan the full mix.</h2>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#0F88C7]" style={{ fontFamily: 'var(--font-display)' }}>Our services — solar + EV portfolio</p>
+            <h2 className="mt-1 text-[22px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>One team for generation, storage and charging.</h2>
           </div>
           <div className="grid gap-px bg-[#D9E2EA] sm:grid-cols-2 lg:grid-cols-5">
             {PORTFOLIO.map(({ icon: Icon, t, d }) => (

@@ -4,7 +4,7 @@ import { BrandArrow } from '@/components/brand-arrow'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Reveal } from '@/components/motion'
 
-export const metadata = { title: 'Blog | EVN Solar Energy Solutions' }
+export const metadata = { title: 'Blog | EVN Solar Energy Solutions', description: 'Practical solar buying guides from EVN Solar engineers: panel comparisons, rooftop sizing, net-metering and EV charging notes.' }
 
 const GUIDE_PANELS = [
   { img: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791122120/01-spark-solar-polycrystalline-solar-panels.webp', name: 'Spark Solar' },

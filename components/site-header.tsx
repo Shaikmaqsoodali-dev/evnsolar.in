@@ -59,9 +59,12 @@ export function SiteHeader() {
                 Nashik · Malegaon · Maharashtra
               </span>
               <span className="hidden h-4 w-px bg-white/15 md:inline-block" aria-hidden />
-              {['Instagram', 'Facebook', 'LinkedIn'].map((s) => (
-                <a key={s} href="#" aria-label={s} className="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-[#62D984]" style={{ fontFamily: 'var(--font-display)' }}>
-                  {s.slice(0, 2)}
+              {[
+                { short: 'IG', label: 'Instagram', href: 'https://www.instagram.com/evnsolar.in/' },
+                { short: 'FB', label: 'Facebook', href: 'https://www.facebook.com/evsolar.in' },
+              ].map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-[#62D984]" style={{ fontFamily: 'var(--font-display)' }}>
+                  {s.short}
                 </a>
               ))}
             </div>

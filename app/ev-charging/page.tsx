@@ -6,7 +6,7 @@ import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 import { Faq } from '@/components/ux-bits'
 import { CountUp, Parallax, Reveal, Stagger } from '@/components/motion'
 
-export const metadata = { title: 'EV Charging | EVN Solar Energy Solutions' }
+export const metadata = { title: 'EV Charging | EVN Solar Energy Solutions', description: '7.4-60 kW AC and DC EV chargers with solar priority, load management, billing and fleet reporting for homes, workplaces and depots in Maharashtra.' }
 
 export default function EvChargingPage() {
   return (

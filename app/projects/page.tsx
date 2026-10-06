@@ -5,7 +5,7 @@ import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Stagger, Tilt } from '@/components/motion'
 
-export const metadata = { title: 'Projects | EVN Solar Energy Solutions' }
+export const metadata = { title: 'Projects | EVN Solar Energy Solutions', description: 'Residential, commercial and industrial solar + EV charging projects across Maharashtra by EVN Solar — rooftops, ground mounts, carports and depot charging hubs.' }
 
 const PROJECTS = [
   { img: IMG.rooftop, icon: Home, badge: 'Home', sector: 'Residential, Nashik', size: '5 kW + 7.4 kW charger', t: 'Rooftop with home EV charging', d: 'Battery-ready hybrid, subsidy filing and app-based generation tracking for a two-storey home.' },

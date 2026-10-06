@@ -218,7 +218,7 @@ export function CtaBand() {
 const FOOT_COLS: [string, [string, string][]][] = [
   ['Quick Links', [['Home', '/'], ['About Us', '/about'], ['Services', '/services'], ['Blog', '/blog'], ['Contact Us', '/contact']]],
   ['Services', [['Rooftop Solar', '/services'], ['Ground-Mounted', '/services'], ['Solar Carports', '/services'], ['EV Charging', '/ev-charging'], ['Sizes & Pricing', '/pricing']]],
-  ['Useful Links', [['Privacy Policy', '/contact'], ['Terms & Conditions', '/contact'], ['Warranty', '/services'], ['Support', '/contact'], ['Subsidy Help', '/pricing']]],
+  ['Useful Links', [['Subsidy Help', '/pricing'], ['Warranty & O&M', '/services'], ['Projects', '/projects'], ['EV Charging', '/ev-charging'], ['Support', '/contact']]],
 ]
 
 export function SiteFooter() {

@@ -375,7 +375,7 @@ export default function HomePage() {
               { v: 1607, s: '', l: 'MWp Delivered', d: 0 },
               { v: 5700, s: '+', l: 'Acres Acquired', d: 0 },
               { v: 1000, s: '+', l: 'Happy Clients', d: 0 },
-              { v: 4.9, s: '★', l: 'Rating Customer', d: 1 },
+              { v: 4.9, s: '★', l: 'Google Rating', d: 1 },
             ].map(({ v, s, l, d = 0 }) => (
               <div key={l} className="bg-white px-6 py-8 text-center">
                 <p className="stat-number text-[#072A45]"><CountUp to={v} decimals={d} suffix={s} /></p>
