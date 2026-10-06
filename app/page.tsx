@@ -216,9 +216,8 @@ export default function HomePage() {
                       <Icon size={15} strokeWidth={2.2} />
                       <span className="photo-badge__label">{badge}</span>
                     </span>
-                    <span aria-hidden className="photo-caption">
-                      <span className="photo-eyebrow">{badge}</span>
-                      <span className="photo-title">{t}</span>
+                    <span className="photo-caption">
+                      <h3 className="photo-title">{t}</h3>
                     </span>
                   </div>
                   <div className="flex items-start justify-between gap-4 p-5">
@@ -226,10 +225,7 @@ export default function HomePage() {
                       <span className="title-icon size-10 bg-[#072A45] text-[#62D984]" aria-hidden>
                         <Icon size={18} strokeWidth={2} />
                       </span>
-                      <div>
-                        <h3 className="card-title-strong font-bold text-[#072A45]">{t}</h3>
-                        <p className="card-desc mt-1.5 text-[#54687A]">{d}</p>
-                      </div>
+                      <p className="card-desc pt-1 text-[#54687A]">{d}</p>
                     </div>
                     <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#EDF3F7] text-[#072A45] transition-colors group-hover:bg-[#62D984]" aria-hidden>
                       <BrandArrow direction="up-right" size={16} />
@@ -273,9 +269,9 @@ export default function HomePage() {
               <img src={IMG.ground} alt="Solar plant at golden hour" className="aspect-[4/3] w-full rounded-xl object-cover" />
               <span aria-hidden className="photo-scrim rounded-xl" />
               <span aria-hidden className="photo-caption">
-                <span className="photo-eyebrow">Energy progress</span>
-                <span className="photo-title photo-title--lg">Best solution for your solar energy</span>
-                <span className="photo-sub">Metered generation · savings · charger use</span>
+                <span className="photo-eyebrow">Live telemetry</span>
+                <span className="photo-title photo-title--lg">1,607 MWp monitored daily</span>
+                <span className="photo-sub">Generation · savings · charger use — one app</span>
               </span>
             </div>
           </Reveal>
@@ -355,19 +351,15 @@ export default function HomePage() {
                     <Icon size={15} strokeWidth={2.2} />
                     <span className="photo-badge__label">{badge}</span>
                   </span>
-                  <span aria-hidden className="photo-caption">
-                    <span className="photo-eyebrow">{badge}</span>
-                    <span className="photo-title photo-title--sm">{t}</span>
+                  <span className="photo-caption">
+                    <h3 className="photo-title photo-title--sm">{t}</h3>
                   </span>
                 </div>
-                <div className="p-5">
-                  <h3 className="flex items-center gap-2.5 text-[19px] font-bold tracking-tight text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>
-                    <span className="title-icon size-9 bg-[#072A45] text-[#62D984]" aria-hidden>
-                      <Icon size={17} strokeWidth={2} />
-                    </span>
-                    {t}
-                  </h3>
-                  <p className="mt-1.5 text-[14px] leading-relaxed text-[#54687A]">{d}</p>
+                <div className="flex items-start gap-3 p-5">
+                  <span className="title-icon size-9 shrink-0 bg-[#072A45] text-[#62D984]" aria-hidden>
+                    <Icon size={17} strokeWidth={2} />
+                  </span>
+                  <p className="card-desc pt-0.5 text-[#54687A]">{d}</p>
                 </div>
               </div>
             ))}
@@ -435,17 +427,14 @@ export default function HomePage() {
                     <span aria-hidden className="photo-scrim" />
                     <span className="photo-badge photo-badge--top" aria-hidden>
                       <Icon size={15} strokeWidth={2.2} />
-                      <span className="photo-badge__label">{badge}</span>
+                      <span className="photo-badge__label">{cat}</span>
                     </span>
-                    <span aria-hidden className="photo-caption">
-                      <span className="photo-eyebrow">{cat}</span>
-                      <span className="photo-title photo-title--sm">{t}</span>
+                    <span className="photo-caption">
+                      <h3 className="photo-title photo-title--sm">{t}</h3>
                     </span>
                   </div>
                   <div className="p-5">
-                    <p className="card-cat">{cat}</p>
-                    <h3 className="card-title-strong mt-2 font-bold text-[#072A45]">{t}</h3>
-                    <p className="card-desc mt-1.5 text-[#54687A]">{d}</p>
+                    <p className="card-desc text-[#54687A]">{d}</p>
                     <p className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#0B6AA0]" style={{ fontFamily: 'var(--font-display)' }}>
                       Read more <BrandArrow direction="up-right" size={14} />
                     </p>

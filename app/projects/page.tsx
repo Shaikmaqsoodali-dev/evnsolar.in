@@ -39,9 +39,8 @@ export default function ProjectsPage() {
                   <Icon size={15} strokeWidth={2.2} />
                   <span className="photo-badge__label">{badge}</span>
                 </span>
-                <span aria-hidden className="photo-caption">
-                  <span className="photo-eyebrow">{sector} · {size}</span>
-                  <span className="photo-title photo-title--sm">{t}</span>
+                <span className="photo-caption">
+                  <h2 className="photo-title photo-title--sm">{t}</h2>
                 </span>
               </div>
               <div className="p-6">
@@ -49,13 +48,12 @@ export default function ProjectsPage() {
                   <p className="card-cat">{sector}</p>
                   <p className="font-tech shrink-0 border border-[#D9E2EA] bg-[#F4F6F8] px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] text-[#54687A]" style={{ borderRadius: 6 }}>{size}</p>
                 </div>
-                <h2 className="card-title-strong mt-3 flex items-center gap-2.5 font-bold text-[#072A45]" style={{ fontSize: '19px' }}>
-                  <span className="title-icon size-9 bg-[#072A45] text-[#62D984]" aria-hidden>
-                    <Icon size={17} strokeWidth={2} />
+                <p className="card-desc mt-2.5 flex items-start gap-2.5 text-[#54687A]" style={{ fontSize: '13px' }}>
+                  <span className="title-icon size-8 shrink-0 bg-[#072A45] text-[#62D984]" aria-hidden>
+                    <Icon size={15} strokeWidth={2} />
                   </span>
-                  {t}
-                </h2>
-                <p className="card-desc mt-2 text-[#54687A]" style={{ fontSize: '13px' }}>{d}</p>
+                  {d}
+                </p>
               </div>
             </article>
             </Tilt>

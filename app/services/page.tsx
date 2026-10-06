@@ -85,12 +85,8 @@ export default function ServicesPage() {
             <article className={`lift grid gap-0 overflow-hidden border border-[#D9E2EA] bg-white hover:border-[#62D984] lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`} style={{ borderRadius: 10 }}>
               <div className="photo-frame relative min-h-[280px]">
                 <img src={img} alt={`${t} — ${badge} system photo`} className="absolute inset-0 h-full w-full object-cover" />
-                <span aria-hidden className="photo-scrim" />
+                <span aria-hidden className="photo-scrim photo-scrim--left" />
                 <span className="card-cat card-cat--on-dark absolute left-5 top-5 z-[2] bg-[#072A45] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
-                <span aria-hidden className="photo-caption" style={{ paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>
-                  <span className="photo-eyebrow">{badge} · {n}</span>
-                  <span className="photo-title photo-title--lg">{t}</span>
-                </span>
               </div>
               <div className="p-8 sm:p-10">
                 <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#0F88C7]">{n}</p>
@@ -129,19 +125,11 @@ export default function ServicesPage() {
                 <img src={img} alt={`${t} — ${badge} system photo`} className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                 <span aria-hidden className="photo-scrim" />
                 <span className="card-cat card-cat--on-dark absolute left-5 top-5 z-[2] bg-[#072A45] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
-                <span aria-hidden className="photo-caption" style={{ paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>
-                  <span className="photo-eyebrow">{badge} · {n}</span>
-                  <span className="photo-title photo-title--sm">{t}</span>
+                <span className="photo-caption" style={{ paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>
+                  <h2 className="photo-title photo-title--sm">{t}</h2>
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-8">
-                <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#0F88C7]">{n}</p>
-                <h2 className="font-display mt-2 flex items-center gap-3 text-[26px] font-bold tracking-tight text-[#072A45]">
-                  <span className="title-icon size-11 bg-[#072A45] text-[#62D984]" aria-hidden>
-                    <Icon size={20} strokeWidth={2} />
-                  </span>
-                  {t}
-                </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-[#54687A]">{d}</p>
                 <ul className="mt-6 flex-1 space-y-2.5 border-t border-[#D9E2EA] pt-6">
                   {points.map((p) => (

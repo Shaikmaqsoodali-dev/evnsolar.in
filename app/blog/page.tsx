@@ -53,13 +53,9 @@ export default function BlogPage() {
             </div>
             <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-5">
               {GUIDE_PANELS.map(({ img, name }) => (
-                <Link key={name} href="/blog/best-solar-panels-home-india" className="photo-frame group block overflow-hidden border border-[#DCE6EE]" style={{ borderRadius: 8 }}>
-                  <span className="relative block overflow-hidden">
+                <Link key={name} href="/blog/best-solar-panels-home-india" className="group block overflow-hidden border border-[#DCE6EE]" style={{ borderRadius: 8 }}>
+                  <span className="block overflow-hidden">
                     <img src={img} alt={`${name} — solar panel product photo`} loading="lazy" className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" />
-                    <span aria-hidden className="photo-scrim" />
-                    <span aria-hidden className="photo-caption" style={{ paddingTop: '1.6rem', paddingBottom: '0.7rem', paddingLeft: '0.8rem', paddingRight: '0.8rem' }}>
-                      <span className="photo-title photo-title--sm" style={{ fontSize: '15px' }}>{name}</span>
-                    </span>
                   </span>
                   <p className="flex items-center gap-1.5 px-3 py-2 text-[12px] font-bold tracking-tight text-[#072A45]">
                     <Sun size={13} className="shrink-0 text-[#1E7A38]" strokeWidth={2.4} aria-hidden />
