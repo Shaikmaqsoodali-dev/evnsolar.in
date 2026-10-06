@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -32,7 +32,7 @@ export function SiteHeader() {
         {/* ── SOLOR topbar: email + phone + socials ── */}
         <div
           className={cn(
-            'overflow-hidden bg-[#163300] text-white transition-all duration-500',
+            'overflow-hidden bg-[#072A45] text-white transition-all duration-500',
             scrolled ? 'max-h-0' : 'max-h-12',
           )}
         >
@@ -40,17 +40,17 @@ export function SiteHeader() {
             <div className="flex items-center gap-5 text-[13px] font-normal">
               <a
                 href="mailto:info@evnsolar.in"
-                className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-[#89EA5F]"
+                className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-[#62D984]"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
-                <Mail size={13} className="text-[#89EA5F]" /> info@evnsolar.in
+                <Mail size={13} className="text-[#62D984]" /> info@evnsolar.in
               </a>
               <a
                 href="tel:+917040506295"
-                className="hidden items-center gap-2 text-white/80 transition-colors hover:text-[#89EA5F] sm:inline-flex"
+                className="hidden items-center gap-2 text-white/80 transition-colors hover:text-[#62D984] sm:inline-flex"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
-                <Phone size={13} className="text-[#89EA5F]" /> +91 70405 06295
+                <Phone size={13} className="text-[#62D984]" /> +91 70405 06295
               </a>
             </div>
             <div className="flex items-center gap-3 text-white/70">
@@ -59,7 +59,7 @@ export function SiteHeader() {
               </span>
               <span className="hidden h-4 w-px bg-white/15 md:inline-block" aria-hidden />
               {['Instagram', 'Facebook', 'LinkedIn'].map((s) => (
-                <a key={s} href="#" aria-label={s} className="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-[#89EA5F]" style={{ fontFamily: 'var(--font-display)' }}>
+                <a key={s} href="#" aria-label={s} className="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-[#62D984]" style={{ fontFamily: 'var(--font-display)' }}>
                   {s.slice(0, 2)}
                 </a>
               ))}
@@ -72,8 +72,8 @@ export function SiteHeader() {
           className={cn(
             'transition-all duration-500',
             scrolled
-              ? 'border-b border-[#DFE5DC] bg-white/95 shadow-[0_8px_32px_rgba(22,51,0,0.10)] backdrop-blur-xl'
-              : 'border-b border-[#DFE5DC]/60 bg-white',
+              ? 'border-b border-[#D9E2EA] bg-white/95 shadow-[0_8px_32px_rgba(7,42,69,0.10)] backdrop-blur-xl'
+              : 'border-b border-[#D9E2EA]/60 bg-white',
           )}
         >
           <div
@@ -104,8 +104,8 @@ export function SiteHeader() {
                     className={cn(
                       'relative py-2 text-[15px] font-semibold uppercase tracking-[0.06em] transition-colors duration-300',
                       active
-                        ? 'text-[#163300]'
-                        : 'text-[#4C554B] hover:text-[#163300]',
+                        ? 'text-[#072A45]'
+                        : 'text-[#3E5162] hover:text-[#072A45]',
                     )}
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
@@ -113,7 +113,7 @@ export function SiteHeader() {
                     <span
                       aria-hidden
                       className={cn(
-                        'absolute -bottom-0.5 left-0 h-[2.5px] w-full origin-left rounded-full bg-[#89EA5F] transition-transform duration-300',
+                        'absolute -bottom-0.5 left-0 h-[2.5px] w-full origin-left rounded-full bg-[#62D984] transition-transform duration-300',
                         active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
                       )}
                     />
@@ -127,13 +127,13 @@ export function SiteHeader() {
               <a
                 href="tel:+917040506295"
                 aria-label="Call EVN Solar"
-                className="hidden size-11 place-items-center rounded-full border border-[#DFE5DC] text-[#163300] transition-all hover:border-[#163300] hover:bg-[#163300] hover:text-[#89EA5F] md:grid"
+                className="hidden size-11 place-items-center rounded-full border border-[#D9E2EA] text-[#072A45] transition-all hover:border-[#072A45] hover:bg-[#072A45] hover:text-[#62D984] md:grid"
               >
                 <Phone size={16} />
               </a>
               <Link
                 href="/contact"
-                className="btn-shine group hidden items-center gap-2 rounded-lg bg-[#163300] py-3 pl-6 pr-5 text-[14px] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-[#5EC73A] hover:text-[#163300] sm:inline-flex"
+                className="btn-shine group hidden items-center gap-2 rounded-lg bg-[#072A45] py-3 pl-6 pr-5 text-[14px] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-[#33A94F] hover:text-[#072A45] sm:inline-flex"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
                 Contact us
@@ -142,7 +142,7 @@ export function SiteHeader() {
               <button
                 onClick={() => setOpen(true)}
                 aria-label="Open menu"
-                className="grid size-11 place-items-center rounded-lg bg-[#163300] text-white lg:hidden"
+                className="grid size-11 place-items-center rounded-lg bg-[#072A45] text-white lg:hidden"
               >
                 <Menu size={18} />
               </button>
@@ -154,13 +154,13 @@ export function SiteHeader() {
       {/* ── mobile overlay menu — Solor dark green ── */}
       <div
         className={cn(
-          'fixed inset-0 z-[70] flex flex-col bg-[#163300] text-white transition-all duration-500 lg:hidden',
+          'fixed inset-0 z-[70] flex flex-col bg-[#072A45] text-white transition-all duration-500 lg:hidden',
           open ? 'visible opacity-100' : 'invisible opacity-0',
         )}
         aria-hidden={!open}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#89EA5F]/20 blur-[100px]" />
-        <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#89EA5F]/10 blur-[100px]" />
+        <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#62D984]/20 blur-[100px]" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#62D984]/10 blur-[100px]" />
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
           <img src={LOGO_URL} alt="EVN Solar" className="h-12 w-auto bg-white object-contain px-2" style={{ borderRadius: 6 }} />
           <button
@@ -189,7 +189,7 @@ export function SiteHeader() {
                 <span
                   className={cn(
                     'tracking-[0] transition-colors',
-                    active ? 'text-[#89EA5F]' : 'text-white group-hover:text-[#89EA5F]',
+                    active ? 'text-[#62D984]' : 'text-white group-hover:text-[#62D984]',
                   )}
                   style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 28 }}
                 >
@@ -197,7 +197,7 @@ export function SiteHeader() {
                 </span>
                 <ArrowUpRight
                   size={20}
-                  className={cn(active ? 'text-[#89EA5F]' : 'text-white/30 group-hover:text-white')}
+                  className={cn(active ? 'text-[#62D984]' : 'text-white/30 group-hover:text-white')}
                 />
               </Link>
             )
@@ -213,7 +213,7 @@ export function SiteHeader() {
             href="/contact"
             onClick={() => setOpen(false)}
             tabIndex={open ? 0 : -1}
-            className="flex items-center justify-center gap-2 rounded-lg bg-[#89EA5F] py-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-[#163300]"
+            className="flex items-center justify-center gap-2 rounded-lg bg-[#62D984] py-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-[#072A45]"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             Get a free site assessment <ArrowRight size={16} />

@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next'
+﻿import type { Metadata, Viewport } from 'next'
 import { Rajdhani, Rubik } from 'next/font/google'
 import './globals.css'
 import { SiteFooter } from '@/components/site-chrome'
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#163300',
+  themeColor: '#072A45',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${body.variable} ${display.variable} ${grot.variable} ${serifEd.variable} ${tech.variable}`}>
-      <body className="bg-white text-[#163300] antialiased">
+      <body className="bg-white text-[#072A45] antialiased">
         <ScrollProgress />
         <SiteHeader />
         {children}
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <BackToTop />
         <FloatCta />
         <MobileCtaBar />
-        <div className="h-[54px] bg-[#163300] sm:hidden" aria-hidden />
+        <div className="h-[54px] bg-[#072A45] sm:hidden" aria-hidden />
       </body>
     </html>
   )

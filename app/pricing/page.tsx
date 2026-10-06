@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
 import { Faq } from '@/components/ux-bits'
@@ -23,10 +23,10 @@ const PLANS = [
 
 export default function PricingPage() {
   return (
-    <main className="bg-[#F2F7F4]">
+    <main className="bg-[#F0F5F9]">
       <PageIntro
         kicker="Sizes & pricing"
-        title={<>Start with the right size. <em className="editorial-accent text-[#008ED6]">Expand later.</em></>}
+        title={<>Start with the right size. <em className="editorial-accent text-[#0F88C7]">Expand later.</em></>}
         lede="Indicative starting points. Your final proposal follows a site survey and includes a generation estimate, subsidy breakup and payment schedule."
         crumb={[['Pricing', '/pricing']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791109850/Solar_EV_Dashboard_Over_Cityscape.png"
@@ -37,35 +37,35 @@ export default function PricingPage() {
           {PLANS.map(({ name, big, small, d, feat, cta, featured }) => (
             <Tilt key={name}>
             <div
-              className={`lift flex h-full flex-col overflow-hidden border p-8 ${featured ? 'border-[#071D26] bg-[#071D26] text-white' : 'border-[#E2E8EC] bg-white hover:border-[#25C7E8]'}`}
+              className={`lift flex h-full flex-col overflow-hidden border p-8 ${featured ? 'border-[#072A45] bg-[#072A45] text-white' : 'border-[#D9E2EA] bg-white hover:border-[#62D984]'}`}
               style={{ borderRadius: 10 }}
             >
               {featured && (
-                <div className="-mx-8 -mt-8 h-1.5" style={{ background: 'linear-gradient(90deg, #008ED6 0%, #25C7E8 50%, #3BB54A 100%)' }} aria-hidden />
+                <div className="-mx-8 -mt-8 h-1.5" style={{ background: 'linear-gradient(90deg, #0F88C7 0%, #62D984 50%, #33A94F 100%)' }} aria-hidden />
               )}
               <div className="flex items-center justify-between gap-3">
-                <p className={`text-[13px] font-semibold uppercase tracking-[0.12em] ${featured ? 'text-white/60' : 'text-[#008ED6]'}`}>{name}</p>
+                <p className={`text-[13px] font-semibold uppercase tracking-[0.12em] ${featured ? 'text-white/60' : 'text-[#0F88C7]'}`}>{name}</p>
                 {featured && (
-                  <span className="bg-[#008ED6] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white" style={{ borderRadius: 6 }}>
+                  <span className="bg-[#0F88C7] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white" style={{ borderRadius: 6 }}>
                     Most specified
                   </span>
                 )}
               </div>
-              <p className={`stat-number mt-4 ${featured ? 'text-white' : 'text-[#071D26]'}`} style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)' }}>
+              <p className={`stat-number mt-4 ${featured ? 'text-white' : 'text-[#072A45]'}`} style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)' }}>
                 {big}
               </p>
-              <p className={`micro mt-1 ${featured ? 'text-[#25C7E8]' : 'text-[#008ED6]'}`}>{small}</p>
-              <p className={`mt-2 text-[14px] leading-relaxed ${featured ? 'text-white/65' : 'text-[#5B6D77]'}`}>{d}</p>
-              <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${featured ? 'border-white/15' : 'border-[#E2E8EC]'}`}>
+              <p className={`micro mt-1 ${featured ? 'text-[#62D984]' : 'text-[#0F88C7]'}`}>{small}</p>
+              <p className={`mt-2 text-[14px] leading-relaxed ${featured ? 'text-white/65' : 'text-[#54687A]'}`}>{d}</p>
+              <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${featured ? 'border-white/15' : 'border-[#D9E2EA]'}`}>
                 {feat.map((f) => (
                   <li key={f} className={`flex items-start gap-2.5 text-[14px] ${featured ? 'text-white/85' : 'text-[#14242E]'}`}>
-                    <Check size={16} className={`mt-0.5 shrink-0 ${featured ? 'text-[#6FDF8F]' : 'text-[#008ED6]'}`} /> {f}
+                    <Check size={16} className={`mt-0.5 shrink-0 ${featured ? 'text-[#62D984]' : 'text-[#0F88C7]'}`} /> {f}
                   </li>
                 ))}
               </ul>
               <Link
                 href="/contact"
-                className={`mt-7 inline-flex items-center justify-center gap-2 px-6 py-3 text-[14px] font-semibold ${featured ? 'bg-white text-[#071D26] hover:bg-[#E8EEF1]' : 'bg-[#008ED6] text-white hover:bg-[#00659D]'}`}
+                className={`mt-7 inline-flex items-center justify-center gap-2 px-6 py-3 text-[14px] font-semibold ${featured ? 'bg-white text-[#072A45] hover:bg-[#E4EDF4]' : 'bg-[#0F88C7] text-white hover:bg-[#0B6AA0]'}`}
                 style={{ borderRadius: 6 }}
               >
                 {cta} <ArrowRight size={15} />
@@ -83,10 +83,10 @@ export default function PricingPage() {
               ['Payments', 'EMI with staged milestones', 'Survey, installation and commissioning milestones, no full advance.'],
               ['Warranty', '25-yr modules, 5-yr service', 'Product and performance warranties documented at handover.'],
             ].map(([k, t, d]) => (
-              <div key={t} className="lift border border-[#CBE3D4] bg-[#EAF7EE] p-7" style={{ borderRadius: 8 }}>
+              <div key={t} className="lift border border-[#BFD9E8] bg-[#E7F1F8] p-7" style={{ borderRadius: 8 }}>
                 <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#1E7A34]">{k}</p>
-                <p className="font-display mt-2 text-[17px] font-semibold text-[#071D26]">{t}</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-[#5B6D77]">{d}</p>
+                <p className="font-display mt-2 text-[17px] font-semibold text-[#072A45]">{t}</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-[#54687A]">{d}</p>
               </div>
             ))}
           </div>

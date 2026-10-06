@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+﻿@import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
@@ -11,34 +11,34 @@
 }
 
 :root {
-  /* SOLOR tokens — https://demo.awaikenthemes.com/solor/ */
-  --solor-primary: #163300;
-  --solor-primary-deep: #0e2200;
-  --solor-secondary: #eff1ed;
-  --solor-text: #6b7268;
-  --solor-accent: #89ea5f;
-  --solor-accent-dark: #5ec73a;
+  /* EVN brand tokens — sampled from logo: solar blue, leaf green, deep navy */
+  --solor-primary: #072A45;
+  --solor-primary-deep: #051E33;
+  --solor-secondary: #EDF3F7;
+  --solor-text: #5B6E80;
+  --solor-accent: #62D984;
+  --solor-accent-dark: #1E7A38;
   --solor-white: #ffffff;
 
-  --navy: #163300;
-  --green: #5ec73a;
-  --green-bright: #89ea5f;
-  --blue: #5ec73a;
-  --cyan: #89ea5f;
-  --offwhite: #eff1ed;
-  --warmwhite: #f6f8f3;
-  --muted: #6b7268;
-  --line: #dfe5dc;
+  --navy: #072A45;
+  --green: #33A94F;
+  --green-bright: #62D984;
+  --blue: #0F88C7;
+  --cyan: #62D984;
+  --offwhite: #EDF3F7;
+  --warmwhite: #F2F6FA;
+  --muted: #5B6E80;
+  --line: #D9E2EA;
 
-  --brand: #163300;
-  --brand-dark: #0e2200;
-  --brand-ink: #163300;
-  --accent: #89ea5f;
-  --paper: #eff1ed;
-  --wash: #f4f6f2;
-  --ink: #163300;
-  --muted-tx: #5c665a;
-  --body-tx: #4c554b;
+  --brand: #072A45;
+  --brand-dark: #051E33;
+  --brand-ink: #072A45;
+  --accent: #62D984;
+  --paper: #EDF3F7;
+  --wash: #F2F6FA;
+  --ink: #072A45;
+  --muted-tx: #54687A;
+  --body-tx: #3E5162;
 
   --font-display: 'Rajdhani', Arial, Helvetica, sans-serif;
   --font-body: 'Rubik', Arial, Helvetica, sans-serif;
@@ -330,7 +330,7 @@ input[type='button'],
   font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 1;
   letter-spacing: 0;
-  color: #d4dccd;
+  color: #C2D4E2;
   user-select: none;
 }
 .sx-index.on-dark { color: rgb(255 255 255 / 0.12); }
@@ -484,10 +484,10 @@ input[type='button'],
 
 /* ---- Brand color system (Solor) ---- */
 :root {
-  --wash-blue: #eff1ed;
-  --wash-green: #eff1ed;
-  --brand-grad: linear-gradient(120deg, #163300 0%, #1e4400 55%, #5ec73a 135%);
-  --solor-grad-lime: linear-gradient(120deg, #89ea5f 0%, #5ec73a 100%);
+  --wash-blue: #EDF3F7;
+  --wash-green: #EDF3F7;
+  --brand-grad: linear-gradient(120deg, #072A45 0%, #0F88C7 60%, #33A94F 130%);
+  --solor-grad-lime: linear-gradient(120deg, #62D984 0%, #33A94F 100%);
 }
 
 .bg-brand-grad {
@@ -498,14 +498,14 @@ input[type='button'],
 .solor-bar {
   height: 8px;
   border-radius: 999px;
-  background: #e3e8e0;
+  background: #D9E2EA;
   overflow: hidden;
 }
 .solor-bar > span {
   display: block;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #5ec73a, #89ea5f);
+  background: linear-gradient(90deg, #33A94F, #62D984);
 }
 
 /* SOLOR step badge */
@@ -545,7 +545,7 @@ section[id] {
 }
 .field:focus {
   border-color: var(--solor-accent-dark);
-  box-shadow: 0 0 0 3px rgb(137 234 95 / 0.3);
+  box-shadow: 0 0 0 3px rgb(98 217 132 / 0.3);
   outline: none;
 }
 

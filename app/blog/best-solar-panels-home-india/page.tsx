@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Check, Sun } from 'lucide-react'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Reveal, Stagger } from '@/components/motion'
@@ -98,10 +98,10 @@ const CHECKLIST = [
 
 export default function SolarPanelsGuidePost() {
   return (
-    <main className="bg-[#F2F7F4]">
+    <main className="bg-[#F0F5F9]">
       <PageIntro
         kicker="Home solar guides"
-        title={<>Best solar panels for home in India, <em className="editorial-accent text-[#008ED6]">explained.</em></>}
+        title={<>Best solar panels for home in India, <em className="editorial-accent text-[#0F88C7]">explained.</em></>}
         lede="Ten panel options Indian homeowners commonly compare: what each technology means, who each brand suits, and how to choose the right one for your roof."
         crumb={[['Blog', '/blog'], ['Best solar panels for home', '/blog/best-solar-panels-home-india']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791122118/03-navitas-solar-multi-crystalline-solar-panels.webp"
@@ -112,9 +112,9 @@ export default function SolarPanelsGuidePost() {
         <Reveal>
           <p className="text-[15.5px] font-normal leading-[1.85] text-[#33474E]">
             Choosing panels for a home rooftop comes down to three things: your{' '}
-            <strong className="font-semibold text-[#071D26]">roof space</strong>, your{' '}
-            <strong className="font-semibold text-[#071D26]">budget</strong>, and your{' '}
-            <strong className="font-semibold text-[#071D26]">monthly consumption</strong>. The brand matters less
+            <strong className="font-semibold text-[#072A45]">roof space</strong>, your{' '}
+            <strong className="font-semibold text-[#072A45]">budget</strong>, and your{' '}
+            <strong className="font-semibold text-[#072A45]">monthly consumption</strong>. The brand matters less
             than getting these three right, but since most homeowners compare the same set of names, here are
             ten commonly used options in India, rewritten in plain language so you can compare them side by side.
           </p>
@@ -122,16 +122,16 @@ export default function SolarPanelsGuidePost() {
 
         {/* Technology primer */}
         <Reveal delay={80}>
-          <div className="mt-10 border border-[#BFDDF2] bg-[#E9F4FB] p-7 sm:p-8" style={{ borderRadius: 10 }}>
-            <p className="font-display flex items-center gap-3 text-[18px] font-semibold text-[#008ED6]">
+          <div className="mt-10 border border-[#BFDDF2] bg-[#E7F1F8] p-7 sm:p-8" style={{ borderRadius: 10 }}>
+            <p className="font-display flex items-center gap-3 text-[18px] font-semibold text-[#0F88C7]">
               <Sun size={16} /> Panel types in 30 seconds.
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
               {TECH.map(([t, h, d]) => (
                 <div key={t} className="border border-[#BFDDF2] bg-white p-5" style={{ borderRadius: 8 }}>
-                  <p className="font-display text-[15px] font-semibold text-[#071D26]">{t}</p>
-                  <p className="mt-1 text-[13px] font-semibold text-[#008ED6]">{h}</p>
-                  <p className="mt-1.5 text-[13px] font-normal leading-relaxed text-[#5B6D77]">{d}</p>
+                  <p className="font-display text-[15px] font-semibold text-[#072A45]">{t}</p>
+                  <p className="mt-1 text-[13px] font-semibold text-[#0F88C7]">{h}</p>
+                  <p className="mt-1.5 text-[13px] font-normal leading-relaxed text-[#54687A]">{d}</p>
                 </div>
               ))}
             </div>
@@ -143,23 +143,23 @@ export default function SolarPanelsGuidePost() {
           {PANELS.map(({ img, tag, name, body, fit }) => (
             <article
               key={name}
-              className="lift grid overflow-hidden border border-[#E2E8EC] bg-white sm:grid-cols-[240px_1fr]"
+              className="lift grid overflow-hidden border border-[#D9E2EA] bg-white sm:grid-cols-[240px_1fr]"
               style={{ borderRadius: 10 }}
             >
               <div className="relative min-h-[180px] overflow-hidden">
                 <img src={img} alt={name} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
                 <span
-                  className="absolute left-3 top-3 bg-[#008ED6] px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.06em] text-white"
+                  className="absolute left-3 top-3 bg-[#0F88C7] px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.06em] text-white"
                   style={{ borderRadius: 4, fontFamily: 'var(--font-body)' }}
                 >
                   {tag}
                 </span>
               </div>
               <div className="p-6 sm:p-7">
-                <h2 className="font-display text-[19px] font-semibold tracking-[-0.015em] text-[#071D26]">{name}</h2>
-                <p className="mt-2 text-[14.5px] font-normal leading-[1.8] text-[#42565D]">{body}</p>
-                <p className="mt-3 flex gap-2.5 border-t border-[#EAEFF2] pt-3 text-[13.5px] font-normal leading-relaxed text-[#33474E]">
-                  <Check size={15} className="mt-1 shrink-0 text-[#3BB54A]" /> {fit}
+                <h2 className="font-display text-[19px] font-semibold tracking-[-0.015em] text-[#072A45]">{name}</h2>
+                <p className="mt-2 text-[14.5px] font-normal leading-[1.8] text-[#3E5162]">{body}</p>
+                <p className="mt-3 flex gap-2.5 border-t border-[#DCE6EE] pt-3 text-[13.5px] font-normal leading-relaxed text-[#33474E]">
+                  <Check size={15} className="mt-1 shrink-0 text-[#33A94F]" /> {fit}
                 </p>
               </div>
             </article>
@@ -168,14 +168,14 @@ export default function SolarPanelsGuidePost() {
 
         {/* How to choose */}
         <Reveal>
-          <div className="mt-10 bg-[#071D26] p-7 text-white sm:p-9" style={{ borderRadius: 10 }}>
+          <div className="mt-10 bg-[#072A45] p-7 text-white sm:p-9" style={{ borderRadius: 10 }}>
             <h2 className="sx sx-md mt-3 text-white">
               Five questions <em>worth asking.</em>
             </h2>
             <ul className="mt-6 space-y-3">
               {CHECKLIST.map((c) => (
                 <li key={c} className="flex items-start gap-3 text-[14.5px] font-normal leading-relaxed text-white/80">
-                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center bg-[#3BB54A] text-white" style={{ borderRadius: 6 }}>
+                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center bg-[#33A94F] text-white" style={{ borderRadius: 6 }}>
                     <Check size={13} strokeWidth={3} />
                   </span>
                   {c}
@@ -185,7 +185,7 @@ export default function SolarPanelsGuidePost() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="btn-shine font-display inline-flex items-center gap-2 bg-white px-6 py-3 text-[13.5px] font-semibold text-[#071D26] hover:bg-[#25C7E8]"
+                className="btn-shine font-display inline-flex items-center gap-2 bg-white px-6 py-3 text-[13.5px] font-semibold text-[#072A45] hover:bg-[#62D984]"
                 style={{ borderRadius: 6 }}
               >
                 Get a free site assessment <ArrowRight size={15} />

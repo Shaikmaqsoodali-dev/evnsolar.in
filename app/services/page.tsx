@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
@@ -32,10 +32,10 @@ const SERVICES = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-[#F2F7F4]">
+    <main className="bg-[#F0F5F9]">
       <PageIntro
         kicker="Solar services"
-        title={<>Solar for every roof, plot and <em className="editorial-accent text-[#008ED6]">parking lot.</em></>}
+        title={<>Solar for every roof, plot and <em className="editorial-accent text-[#0F88C7]">parking lot.</em></>}
         lede="On-grid, hybrid and battery-ready systems with engineering drawings, DISCOM liaison and verified generation, not just installation."
         crumb={[['Solar', '/services']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Rooftop_solar_installation.webp"
@@ -46,27 +46,27 @@ export default function ServicesPage() {
         <div className="space-y-8">
           {SERVICES.slice(0, 2).map(({ img, n, tag, t, d, points }, i) => (
             <Reveal key={t} variant={i % 2 ? 'right' : 'left'}>
-            <article className={`lift grid gap-0 overflow-hidden border border-[#E2E8EC] bg-white hover:border-[#25C7E8] lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`} style={{ borderRadius: 10 }}>
+            <article className={`lift grid gap-0 overflow-hidden border border-[#D9E2EA] bg-white hover:border-[#62D984] lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`} style={{ borderRadius: 10 }}>
               <div className="relative min-h-[280px]">
                 <img src={img} alt={t} className="absolute inset-0 h-full w-full object-cover" />
-                <span className="card-cat card-cat--on-dark absolute left-5 top-5 bg-[#071D26] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
+                <span className="card-cat card-cat--on-dark absolute left-5 top-5 bg-[#072A45] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
               </div>
               <div className="p-8 sm:p-10">
-                <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#008ED6]">{n}</p>
-                <h2 className="font-display mt-2 text-[26px] font-semibold tracking-[-0.02em] text-[#071D26]">{t}</h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#5B6D77]">{d}</p>
-                <ul className="mt-6 space-y-2.5 border-t border-[#E2E8EC] pt-6">
+                <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#0F88C7]">{n}</p>
+                <h2 className="font-display mt-2 text-[26px] font-semibold tracking-[-0.02em] text-[#072A45]">{t}</h2>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#54687A]">{d}</p>
+                <ul className="mt-6 space-y-2.5 border-t border-[#D9E2EA] pt-6">
                   {points.map((p) => (
                     <li key={p} className="flex items-start gap-2.5 text-[14.5px] text-[#14242E]">
-                      <Check size={17} className="mt-0.5 shrink-0 text-[#008ED6]" /> {p}
+                      <Check size={17} className="mt-0.5 shrink-0 text-[#0F88C7]" /> {p}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <Link href="/contact" className="inline-flex items-center gap-2 bg-[#008ED6] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
+                  <Link href="/contact" className="inline-flex items-center gap-2 bg-[#0F88C7] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#0B6AA0]" style={{ borderRadius: 6 }}>
                     Get a free site assessment <ArrowRight size={15} />
                   </Link>
-                  <Link href="/pricing" className="border border-[#CBD6DD] px-5 py-2.5 text-[14px] font-semibold text-[#071D26] hover:border-[#008ED6] hover:text-[#008ED6]" style={{ borderRadius: 6 }}>
+                  <Link href="/pricing" className="border border-[#C3D2DE] px-5 py-2.5 text-[14px] font-semibold text-[#072A45] hover:border-[#0F88C7] hover:text-[#0F88C7]" style={{ borderRadius: 6 }}>
                     Sizes & pricing
                   </Link>
                 </div>
@@ -78,27 +78,27 @@ export default function ServicesPage() {
         <Stagger className="mt-8 grid gap-5 md:grid-cols-2" itemClassName="h-full" step={100}>
           {SERVICES.slice(2).map(({ img, n, tag, t, d, points }) => (
             <Tilt key={t} className="h-full">
-            <article className="group lift flex h-full flex-col overflow-hidden border border-[#E2E8EC] bg-white hover:border-[#25C7E8]" style={{ borderRadius: 10 }}>
+            <article className="group lift flex h-full flex-col overflow-hidden border border-[#D9E2EA] bg-white hover:border-[#62D984]" style={{ borderRadius: 10 }}>
               <div className="relative overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
-                <span className="card-cat card-cat--on-dark absolute left-5 top-5 bg-[#071D26] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
+                <span className="card-cat card-cat--on-dark absolute left-5 top-5 bg-[#072A45] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
               </div>
               <div className="flex flex-1 flex-col p-8">
-                <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#008ED6]">{n}</p>
-                <h2 className="font-display mt-2 text-[26px] font-semibold tracking-[-0.02em] text-[#071D26]">{t}</h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#5B6D77]">{d}</p>
-                <ul className="mt-6 flex-1 space-y-2.5 border-t border-[#E2E8EC] pt-6">
+                <p className="font-tech text-[11px] font-medium tracking-[0.08em] text-[#0F88C7]">{n}</p>
+                <h2 className="font-display mt-2 text-[26px] font-semibold tracking-[-0.02em] text-[#072A45]">{t}</h2>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#54687A]">{d}</p>
+                <ul className="mt-6 flex-1 space-y-2.5 border-t border-[#D9E2EA] pt-6">
                   {points.map((p) => (
                     <li key={p} className="flex items-start gap-2.5 text-[14.5px] text-[#14242E]">
-                      <Check size={17} className="mt-0.5 shrink-0 text-[#008ED6]" /> {p}
+                      <Check size={17} className="mt-0.5 shrink-0 text-[#0F88C7]" /> {p}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <Link href="/contact" className="inline-flex items-center gap-2 bg-[#008ED6] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
+                  <Link href="/contact" className="inline-flex items-center gap-2 bg-[#0F88C7] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#0B6AA0]" style={{ borderRadius: 6 }}>
                     Get a free site assessment <ArrowRight size={15} />
                   </Link>
-                  <Link href="/pricing" className="border border-[#CBD6DD] px-5 py-2.5 text-[14px] font-semibold text-[#071D26] hover:border-[#008ED6] hover:text-[#008ED6]" style={{ borderRadius: 6 }}>
+                  <Link href="/pricing" className="border border-[#C3D2DE] px-5 py-2.5 text-[14px] font-semibold text-[#072A45] hover:border-[#0F88C7] hover:text-[#0F88C7]" style={{ borderRadius: 6 }}>
                     Sizes & pricing
                   </Link>
                 </div>
@@ -109,8 +109,8 @@ export default function ServicesPage() {
         </Stagger>
       </section>
 
-      <section className="bg-[#071D26]">
-        <div className="h-1" style={{ background: 'linear-gradient(90deg, #008ED6 0%, #25C7E8 50%, #3BB54A 100%)' }} aria-hidden />
+      <section className="bg-[#072A45]">
+        <div className="h-1" style={{ background: 'linear-gradient(90deg, #0F88C7 0%, #62D984 50%, #33A94F 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-14">
           <h2 className="sx sx-md max-w-2xl text-white">Included in every project.</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -122,7 +122,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <h2 className="section-title mt-3 text-[26px] text-[#071D26] sm:text-[32px]">Before you ask.</h2>
+        <h2 className="section-title mt-3 text-[26px] text-[#072A45] sm:text-[32px]">Before you ask.</h2>
         <div className="mt-8">
           <Faq
             items={[

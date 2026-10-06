@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 
 export function InstagramIcon({ size = 15, className }: { size?: number; className?: string }) {
@@ -48,11 +48,11 @@ import { Reveal } from '@/components/motion'
 export function Kicker({ children, center = false }: { children: string; center?: boolean }) {
   return (
     <p
-      className={`micro flex items-center gap-2.5 text-[#5EC73A] ${
+      className={`micro flex items-center gap-2.5 text-[#1E7A38] ${
         center ? 'justify-center' : ''
       }`}
     >
-      <span className="inline-block size-2 rounded-full bg-[#89EA5F]" aria-hidden />
+      <span className="inline-block size-2 rounded-full bg-[#62D984]" aria-hidden />
       {children}
     </p>
   )
@@ -79,11 +79,11 @@ export function SectionHeading({
   return (
     <div className={`max-w-2xl ${alignCls}`}>
       {kicker ? <Kicker center={a === 'center'}>{kicker}</Kicker> : null}
-      <h2 className={`sx sx-${size} mt-3 text-[#163300]`}>
+      <h2 className={`sx sx-${size} mt-3 text-[#072A45]`}>
         {title}
       </h2>
       {lede && (
-        <p className={`mt-4 text-[15px] font-normal leading-relaxed text-[#5C665A] ${a === 'center' ? 'mx-auto' : ''}`}>
+        <p className={`mt-4 text-[15px] font-normal leading-relaxed text-[#54687A] ${a === 'center' ? 'mx-auto' : ''}`}>
           {lede}
         </p>
       )}
@@ -108,7 +108,7 @@ export function PageIntro({
 }) {
   if (image) {
     return (
-      <section className="relative overflow-hidden border-b border-[#163300] bg-[#163300]">
+      <section className="relative overflow-hidden border-b border-[#072A45] bg-[#072A45]">
         <img
           src={image}
           alt={imageAlt}
@@ -116,8 +116,8 @@ export function PageIntro({
           loading="eager"
         />
         {/* Left-heavy dark gradient: photo stays visible right, text readable left */}
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#163300]/95 via-[#163300]/60 to-[#163300]/15" />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#163300]/60 via-transparent to-[#163300]/10" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#072A45]/95 via-[#072A45]/60 to-[#072A45]/15" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#072A45]/60 via-transparent to-[#072A45]/10" />
         <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
           {crumb && (
             <Reveal variant="fade" delay={0}>
@@ -125,13 +125,13 @@ export function PageIntro({
             </Reveal>
           )}
           <Reveal variant="up" delay={70}>
-            <p className="micro flex items-center gap-2.5 text-[#89EA5F]">
-              <span className="inline-block size-2 rounded-full bg-[#89EA5F]" aria-hidden />
+            <p className="micro flex items-center gap-2.5 text-[#62D984]">
+              <span className="inline-block size-2 rounded-full bg-[#62D984]" aria-hidden />
               {kicker}
             </p>
           </Reveal>
           <Reveal variant="blur" delay={150}>
-            <h1 className="page-hero mt-5 max-w-4xl text-white [&_em]:text-[#89EA5F]">
+            <h1 className="page-hero mt-5 max-w-4xl text-white [&_em]:text-[#62D984]">
               {title}
             </h1>
           </Reveal>
@@ -150,8 +150,8 @@ export function PageIntro({
       speed="3s"
       opacity={0.15}
       enableGlow={true}
-      lineColor="137, 234, 95"
-      className="border-b border-[#DFE5DC] bg-[#EFF1ED]"
+      lineColor="98, 217, 132"
+      className="border-b border-[#D9E2EA] bg-[#EDF3F7]"
     >
       <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-12 sm:pb-14 sm:pt-16">
         {crumb && (
@@ -163,13 +163,13 @@ export function PageIntro({
           <Kicker>{kicker}</Kicker>
         </Reveal>
         <Reveal variant="blur" delay={150}>
-          <h1 className="page-hero mt-5 max-w-4xl text-[#163300]">
+          <h1 className="page-hero mt-5 max-w-4xl text-[#072A45]">
             {title}
           </h1>
         </Reveal>
         {lede && (
           <Reveal variant="up" delay={250}>
-            <p className="mt-5 max-w-2xl text-[16px] font-normal leading-relaxed text-[#5C665A]">{lede}</p>
+            <p className="mt-5 max-w-2xl text-[16px] font-normal leading-relaxed text-[#54687A]">{lede}</p>
           </Reveal>
         )}
       </div>
@@ -181,11 +181,11 @@ export function CtaBand() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        {/* SOLOR CTA banner — dark green panel, lime accents, “Have Questions? Call Us” pattern */}
-        <div className="relative grid gap-8 overflow-hidden bg-[#163300] p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 12 }}>
-          <div className="orb left-[-8%] top-[-30%] size-72 bg-[#89EA5F]/20" aria-hidden />
+        {/* SOLOR CTA banner — deep navy panel, brand-green accents, “Have Questions? Call Us” pattern */}
+        <div className="relative grid gap-8 overflow-hidden bg-[#072A45] p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 12 }}>
+          <div className="orb left-[-8%] top-[-30%] size-72 bg-[#62D984]/20" aria-hidden />
           <div className="relative">
-            <p className="micro text-[#89EA5F]">
+            <p className="micro text-[#62D984]">
               Have questions? Call us +91 70405 06295
             </p>
             <h2 className="sx sx-lg mt-3 max-w-xl text-white">
@@ -200,7 +200,7 @@ export function CtaBand() {
           <div className="relative flex flex-col gap-3 lg:items-end">
             <Link
               href="/contact"
-              className="btn-shine inline-flex items-center justify-center gap-2 rounded-lg bg-[#89EA5F] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#163300] transition-colors hover:bg-white"
+              className="btn-shine inline-flex items-center justify-center gap-2 rounded-lg bg-[#62D984] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               Get a free site assessment <ArrowRight size={17} />
@@ -223,7 +223,7 @@ const FOOT_COLS: [string, [string, string][]][] = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#163300] text-white">
+    <footer className="bg-[#072A45] text-white">
       {/* SOLOR footer top strip — Generate / Reap / Heal */}
       <div className="border-b border-white/10">
         <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 sm:grid-cols-3">
@@ -233,7 +233,7 @@ export function SiteFooter() {
             ['Heal the World', 'Every kW cuts grid draw and tailpipe kilometres.'],
           ].map(([t, d]) => (
             <div key={t} className="flex items-start gap-4">
-              <span className="mt-1 inline-block size-2.5 shrink-0 rounded-full bg-[#89EA5F]" aria-hidden />
+              <span className="mt-1 inline-block size-2.5 shrink-0 rounded-full bg-[#62D984]" aria-hidden />
               <div>
                 <p className="text-[16px] font-bold uppercase tracking-[0.04em]" style={{ fontFamily: 'var(--font-display)' }}>{t}</p>
                 <p className="mt-1 text-[13.5px] leading-relaxed text-white/60">{d}</p>
@@ -259,8 +259,8 @@ export function SiteFooter() {
               solar carports and EV charging as one accountable system across Maharashtra.
             </p>
             <div className="mt-6 space-y-1.5 text-[13px]">
-              <p><a href="mailto:info@evnsolar.in" className="text-white/75 hover:text-[#89EA5F]">info@evnsolar.in</a></p>
-              <p><a href="tel:+917040506295" className="text-white/75 hover:text-[#89EA5F]">+91 70405 06295</a></p>
+              <p><a href="mailto:info@evnsolar.in" className="text-white/75 hover:text-[#62D984]">info@evnsolar.in</a></p>
+              <p><a href="tel:+917040506295" className="text-white/75 hover:text-[#62D984]">+91 70405 06295</a></p>
               <p className="text-white/45">79 Mahada Colony, Malegaon 423203</p>
             </div>
             <div className="mt-5 flex flex-wrap gap-2.5">
@@ -268,19 +268,19 @@ export function SiteFooter() {
                 href="https://www.instagram.com/evnsolar.in/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 border border-white/15 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.06em] text-white/75 transition-colors hover:border-[#89EA5F] hover:text-white"
+                className="inline-flex items-center gap-2.5 border border-white/15 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.06em] text-white/75 transition-colors hover:border-[#62D984] hover:text-white"
                 style={{ borderRadius: 8, fontFamily: 'var(--font-display)' }}
               >
-                <InstagramIcon size={15} className="text-[#89EA5F]" /> IG
+                <InstagramIcon size={15} className="text-[#62D984]" /> IG
               </a>
               <a
                 href="https://www.facebook.com/evsolar.in"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 border border-white/15 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.06em] text-white/75 transition-colors hover:border-[#89EA5F] hover:text-white"
+                className="inline-flex items-center gap-2.5 border border-white/15 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.06em] text-white/75 transition-colors hover:border-[#62D984] hover:text-white"
                 style={{ borderRadius: 8, fontFamily: 'var(--font-display)' }}
               >
-                <FacebookIcon size={15} className="text-[#89EA5F]" /> FB
+                <FacebookIcon size={15} className="text-[#62D984]" /> FB
               </a>
             </div>
           </div>
@@ -291,9 +291,9 @@ export function SiteFooter() {
                 <ul className="mt-4 space-y-2.5">
                   {links.map(([label, href]) => (
                     <li key={label}>
-                      <Link href={href} className="foot-link group inline-flex items-center gap-1 text-white/65 hover:text-[#89EA5F]">
+                      <Link href={href} className="foot-link group inline-flex items-center gap-1 text-white/65 hover:text-[#62D984]">
                         {label}
-                        <ArrowUpRight size={13} className="text-[#89EA5F] opacity-0 transition-opacity group-hover:opacity-70" />
+                        <ArrowUpRight size={13} className="text-[#62D984] opacity-0 transition-opacity group-hover:opacity-70" />
                       </Link>
                     </li>
                   ))}

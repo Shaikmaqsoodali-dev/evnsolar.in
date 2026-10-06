@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { type CSSProperties } from 'react';
 import { cn } from '@/lib/utils';
@@ -12,7 +12,7 @@ export type MotionGridProps = {
   opacity?: number;
   /** Show a soft radial glow tinted with lineColor. */
   enableGlow?: boolean;
-  /** Grid line color as "r, g, b", e.g. '20, 184, 166'. */
+  /** Grid line color as "r, g, b", e.g. '15, 136, 199'. */
   lineColor?: string;
   /** Grid cell size in px. */
   cellSize?: number;
@@ -28,7 +28,7 @@ export function MotionGrid({
   speed = '8s',
   opacity = 0.5,
   enableGlow = false,
-  lineColor = '20, 184, 166',
+  lineColor = '15, 136, 199',
   cellSize = 48,
   lineWidth = 1,
   fadeEdges = true,

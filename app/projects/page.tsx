@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
@@ -17,10 +17,10 @@ const PROJECTS = [
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-[#F2F7F4]">
+    <main className="bg-[#F0F5F9]">
       <PageIntro
         kicker="Projects"
-        title={<>Work we will stand behind <em className="editorial-accent text-[#008ED6]">in writing.</em></>}
+        title={<>Work we will stand behind <em className="editorial-accent text-[#0F88C7]">in writing.</em></>}
         lede="A selection of residential, commercial and industrial installations across Maharashtra. Every project includes drawings, test records and a monitoring handover."
         crumb={[['Projects', '/projects']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar_carport_EV-ready_parking.jpg"
@@ -30,27 +30,27 @@ export default function ProjectsPage() {
         <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" step={90}>
           {PROJECTS.map(({ img, sector, size, t, d }) => (
             <Tilt key={t}>
-            <article className="group lift border border-[#E2E8EC] bg-white transition-shadow hover:border-[#25C7E8] hover:shadow-[0_12px_36px_rgba(12,30,40,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
+            <article className="group lift border border-[#D9E2EA] bg-white transition-shadow hover:border-[#62D984] hover:shadow-[0_12px_36px_rgba(7,42,69,0.10)]" style={{ borderRadius: 8, overflow: 'hidden' }}>
               <div className="overflow-hidden">
                 <img src={img} alt={t} className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between gap-3">
                   <p className="card-cat">{sector}</p>
-                  <p className="font-tech shrink-0 border border-[#E2E8EC] bg-[#F4F6F8] px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] text-[#50656A]" style={{ borderRadius: 6 }}>{size}</p>
+                  <p className="font-tech shrink-0 border border-[#D9E2EA] bg-[#F4F6F8] px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] text-[#54687A]" style={{ borderRadius: 6 }}>{size}</p>
                 </div>
-                <h2 className="card-title mt-3 text-[#071D26]" style={{ fontSize: '19px' }}>{t}</h2>
-                <p className="card-desc mt-2 text-[#50656A]" style={{ fontSize: '13px' }}>{d}</p>
+                <h2 className="card-title mt-3 text-[#072A45]" style={{ fontSize: '19px' }}>{t}</h2>
+                <p className="card-desc mt-2 text-[#54687A]" style={{ fontSize: '13px' }}>{d}</p>
               </div>
             </article>
             </Tilt>
           ))}
         </Stagger>
-        <div className="mt-10 flex flex-col items-start justify-between gap-4 border border-[#E2E8EC] bg-[#F4F6F8] p-6 sm:flex-row sm:items-center" style={{ borderRadius: 8 }}>
+        <div className="mt-10 flex flex-col items-start justify-between gap-4 border border-[#D9E2EA] bg-[#F4F6F8] p-6 sm:flex-row sm:items-center" style={{ borderRadius: 8 }}>
           <p className="text-[15px] text-[#42545F]">
-            <span className="font-semibold text-[#071D26]">Have a similar site?</span> Send your bill and photos. We respond with size, generation and subsidy breakup.
+            <span className="font-semibold text-[#072A45]">Have a similar site?</span> Send your bill and photos. We respond with size, generation and subsidy breakup.
           </p>
-          <Link href="/contact" className="font-display inline-flex shrink-0 items-center gap-2 bg-[#008ED6] px-6 py-3 text-[13px] font-semibold tracking-[-0.01em] text-white hover:bg-[#00659D]" style={{ borderRadius: 6 }}>
+          <Link href="/contact" className="font-display inline-flex shrink-0 items-center gap-2 bg-[#0F88C7] px-6 py-3 text-[13px] font-semibold tracking-[-0.01em] text-white hover:bg-[#0B6AA0]" style={{ borderRadius: 6 }}>
             Get a free site assessment <ArrowRight size={15} />
           </Link>
         </div>

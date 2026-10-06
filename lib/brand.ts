@@ -1,8 +1,8 @@
-export const LOGO_URL =
+﻿export const LOGO_URL =
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/EV%20%26%20SOLAR%20LOGO%20final.jpg%20%284%29-mkVPCg09FJf5Yc550FUgAC2cI2EFi8.jpeg'
 
 export const GRADIENT =
-  'linear-gradient(135deg, #0083CB 0%, #12A9E2 45%, #74BD6C 100%)'
+  'linear-gradient(135deg, #0F88C7 0%, #33A94F 100%)'
 
 export const IMG = {
   solarField: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=80',

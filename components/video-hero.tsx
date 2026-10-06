@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowRight, Star } from 'lucide-react'
 import { IMG } from '@/lib/brand'
 import { Reveal, ScrollFade } from '@/components/motion'
@@ -7,15 +7,15 @@ const VIDEO_SRC =
   'https://res.cloudinary.com/qxjpbgh6/video/upload/v1790691758/evn_videoplayback_2.mp4'
 
 const AVATARS = [
-  { initial: 'R', bg: '#5EC73A' },
-  { initial: 'S', bg: '#163300' },
-  { initial: 'A', bg: '#3A5A2A' },
-  { initial: 'M', bg: '#5EC73A' },
+  { initial: 'R', bg: '#33A94F' },
+  { initial: 'S', bg: '#072A45' },
+  { initial: 'A', bg: '#0B6AA0' },
+  { initial: 'M', bg: '#0F88C7' },
 ]
 
 export function VideoHero() {
   return (
-    <section className="relative overflow-hidden bg-[#163300] text-white">
+    <section className="relative overflow-hidden bg-[#072A45] text-white">
       {/* background video */}
       <video
         autoPlay
@@ -28,15 +28,15 @@ export function VideoHero() {
       >
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#163300] via-[#163300]/80 to-[#163300]/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#163300]/70 via-transparent to-[#163300]/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#072A45] via-[#072A45]/80 to-[#072A45]/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#072A45]/70 via-transparent to-[#072A45]/25" />
 
       <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-14 sm:pb-20 sm:pt-20">
         <Reveal variant="fade" delay={50}>
           <p
-            className="micro text-[#89EA5F]"
+            className="micro text-[#62D984]"
           >
-            <span className="mr-2 inline-block size-2 rounded-full bg-[#89EA5F]" aria-hidden />
+            <span className="mr-2 inline-block size-2 rounded-full bg-[#62D984]" aria-hidden />
             Welcome to EVN Solar
           </p>
         </Reveal>
@@ -64,7 +64,7 @@ export function VideoHero() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="/services"
-                  className="btn-shine inline-flex items-center gap-2 rounded-lg bg-[#89EA5F] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#163300] transition-colors hover:bg-white"
+                  className="btn-shine inline-flex items-center gap-2 rounded-lg bg-[#62D984] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
                   Our services <ArrowRight size={15} />
@@ -83,7 +83,7 @@ export function VideoHero() {
           {/* right: Solor mini proof card */}
           <Reveal variant="scale" delay={600} className="lg:pb-2">
             <div
-              className="ml-auto w-full border border-white/15 bg-[#0F2400]/70 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-md sm:max-w-[340px]"
+              className="ml-auto w-full border border-white/15 bg-[#051E33]/70 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-md sm:max-w-[340px]"
               style={{ borderRadius: 10 }}
             >
               <div className="mb-3 flex items-center gap-3">
@@ -102,10 +102,10 @@ export function VideoHero() {
                   Trusted by 1,000+ homes & businesses
                 </span>
               </div>
-              <div className="bg-[#163300]/60 p-3.5" style={{ borderRadius: 6 }}>
+              <div className="bg-[#072A45]/60 p-3.5" style={{ borderRadius: 6 }}>
                 <div className="mb-2 flex gap-0.5" aria-label="5 star rating">
                   {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} size={11} className="fill-[#89EA5F] text-[#89EA5F]" />
+                    <Star key={s} size={11} className="fill-[#62D984] text-[#62D984]" />
                   ))}
                 </div>
                 <blockquote className="text-[14px] font-normal leading-[1.7] text-white/90">
@@ -113,7 +113,7 @@ export function VideoHero() {
                   project. Generation reporting just works. Bills down 68% in
                   six months.&rdquo;
                 </blockquote>
-                <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.1em] text-[#89EA5F]" style={{ fontFamily: 'var(--font-display)' }}>
+                <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.1em] text-[#62D984]" style={{ fontFamily: 'var(--font-display)' }}>
                   Logistics depot, Malegaon
                 </p>
               </div>

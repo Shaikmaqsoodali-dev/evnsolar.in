@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import {
   Children,
@@ -445,7 +445,7 @@ export function Marquee({
             {item}
           </span>
           <span
-            className="inline-block size-1.5 shrink-0 rounded-full bg-[#89EA5F]"
+            className="inline-block size-1.5 shrink-0 rounded-full bg-[#62D984]"
             aria-hidden
           />
         </span>
