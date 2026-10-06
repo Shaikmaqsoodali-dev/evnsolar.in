@@ -231,7 +231,7 @@ export default function AboutPage() {
             }
             lede="Four connected capabilities that take a project from first conversation to lifetime operation."
           />
-          <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" itemClassName="h-full" step={90}>
+          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" itemClassName="h-full" step={90}>
             {WHAT_WE_DO.map(({ icon: Icon, title, desc }) => (
               <article
                 key={title}
@@ -341,7 +341,7 @@ export default function AboutPage() {
             }
             lede="We believe renewable energy should be simple, dependable, and built for the long term."
           />
-          <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" itemClassName="h-full" step={80}>
+          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" itemClassName="h-full" step={80}>
             {WHY_CARDS.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
@@ -385,7 +385,7 @@ export default function AboutPage() {
       <section className="bg-[#072A45] text-white">
         <div className="h-1" style={{ background: 'linear-gradient(90deg, #0F88C7 0%, #62D984 50%, #33A94F 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-          <div className="grid gap-5 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-2">
             <Reveal variant="left">
               <article
                 className="relative flex h-full flex-col overflow-hidden border border-white/10 bg-white/[0.05] p-8 sm:p-10"

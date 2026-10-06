@@ -47,7 +47,7 @@ import { Reveal } from '@/components/motion'
 export function Kicker({ children, center = false }: { children: string; center?: boolean }) {
   return (
     <p
-      className={`micro flex items-center gap-2.5 text-[#1E7A38] ${
+      className={`micro flex items-center gap-2.5 text-[#33A94F] ${
         center ? 'justify-center' : ''
       }`}
     >

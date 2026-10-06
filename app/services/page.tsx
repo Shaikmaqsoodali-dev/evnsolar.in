@@ -115,7 +115,7 @@ export default function ServicesPage() {
             </Reveal>
           ))}
         </div>
-        <Stagger className="mt-8 grid gap-5 md:grid-cols-2" itemClassName="h-full" step={100}>
+        <Stagger className="mt-8 grid gap-6 md:grid-cols-2" itemClassName="h-full" step={100}>
           {SERVICES.slice(2).map(({ img, n, icon: Icon, badge, tag, t, d, points }) => (
             <Tilt key={t} className="h-full">
             <article className="group lift flex h-full flex-col overflow-hidden border border-[#D9E2EA] bg-white hover:border-[#62D984]" style={{ borderRadius: 10 }}>

@@ -58,7 +58,7 @@ export default function BlogPage() {
                     <img src={img} alt={`${name} — solar panel product photo`} loading="lazy" className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" />
                   </span>
                   <p className="flex items-center gap-1.5 px-3 py-2 text-[12px] font-bold tracking-tight text-[#072A45]">
-                    <Sun size={13} className="shrink-0 text-[#1E7A38]" strokeWidth={2.4} aria-hidden />
+                    <Sun size={13} className="shrink-0 text-[#33A94F]" strokeWidth={2.4} aria-hidden />
                     {name}
                   </p>
                 </Link>

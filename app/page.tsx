@@ -205,7 +205,7 @@ export default function HomePage() {
               Six factory-tested disciplines, each with drawings, protection design and a monitoring handover.
             </p>
           </div>
-          <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" itemClassName="h-full" step={90}>
+          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" itemClassName="h-full" step={90}>
             {SERVICES.map(({ img, icon: Icon, badge, t, d, href }) => (
               <Tilt key={t} className="h-full">
                 <Link href={href} className="group lift block h-full overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.12)]">
@@ -245,7 +245,7 @@ export default function HomePage() {
             <div className="flex justify-center"><Kicker center>Our latest process</Kicker></div>
             <ScrollWords text="Our *Work Process.*" className="sx sx-lg mt-3 text-[#072A45] [&_em]:text-[#33A94F]" />
           </div>
-          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" step={110}>
+          <Stagger className="mt-10 grid gap-6 md:grid-cols-3" step={110}>
             {STEPS.map(({ n, icon: Icon, t, d }) => (
               <div key={n} className="relative overflow-hidden rounded-xl border border-[#D9E2EA] bg-white p-7 text-center transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.10)]">
                 <span className="solor-step mx-auto size-14 text-[18px]">{n}</span>
@@ -341,7 +341,7 @@ export default function HomePage() {
             <Kicker>Why choose us</Kicker>
             <ScrollWords text="Providing Solar *Energy Solutions.*" className="sx sx-lg mt-3 text-[#072A45] [&_em]:text-[#33A94F]" />
           </div>
-          <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" step={90}>
+          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" step={90}>
             {WHY.map(({ img, icon: Icon, badge, t, d }) => (
               <div key={t} className="group overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.10)]">
                 <div className="photo-frame relative overflow-hidden">
@@ -414,7 +414,7 @@ export default function HomePage() {
               All articles <BrandArrow size={14} />
             </Link>
           </div>
-          <Stagger className="mt-10 grid gap-5 md:grid-cols-3" itemClassName="h-full" step={100}>
+          <Stagger className="mt-10 grid gap-6 md:grid-cols-3" itemClassName="h-full" step={100}>
             {[
               { img: IMG.blog1, icon: Cpu, badge: 'Tech', cat: 'Solar Technology', t: 'Exploring the Latest Innovations in Solar Technology', d: 'TOPCon gains, micro-inverters and what they mean for your terrace.' },
               { img: IMG.blog2, icon: Leaf, badge: 'Green', cat: 'Sustainability', t: 'Solar Solutions for a Sustainable Tomorrow', d: 'How homes and depots pair solar with EV charging in one project.' },

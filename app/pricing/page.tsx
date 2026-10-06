@@ -83,7 +83,7 @@ export default function PricingPage() {
 
         <div className="mt-14">
           <SectionHeading title="How pricing and payment work." />
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             {[
               { icon: IndianRupee, k: 'Subsidy', t: 'PM Surya Ghar guidance', d: 'Eligibility check and application support for residential systems.' },
               { icon: CreditCard, k: 'Payments', t: 'EMI with staged milestones', d: 'Survey, installation and commissioning milestones, no full advance.' },
