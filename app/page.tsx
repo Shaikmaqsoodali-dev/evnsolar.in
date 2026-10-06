@@ -161,7 +161,7 @@ export default function HomePage() {
             <Kicker>About us</Kicker>
             <ScrollWords
               text="Early solar-park movers, *now turnkey EPC.*"
-              className="sx sx-lg mt-3 text-[#072A45]"
+              className="sx sx-lg mt-3 text-[#072A45] [&_em]:text-[#33A94F]"
             />
             <p className="mt-4 max-w-lg text-[15px] font-normal leading-[1.75] text-[#3E5162]">
               Established in 2020, we grew from solar-park pioneers into an integrated
@@ -199,7 +199,7 @@ export default function HomePage() {
             <div className="flex justify-center"><Kicker center>Our services</Kicker></div>
             <ScrollWords
               text="Best Offer For *Renewable Energy.*"
-              className="sx sx-lg mt-3 text-[#072A45]"
+              className="sx sx-lg mt-3 text-[#072A45] [&_em]:text-[#33A94F]"
             />
             <p className="mx-auto mt-4 max-w-xl text-[15px] font-normal leading-[1.75] text-[#3E5162]">
               Six factory-tested disciplines, each with drawings, protection design and a monitoring handover.
@@ -243,7 +243,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">
             <div className="flex justify-center"><Kicker center>Our latest process</Kicker></div>
-            <ScrollWords text="Our *Work Process.*" className="sx sx-lg mt-3 text-[#072A45]" />
+            <ScrollWords text="Our *Work Process.*" className="sx sx-lg mt-3 text-[#072A45] [&_em]:text-[#33A94F]" />
           </div>
           <Stagger className="mt-10 grid gap-5 md:grid-cols-3" step={110}>
             {STEPS.map(({ n, icon: Icon, t, d }) => (
@@ -339,7 +339,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
           <div className="max-w-2xl">
             <Kicker>Why choose us</Kicker>
-            <ScrollWords text="Providing Solar *Energy Solutions.*" className="sx sx-lg mt-3 text-[#072A45]" />
+            <ScrollWords text="Providing Solar *Energy Solutions.*" className="sx sx-lg mt-3 text-[#072A45] [&_em]:text-[#33A94F]" />
           </div>
           <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" step={90}>
             {WHY.map(({ img, icon: Icon, badge, t, d }) => (
@@ -391,7 +391,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <Kicker>Solar calculator</Kicker>
-            <ScrollWords text="Your Solar *Savings Calculator.*" className="sx sx-lg mt-3 text-[#072A45]" />
+            <ScrollWords text="Your Solar *Savings Calculator.*" className="sx sx-lg mt-3 text-[#072A45] [&_em]:text-[#33A94F]" />
             <p className="mt-4 max-w-md text-[15px] leading-relaxed text-[#3E5162]">
               Pick Residential or Commercial, slide your monthly bill — get an instant size and savings estimate.
             </p>
@@ -408,7 +408,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
               <Kicker>Recent articles</Kicker>
-              <ScrollWords text="Our *Latest News.*" className="sx sx-lg mt-3 text-[#072A45]" />
+              <ScrollWords text="Our *Latest News.*" className="sx sx-lg mt-3 text-[#072A45] [&_em]:text-[#33A94F]" />
             </div>
             <Link href="/blog" className="inline-flex items-center gap-1.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0B6AA0]" style={{ fontFamily: 'var(--font-display)' }}>
               All articles <BrandArrow size={14} />
