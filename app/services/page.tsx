@@ -9,34 +9,57 @@ export const metadata = { title: 'Solar Services | EVN Solar Energy Solutions' }
 
 const SERVICES = [
   {
-    img: IMG.rooftop, n: '01', tag: '1-100 kW, On-grid / Hybrid', t: 'Rooftop solar',
-    d: 'Homes, shops, schools, hospitals and factories. Shadow analysis, structure design, high-efficiency TOPCon modules with string or micro-inverters.',
-    points: ['Site survey with generation estimate', 'Net-metering and subsidy filing', 'Monitoring app with 5-year service'],
+    img: IMG.rooftop, n: '01', tag: 'On-grid / Off-grid, 1-100 kW', t: 'On-grid & off-grid rooftop systems',
+    d: 'Tailored to meet diverse energy needs — on-grid solutions that connect to the local utility grid, and off-grid options for full independence. Designed for efficiency and reliability, ensuring a consistent power supply.',
+    points: ['Load + shadow study before sizing', 'Net-metering or battery-ready design', 'Monitoring app with 5-year service'],
   },
   {
-    img: IMG.ground, n: '02', tag: '100 kW-2 MW, SCADA-ready', t: 'Ground-mounted plants',
-    d: 'Farms, industry and campuses. Soil, drainage and row spacing engineered for yield and straightforward maintenance access.',
-    points: ['Land and evacuation study', 'Structure with DC/AC design', 'O&M contracts available'],
+    img: IMG.ground, n: '02', tag: 'Turnkey EPC, up to 1,607 MWp', t: 'Solar EPC services',
+    d: 'We manage every aspect of solar project development, from initial design and procurement to final construction. Focus on quality assurance ensures each project meets the highest standards for performance and longevity.',
+    points: ['Engineering, procurement, construction', 'Land liaison — 5,700+ acres delivered', 'Testing, commissioning & O&M'],
   },
   {
-    img: IMG.carport, n: '03', tag: '2-50 cars, EV-ready', t: 'Solar carports',
-    d: 'Turn parking into a power plant. Waterproof structures with EV-conduit pre-wiring, lighting and CCTV provision.',
-    points: ['Steel and waterproof design', 'EV charger pre-wiring', 'Lighting integration'],
+    img: IMG.engineer2, n: '03', tag: 'MPPT / PWM, battery-safe', t: 'Solar charge controllers',
+    d: 'Advanced controllers regulate power from solar panels to batteries, preventing overcharging and ensuring efficient energy storage. Extends battery life and enhances system performance.',
+    points: ['Overcharge & deep-discharge protection', 'MPPT for higher harvest', 'Sized to panel + battery bank'],
   },
   {
-    img: IMG.panel, n: '04', tag: 'AMC, Health checks', t: 'Maintenance & upgrades',
-    d: 'Cleaning plans, thermography, inverter service, capacity additions and battery retrofits for existing plants.',
-    points: ['AMC with breakdown support', 'Performance audits', 'Battery and EV add-ons'],
+    img: IMG.fleetDepot, n: '04', tag: 'Solar + grid / DG hybrid', t: 'Solar hybrid power packs',
+    d: 'Combining solar energy with other power sources, our hybrid systems provide a reliable and uninterrupted power supply, adaptable to various applications and environments.',
+    points: ['Uninterrupted supply for outages', 'Adaptable for home, shop, farm', 'Pre-wired for EV charging'],
   },
+  {
+    img: IMG.panel, n: '05', tag: 'Tier-1, high-efficiency PV', t: 'Solar PV panels',
+    d: 'High-quality photovoltaic panels that convert sunlight into electricity with exceptional efficiency, supporting a wide range of energy requirements — from homes to solar parks.',
+    points: ['Tier-1 modules with warranty', 'TOPCon high-efficiency options', 'Structure + tilt engineered per roof'],
+  },
+  {
+    img: IMG.industrial, n: '06', tag: 'String / micro + UPS', t: 'Inverters & UPS systems',
+    d: 'Our inverters convert DC power from solar panels into AC power for household or commercial use, while UPS systems ensure continuous power during outages, maintaining operational continuity.',
+    points: ['String, hybrid & micro-inverters', 'UPS backup for critical loads', 'Surge, earthing & protection tested'],
+  },
+  {
+    img: IMG.solarField, n: '07', tag: 'DISCOM liaison included', t: 'Net metering solutions',
+    d: 'Feed excess solar energy back into the grid, earning credits on your utility bill and promoting environmental sustainability. We handle application, liaison and approvals end-to-end.',
+    points: ['DISCOM application + follow-up', 'Bi-directional meter coordination', 'Subsidy filing under PM Surya Ghar'],
+  },
+]
+
+const PORTFOLIO = [
+  { t: 'Wind Turbines', d: 'Complementary wind assessment for hybrid sites.' },
+  { t: 'Solar Panels', d: 'Tier-1 PV for rooftop, ground and carport plants.' },
+  { t: 'Hydropower Plants', d: 'Advisory for small-hydro integration where viable.' },
+  { t: 'Fossil Resources', d: 'Transition planning — reduce diesel / grid dependence.' },
+  { t: 'Battery Materials', d: 'Storage sizing, lithium backup and hybrid packs.' },
 ]
 
 export default function ServicesPage() {
   return (
     <main className="bg-[#F0F5F9]">
       <PageIntro
-        kicker="Solar services"
-        title={<>Solar for every roof, plot and <em className="editorial-accent text-[#0F88C7]">parking lot.</em></>}
-        lede="On-grid, hybrid and battery-ready systems with engineering drawings, DISCOM liaison and verified generation, not just installation."
+        kicker="Solar services — Est. 2020"
+        title={<>Solar EPC + products for every roof, plot and <em className="editorial-accent text-[#0F88C7]">parking lot.</em></>}
+        lede="Turnkey EPC with 1,607 MWp delivered and 5,700+ acres acquired. On-grid, off-grid and hybrid systems with drawings, DISCOM liaison and verified generation."
         crumb={[['Solar', '/services']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Rooftop_solar_installation.webp"
         imageAlt="Rooftop solar installation"
@@ -107,6 +130,26 @@ export default function ServicesPage() {
             </Tilt>
           ))}
         </Stagger>
+        <p className="mx-auto mt-8 max-w-3xl text-center text-[14px] leading-relaxed text-[#54687A]">
+          All our products are eco-friendly, versatile, user-friendly and highly energy-efficient — superior design quality, high performance and affordability, making sustainable energy accessible for all.
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-14 sm:pb-20">
+        <div className="overflow-hidden rounded-xl border border-[#D9E2EA] bg-white">
+          <div className="border-b border-[#D9E2EA] px-6 py-5 sm:px-8">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#0F88C7]" style={{ fontFamily: 'var(--font-display)' }}>Our services — energy portfolio</p>
+            <h2 className="mt-1 text-[22px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>Beyond solar, we plan the full mix.</h2>
+          </div>
+          <div className="grid gap-px bg-[#D9E2EA] sm:grid-cols-2 lg:grid-cols-5">
+            {PORTFOLIO.map(({ t, d }) => (
+              <div key={t} className="bg-white px-5 py-6">
+                <p className="text-[15px] font-bold text-[#072A45]" style={{ fontFamily: 'var(--font-display)' }}>{t}</p>
+                <p className="mt-1.5 text-[13.5px] leading-relaxed text-[#54687A]">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="bg-[#072A45]">

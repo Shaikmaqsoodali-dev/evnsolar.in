@@ -31,23 +31,23 @@ export const metadata = {
 const WHAT_WE_DO = [
   {
     icon: Sun,
-    title: 'Solar Energy Solutions',
-    desc: 'Efficient rooftop and commercial solar systems tailored to each customer\u2019s energy requirements: on-grid, off-grid, or hybrid, matched to property and energy goals.',
+    title: 'On-Grid & Off-Grid Rooftop',
+    desc: 'Tailored rooftop systems — on-grid for utility savings, off-grid for independence — engineered for efficiency, reliability and consistent power.',
   },
   {
     icon: ClipboardCheck,
-    title: 'Solar EPC & Project Execution',
-    desc: 'Complete project lifecycle management: site assessment, engineering, system design, procurement, installation, testing and commissioning as a streamlined turnkey experience.',
+    title: 'Turnkey Solar EPC',
+    desc: 'Every aspect from design and procurement to construction with strict quality assurance for optimal performance and longevity. 1,607 MWp delivered.',
   },
   {
     icon: PlugZap,
-    title: 'EV Charging Solutions',
-    desc: 'Reliable EV charging infrastructure for homes, businesses, commercial properties and other locations. Convenient, practical and future-ready.',
+    title: 'Panels, Inverters & Storage',
+    desc: 'High-efficiency Solar PV panels, inverters + UPS for continuity, charge controllers, hybrid power packs and net-metering solutions.',
   },
   {
     icon: Wrench,
-    title: 'Operations & Maintenance',
-    desc: 'Ongoing support, monitoring, maintenance and performance assistance so solar systems keep operating efficiently over their lifetime.',
+    title: 'Land + O&M Support',
+    desc: '5,700+ acres acquired via State liaison, plus monitoring, maintenance and performance support so plants stay high-yield for life.',
   },
 ]
 
@@ -104,13 +104,13 @@ export default function AboutPage() {
     <main className="bg-[#F0F5F9]">
       {/* 1 — Page header */}
       <PageIntro
-        kicker="About EVN Solar"
+        kicker="About EVN Solar — Est. 2020"
         title={
           <>
-            Powering a smarter, <em className="editorial-accent text-[#62D984]">cleaner future.</em>
+            Early movers in solar parks, <em className="editorial-accent text-[#62D984]">now 1,607 MWp strong.</em>
           </>
         }
-        lede="EVN Solar is a renewable energy solutions company focused on making solar power and electric mobility more accessible, reliable, and practical for homes, businesses, and industries."
+        lede="Established in 2020, we have grown into a well-established turnkey solar EPC player — with 1,607 MWp implemented and 5,700+ acres acquired for customers across India."
         crumb={[['About', '/about']]}
         image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar-Panel-Installation.png"
         imageAlt="Rooftop solar panels against a clear sky"
@@ -123,22 +123,41 @@ export default function AboutPage() {
             <SectionHeading
               title={
                 <>
-                  Simple, dependable energy, <em className="editorial-accent text-[#0F88C7]">built for the long term.</em>
+                  Consultative solar EPC, <em className="editorial-accent text-[#0F88C7]">built for the long term.</em>
                 </>
               }
             />
             <div className="prose-tight mt-5 max-w-xl space-y-4 text-[15.5px] font-normal leading-[1.8] text-[#33474E]">
               <p>
-                EVN Solar is a renewable energy solutions company focused on making solar
-                power and electric mobility more accessible, reliable, and practical for
-                homes, businesses, and industries.
+                Established in 2020, we have been one of the early movers in the solar
+                park regime and have now grown into a well-established player in
+                turnkey solar engineering, procurement and construction (EPC) services,
+                catering to the increasing demand for renewable energy in the country.
               </p>
               <p>
-                We provide end-to-end solar solutions, from consultation and system
-                design to installation, commissioning, and ongoing support. Our approach
-                combines engineering expertise, quality equipment, and practical project
-                execution to deliver energy systems designed for long-term performance.
+                We are also one of the leading integrated solar power companies in
+                India with implementation of solar power projects of 1,607 MWp. On the
+                back of our strong regulatory understanding of State laws for land
+                acquisition and our ability to liaise with State land authorities, we
+                have acquired over 5,700 acres of land for our customers across India.
               </p>
+              <p>
+                We offer a consultative approach to our customers&apos; solar energy needs
+                and capabilities, which enables us to provide customized solutions to
+                meet their requirements — from rooftop to utility-scale.
+              </p>
+            </div>
+            <div className="mt-7 grid grid-cols-3 gap-3 border-y border-[#D9E2EA] py-5">
+              {[
+                ['1,607', 'MWp delivered'],
+                ['5,700+', 'Acres acquired'],
+                ['2020', 'Established'],
+              ].map(([v, l]) => (
+                <div key={l}>
+                  <p className="font-display text-[26px] font-bold tracking-[-0.02em] text-[#072A45]">{v}</p>
+                  <p className="mt-0.5 text-[11.5px] font-semibold uppercase tracking-[0.1em] text-[#54687A]">{l}</p>
+                </div>
+              ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link

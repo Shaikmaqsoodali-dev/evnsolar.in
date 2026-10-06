@@ -12,19 +12,20 @@ const TICKER = [
   'Generate your own power',
   'Reap the returns',
   'Heal the world',
-  'MNRE-aligned engineering',
-  'Tier-1 modules',
-  '2.4 MW+ installed',
+  'Est. 2020 — solar park pioneers',
+  '1,607 MWp implemented',
+  '5,700+ acres acquired',
+  'Turnkey solar EPC',
   'PM Surya Ghar guidance',
 ]
 
 const SERVICES = [
-  { img: IMG.rooftop, t: 'Solar Maintenance', d: 'Health checks, cleaning and generation audits that keep output high.', href: '/services' },
-  { img: IMG.engineer2, t: 'Energy Saving Devices', d: 'Load management and monitoring that cut waste before you add kW.', href: '/services' },
-  { img: IMG.ground, t: 'Solar Solutions', d: 'Rooftop and ground plants engineered to your bill and shadow profile.', href: '/services' },
-  { img: IMG.panel, t: 'Solar PV Systems', d: 'Tier-1 TOPCon arrays with tested string and micro-inverters.', href: '/services' },
-  { img: IMG.fleetDepot, t: 'Hybrid Energy', d: 'Hybrid + battery backup for outages, pre-wired for EV charging.', href: '/ev-charging' },
-  { img: IMG.solarField, t: 'Renewable Energy', d: 'Solar carports and EV chargers combined into one clean system.', href: '/ev-charging' },
+  { img: IMG.rooftop, t: 'On/Off-Grid Rooftop', d: 'On-grid for savings, off-grid for independence — sized to bill + shadow.', href: '/services' },
+  { img: IMG.engineer2, t: 'Solar EPC', d: 'Turnkey design, procurement & construction — 1,607 MWp delivered.', href: '/services' },
+  { img: IMG.panel, t: 'PV Panels & Inverters', d: 'Tier-1 PV, inverters + UPS for continuity and outage protection.', href: '/services' },
+  { img: IMG.fleetDepot, t: 'Hybrid Power Packs', d: 'Solar + grid backup for uninterrupted supply in any environment.', href: '/services' },
+  { img: IMG.ground, t: 'Charge Controllers', d: 'MPPT regulation that protects batteries and lifts harvest.', href: '/services' },
+  { img: IMG.solarField, t: 'Net Metering', d: 'Feed excess to the grid, earn credits — DISCOM filing included.', href: '/services' },
 ]
 
 const STEPS = [
@@ -130,9 +131,9 @@ export default function HomePage() {
               <div className="col-span-5 flex flex-col gap-4">
                 <img src={IMG.rooftop} alt="Rooftop solar array in Nashik" className="aspect-square w-full rounded-xl object-cover" />
                 <div className="flex flex-1 flex-col justify-center rounded-xl bg-[#072A45] p-6 text-white">
-                  <p className="stat-number text-[#62D984]">25+</p>
+                  <p className="stat-number text-[#62D984]">1,607</p>
                   <p className="mt-2 text-[13px] font-semibold uppercase leading-snug tracking-[0.08em] text-white/85" style={{ fontFamily: 'var(--font-display)' }}>
-                    Years of clean-energy practice
+                    MWp solar delivered since 2020
                   </p>
                 </div>
               </div>
@@ -141,21 +142,20 @@ export default function HomePage() {
           <Reveal variant="right" delay={120}>
             <Kicker>About us</Kicker>
             <ScrollWords
-              text="About Green Energy Solar *— EVN.*"
+              text="Early solar-park movers, *now turnkey EPC.*"
               className="sx sx-lg mt-3 text-[#072A45]"
             />
             <p className="mt-4 max-w-lg text-[15px] font-normal leading-[1.75] text-[#3E5162]">
-              EVN Solar Energy Solutions designs rooftop solar, ground-mounted plants,
-              solar carports and EV charging as one electrical system — generation sized
-              to your bill and your kilometres, with protection, approvals and
-              monitoring included from day one.
+              Established in 2020, we grew from solar-park pioneers into an integrated
+              solar company with 1,607 MWp implemented and 5,700+ acres acquired for
+              customers across India — consultative, customized, and built for longevity.
             </p>
             <ul className="mt-6 grid gap-x-6 sm:grid-cols-2">
               {[
-                'Solar Inverter Setup',
-                'Battery Storage Solutions',
-                'Subsidy & Material Financing',
-                '24×7 Call & Chat Support',
+                'Turnkey Solar EPC',
+                'On-Grid / Off-Grid Rooftop',
+                'Net Metering & Subsidy Filing',
+                'Panels, Inverters, Hybrid Packs',
               ].map((li) => (
                 <li key={li} className="flex items-start gap-3 border-b border-[#DCE6EE] py-3 text-[14.5px] font-normal leading-relaxed text-[#072A45]">
                   <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-[#62D984] text-[#072A45]">
@@ -318,9 +318,9 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-12 sm:py-14">
           <div className="grid gap-px overflow-hidden rounded-xl border border-[#D9E2EA] bg-[#D9E2EA] sm:grid-cols-4">
             {[
-              { v: 1000, s: '+', l: 'Project Done' },
-              { v: 1000, s: '+', l: 'Happy Clients' },
-              { v: 15, s: '+', l: 'Award Winning' },
+              { v: 1607, s: '', l: 'MWp Delivered', d: 0 },
+              { v: 5700, s: '+', l: 'Acres Acquired', d: 0 },
+              { v: 1000, s: '+', l: 'Happy Clients', d: 0 },
               { v: 4.9, s: '★', l: 'Rating Customer', d: 1 },
             ].map(({ v, s, l, d = 0 }) => (
               <div key={l} className="bg-white px-6 py-8 text-center">
