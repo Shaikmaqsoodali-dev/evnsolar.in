@@ -82,19 +82,19 @@ export function SiteHeader() {
         >
           <div
             className={cn(
-              'mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 transition-all duration-500',
-              scrolled ? 'h-16' : 'h-20',
+              'mx-auto flex max-w-7xl items-center justify-between gap-4 overflow-visible px-6 transition-all duration-500',
+              scrolled ? 'h-[108px]' : 'h-[116px]',
             )}
           >
             {/* logo lockup — transparent PNG, no cropping needed */}
-            <Link href="/" className="group flex shrink-0 items-center" aria-label="EVN Solar home">
+            <Link href="/" className="group flex shrink-0 items-center overflow-visible py-1" aria-label="EVN Solar home">
               <img
                 src={LOGO_URL}
                 alt="EVN Solar"
-                className={cn(
-                  'w-auto max-w-[180px] object-contain transition-all duration-500',
-                  scrolled ? 'h-10 lg:h-11' : 'h-12 lg:h-[52px]',
-                )}
+                width={256}
+                height={256}
+                fetchPriority="high"
+                className="navbar-logo transition-all duration-500"
               />
             </Link>
 
@@ -171,7 +171,7 @@ export function SiteHeader() {
         <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-[#62D984]/20 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-[#62D984]/10 blur-[100px]" />
         <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-          <img src={LOGO_URL} alt="EVN Solar" className="h-11 w-auto max-w-[170px] object-contain" />
+          <img src={LOGO_URL} alt="EVN Solar" className="navbar-logo" />
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
