@@ -27,8 +27,8 @@ export default function BlogPage() {
         title={<>Practical guides, <em className="editorial-accent text-[#0F88C7]">not brochures.</em></>}
         lede="Panel comparisons and practical notes from our survey and service teams."
         crumb={[['Blog', '/blog']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791293344/WhatsApp_Image_2026-10-06_at_6.58.40_PM.jpg"
-        imageAlt="EVN Solar blog header"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Rooftop_solar_installation.webp"
+        imageAlt="Rooftop solar installation on a home"
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Reveal>
