@@ -24,8 +24,8 @@ export default function ProjectsPage() {
         title={<>Work we will stand behind <em className="editorial-accent text-[#0F88C7]">in writing.</em></>}
         lede="A selection of residential, commercial and industrial installations across Maharashtra. Every project includes drawings, test records and a monitoring handover."
         crumb={[['Projects', '/projects']]}
-        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791106731/Solar_carport_EV-ready_parking.jpg"
-        imageAlt="Solar carport EV-ready parking"
+        image="https://res.cloudinary.com/qxjpbgh6/image/upload/v1791301306/Solar_Carport_at_a_Modern_Residential_Complex.png"
+        imageAlt="Solar Carport at a Modern Residential Complex"
       />
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" step={90}>
