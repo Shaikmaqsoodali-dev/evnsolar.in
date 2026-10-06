@@ -16,7 +16,6 @@ import {
   Sun,
   Wrench,
   X,
-  Zap,
 } from 'lucide-react'
 import { IMG, LOGO_URL } from '@/lib/brand'
 import { cn } from '@/lib/utils'
@@ -181,12 +180,11 @@ export function SiteHeader() {
                     href={l.href}
                     onMouseEnter={() => setSolarOpen(false)}
                     className={cn(
-                      'group relative flex items-center gap-1.5 py-2 text-[15px] font-bold uppercase tracking-[0.06em] transition-colors duration-200',
+                      'group relative flex items-center gap-1.5 whitespace-nowrap py-2 text-[15px] font-bold uppercase tracking-[0.06em] transition-colors duration-200',
                       active ? 'text-[#072A45]' : 'text-[#46586A] hover:text-[#072A45]',
                     )}
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
-                    {l.accent && <Zap size={13} strokeWidth={2.75} className="text-[#33A94F]" />}
                     {l.label}
                     <span
                       aria-hidden
