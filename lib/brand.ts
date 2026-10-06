@@ -1,4 +1,4 @@
-﻿export const LOGO_URL = '/logo.png'
+﻿export const LOGO_URL = 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791305602/WhatsApp_Image_2026-10-06_at_9.46.11_PM-removebg-preview.png'
 
 export const GRADIENT =
   'linear-gradient(135deg, #0F88C7 0%, #33A94F 100%)'
