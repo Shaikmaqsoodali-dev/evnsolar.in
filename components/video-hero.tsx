@@ -66,7 +66,7 @@ export function VideoHero() {
           </p>
         </Reveal>
 
-        <p aria-hidden className="vertical-micro absolute right-6 top-24 hidden text-white/40 xl:block">
+        <p aria-hidden className="vertical-micro absolute right-6 top-24 hidden text-white/40 2xl:block">
           Rooftop Solar — EV Charging
         </p>
 
@@ -122,7 +122,7 @@ export function VideoHero() {
                 Live from site monitoring
               </p>
               <div className="mb-3 flex items-center gap-3">
-                <div className="flex -space-x-2">
+                <div className="flex shrink-0 -space-x-2">
                   {AVATARS.map(({ initial, bg }) => (
                     <span
                       key={initial}
@@ -133,7 +133,7 @@ export function VideoHero() {
                     </span>
                   ))}
                 </div>
-                <span className="text-[12px] font-normal tracking-[0] text-white/70" style={{ fontFamily: 'var(--font-body)' }}>
+                <span className="min-w-0 text-[12px] font-normal leading-snug tracking-[0] text-white/70" style={{ fontFamily: 'var(--font-body)' }}>
                   Trusted by 1,000+ homes & businesses
                 </span>
               </div>
@@ -152,11 +152,11 @@ export function VideoHero() {
                   six months.&rdquo;
                 </blockquote>
                 <div className="mt-3 flex items-center justify-between gap-3 border-t border-white/10 pt-3">
-                  <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#62D984]" style={{ fontFamily: 'var(--font-display)' }}>
+                  <p className="min-w-0 text-[12px] font-semibold uppercase leading-snug tracking-[0.1em] text-[#62D984]" style={{ fontFamily: 'var(--font-display)' }}>
                     Logistics depot, Malegaon
                   </p>
-                  <Link href="/projects" className="press inline-flex items-center gap-1 rounded-full bg-[#62D984] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white" style={{ fontFamily: 'var(--font-display)' }}>
-                    View proof →
+                  <Link href="/projects" className="press inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full bg-[#62D984] px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white" style={{ fontFamily: 'var(--font-display)' }}>
+                    View proof <span aria-hidden>→</span>
                   </Link>
                 </div>
               </div>
