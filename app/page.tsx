@@ -415,11 +415,6 @@ export default function HomePage() {
                 </a>
               </Magnetic>
             </div>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-white/65">
-              <span className="inline-flex items-center gap-1.5"><Check size={14} className="text-[#62D984]" /> Free site survey</span>
-              <span className="inline-flex items-center gap-1.5"><Check size={14} className="text-[#62D984]" /> Subsidy filing included</span>
-              <span className="inline-flex items-center gap-1.5"><Check size={14} className="text-[#62D984]" /> 5-year service</span>
-            </div>
           </Reveal>
         </div>
       </section>
