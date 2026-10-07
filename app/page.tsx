@@ -24,7 +24,7 @@ import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { CtaBand, Kicker } from '@/components/site-chrome'
 import { AnimatedBar, CountUp, Magnetic, Marquee, Parallax, Reveal, ScrollWords, Spot, Stagger, Tilt } from '@/components/motion'
-import { Faq, Testimonials, TrustBar } from '@/components/ux-bits'
+import { Faq, Testimonials } from '@/components/ux-bits'
 import { VideoHero } from '@/components/video-hero'
 
 const TICKER = [
@@ -165,7 +165,6 @@ export default function HomePage() {
       <div className="marquee-fade border-y border-white/10 bg-[#072A45] py-3.5 text-white/75">
         <Marquee items={TICKER} duration={36} />
       </div>
-      <TrustBar />
 
       {/* 2 — ABOUT (Solor: 2 images + About us + checklist 2×2) */}
       <section className="relative overflow-hidden bg-white">

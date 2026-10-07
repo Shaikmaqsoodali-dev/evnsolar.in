@@ -51,24 +51,19 @@ export function VideoHero() {
       >
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
-      {/* Lightened scrims — background video/photo stays clearly visible, text zone kept readable */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#072A45]/85 via-[#072A45]/40 to-[#072A45]/5" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#072A45]/55 via-transparent to-transparent" />
+      {/* Light scrims — video stays clearly visible, text zone kept readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#072A45]/70 via-[#072A45]/28 to-[#072A45]/5" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#072A45]/40 via-transparent to-transparent" />
       <div ref={glow} aria-hidden className="hero-glow left-1/2 top-1/3 z-[1] opacity-0" />
       {/* brand sweep hairline at hero base */}
       <div aria-hidden className="absolute inset-x-0 bottom-0 z-[3] h-[2px]" style={{ background: 'linear-gradient(90deg, #0E8ACB 0%, #43A85C 55%, #7BC24A 100%)' }} />
 
       <div className="relative z-[2] mx-auto max-w-7xl px-6 pb-14 pt-14 sm:pb-20 sm:pt-20">
         <Reveal variant="fade" delay={50}>
-          <div className="flex flex-wrap items-center gap-3">
-            <p className="micro inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[#62D984] backdrop-blur-md">
-              <span className="live-dot size-2 rounded-full bg-[#62D984]" aria-hidden />
-              Welcome to EVN Solar
-            </p>
-            <p className="micro hidden items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-white/70 backdrop-blur-md sm:inline-flex">
-              MNRE-aligned · Nashik — Malegaon
-            </p>
-          </div>
+          <p className="micro inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[#62D984] backdrop-blur-md">
+            <span className="live-dot size-2 rounded-full bg-[#62D984]" aria-hidden />
+            Welcome to EVN Solar
+          </p>
         </Reveal>
 
         <p aria-hidden className="vertical-micro absolute right-6 top-24 hidden text-white/40 xl:block">
@@ -92,7 +87,7 @@ export function VideoHero() {
               </p>
             </Reveal>
             <Reveal variant="up" delay={460}>
-              <div className="mt-7 flex flex-wrap items-center gap-3">
+              <div className="mt-7 flex flex-wrap gap-3">
                 <Magnetic>
                   <Link
                     href="/services"
@@ -111,23 +106,6 @@ export function VideoHero() {
                     Contact now
                   </Link>
                 </Magnetic>
-                <a href="#calculator" className="scroll-cue ml-1 hidden text-white/60 transition-colors hover:text-white md:inline-flex">
-                  <span className="cue-line" aria-hidden />
-                  <span className="cue-text">Scroll</span>
-                </a>
-              </div>
-              {/* live proof strip */}
-              <div className="mt-8 flex max-w-lg items-stretch gap-px overflow-hidden rounded-xl border border-white/15 bg-white/10 backdrop-blur-md">
-                {[
-                  ['1,607 MWp', 'delivered'],
-                  ['₹78k', 'subsidy help'],
-                  ['68%', 'avg. bill cut'],
-                ].map(([v, l]) => (
-                  <div key={l} className="flex-1 bg-[#051E33]/40 px-4 py-3 text-center">
-                    <p className="text-[16px] font-bold text-white" style={{ fontFamily: 'var(--font-display)' }}>{v}</p>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#62D984]" style={{ fontFamily: 'var(--font-display)' }}>{l}</p>
-                  </div>
-                ))}
               </div>
             </Reveal>
           </div>
