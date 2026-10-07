@@ -892,3 +892,240 @@ img {
   .stat-number { font-size: clamp(34px, 10vw, 44px); }
   .quote-ed { font-size: 14.5px; }
 }
+
+/* ============================================================
+   AGENCY UX LAYER — visual/interactive polish only.
+   NOTE: no font-family / font-weight / font-size / letter-spacing
+   / line-height / text-transform rules are changed here.
+   ============================================================ */
+
+/* Custom scrollbar — navy track, green thumb */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #EDF3F7; }
+::-webkit-scrollbar-thumb { background: #072A45; border-radius: 8px; border: 2px solid #EDF3F7; }
+::-webkit-scrollbar-thumb:hover { background: #33A94F; }
+
+/* Film grain overlay for dark cinematic panels (pointer-safe) */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Spotlight cards — radial highlight follows cursor via --mx/--my */
+.spot {
+  position: relative;
+}
+.spot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    rgb(98 217 132 / 0.14),
+    transparent 65%
+  );
+}
+.spot:hover::after { opacity: 1; }
+
+/* Gradient hairline — 1px brand sweep for section / card tops */
+.hairline {
+  position: relative;
+}
+.hairline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(98 217 132 / 0.7), rgb(15 136 199 / 0.5), transparent);
+  pointer-events: none;
+}
+
+/* Glass treatments */
+.glass-dark {
+  background: rgb(5 30 51 / 0.62);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgb(255 255 255 / 0.14);
+}
+.glass-light {
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgb(255 255 255 / 0.7);
+}
+
+/* Deep agency panel — inner ring + layered shadow + glow */
+.agency-panel {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.12),
+    inset 0 0 0 1px rgb(255 255 255 / 0.06),
+    0 30px 80px -30px rgb(3 18 30 / 0.55);
+}
+.agency-card {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.7),
+    0 1px 2px rgb(7 42 69 / 0.05),
+    0 18px 44px -22px rgb(7 42 69 / 0.22);
+}
+.agency-card:hover {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.7),
+    0 2px 4px rgb(7 42 69 / 0.06),
+    0 26px 60px -22px rgb(7 42 69 / 0.32);
+}
+
+/* Marquee edge fade so ticker melts into background */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+/* Background patterns (layout texture, no type impact) */
+.bg-grid-dark {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.bg-grid-light {
+  background-image:
+    linear-gradient(rgb(7 42 69 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(7 42 69 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.bg-dots {
+  background-image: radial-gradient(rgb(7 42 69 / 0.14) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Pressable — tactile button feedback */
+.press { transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease; }
+.press:active { transform: scale(0.97); }
+
+/* Image treatment — slow zoom + veil on hover */
+.img-zoom img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease; }
+.img-zoom:hover img { transform: scale(1.06); }
+
+/* Process connector rail (desktop) */
+.process-rail { position: relative; }
+@media (min-width: 768px) {
+  .process-rail::before {
+    content: '';
+    position: absolute;
+    top: 27px;
+    left: 12%;
+    right: 12%;
+    border-top: 2px dashed #C9D8E4;
+    pointer-events: none;
+  }
+}
+
+/* Pulsing live dot */
+.live-dot { position: relative; display: inline-flex; }
+.live-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 1px solid rgb(98 217 132 / 0.7);
+  animation: live-ring 2s ease-out infinite;
+}
+@keyframes live-ring {
+  from { transform: scale(0.6); opacity: 1; }
+  to { transform: scale(1.5); opacity: 0; }
+}
+
+/* Calculator range — custom track + thumb */
+.calc-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #33A94F var(--fill, 10%), #D9E2EA var(--fill, 10%));
+  outline-offset: 4px;
+}
+.calc-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: #072A45;
+  border: 3px solid #62D984;
+  box-shadow: 0 6px 18px rgb(7 42 69 / 0.4);
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+.calc-range::-webkit-slider-thumb:hover { transform: scale(1.12); }
+.calc-range::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.05); }
+.calc-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #072A45;
+  border: 3px solid #62D984;
+  box-shadow: 0 6px 18px rgb(7 42 69 / 0.4);
+  cursor: grab;
+}
+
+/* FAQ accordion motion */
+.faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+details[open] .faq-a { grid-template-rows: 1fr; }
+.faq-a > div { overflow: hidden; }
+
+/* Testimonial slide */
+.tst-slide { transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.tst-dot { transition: all 0.3s ease; }
+
+/* Hero mouse glow */
+.hero-glow {
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgb(98 217 132 / 0.16) 0%, transparent 65%);
+  filter: blur(10px);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease;
+}
+
+/* Floating badge drift */
+@keyframes float-y {
+  from { transform: translateY(-6px); }
+  to { transform: translateY(6px); }
+}
+.float-y { animation: float-y 5s ease-in-out infinite alternate; }
+
+/* Logo wall — pause on hover, edge fade */
+.logo-wall { -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+
+/* Animated bar fill */
+.bar-fill { transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* Card arrow slide */
+.arrow-slide { transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), background-color 0.3s ease, color 0.3s ease; }
+.group:hover .arrow-slide { transform: translate(2px, -2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot::after, .float-y, .hero-glow { animation: none; display: none; }
+  .hero-glow { display: none; }
+  .bar-fill, .tst-slide, .faq-a { transition: none; }
+  .calc-range::-webkit-slider-thumb { transition: none; }
+}

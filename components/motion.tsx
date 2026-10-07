@@ -284,6 +284,101 @@ export function ScrollProgress({ className }: { className?: string }) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Spot — spotlight wrapper: sets --mx/--my so .spot::after follows   */
+/* the cursor. Visual only, no layout shift. Fine pointers only.       */
+/* ------------------------------------------------------------------ */
+export function Spot({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', `${e.clientX - r.left}px`);
+    el.style.setProperty('--my', `${e.clientY - r.top}px`);
+  };
+
+  return (
+    <div ref={ref} onMouseMove={onMove} className={cn('spot', className)}>
+      {children}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Magnetic — subtle pull toward cursor for CTAs. Fine pointers only.  */
+/* strength: px of max offset (6–12 recommended).                       */
+/* ------------------------------------------------------------------ */
+export function Magnetic({
+  children,
+  className,
+  strength = 8,
+}: {
+  children: ReactNode;
+  className?: string;
+  strength?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el || prefersReducedMotion()) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    const r = el.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `translate3d(${(px * strength).toFixed(1)}px, ${(py * strength).toFixed(1)}px, 0)`;
+  };
+
+  const reset = () => {
+    if (ref.current) ref.current.style.transform = '';
+  };
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={onMove}
+      onMouseLeave={reset}
+      className={cn('inline-block transition-transform duration-300 ease-out will-change-transform', className)}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* AnimatedBar — fills to `value%` when scrolled into view.            */
+/* ------------------------------------------------------------------ */
+export function AnimatedBar({
+  value,
+  className,
+}: {
+  value: number;
+  className?: string;
+}) {
+  const { ref, seen } = useInView<HTMLDivElement>(0.4);
+  return (
+    <div ref={ref} className={cn('h-2 overflow-hidden rounded-full bg-white/15', className)}>
+      <div
+        className="bar-fill h-full rounded-full"
+        style={{
+          width: seen ? `${value}%` : '0%',
+          background: 'linear-gradient(90deg,#33A94F,#62D984)',
+          boxShadow: seen ? '0 0 16px rgb(98 217 132 / 0.6)' : undefined,
+        }}
+      />
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /* Tilt — pointer-driven 3D card tilt. Fine pointers only, subtle.     */
 /* ------------------------------------------------------------------ */
 export function Tilt({

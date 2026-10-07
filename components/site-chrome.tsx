@@ -182,13 +182,17 @@ export function CtaBand() {
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         {/* SOLOR CTA banner — deep navy panel, brand-green accents, “Have Questions? Call Us” pattern */}
-        <div className="relative grid gap-8 overflow-hidden bg-[#072A45] p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 12 }}>
+        <div className="agency-panel grain relative grid gap-8 overflow-hidden bg-[#072A45] p-8 text-white sm:p-12 lg:grid-cols-[1.5fr_1fr] lg:items-center" style={{ borderRadius: 16 }}>
+          <div aria-hidden className="bg-grid-dark absolute inset-0 opacity-60" />
           <div className="orb left-[-8%] top-[-30%] size-72 bg-[#62D984]/20" aria-hidden />
+          <div className="orb orb-2 right-[-6%] bottom-[-40%] size-80 bg-[#0F88C7]/20" aria-hidden />
+          <div aria-hidden className="absolute inset-x-8 top-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent, rgb(98 217 132 / 0.8), transparent)' }} />
           <div className="relative">
-            <p className="micro text-[#62D984]">
+            <p className="micro inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[#62D984]">
+              <span className="live-dot size-1.5 rounded-full bg-[#62D984]" aria-hidden />
               Have questions? Call us +91 70405 06295
             </p>
-            <h2 className="sx sx-lg mt-3 max-w-xl text-white">
+            <h2 className="sx sx-lg mt-4 max-w-xl text-white">
               Send us your electricity bill. We&rsquo;ll size the right system.
             </h2>
             <p className="mt-3 max-w-xl text-[15px] font-normal leading-relaxed text-white/70">
@@ -196,16 +200,21 @@ export function CtaBand() {
               system size, generation estimate and subsidy breakup, usually within one
               working day.
             </p>
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-white/60">
+              <span>✓ Free survey</span>
+              <span>✓ Subsidy filing</span>
+              <span>✓ 5-year service</span>
+            </div>
           </div>
           <div className="relative flex flex-col gap-3 lg:items-end">
             <Link
               href="/contact"
-              className="btn-shine inline-flex items-center justify-center gap-2 rounded-lg bg-[#62D984] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white"
+              className="btn-shine press inline-flex items-center justify-center gap-2 rounded-lg bg-[#62D984] px-7 py-3.5 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#072A45] transition-colors hover:bg-white"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               Get a free site assessment <BrandArrow size={17} />
             </Link>
-            <a href="tel:+917040506295" className="text-[13px] uppercase tracking-[0.1em] text-white/60 hover:text-white" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
+            <a href="tel:+917040506295" className="press inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-[13px] uppercase tracking-[0.1em] text-white/80 backdrop-blur transition-colors hover:border-white/40 hover:text-white" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
               or call +91 70405 06295
             </a>
           </div>
