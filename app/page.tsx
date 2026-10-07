@@ -23,7 +23,7 @@ import {
 import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { CtaBand, Kicker } from '@/components/site-chrome'
-import { AnimatedBar, CountUp, Headline, Magnetic, Marquee, Parallax, Reveal, ScrollWords, Spot, Stagger, Tilt } from '@/components/motion'
+import { AnimatedBar, CountUp, Magnetic, Marquee, Parallax, Reveal, ScrollWords, Spot, Stagger, Tilt } from '@/components/motion'
 import { Faq, Testimonials } from '@/components/ux-bits'
 import { VideoHero } from '@/components/video-hero'
 
@@ -362,7 +362,7 @@ export default function HomePage() {
               <span className="mr-0 inline-block size-2 rounded-full bg-[#62D984]" aria-hidden />
               Energy progress
             </p>
-            <Headline text="Best Solution For Your *Solar Energy*" className="sx sx-lg mt-4 text-white" />
+            <h2 className="sx sx-lg mt-4 text-white">Best Solution For Your Solar Energy</h2>
             <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-white/65">
               Every site is metered and reported — generation, savings and charger use visible in one app.
             </p>
@@ -399,7 +399,7 @@ export default function HomePage() {
               <span className="live-dot size-2 rounded-full bg-[#62D984]" aria-hidden />
               Ready when you are · replies in 1 working day
             </p>
-            <Headline text="Have Questions? *Call Us* +91 70405 06295" className="sx sx-xl mx-auto mt-4 max-w-3xl text-white" />
+            <h2 className="sx sx-xl mx-auto mt-4 max-w-3xl text-white">Have Questions? Call Us +91 70405 06295</h2>
             <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-white/75">
               Send your bill and site photos — receive size, generation and subsidy breakup within one working day.
             </p>

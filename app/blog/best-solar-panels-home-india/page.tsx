@@ -2,7 +2,7 @@
 import { Check, Sun } from 'lucide-react'
 import { BrandArrow } from '@/components/brand-arrow'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
-import { Headline, Reveal, Stagger } from '@/components/motion'
+import { Reveal, Stagger } from '@/components/motion'
 
 export const metadata = {
   title: 'Best Solar Panels for Home in India | 10 Options Explained | EVN Solar',
@@ -170,9 +170,9 @@ export default function SolarPanelsGuidePost() {
         {/* How to choose */}
         <Reveal>
           <div className="mt-10 bg-[#072A45] p-7 text-white sm:p-9" style={{ borderRadius: 10 }}>
-            <Headline as="h2" stagger={55} className="sx sx-md mt-3 text-white">
+            <h2 className="sx sx-md mt-3 text-white">
               Five questions <em>worth asking.</em>
-            </Headline>
+            </h2>
             <ul className="mt-6 space-y-3">
               {CHECKLIST.map((c) => (
                 <li key={c} className="flex items-start gap-3 text-[14.5px] font-normal leading-relaxed text-white/80">

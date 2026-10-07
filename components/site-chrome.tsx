@@ -43,7 +43,7 @@ export function FacebookIcon({ size = 15, className }: { size?: number; classNam
 }
 import { Breadcrumbs } from '@/components/ux-bits'
 import { MotionGrid } from '@/components/ui/motion-grid'
-import { Headline, Reveal } from '@/components/motion'
+import { Reveal } from '@/components/motion'
 
 export function Kicker({ children, center = false }: { children: string; center?: boolean }) {
   return (
@@ -79,9 +79,9 @@ export function SectionHeading({
   return (
     <div className={`max-w-2xl ${alignCls}`}>
       {kicker ? <Kicker center={a === 'center'}>{kicker}</Kicker> : null}
-      <Headline as="h2" stagger={55} className={`sx sx-${size} mt-3 text-[#072A45]`}>
+      <h2 className={`sx sx-${size} mt-3 text-[#072A45]`}>
         {title}
-      </Headline>
+      </h2>
       {lede && (
         <p className={`mt-4 text-[15px] font-normal leading-relaxed text-[#54687A] ${a === 'center' ? 'mx-auto' : ''}`}>
           {lede}
@@ -130,14 +130,11 @@ export function PageIntro({
               {kicker}
             </p>
           </Reveal>
-          <Headline
-            as="h1"
-            stagger={55}
-            base={150}
-            className="page-hero mt-5 max-w-4xl text-white [&_em]:text-[#62D984]"
-          >
-            {title}
-          </Headline>
+          <Reveal variant="blur" delay={150}>
+            <h1 className="page-hero mt-5 max-w-4xl text-white [&_em]:text-[#62D984]">
+              {title}
+            </h1>
+          </Reveal>
           {lede && (
             <Reveal variant="up" delay={250}>
               <p className="mt-5 max-w-2xl text-[16px] font-normal leading-relaxed text-white/75">{lede}</p>
@@ -165,14 +162,11 @@ export function PageIntro({
         <Reveal variant="up" delay={70}>
           <Kicker>{kicker}</Kicker>
         </Reveal>
-        <Headline
-          as="h1"
-          stagger={55}
-          base={150}
-          className="page-hero mt-5 max-w-4xl text-[#072A45]"
-        >
-          {title}
-        </Headline>
+        <Reveal variant="blur" delay={150}>
+          <h1 className="page-hero mt-5 max-w-4xl text-[#072A45]">
+            {title}
+          </h1>
+        </Reveal>
         {lede && (
           <Reveal variant="up" delay={250}>
             <p className="mt-5 max-w-2xl text-[16px] font-normal leading-relaxed text-[#54687A]">{lede}</p>
@@ -198,11 +192,9 @@ export function CtaBand() {
               <span className="live-dot size-1.5 rounded-full bg-[#62D984]" aria-hidden />
               Have questions? Call us +91 70405 06295
             </p>
-            <Headline
-              text="Send us your bill. We'll size the *right system.*"
-              stagger={55}
-              className="sx sx-lg mt-4 max-w-xl text-white"
-            />
+            <h2 className="sx sx-lg mt-4 max-w-xl text-white">
+              Send us your electricity bill. We&rsquo;ll size the right system.
+            </h2>
             <p className="mt-3 max-w-xl text-[15px] font-normal leading-relaxed text-white/70">
               Share monthly units, terrace or parking photos, and any EV plans. You receive a
               system size, generation estimate and subsidy breakup, usually within one
