@@ -223,9 +223,34 @@ const FOOT_COLS: [string, [string, string][]][] = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#072A45] text-white">
+    <footer
+      className="relative overflow-hidden text-white"
+      style={{
+        background:
+          'linear-gradient(160deg, #041824 0%, #062A44 45%, #073A5C 78%, #0A4A73 100%)',
+      }}
+    >
+      {/* logo-colour ambience — solar-blue panel glow + leaf-green ray glow */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute left-[-12%] top-[-30%] size-[440px] rounded-full blur-[90px]"
+          style={{ background: 'radial-gradient(circle, rgb(14 138 203 / 0.35) 0%, transparent 70%)' }}
+        />
+        <div
+          className="absolute right-[-10%] bottom-[-35%] size-[460px] rounded-full blur-[90px]"
+          style={{ background: 'radial-gradient(circle, rgb(67 168 92 / 0.28) 0%, transparent 70%)' }}
+        />
+        <div
+          className="absolute right-[12%] top-[-20%] size-[220px] rounded-full blur-[80px]"
+          style={{ background: 'radial-gradient(circle, rgb(123 194 74 / 0.16) 0%, transparent 70%)' }}
+        />
+        {/* dark veil for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#041824]/55 via-transparent to-transparent" />
+      </div>
+      {/* logo sweep hairline — panel blue → leaf green → bolt lime */}
+      <div aria-hidden className="absolute inset-x-0 top-0 h-[3px]" style={{ background: 'linear-gradient(90deg, #0E8ACB 0%, #43A85C 55%, #7BC24A 100%)' }} />
       {/* SOLOR footer top strip — Generate / Reap / Heal */}
-      <div className="border-b border-white/10">
+      <div className="relative border-b border-white/15 bg-white/[0.05] backdrop-blur-[2px]">
         <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 sm:grid-cols-3">
           {[
             ['Generate Your Own Power', 'Rooftop, ground & carport plants sized to your bill.'],
@@ -233,20 +258,26 @@ export function SiteFooter() {
             ['Heal the World', 'Every kW cuts grid draw and tailpipe kilometres.'],
           ].map(([t, d]) => (
             <div key={t} className="flex items-start gap-4">
-              <span className="mt-1 inline-block size-2.5 shrink-0 rounded-full bg-[#62D984]" aria-hidden />
+              <span
+                className="mt-1.5 inline-block size-2.5 shrink-0 rounded-full"
+                style={{ background: '#43A85C', boxShadow: '0 0 12px 2px rgb(67 168 92 / 0.8)' }}
+                aria-hidden
+              />
               <div>
-                <p className="text-[16px] font-bold uppercase tracking-[0.04em]" style={{ fontFamily: 'var(--font-display)' }}>{t}</p>
-                <p className="mt-1 text-[13.5px] leading-relaxed text-white/60">{d}</p>
+                <p className="text-[16px] font-bold uppercase tracking-[0.04em] text-white drop-shadow-[0_1px_8px_rgb(0_0_0/0.5)]" style={{ fontFamily: 'var(--font-display)' }}>{t}</p>
+                <p className="mt-1 text-[13.5px] leading-relaxed text-white/75">{d}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-6 pb-10 pt-14">
+      <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-14">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr]">
           <div>
             <div className="flex items-center gap-3">
-              <img src={LOGO_URL} alt="EVN Solar" className="h-16 w-auto object-contain" />
+              <span className="grid place-items-center rounded-2xl bg-white px-3 py-2 shadow-[0_8px_30px_rgb(0_0_0/0.35)]">
+                <img src={LOGO_URL} alt="EVN Solar" className="h-12 w-auto object-contain" />
+              </span>
               <div className="leading-none">
                 <p className="text-[19px] font-bold uppercase tracking-[0.02em]" style={{ fontFamily: 'var(--font-display)' }}>EV&amp;SOLAR</p>
                 <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-white/50" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
@@ -254,33 +285,33 @@ export function SiteFooter() {
                 </p>
               </div>
             </div>
-            <p className="mt-5 max-w-sm text-[14px] font-normal leading-relaxed text-white/60">
+            <p className="mt-5 max-w-sm text-[14px] font-normal leading-relaxed text-white/75">
               Green energy is the future — EVN designs rooftop solar, ground-mounted plants,
               solar carports and EV charging as one accountable system across Maharashtra.
             </p>
             <div className="mt-6 space-y-1.5 text-[13px]">
-              <p><a href="mailto:info@evnsolar.in" className="text-white/75 hover:text-[#62D984]">info@evnsolar.in</a></p>
-              <p><a href="tel:+917040506295" className="text-white/75 hover:text-[#62D984]">+91 70405 06295</a></p>
-              <p className="text-white/45">79 Mahada Colony, Malegaon 423203</p>
+              <p><a href="mailto:info@evnsolar.in" className="font-medium text-white hover:text-[#7BC24A]">info@evnsolar.in</a></p>
+              <p><a href="tel:+917040506295" className="font-medium text-white hover:text-[#7BC24A]">+91 70405 06295</a></p>
+              <p className="text-white/60">79 Mahada Colony, Malegaon 423203</p>
             </div>
             <div className="mt-5 flex flex-wrap gap-2.5">
               <a
                 href="https://www.instagram.com/evnsolar.in/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 border border-white/15 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.06em] text-white/75 transition-colors hover:border-[#62D984] hover:text-white"
-                style={{ borderRadius: 8, fontFamily: 'var(--font-display)' }}
+                className="inline-flex items-center gap-2.5 border border-white/20 bg-white/10 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.06em] text-white backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-[#43A85C] hover:bg-[#43A85C] hover:text-[#041824] hover:shadow-[0_8px_24px_rgb(67_168_92/0.45)]"
+                style={{ borderRadius: 10, fontFamily: 'var(--font-display)' }}
               >
-                <InstagramIcon size={15} className="text-[#62D984]" /> IG
+                <InstagramIcon size={15} /> IG
               </a>
               <a
                 href="https://www.facebook.com/evsolar.in"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 border border-white/15 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.06em] text-white/75 transition-colors hover:border-[#62D984] hover:text-white"
-                style={{ borderRadius: 8, fontFamily: 'var(--font-display)' }}
+                className="inline-flex items-center gap-2.5 border border-white/20 bg-white/10 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.06em] text-white backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-[#43A85C] hover:bg-[#43A85C] hover:text-[#041824] hover:shadow-[0_8px_24px_rgb(67_168_92/0.45)]"
+                style={{ borderRadius: 10, fontFamily: 'var(--font-display)' }}
               >
-                <FacebookIcon size={15} className="text-[#62D984]" /> FB
+                <FacebookIcon size={15} /> FB
               </a>
             </div>
           </div>
@@ -288,12 +319,13 @@ export function SiteFooter() {
             {FOOT_COLS.map(([title, links]) => (
               <div key={title}>
                 <p className="foot-title text-white">{title}</p>
+                <span aria-hidden className="mt-2 block h-[2px] w-8 rounded-full" style={{ background: 'linear-gradient(90deg, #0E8ACB, #43A85C)' }} />
                 <ul className="mt-4 space-y-2.5">
                   {links.map(([label, href]) => (
                     <li key={label}>
-                      <Link href={href} className="foot-link group inline-flex items-center gap-1 text-white/65 hover:text-[#62D984]">
+                      <Link href={href} className="foot-link group inline-flex items-center gap-1 text-white/75 transition-colors hover:text-[#7BC24A]">
                         {label}
-                        <BrandArrow direction="up-right" size={13} className="text-[#62D984] opacity-0 transition-opacity group-hover:opacity-70" />
+                        <BrandArrow direction="up-right" size={13} className="text-[#7BC24A] opacity-0 transition-opacity group-hover:opacity-100" />
                       </Link>
                     </li>
                   ))}
@@ -302,7 +334,7 @@ export function SiteFooter() {
             ))}
           </div>
         </div>
-        <div className="foot-copy mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-white/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="foot-copy relative mt-12 flex flex-col gap-2 border-t border-white/15 bg-black/10 pt-6 text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 EVN Solar Energy Solutions Pvt. Ltd. All rights reserved.</p>
           <p>Works: 79 Mahada Colony, Malegaon 423203, Maharashtra, India. MNRE-aligned, 5-year service</p>
         </div>
