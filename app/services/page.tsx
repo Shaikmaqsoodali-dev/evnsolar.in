@@ -25,7 +25,7 @@ const SERVICES = [
     points: ['Load + shadow study before sizing', 'Net-metering or battery-ready design', 'Monitoring app with 5-year service'],
   },
   {
-    img: IMG.ground, n: '02', icon: Factory, badge: 'EPC', tag: 'Turnkey EPC, up to 1,607 MWp', t: 'Solar EPC services',
+    img: IMG.epc, n: '02', icon: Factory, badge: 'EPC', tag: 'Turnkey EPC, up to 1,607 MWp', t: 'Solar EPC services',
     d: 'We manage every aspect of solar project development, from initial design and procurement to final construction. Focus on quality assurance ensures each project meets the highest standards for performance and longevity.',
     points: ['Engineering, procurement, construction', 'Land liaison — 5,700+ acres delivered', 'Testing, commissioning & O&M'],
   },

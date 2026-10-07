@@ -14,6 +14,7 @@ export const IMG = {
   panel: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790770236/Maintenance_upgrades_2.png',
   engineer1: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790780165/installing-solar-panels.webp',
   engineer2: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80',
+  epc: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791364212/5b98dd50-36eb-4cd1-b53b-f64691889ce7.png',
   blog1: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=800&q=80',
   blog2: 'https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&w=800&q=80',
   blog3: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=800&q=80',

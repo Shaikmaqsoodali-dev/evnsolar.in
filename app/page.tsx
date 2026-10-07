@@ -39,7 +39,7 @@ const TICKER = [
 
 const SERVICES = [
   { img: IMG.rooftop, icon: Home, badge: 'Rooftop', t: 'On/Off-Grid Rooftop', d: 'On-grid for savings, off-grid for independence — sized to bill + shadow.', href: '/services' },
-  { img: IMG.engineer2, icon: Factory, badge: 'EPC', t: 'Solar EPC', d: 'Turnkey design, procurement & construction — 1,607 MWp delivered.', href: '/services' },
+  { img: IMG.epc, icon: Factory, badge: 'EPC', t: 'Solar EPC', d: 'Turnkey design, procurement & construction — 1,607 MWp delivered.', href: '/services' },
   { img: IMG.panel, icon: Sun, badge: 'PV + Inverter', t: 'PV Panels & Inverters', d: 'Tier-1 PV, inverters + UPS for continuity and outage protection.', href: '/services' },
   { img: IMG.fleetDepot, icon: BatteryCharging, badge: 'Hybrid', t: 'Hybrid Power Packs', d: 'Solar + grid backup for uninterrupted supply in any environment.', href: '/services' },
   { img: IMG.ground, icon: Gauge, badge: 'MPPT', t: 'Charge Controllers', d: 'MPPT regulation that protects batteries and lifts harvest.', href: '/services' },
