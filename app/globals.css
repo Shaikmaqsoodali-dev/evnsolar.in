@@ -279,6 +279,26 @@ input[type='button'],
   color: var(--solor-accent);
 }
 
+/* Hero-tight: 3 balanced lines (Powering the / Future With / Renewable.)
+   Prevents widows like "With" alone + tighter leading so stacked lines read as one block. */
+.hero-display.hero-tight {
+  font-size: clamp(48px, 6.8vw, 92px);
+  line-height: 1.02em;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.hero-display.hero-tight em {
+  font-size: 1em;
+  letter-spacing: -0.035em;
+  padding-right: 0;
+}
+.hero-display.hero-tight .line-mask {
+  padding-top: 0.05em;
+  padding-bottom: 0.12em;
+  margin-top: -0.05em;
+  margin-bottom: -0.05em;
+}
+
 /* 1b. SUBPAGE HERO — Poppins ExtraBold Italic, tight. */
 .page-hero {
   font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;

@@ -55,11 +55,12 @@ export function VideoHero() {
         </p>
 
         <ScrollFade distance={110} fade={0.6}>
-        <div className="mt-8 grid items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
+        <div className="mt-6 grid items-end gap-10 lg:grid-cols-[1.6fr_0.9fr]">
           <div>
-              <h1 className="hero-display text-white">
-                <span className="line-mask"><span style={{ animationDelay: '120ms' }}>Powering the Future</span></span>
-                <span className="line-mask"><span style={{ animationDelay: '230ms' }}>With <em>Renewable.</em></span></span>
+              <h1 className="hero-display hero-tight text-white">
+                <span className="line-mask"><span style={{ animationDelay: '120ms' }}>Powering the</span></span>
+                <span className="line-mask"><span style={{ animationDelay: '230ms' }}>Future With</span></span>
+                <span className="line-mask"><span style={{ animationDelay: '340ms' }}><em>Renewable.</em></span></span>
               </h1>
             <Reveal variant="up" delay={320}>
               <p
