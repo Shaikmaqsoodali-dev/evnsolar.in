@@ -13,7 +13,7 @@ export const IMG = {
   carport: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790769254/csm_Solar-Carports-Header.webp',
   panel: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790770236/Maintenance_upgrades_2.png',
   engineer1: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790780165/installing-solar-panels.webp',
-  engineer2: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80',
+  engineer2: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791308854/46b6b781c9d092f11160bace7daec4e6.jpg',
   epc: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791364212/5b98dd50-36eb-4cd1-b53b-f64691889ce7.png',
   whyEfficiency: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791373600/01_Efficiency_and_Power.jpg',
   whyTrust: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791373601/02_Trust_and_Warranty.jpg',
