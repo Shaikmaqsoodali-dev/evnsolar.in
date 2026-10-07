@@ -120,7 +120,7 @@ export default function ServicesPage() {
             <Tilt key={t} className="h-full">
             <article className="group lift flex h-full flex-col overflow-hidden border border-[#D9E2EA] bg-white hover:border-[#62D984]" style={{ borderRadius: 10 }}>
               <div className="photo-frame relative overflow-hidden">
-                <img src={img} alt={`${t} — ${badge} system photo`} className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                <img src={img} alt={`${t} — ${badge} system photo`} className="aspect-[16/9] w-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]" />
                 <span aria-hidden className="photo-scrim" />
                 <span className="card-cat card-cat--on-dark absolute left-5 top-5 z-[2] bg-[#072A45] px-3 py-1.5" style={{ borderRadius: 6 }}>{tag}</span>
                 <span className="photo-caption" style={{ paddingLeft: '1.25rem', paddingRight: '1.25rem' }}>

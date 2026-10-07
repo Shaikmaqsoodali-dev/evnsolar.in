@@ -210,7 +210,7 @@ export default function HomePage() {
               <Tilt key={t} className="h-full">
                 <Link href={href} className="group lift block h-full overflow-hidden rounded-xl border border-[#D9E2EA] bg-white transition-shadow hover:shadow-[0_14px_40px_rgba(7,42,69,0.12)]">
                   <div className="photo-frame relative overflow-hidden">
-                    <img src={img} alt={`${t} — ${badge} installation photo`} className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+                    <img src={img} alt={`${t} — ${badge} installation photo`} className="aspect-[16/10] w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.05]" />
                     <span aria-hidden className="photo-scrim" />
                     <span className="photo-badge photo-badge--top" aria-hidden>
                       <Icon size={15} strokeWidth={2.2} />
