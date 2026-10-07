@@ -60,10 +60,10 @@ const BARS = [
 ]
 
 const WHY = [
-  { img: IMG.panel, icon: Zap, badge: 'Output', t: 'Efficiency & Power', d: 'TOPCon arrays to 23%+ efficiency, sized from real shadow data.' },
-  { img: IMG.engineer1, icon: ShieldCheck, badge: 'Warranty', t: 'Trust & Warranty', d: 'Written warranties, DISCOM liaison and 5-year service support.' },
-  { img: IMG.industrial, icon: Award, badge: 'Quality', t: 'High Quality Work', d: 'Galvanised structures, earthing and surge tests you receive in writing.' },
-  { img: IMG.evCharge, icon: Phone, badge: '24×7', t: '24×7 Support', d: 'Monitoring alerts plus call support across Nashik and Malegaon.' },
+  { img: IMG.whyEfficiency, icon: Zap, badge: 'Output', t: 'Efficiency & Power', d: 'TOPCon arrays to 23%+ efficiency, sized from real shadow data.' },
+  { img: IMG.whyTrust, icon: ShieldCheck, badge: 'Warranty', t: 'Trust & Warranty', d: 'Written warranties, DISCOM liaison and 5-year service support.' },
+  { img: IMG.whyQuality, icon: Award, badge: 'Quality', t: 'High Quality Work', d: 'Galvanised structures, earthing and surge tests you receive in writing.' },
+  { img: IMG.whySupport, icon: Phone, badge: '24×7', t: '24×7 Support', d: 'Monitoring alerts plus call support across Nashik and Malegaon.' },
 ]
 
 function SolarCalculator() {
