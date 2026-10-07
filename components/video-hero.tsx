@@ -51,10 +51,9 @@ export function VideoHero() {
       >
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
-      {/* Text-zone scrim — dark backing only behind the headline (left), video stays open on the right */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#04182B]/90 via-[#072A45]/55 to-[#072A45]/0" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#04182B]/50 via-transparent to-transparent" />
-      <div aria-hidden className="absolute left-[-12%] top-1/2 hidden h-[85%] w-[62%] -translate-y-1/2 rounded-full bg-[#04182B]/55 blur-[110px] lg:block" />
+      {/* Flat gradient scrims only — no blurred layers, video stays fully visible */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#04182B]/85 via-[#072A45]/45 to-[#072A45]/0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#04182B]/45 via-transparent to-transparent" />
       <div ref={glow} aria-hidden className="hero-glow left-1/2 top-1/3 z-[1] opacity-0" />
       {/* brand sweep hairline at hero base */}
       <div aria-hidden className="absolute inset-x-0 bottom-0 z-[3] h-[2px]" style={{ background: 'linear-gradient(90deg, #0E8ACB 0%, #43A85C 55%, #7BC24A 100%)' }} />
@@ -74,7 +73,7 @@ export function VideoHero() {
         <ScrollFade distance={110} fade={0.6}>
         <div className="mt-6 grid items-end gap-10 lg:grid-cols-[1.6fr_0.9fr]">
           <div>
-              <h1 className="hero-display hero-tight hero-clear text-white">
+              <h1 className="hero-display hero-tight text-white" style={{ textShadow: 'none' }}>
                 <span className="line-mask"><span style={{ animationDelay: '120ms' }}>Powering the</span></span>
                 <span className="line-mask"><span style={{ animationDelay: '230ms' }}>Future With</span></span>
                 <span className="line-mask"><span style={{ animationDelay: '340ms' }}><em>Renewable.</em></span></span>
