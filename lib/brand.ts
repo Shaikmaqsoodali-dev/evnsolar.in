@@ -19,9 +19,9 @@ export const IMG = {
   whyTrust: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791373601/02_Trust_and_Warranty.jpg',
   whyQuality: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791373602/03_High_Quality_Work.jpg',
   whySupport: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791373597/04_24x7_Support.jpg',
-  blog1: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=800&q=80',
-  blog2: 'https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&w=800&q=80',
-  blog3: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=800&q=80',
+  blog1: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1790769730/Maintenance_upgrades.png',
+  blog2: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791384332/Solar-Powered_EV_Charging_Station.png',
+  blog3: 'https://res.cloudinary.com/qxjpbgh6/image/upload/v1791384332/Renewable_Energy_Storage_Park.png',
 }
 
 export const NAV_LINKS: [string, string][] = [
