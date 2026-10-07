@@ -162,8 +162,10 @@ export default function HomePage() {
       {/* 1 — SOLOR HERO */}
       <VideoHero />
 
-      <div className="marquee-fade border-y border-white/10 bg-[#072A45] py-3.5 text-white/75">
-        <Marquee items={TICKER} duration={36} />
+      <div className="relative border-y border-white/10 bg-[#072A45] py-3.5 text-white/75">
+        <Marquee items={TICKER} duration={36} className="marquee-fade" />
+        <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#072A45] via-[#072A45]/70 to-transparent" />
+        <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#072A45] via-[#072A45]/70 to-transparent" />
       </div>
 
       {/* 2 — ABOUT (Solor: 2 images + About us + checklist 2×2) */}
