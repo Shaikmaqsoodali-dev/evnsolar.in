@@ -14,7 +14,7 @@ import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { PageIntro, CtaBand } from '@/components/site-chrome'
 import { Faq } from '@/components/ux-bits'
-import { Reveal, Stagger, Tilt } from '@/components/motion'
+import { Headline, Reveal, Stagger, Tilt } from '@/components/motion'
 
 export const metadata = { title: 'Solar Services | EVN Solar Energy Solutions', description: 'Turnkey solar EPC in Maharashtra: on/off-grid rooftop, ground-mounted plants, carports, inverters, storage and net-metering with DISCOM liaison and subsidy support.' }
 
@@ -177,7 +177,7 @@ export default function ServicesPage() {
       <section className="bg-[#072A45]">
         <div className="h-1" style={{ background: 'linear-gradient(90deg, #0F88C7 0%, #62D984 50%, #33A94F 100%)' }} aria-hidden />
         <div className="mx-auto max-w-7xl px-6 py-14">
-          <h2 className="sx sx-md max-w-2xl text-white">Included in every project.</h2>
+          <Headline text="Included in *every project.*" className="sx sx-md max-w-2xl text-white" />
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {['Earthing & lightning protection', 'Surge, MCB & MCCB protection', 'Cable routing & labelling', 'Generation & consumption monitoring', 'DISCOM & subsidy documentation', 'Handover training & manuals'].map((x) => (
               <p key={x} className="border border-white/10 bg-white/[0.06] px-5 py-4 text-[14px] font-medium text-white" style={{ borderRadius: 8 }}>{x}</p>
@@ -187,7 +187,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
-        <h2 className="section-title mt-3 text-[26px] text-[#072A45] sm:text-[32px]">Before you ask.</h2>
+        <Headline text="Before you *ask.*" className="section-title mt-3 text-[26px] text-[#072A45] sm:text-[32px]" />
         <div className="mt-8">
           <Faq
             items={[

@@ -19,7 +19,7 @@ import {
 import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
 import { PageIntro, SectionHeading, CtaBand } from '@/components/site-chrome'
-import { Parallax, Reveal, Stagger } from '@/components/motion'
+import { Headline, Parallax, Reveal, Stagger } from '@/components/motion'
 
 export const metadata = {
   title: 'About EVN Solar | Powering a Smarter, Cleaner Future',
@@ -397,9 +397,9 @@ export default function AboutPage() {
                     <span className="inline-block h-[2px] w-8 bg-[#62D984]" aria-hidden />
                     Our mission
                   </p>
-                  <h2 className="sx sx-md mt-4 text-white">
+                  <Headline as="h2" stagger={55} className="sx sx-md mt-4 text-white">
                     Accelerating the shift <em>to clean energy.</em>
-                  </h2>
+                  </Headline>
                   <p className="mt-4 max-w-lg text-[15.5px] font-normal leading-[1.8] text-white/75">
                     To accelerate the transition towards clean energy by delivering
                     dependable solar and EV solutions that help customers reduce energy
@@ -436,9 +436,9 @@ export default function AboutPage() {
                     <span className="inline-block h-[2px] w-8 bg-[#0F88C7]" aria-hidden />
                     Our vision
                   </p>
-                  <h2 className="sx sx-md mt-4 text-[#072A45]">
+                  <Headline as="h2" stagger={55} shine={false} className="sx sx-md mt-4 text-[#072A45]">
                     A trusted partner <em className="editorial-accent text-[#0F88C7]">for clean growth.</em>
-                  </h2>
+                  </Headline>
                   <p className="mt-4 max-w-lg text-[15.5px] font-normal leading-[1.8] text-[#33474E]">
                     To become a trusted renewable-energy partner by combining innovative
                     technology, engineering excellence, and responsible energy solutions.

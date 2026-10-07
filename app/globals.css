@@ -214,6 +214,19 @@ input[type='button'],
     transform: none;
     transition: none;
   }
+  .hl .hl-word {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+  .hl-shine .hl-accent em {
+    animation: none;
+    background: none;
+    color: inherit;
+    -webkit-text-fill-color: currentcolor;
+  }
+  .hl-underline .hl-rule { transform: scaleX(1); transition: none; }
   .line-mask > span { transform: none; animation: none; }
   .scroll-cue .cue-line::after { animation: none; }
   .marquee-track,
@@ -801,6 +814,110 @@ img {
   line-height: inherit;
 }
 
+/* ---- Headline kinetic motion UX ---- */
+/* Word-mask rise + blur + tilt. Mask padding guards descenders (y/p/g). */
+.hl {
+  position: relative;
+  text-wrap: balance;
+}
+.hl .hl-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-top: 0.08em;
+  padding-bottom: 0.14em;
+  margin-top: -0.08em;
+  margin-bottom: -0.14em;
+}
+.hl .hl-word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translate3d(0, 110%, 0) rotate(5deg);
+  transform-origin: 0% 100%;
+  transition:
+    opacity 0.65s ease,
+    filter 0.75s ease,
+    transform 0.95s var(--ease-expo);
+  will-change: opacity, filter, transform;
+}
+.hl.is-in .hl-word {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) rotate(0deg);
+}
+/* Hover UX — headline lifts a hair, accent shines harder */
+.hl:hover .hl-word {
+  transition-duration: 0.55s, 0.5s, 0.65s;
+}
+/* Accent words: gradient shine sweep (loops subtly, pauses on reduced-motion) */
+.hl .hl-accent {
+  position: relative;
+}
+.hl .hl-accent em {
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 1.06em;
+  letter-spacing: -0.01em;
+  line-height: inherit;
+}
+.hl-shine .hl-accent em {
+  background: linear-gradient(
+    100deg,
+    var(--solor-accent-dark, #33a94f) 20%,
+    #8ff0b3 40%,
+    var(--solor-accent-dark, #33a94f) 60%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hl-shine 5.5s ease-in-out infinite;
+}
+.hl-shine .hl-accent em::selection {
+  color: #072a45;
+  background: #62d984;
+}
+@keyframes hl-shine {
+  0%, 55% { background-position: 115% 0; }
+  85%, 100% { background-position: -115% 0; }
+}
+.hl:hover.hl-shine .hl-accent em {
+  animation-duration: 2.6s;
+}
+/* Opt-out: custom-coloured accents (e.g. editorial-accent text-[#0F88C7]) keep their colour */
+.hl-shine .hl-accent.hl-plain em {
+  background: none;
+  -webkit-text-fill-color: currentcolor;
+  animation: none;
+}
+/* On dark backgrounds accent reads brighter */
+.bg-\[\#072A45\] .hl-shine .hl-accent em,
+.bg-\[\#051E33\] .hl-shine .hl-accent em,
+.text-white.hl-shine .hl-accent em {
+  background-image: linear-gradient(100deg, #62d984 20%, #d6ffe4 40%, #62d984 60%);
+}
+/* Optional underline draw */
+.hl-underline {
+  padding-bottom: 0.1em;
+}
+.hl-underline .hl-rule {
+  display: block;
+  height: 3px;
+  width: min(180px, 40%);
+  margin-top: 0.5em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0e8acb, #43a85c, #7bc24a);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.9s var(--ease-expo) 0.35s;
+}
+.hl-underline.is-in .hl-rule,
+.hl-underline .hl-rule.is-in {
+  transform: scaleX(1);
+}
+
 /* Scroll-linked fade/rise */
 .scroll-fade {
   will-change: opacity, transform, filter;
@@ -1128,4 +1245,5 @@ details[open] .faq-a { grid-template-rows: 1fr; }
   .hero-glow { display: none; }
   .bar-fill, .tst-slide, .faq-a { transition: none; }
   .calc-range::-webkit-slider-thumb { transition: none; }
+  .hl-shine .hl-accent em { animation: none; }
 }

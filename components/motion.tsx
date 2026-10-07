@@ -413,10 +413,115 @@ export function Tilt({
   );
 }
 /* ------------------------------------------------------------------ */
-/* ScrollWords — Brandvertise-style scroll-down text reveal.           */
-/* Words resolve (opacity/blur/rise) as you scroll the heading into    */
-/* view, with a per-word stagger. Accent words: wrap in *…* to get     */
-/* DM Serif italic, e.g. "Turning sunlight *into energy.*"             */
+/* Headline — premium kinetic headline motion UX.                      */
+/* Word-mask rise + blur + slight rotate, expo-eased stagger.          */
+/* Accent words get gradient shine sweep. Underline draws on reveal.   */
+/* Accepts string `text` with *accent* syntax OR rich React children   */
+/* with <em> for accent (PageIntro / SectionHeading titles).           */
+/* ------------------------------------------------------------------ */
+type HeadlineWord = { w: string; accent: boolean; accentClass?: string };
+
+function wordsFromText(text: string): HeadlineWord[] {
+  const words: HeadlineWord[] = [];
+  const parts = text.split(/(\*[^*]+\*)/g);
+  for (const part of parts) {
+    if (!part) continue;
+    const accent = part.startsWith('*') && part.endsWith('*');
+    const clean = accent ? part.slice(1, -1) : part;
+    for (const w of clean.split(/\s+/)) {
+      if (w) words.push({ w, accent });
+    }
+  }
+  return words;
+}
+
+function wordsFromNodes(nodes: ReactNode): HeadlineWord[] {
+  const words: HeadlineWord[] = [];
+  const walk = (node: ReactNode, accent: boolean, accentClass?: string) => {
+    Children.forEach(node, (child) => {
+      if (child == null || typeof child === 'boolean') return;
+      if (typeof child === 'string' || typeof child === 'number') {
+        for (const w of String(child).split(/\s+/)) {
+          if (w) words.push({ w, accent, accentClass });
+        }
+        return;
+      }
+      if (isValidElement(child)) {
+        const type = typeof child.type === 'string' ? child.type : '';
+        const props = child.props as { className?: unknown; children?: ReactNode };
+        const cls = typeof props.className === 'string' ? props.className : '';
+        const isAccent =
+          type === 'em' ||
+          type === 'i' ||
+          cls.includes('editorial-accent') ||
+          cls.includes('serif-accent') ||
+          cls.includes('hl-accent');
+        const nextClass = isAccent ? cls || accentClass : accentClass;
+        walk(props.children, accent || isAccent, nextClass);
+        return;
+      }
+    });
+  };
+  walk(nodes, false, undefined);
+  return words;
+}
+
+export function Headline({
+  text,
+  children,
+  className,
+  as: Tag = 'h2',
+  stagger = 65,
+  base = 0,
+  shine = true,
+  underline = false,
+}: {
+  text?: string;
+  children?: ReactNode;
+  className?: string;
+  as?: 'h1' | 'h2' | 'h3' | 'p' | 'span' | 'div';
+  stagger?: number;
+  base?: number;
+  shine?: boolean;
+  underline?: boolean;
+}) {
+  const { ref, seen } = useInView<HTMLDivElement>(0.25);
+  const words = text != null ? wordsFromText(text) : wordsFromNodes(children);
+  const plain = words.map((x) => x.w).join(' ');
+  const cap = 900;
+
+  return (
+    <Tag
+      ref={ref as never}
+      className={cn('hl', seen && 'is-in', shine && 'hl-shine', underline && 'hl-underline', className)}
+      aria-label={plain}
+    >
+      {words.map(({ w, accent, accentClass }, i) => {
+        const customColor =
+          accentClass != null &&
+          (accentClass.includes('text-[') ||
+            accentClass.includes('text-#') ||
+            accentClass.includes('text-white') ||
+            accentClass.includes('editorial-accent'));
+        return (
+          <span key={i} className="hl-mask" aria-hidden>
+            <span
+              className={cn('hl-word', accent && 'hl-accent', customColor && 'hl-plain')}
+              style={{ transitionDelay: seen ? `${base + Math.min(i * stagger, cap)}ms` : '0ms' }}
+            >
+              {accent ? <em className={customColor ? accentClass : undefined}>{w}</em> : w}
+            </span>
+            {i < words.length - 1 ? ' ' : ''}
+          </span>
+        );
+      })}
+      {underline ? <span aria-hidden className={cn('hl-rule', seen && 'is-in')} /> : null}
+    </Tag>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* ScrollWords — now powered by Headline motion (backward compatible). */
 /* ------------------------------------------------------------------ */
 export function ScrollWords({
   text,
@@ -429,35 +534,7 @@ export function ScrollWords({
   as?: 'h1' | 'h2' | 'h3' | 'p';
   stagger?: number;
 }) {
-  const { ref, seen } = useInView<HTMLDivElement>(0.25);
-
-  // Parse *accent* spans into words, keeping accent flags.
-  const words: { w: string; accent: boolean }[] = [];
-  const parts = text.split(/(\*[^*]+\*)/g);
-  for (const part of parts) {
-    if (!part) continue;
-    const accent = part.startsWith('*') && part.endsWith('*');
-    const clean = accent ? part.slice(1, -1) : part;
-    for (const w of clean.split(/\s+/)) {
-      if (w) words.push({ w, accent });
-    }
-  }
-
-  return (
-    <Tag ref={ref as never} className={cn('scroll-words', className)} aria-label={text.replaceAll('*', '')}>
-      {words.map(({ w, accent }, i) => (
-        <span key={i} aria-hidden>
-          <span
-            className={cn('sw-word', seen && 'is-on')}
-            style={{ transitionDelay: seen ? `${Math.min(i * stagger, 900)}ms` : '0ms' }}
-          >
-            {accent ? <em>{w}</em> : w}
-          </span>
-          {i < words.length - 1 ? ' ' : ''}
-        </span>
-      ))}
-    </Tag>
-  );
+  return <Headline text={text} as={Tag} stagger={stagger} className={className} />;
 }
 
 /* ------------------------------------------------------------------ */

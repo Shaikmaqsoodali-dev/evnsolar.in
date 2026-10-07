@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import { Star } from 'lucide-react'
 import { BrandArrow } from '@/components/brand-arrow'
 import { IMG } from '@/lib/brand'
-import { Magnetic, Reveal, ScrollFade } from '@/components/motion'
+import { Headline, Magnetic, Reveal, ScrollFade } from '@/components/motion'
 
 const VIDEO_SRC =
   'https://res.cloudinary.com/qxjpbgh6/video/upload/v1790691758/evn_videoplayback_2.mp4'
@@ -73,11 +73,13 @@ export function VideoHero() {
         <ScrollFade distance={110} fade={0.6}>
         <div className="mt-6 grid items-end gap-10 lg:grid-cols-[1.6fr_0.9fr]">
           <div>
-              <h1 className="hero-display hero-tight text-white" style={{ textShadow: 'none' }}>
-                <span className="line-mask"><span style={{ animationDelay: '120ms' }}>Powering the</span></span>
-                <span className="line-mask"><span style={{ animationDelay: '230ms' }}>Future With</span></span>
-                <span className="line-mask"><span style={{ animationDelay: '340ms' }}><em>Renewable.</em></span></span>
-              </h1>
+              <Headline
+                text="Powering the Future With *Renewable.*"
+                as="h1"
+                stagger={85}
+                base={120}
+                className="hero-display hero-tight text-white [text-shadow:none]"
+              />
             <Reveal variant="up" delay={320}>
               <p
                 className="mt-5 max-w-md text-[16px] font-normal leading-[1.75] text-white/75"
